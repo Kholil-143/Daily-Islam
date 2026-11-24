@@ -1,0 +1,301 @@
+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" alt="Daily Islam লোগো" style="width:76px; height:76px; border-radius:18px; border:2px solid var(--gold)" />' +
+      '<h3 style="margin:10px 0 4px; font-size:21px">Daily Islam-এ স্বাগতম</h3>' +
+      '<p class="sub" style="margin:0 auto 16px; max-width:430px">সাইন ইন করলে আপনার তাসবিহের হিসাব, নামাজ ট্র্যাকার ও বুকমার্ক আপনার প্রোফাইলের সঙ্গে যুক্ত থাকবে। সাইন ইন ছাড়াও গেস্ট হিসেবে অ্যাপের সব ফিচার ব্যবহার করা যাবে।</p>' +
+      '<div style="max-width:400px; margin:0 auto">' +
+      '<button class="gbtn" id="googleBtn">' + GOOGLE_G + 'Google দিয়ে সাইন ইন</button>' +
+      '<p id="googleNote" class="sub" style="margin:10px 0 0; display:none"></p>' +
+      '<div style="display:flex; align-items:center; gap:10px; margin:18px 0"><span style="flex:1; height:1px; background:var(--line)"></span><span style="color:var(--ink-2); font-size:13.5px">অথবা নাম দিয়ে প্রোফাইল</span><span style="flex:1; height:1px; background:var(--line)"></span></div>' +
+      '<input type="text" id="pfName" placeholder="আপনার নাম লিখুন" style="width:100%; margin-bottom:10px" maxlength="40" />' +
+      '<button class="btn gold" id="pfCreate" style="width:100%">প্রোফাইল তৈরি করুন</button>' +
+      '<p class="sub" style="margin:10px 0 0">প্রোফাইল ও হিসাব শুধু এই সেশনে থাকে — পেজ বন্ধ করলে মুছে যাবে।</p>' +
+      '</div></div>';
+    $('googleBtn').addEventListener('click', function(){
+      var n = $('googleNote');
+      n.style.display = 'block';
+      n.innerHTML = 'এই ওয়েব সংস্করণে Google সাইন-ইন এখনো চালু হয়নি — পূর্ণ অ্যাপ সংস্করণে Google সাইন-ইন সুবিধা পাওয়া যাবে। আপাতত নিচে নাম দিয়ে প্রোফাইল তৈরি করে এই সেশনে তাসবিহ, নামাজ ট্র্যাকার ও বুকমার্ক ব্যবহার করুন।';
+      $('pfName').focus();
+    });
+    if (BOOKMARKS.length){
+      box.innerHTML += '<div class="card"><h3 style="margin:0 0 4px">আমার বুকমার্ক</h3>' +
+        '<p class="sub" style="margin:0 0 10px">গেস্ট হিসেবে এই সেশনে সংরক্ষিত — প্রোফাইল তৈরি করলেও এগুলো থাকবে।</p>' +
+        BOOKMARKS.map(function(b, i){
+          return '<button class="bmk" data-open-bmk="' + i + '"><span>🔖</span><span>' + esc(b.label) + '<small>' + esc(b.sub) + '</small></span><span class="del" data-del-bmk="' + i + '" role="button" aria-label="বুকমার্ক সরান">✕</span></button>';
+        }).join('') + '</div>';
+    }
+    $('pfCreate').addEventListener('click', function(){
+      var name = $('pfName').value.trim();
+      if (!name){ toast('আগে আপনার নাম লিখুন'); $('pfName').focus(); return; }
+      PROFILE = { name: name };
+      renderProfileChip(); renderProfile();
+      toast('স্বাগতম, ' + name + '! আপনার প্রোফাইল তৈরি হয়েছে');
+    });
+    return;
+  }
+  var initial = PROFILE.name.trim().charAt(0) || 'ম';
+  var bmkHtml = BOOKMARKS.length ? BOOKMARKS.map(function(b, i){
+    return '<button class="bmk" data-open-bmk="' + i + '"><span>🔖</span><span>' + esc(b.label) + '<small>' + esc(b.sub) + '</small></span><span class="del" data-del-bmk="' + i + '" role="button" aria-label="বুকমার্ক সরান">✕</span></button>';
+  }).join('') : '<p class="sub" style="margin:0">এখনো কোনো বুকমার্ক নেই। কুরআন পড়ার সময় "বুকমার্ক করুন" বা হাদিস কার্ডের "বুকমার্ক" বোতামে চাপ দিলে এখানে জমা হবে।</p>';
+  box.innerHTML = '<div class="card" style="text-align:center; padding:24px 20px">' +
+    '<div class="avatar">' + esc(initial) + '</div>' +
+    '<h3 style="margin:10px 0 2px; font-size:22px">' + esc(PROFILE.name) + '</h3>' +
+    '<p class="sub" style="margin:0">সেশন প্রোফাইল • গেস্ট অ্যাকাউন্ট</p>' +
+    '<div class="pstats">' +
+    '<div class="st"><b>' + bn(trackerDoneCount()) + '/৫</b><span>আজকের নামাজ</span></div>' +
+    '<div class="st"><b>' + bn(tasbih.total) + '</b><span>মোট যিকির</span></div>' +
+    '<div class="st"><b>' + bn(BOOKMARKS.length) + '</b><span>বুকমার্ক</span></div>' +
+    '</div>' +
+    '<p style="margin:16px 0 0"><button class="btn ghost" id="pfOut">প্রোফাইল থেকে বের হয়ে যান</button></p>' +
+    '</div>' +
+    '<div class="card" style="margin-top:12px"><h3 style="margin-top:0">আমার বুকমার্ক</h3>' + bmkHtml + '</div>';
+  $('pfOut').addEventListener('click', function(){
+    PROFILE = null;
+    renderProfileChip(); renderProfile();
+    toast('আপনি গেস্ট হিসেবে আছেন');
+  });
+}
+$('profileChip').addEventListener('click', function(){ showView('profile'); renderProfile(); });
+(function profileTile(){
+  var grid = $('featureGrid');
+  var b = document.createElement('button');
+  b.className = 'tile';
+  b.innerHTML = '<span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1.4-3.4 4.2-5 7.5-5s6.1 1.6 7.5 5"/></svg></span>আমার প্রোফাইল<small>সাইন ইন, বুকমার্ক ও হিসাব</small>';
+  b.addEventListener('click', function(){ showView('profile'); renderProfile(); });
+  grid.appendChild(b);
+})();
+renderProfileChip();
+renderProfile();
+</script>
+<script>
+/* ================= Per-ayah tafsir ================= */
+var TAFSIR_AYAH = {
+ '1:1': 'প্রতিটি ভালো কাজ আল্লাহর নামে শুরু করাই সুন্নাত। "রহমান" অর্থ যাঁর দয়া দুনিয়ায় সব সৃষ্টিকে বেষ্টন করে আছে; "রহিম" অর্থ যিনি আখিরাতে বিশেষভাবে মুমিনদের প্রতি দয়ালু। (তাফসিরে ইবনে কাসির)',
+ '1:2': 'সব ধরনের প্রশংসা ও কৃতজ্ঞতা একমাত্র আল্লাহরই প্রাপ্য, কারণ তিনি সমগ্র বিশ্বজগতের সৃষ্টিকর্তা, মালিক ও প্রতিপালক — ধীরে ধীরে সবকিছুকে পূর্ণতার দিকে নিয়ে যান।',
+ '1:3': 'আল্লাহর রহমতের বিশালতা আবার স্মরণ করানো হয়েছে, যাতে বান্দা ভয়ের পাশাপাশি আশা নিয়েও তাঁর দিকে এগিয়ে যায়।',
+ '1:4': 'প্রতিদান দিবস (কিয়ামত) এর একচ্ছত্র মালিক আল্লাহ; সেদিন কারো কোনো কর্তৃত্ব থাকবে না। এই আয়াত মানুষকে জবাবদিহিতার ভয়ে সৎকর্মে উদ্বুদ্ধ করে।',
+ '1:5': 'তাওহিদের সারকথা: ইবাদত (নামাজ, রোজা, দোয়া, মানত ইত্যাদি) শুধু আল্লাহর জন্যই এবং সাহায্যও চাইতে হবে শুধু তাঁর কাছেই। প্রথমে ইবাদতের কথা, পরে সাহায্য চাওয়ার কথা — কারণ ইবাদতই উদ্দেশ্য, সাহায্য তার উপায়।',
+ '1:6': 'সিরাতুল মুস্তাকিম অর্থাৎ সরল পথ — যা আল্লাহর সন্তুষ্টি ও জান্নাত পর্যন্ত পৌঁছে দেয়। এটাই সূরা ফাতিহার প্রধান দোয়া; তাই এই সূরা ছাড়া নামাজ হয় না।',
+ '1:7': 'নেয়ামতপ্রাপ্তরা হলেন নবী, সিদ্দিক, শহীদ ও সালেহিন (সূরা আন-নিসা: ৬৯)। "মাগদুব" অর্থ যারা জেনে-বুঝে সত্য প্রত্যাখ্যান করে আল্লাহর গজবের পাত্র হয়েছে; "দাল্লিন" অর্থ যারা অজ্ঞতায় পথভ্রষ্ট হয়েছে। মুসলিম প্রতিদিন নামাজে এই দুই পথ থেকে বাঁচার দোয়া করে।',
+ '2:45': 'সবর (ধৈর্য) ও নামাজ — এই দুটিকে আল্লাহ সাহায্য লাভের মাধ্যম বানিয়েছেন। নামাজে মনোযোগী (খাশিয়িন) ছাড়া অন্যদের কাছে এটি ভারী মনে হয়।',
+ '2:152': 'আল্লাহকে স্মরণ (যিকির, নামাজ, কুরআন তিলাওয়াত) করলে আল্লাহও বান্দাকে স্মরণ করেন — অর্থাৎ রহমত ও মাগফিরাত দান করেন। নেয়ামতের কৃতজ্ঞতা করা ওয়াজিব; অকৃতজ্ঞতা গুনাহ।',
+ '2:153': 'বিপদে ধৈর্য ও নামাজের মাধ্যমে সাহায্য চাওয়ার নির্দেশ। "আল্লাহ ধৈর্যশীলদের সঙ্গে আছেন" — অর্থাৎ তাঁর সাহায্য, তাওফিক ও রহমত তাদের সঙ্গে থাকে।',
+ '2:155': 'ভয়, ক্ষুধা, জান-মাল ও ফল-ফসলের ক্ষতি দিয়ে পরীক্ষা অবশ্যম্ভাবী — এটি মুমিনের জীবনের নিয়ম। সুসংবাদ কেবল ধৈর্যশীলদের জন্য।',
+ '2:156': 'ধৈর্যশীলদের পরিচয়: বিপদে তারা বলে "ইন্না লিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন" — আমরা আল্লাহরই এবং তাঁর দিকেই ফিরে যাব। এই বাক্যে তাওহিদ, আত্মসমর্পণ ও আখিরাতের বিশ্বাস নিহিত।',
+ '2:185': 'রমজান মাসেই কুরআন নাজিল শুরু হয়; এই মাসে রোজা ফরজ। অসুস্থ ও মুসাফিরের জন্য ছাড় রয়েছে — পরে কাজা করতে হবে। "আল্লাহ তোমাদের জন্য সহজতা চান, কঠিনতা চান না" — শরিয়তের একটি মৌলিক নীতি।',
+ '2:186': 'আল্লাহ বান্দার অতি নিকটে; দোয়াকারীর দোয়া তিনি কবুল করেন। শর্ত হলো তাঁর ডাকে সাড়া দেওয়া ও ঈমান রাখা — তাহলেই সঠিক পথ পাওয়া যায়।',
+ '2:201': 'এটি সবচেয়ে সর্বাঙ্গীণ দোয়া: দুনিয়ার কল্যাণ (সুস্থতা, হালাল রিজিক, নেক আমল), আখিরাতের কল্যাণ (জান্নাত) এবং জাহান্নাম থেকে মুক্তি — তিনটিই একসঙ্গে চাওয়া হয়েছে। রাসূলুল্লাহ ﷺ এই দোয়া বেশি পড়তেন।',
+ '2:255': 'আয়াতুল কুরসি — কুরআনের শ্রেষ্ঠ আয়াতগুলোর একটি। এতে আল্লাহর একত্ব, চিরঞ্জীবতা, সবকিছুর ধারণ-ক্ষমতা, ঘুম-তন্দ্রা থেকে পবিত্রতা, আসমান-জমিনের মালিকানা, তাঁর অনুমতি ছাড়া সুপারিশের অসম্ভবতা, সর্বব্যাপী জ্ঞান এবং কুরসির (তাঁর জ্ঞান ও কর্তৃত্বের) বিশালতা বর্ণিত হয়েছে। (তাফসিরে ইবনে কাসির)',
+ '2:256': 'ধর্মে কোনো জবরদস্তি নেই — হেদায়েত ও গোমরাহি স্পষ্ট হয়ে যাওয়ার পর ঈমান স্বেচ্ছায় গ্রহণের বিষয়। তাগুত (আল্লাহ ছাড়া যার ইবাদত করা হয়) কে অস্বীকার করে আল্লাহর প্রতি ঈমান আনলেই মজবুত হাতল ধরা হয়।',
+ '2:257': 'আল্লাহ মুমিনদের অভিভাবক (ওলি); তিনি তাদের কুফর ও অজ্ঞতার অন্ধকার থেকে ঈমানের আলোতে বের করে আনেন। বিপরীতে কাফেরদের অভিভাবক তাগুত, যারা তাদের আলো থেকে অন্ধকারে নিয়ে যায়।',
+ '2:285': 'রাসূল ﷺ ও মুমিনগণ আল্লাহ, ফেরেশতা, কিতাবসমূহ ও রাসূলগণের প্রতি ঈমান এনেছেন — রাসূলদের মধ্যে কোনো পার্থক্য (কাউকে মানা, কাউকে অস্বীকার) করেন না। "শুনলাম ও আনুগত্য করলাম" — এটাই মুমিনের জবাব।',
+ '2:286': 'আল্লাহ কাউকে তার সাধ্যের বাইরে দায়িত্ব দেন না। প্রত্যেকে নিজের অর্জিত পুণ্য ও পাপের ফল পাবে। আয়াতের শেষাংশের দোয়াগুলো আল্লাহ নিজে শিখিয়ে দিয়েছেন; হাদিসে এসেছে, রাতে এই দুই আয়াত (২৮৫–২৮৬) পড়লে তা যথেষ্ট হয়। (সহিহ বুখারি: ৫০০৯)',
+ '3:26': 'সব রাজত্ব ও ক্ষমতার প্রকৃত মালিক আল্লাহ; তিনি যাকে চান ক্ষমতা ও সম্মান দেন, যার থেকে চান ছিনিয়ে নেন। দুনিয়ার উত্থান-পতন তাঁর ইচ্ছার অধীন — তাই ক্ষমতাবানদের ভয়ে নয়, আল্লাহর ভয়েই চলতে হয়।',
+ '3:139': 'উহুদের পরাজয়ের পর মুসলিমদের সান্ত্বনা: দুর্বল হয়ো না, দুঃখ করো না — সত্যিকারের মুমিন হলে চূড়ান্ত বিজয় তোমাদেরই। পরাজয় সাময়িক পরীক্ষা মাত্র।',
+ '13:28': 'অন্তরের প্রকৃত প্রশান্তি (তুমানিনা) পাওয়া যায় আল্লাহর যিকিরে — দুনিয়ার সম্পদ ও ভোগে নয়। যিকির অর্থ নামাজ, কুরআন তিলাওয়াত ও আল্লাহর স্মরণের সব রূপ।',
+ '14:7': 'আল্লাহর ঘোষণা: নেয়ামতের কৃতজ্ঞতা (শুকর) করলে তিনি নেয়ামত আরও বাড়িয়ে দেন; আর অকৃতজ্ঞতা করলে তাঁর শাস্তি কঠিন। শুকর হয় অন্তরের স্বীকৃতি, মুখের প্রশংসা ও নেয়ামতকে সৎকাজে ব্যবহারের মাধ্যমে।',
+ '36:58': 'জান্নাতবাসীদের জন্য সবচেয়ে বড় সম্মান: পরম দয়ালু রবের পক্ষ থেকে সরাসরি "সালাম" — শান্তির অভিবাদন। সব নেয়ামতের ঊর্ধ্বে এই মর্যাদা।',
+ '40:60': 'আল্লাহ নিজে দোয়ার আহ্বান করে কবুলের প্রতিশ্রুতি দিয়েছেন। হাদিসে এসেছে, "দোয়াই ইবাদত" (তিরমিযি: ২৯৬৯)। যারা অহংকারে ইবাদত থেকে মুখ ফিরিয়ে নেয়, তাদের জন্য অপমানজনক জাহান্নামের হুশিয়ারি রয়েছে।',
+ '55:13': 'সূরা আর-রাহমানে এই আয়াতটি ৩১ বার এসেছে। প্রতিটি নেয়ামত বর্ণনার পর মানুষ ও জিন — উভয় সম্প্রদায়কে প্রশ্ন করা হচ্ছে: এত নেয়ামতের পরও কোনটি অস্বীকার করবে? এটি কৃতজ্ঞতার দিকে বারবার আহ্বান।',
+ '65:3': 'যে আল্লাহর ওপর তাওয়াক্কুল (ভরসা) করে, আল্লাহ তার জন্য যথেষ্ট হন এবং এমন উৎস থেকে রিজিক দেন যা সে কল্পনাও করেনি। তাওয়াক্কুল অর্থ চেষ্টা করে ফলাফল আল্লাহর হাতে ছেড়ে দেওয়া।',
+ '67:1': 'সার্বভৌম কর্তৃত্ব একমাত্র আল্লাহর হাতে; তিনি সবকিছুর ওপর ক্ষমতাবান। "তাবারাকা" অর্থ তাঁর কল্যাণ ও মাহাত্ম্য অপরিসীম।',
+ '67:2': 'মৃত্যু ও জীবন সৃষ্টির উদ্দেশ্য পরীক্ষা: কে সবচেয়ে উত্তম আমল করে — আমলের পরিমাণ নয়, মান (ইখলাস ও সুন্নাহ অনুযায়ী হওয়া) ই এখানে বিবেচ্য।',
+ '94:5': 'নিশ্চয় কষ্টের সঙ্গেই স্বস্তি রয়েছে — কষ্টের পরে নয়, সঙ্গে। অর্থাৎ প্রতিটি সংকটের ভেতরেই মুক্তির বীজ থাকে; একটি কষ্ট দুটি স্বস্তিকে হারাতে পারে না।',
+ '94:6': 'আগের আয়াতের বক্তব্য জোর দিয়ে পুনরাবৃত্তি করা হয়েছে, যাতে রাসূল ﷺ ও প্রতিটি মুমিন নিশ্চিত থাকে: কষ্ট স্থায়ী নয়, স্বস্তি অবশ্যম্ভাবী।',
+ '97:1': 'লাইলাতুল কদরে পুরো কুরআন লাওহে মাহফুজ থেকে প্রথম আসমানে নাজিল হয়; এরপর ২৩ বছরে ধাপে ধাপে রাসূল ﷺ-এর ওপর অবতীর্ণ হয়। (তাফসিরে ইবনে কাসির)',
+ '97:3': 'এই এক রাতের ইবাদত হাজার মাস (৮৩ বছর ৪ মাস) এর ইবাদতের চেয়ে উত্তম — এমন ব্যক্তির জন্যও সম্ভব যার পুরো জীবনই ৮৩ বছর নয়। এটি উম্মতে মুহাম্মদির জন্য বিশেষ অনুগ্রহ।',
+ '97:4': 'এই রাতে ফেরেশতাগণ ও "রূহ" (জিবরাইল আ.) আল্লাহর হুকুমে প্রতিটি নির্ধারিত বিষয় নিয়ে পৃথিবীতে অবতরণ করেন — তাই রাতটি বরকতময়।',
+ '97:5': 'ফজর উদয় পর্যন্ত পুরো রাতটাই শান্তি ও কল্যাণে ভরা; শয়তানের অনিষ্ট থেকে এটি সুরক্ষিত রাত।',
+ '103:1': 'আল্লাহ সময়ের শপথ করেছেন — সময় মানুষের জীবনের মূলধন; তা কাজে লাগানো বা নষ্ট করার ওপরই সাফল্য-ব্যর্থতা নির্ভর করে।',
+ '103:2': 'সমগ্র মানবজাতি ক্ষতির মধ্যে রয়েছে — কারণ জীবন নামের পুঁজি প্রতিদিন কমছে, অথচ অধিকাংশ মানুষ তা আখিরাতের কাজে লাগায় না।',
+ '103:3': 'ক্ষতি থেকে বাঁচার চার শর্ত: (১) ঈমান, (২) নেক আমল, (৩) পরস্পরকে সত্যের উপদেশ (দাওয়াত ও সৎকাজের আদেশ), (৪) পরস্পরকে ধৈর্যের উপদেশ। শুধু নিজে ভালো হওয়া যথেষ্ট নয় — অন্যকে ভালোর দিকে ডাকাও শর্ত।',
+ '108:1': 'কাউসার অর্থ প্রচুর কল্যাণ; বিশেষভাবে জান্নাতে রাসূলুল্লাহ ﷺ-কে দেওয়া হাউজ/নহরের নাম কাউসার। মক্কার কাফেররা তাঁকে "আবতার" (নির্বংশ) বলায় সান্ত্বনা হিসেবে এই সূরা নাজিল হয়।',
+ '108:2': 'নেয়ামতের শুকরিয়া: নামাজ শুধু আল্লাহর জন্য এবং কুরবানিও শুধু তাঁর নামে — ইবাদতে কাউকে শরিক করা যাবে না।',
+ '108:3': 'প্রকৃত নির্বংশ তারাই যারা রাসূল ﷺ-এর শত্রু; আর তাঁর নাম ও বাণী যুগে যুগে জীবিত থাকবে — ইতিহাসই এর প্রমাণ।',
+ '109:6': 'তাওহিদে কোনো আপস নেই: কাফেররা প্রস্তাব দিয়েছিল এক বছর একে অপরের উপাস্যের ইবাদত করার — তার জবাবে এই স্পষ্ট ঘোষণা। নিজের ধর্মে অবিচল থাকা ও অন্যের ধর্মে হস্তক্ষেপ না করা — দুটোই এখানে শিক্ষা।',
+ '112:1': 'আল্লাহ এক ও অদ্বিতীয় — তাঁর সত্তা, গুণাবলি ও ইবাদতে কোনো শরিক নেই। এই সূরা তাওহিদের বিশুদ্ধ ঘোষণা।',
+ '112:2': '"সামাদ" অর্থ: তিনি সবার প্রয়োজন পূরণকারী, সবাই তাঁর মুখাপেক্ষী; অথচ তিনি কারো মুখাপেক্ষী নন, তাঁর কোনো অভাব নেই।',
+ '112:3': 'আল্লাহ কাউকে জন্ম দেননি এবং তাঁকেও জন্ম দেওয়া হয়নি — সন্তান ও পিতা-মাতার সম্পর্ক থেকে তিনি পবিত্র। এটি খ্রিস্টান ও মুশরিকদের ভ্রান্ত ধারণার জবাব।',
+ '112:4': 'তাঁর সমতুল্য, সমকক্ষ বা সদৃশ কেউ নেই — কোনো দিক থেকেই সৃষ্টির সঙ্গে তাঁর তুলনা চলে না।',
+ '113:1': 'ভোরের রবের কাছে আশ্রয় — যিনি অন্ধকার বিদীর্ণ করে আলো আনেন, তিনিই সব অনিষ্ট দূর করতে সক্ষম। এই সূরা ও সূরা আন-নাস মিলে "মুআওয়িযাতাইন"; সকাল-সন্ধ্যায় পড়া সুন্নাত।',
+ '114:1': 'মানুষের রব, বাদশাহ ও ইলাহ — এই তিনটি গুণ উল্লেখ করে আশ্রয় চাওয়া হয়েছে গোপনে কুমন্ত্রণাদাতা শয়তানের থেকে, যে মানুষের বুকে ওয়াসওয়াসা দিয়ে পিছিয়ে যায়। কুরআনের শেষ সূরাটি সুরক্ষার দোয়া দিয়ে শেষ হয়েছে।'
+};
+$('readerBody').addEventListener('click', function(e){
+  var b = e.target.closest('[data-tafsir]'); if (!b) return;
+  var box = $('tfs-' + b.getAttribute('data-tafsir'));
+  if (!box) return;
+  box.classList.toggle('hidden');
+  b.textContent = box.classList.contains('hidden') ? 'তাফসির দেখুন' : 'তাফসির লুকান';
+});
+</script>
+<script>
+/* ================= New sections: tilawat, kitab, articles, quran shikkha, taleem, amal, roza, sunnah, mosque, bayan, fitra, hijri calendar, dua bookmarks, last read ================= */
+
+/* ---------- Tilawat (full-surah audio) ---------- */
+var tilSurah = null;
+function tilUrl(n){ return 'https://cdn.islamic.network/quran/audio-surah/128/' + RECITER + '/' + n + '.mp3'; }
+function buildTilawat(){
+  if (typeof QURAN === 'undefined' || !QURAN) return;
+  var q = ($('tilSearch').value || '').trim();
+  var html = '';
+  QURAN.surahs.forEach(function(s, i){
+    if (q && (SURA_BN[i] + ' ' + s.n).indexOf(q) === -1) return;
+    var playing = tilSurah === s.n && !player.paused;
+    html += '<button class="srow" data-til="' + s.n + '"><span class="sno">' + bn(s.n) + '</span><span class="tt"><b>সূরা ' + SURA_BN[i] + ' (' + s.ar + ')</b><span>' + bn(s.cnt) + ' আয়াত • ' + (s.rev === 'Makki' ? 'মাক্কী' : 'মাদানী') + '</span></span><span style="font-weight:700; color:var(--gold)">' + (playing ? '❚❚ চলছে' : '▶ শুনুন') + '</span></button>';
+  });
+  $('tilList').innerHTML = html || '<p class="loadmsg">কিছু পাওয়া যায়নি।</p>';
+}
+loadQuran(function(){ buildTilawat(); });
+$('tilSearch').addEventListener('input', buildTilawat);
+$('tilReciter').addEventListener('change', function(){
+  RECITER = this.value;
+  var rs = $('reciterSel'); if (rs) rs.value = this.value;
+  if (tilSurah && !player.paused){ player.src = tilUrl(tilSurah); player.play(); }
+  buildTilawat();
+  toast('ক্বারী পরিবর্তন হয়েছে');
+});
+$('tilList').addEventListener('click', function(e){
+  var b = e.target.closest('[data-til]'); if (!b) return;
+  var n = +b.getAttribute('data-til');
+  if (tilSurah === n && !player.paused){ player.pause(); }
+  else { stopAudio(); tilSurah = n; player.src = tilUrl(n); player.play(); }
+  setTimeout(buildTilawat, 80);
+});
+player.addEventListener('ended', function(){ if (tilSurah){ tilSurah = null; buildTilawat(); } });
+player.addEventListener('pause', function(){ if (tilSurah && currentView === 'tilawat') setTimeout(buildTilawat, 80); });
+
+/* ---------- Kitab ---------- */
+var KITAB = [
+ { t:'রিয়াদুস সালেহিন', a:'ইমাম আবু যাকারিয়া আন-নববি (রহ.) (মৃ. ৬৭৬ হি.)', d:'কুরআনের আয়াত ও প্রায় ১,৯০০ হাদিসের অনন্য সংকলন — তাকওয়া, সবর, সত্যবাদিতা, পিতামাতার হক, প্রতিবেশীর হকসহ দৈনন্দিন জীবনের প্রায় সব বিষয়ে অধ্যায় সাজানো। ঘরের তালিম ও ব্যক্তিগত পাঠের জন্য সবচেয়ে উপযোগী বইগুলোর একটি।' },
+ { t:'ফিকহুস সুন্নাহ', a:'সাইয়েদ সাবেক (রহ.)', d:'ইবাদতের ফিকহ — পবিত্রতা, নামাজ, রোজা, যাকাত ও হজের মাসআলা কুরআন-হাদিসের দলিলসহ সহজ ভাষায়। চার মাযহাবের মতামতের তুলনামূলক আলোচনাও রয়েছে।' },
+ { t:'বেহেশতি জেওর', a:'মাওলানা আশরাফ আলী থানভি (রহ.)', d:'মহিলাদের জন্য রচিত বিখ্যাত ফিকহের বই — ঈমান, ইবাদত, বিবাহ, পর্দা ও দৈনন্দিন জীবনের মাসআলা। উপমহাদেশের ঘরে ঘরে পঠিত।' },
+ { t:'ফাজায়েলে আমল', a:'শায়খুল হাদিস মাওলানা মুহাম্মদ জাকারিয়া কান্ধলভি (রহ.)', d:'নামাজ, কুরআন তিলাওয়াত, যিকির, রমজান, হজ ও দাওয়াতের ফজিলত-বিষয়ক হাদিসের সংকলন — ফাজায়েলে কুরআন, ফাজায়েলে নামাজ, ফাজায়েলে রমজান ইত্যাদি খণ্ডে বিভক্ত; তালিমের মজলিসে বহুল পঠিত।' },
+ { t:'আর-রাহিকুল মাখতুম (সীরাতে নববি)', a:'আল্লামা সফিউর রহমান মোবারকপুরি (রহ.)', d:'রাসূলুল্লাহ ﷺ-এর পূর্ণাঙ্গ জীবনী — জন্ম থেকে ওফাত পর্যন্ত ধারাবাহিক ও প্রামাণ্য বর্ণনা। মক্কা শরিফে অনুষ্ঠিত বিশ্ব সীরাত প্রতিযোগিতায় প্রথম পুরস্কারপ্রাপ্ত গ্রন্থ।' },
+ { t:'তাফসিরে মারফুল কুরআন', a:'মুফতি মুহাম্মদ শাফি (রহ.)', d:'উর্দু ভাষায় রচিত সহজ ও নির্ভরযোগ্য তাফসির; বাংলা অনুবাদও বহুল প্রচলিত। প্রতি সূরার সারসংক্ষেপ ও আয়াতের ব্যাখ্যা সাধারণ পাঠকের উপযোগী করে লেখা।' },
+ { t:'তাফসিরে ইবনে কাসির', a:'হাফিজ ইমাদুদ্দিন ইবনে কাসির (রহ.) (মৃ. ৭৭৪ হি.)', d:'সবচেয়ে প্রসিদ্ধ আছারভিত্তিক তাফসির — কুরআনের আয়াত দিয়ে আয়াতের ব্যাখ্যা, হাদিস ও সাহাবিদের বর্ণনার ভিত্তিতে তাফসির। গভীর অধ্যয়নের জন্য অপরিহার্য।' },
+ { t:'হিসনুল মুসলিম', a:'ড. সাইদ ইবন আলি আল-কাহতানি', d:'কুরআন ও সহিহ হাদিস থেকে সংকলিত দৈনন্দিন দোয়া ও যিকিরের ছোট্ট কিন্তু অমূল্য বই — সকাল-সন্ধ্যার আমল, ঘুম, খাবার, সফরসহ জীবনের প্রতিটি মুহূর্তের দোয়া।' }
+];
+$('kitabList').innerHTML = KITAB.map(function(k){
+  return '<article class="hcard"><span class="cat">ইসলামিক বই</span><h3>' + k.t + '</h3><p style="color:var(--gold); font-weight:600; margin:0 0 6px">' + k.a + '</p><p style="margin:0">' + k.d + '</p></article>';
+}).join('');
+
+/* ---------- Articles ---------- */
+var ARTICLES = [
+ { t:'তাওহিদ: ঈমানের ভিত্তি', b:'তাওহিদ অর্থ আল্লাহকে তাঁর সত্তা, গুণাবলি, কাজ ও ইবাদতে এক ও অদ্বিতীয় মানা। সব নবী-রাসূলের দাওয়াতের মূল কথাই ছিল এটি: "তোমরা আল্লাহর ইবাদত করো, তিনি ছাড়া তোমাদের কোনো ইলাহ নেই।" (সূরা আল-আরাফ: ৫৯)\nতাওহিদ শুধু মুখের স্বীকৃতি নয় — ইবাদতের প্রতিটি কাজ (নামাজ, রোজা, দোয়া, কুরবানি, মানত) শুধু আল্লাহর জন্য নির্দিষ্ট করা এবং সাহায্য ও ভরসা একমাত্র তাঁর ওপর রাখাই এর প্রাণ। যে অন্তরে তাওহিদ প্রতিষ্ঠিত, সে অন্তরে সৃষ্টির ভয় ও লোভ জায়গা পায় না।' },
+ { t:'নামাজ: মুমিনের মিরাজ', b:'পাঁচ ওয়াক্ত নামাজ ইসলামের দ্বিতীয় স্তম্ভ এবং মিরাজের রাতে উম্মতকে দেওয়া আল্লাহর বিশেষ উপহার। আল্লাহ বলেন, "নিশ্চয় নামাজ অশ্লীল ও মন্দ কাজ থেকে বিরত রাখে।" (সূরা আল-আনকাবুত: ৪৫)\nনামাজ শুধু একটি আচার নয় — এটি দিনে পাঁচবার আল্লাহর সামনে দাঁড়িয়ে নিজের হিসাব নেওয়ার সুযোগ। যে নামাজ খুশু-খুযুসহ আদায় করা হয়, তা মানুষের চরিত্র বদলে দেয়: সময়নিষ্ঠা, পবিত্রতা, ধৈর্য ও বিনয় — সব গুণই নামাজ থেকে জন্ম নেয়। তাই হাদিসে এসেছে, কিয়ামতের দিন সর্বপ্রথম নামাজের হিসাব নেওয়া হবে। (সুনানে তিরমিযি: ৪১৩)' },
+ { t:'পিতামাতার হক ও খেদমত', b:'আল্লাহ তাঁর নিজের ইবাদতের নির্দেশের ঠিক পরেই পিতামাতার প্রতি সদ্ব্যবহারের নির্দেশ দিয়েছেন (সূরা আল-ইসরা: ২৩) — এ থেকেই বোঝা যায় এই হকের মর্যাদা কত উচ্চ। এমনকি তাঁদের কোনো কথায় "উফ" শব্দটুকুও বলতে নিষেধ করা হয়েছে।\nরাসূলুল্লাহ ﷺ বলেছেন, "পিতা-মাতার সন্তুষ্টিতেই আল্লাহর সন্তুষ্টি, আর তাঁদের অসন্তুষ্টিতে আল্লাহর অসন্তুষ্টি।" (সুনানে তিরমিযি: ১৮৯৯) বৃদ্ধ বয়সে তাঁদের খেদমত জান্নাত লাভের সবচেয়ে সহজ পথগুলোর একটি — যে পিতামাতা উভয়কে বা একজনকে বৃদ্ধ অবস্থায় পেয়েও জান্নাত অর্জন করতে পারল না, তার জন্য হাদিসে দুঃখ প্রকাশ করা হয়েছে। (সহিহ মুসলিম: ২৫৫১)' },
+ { t:'সদকা: যে দানে সম্পদ বাড়ে', b:'সদকা শুধু টাকা দেওয়া নয় — প্রতিটি ভালো কাজই সদকা: মুখের হাসি, পথ থেকে কষ্টদায়ক জিনিস সরানো, ভালো কথা বলা — সবই সদকার অন্তর্ভুক্ত। (সহিহ মুসলিম: ১০০৯) আল্লাহ প্রতিশ্রুতি দিয়েছেন, সদকার বিনিময়ে তিনি বহুগুণ বাড়িয়ে দেবেন (সূরা আল-বাকারা: ২৬১)।\nরাসূলুল্লাহ ﷺ বলেছেন, "সদকা করলে সম্পদ কমে না।" (সহিহ মুসলিম: ২৫৮৮) গোপনে দান করা সর্বোত্তম, কারণ তা রিয়া থেকে মুক্ত; আর নিয়মিত ছোট দান আল্লাহর কাছে প্রিয় — "আল্লাহর কাছে সবচেয়ে প্রিয় আমল হলো যা নিয়মিত করা হয়, যদিও তা কম হয়।" (সহিহ বুখারি: ৬৪৬৪)' },
+ { t:'রমজান: আত্মশুদ্ধির প্রশিক্ষণের মাস', b:'রমজান কেবল না-খেয়ে থাকার মাস নয় — এটি তাকওয়া অর্জনের প্রশিক্ষণকাল। আল্লাহ বলেন, "তোমাদের ওপর রোজা ফরজ করা হয়েছে, যেমন ফরজ করা হয়েছিল তোমাদের পূর্ববর্তীদের ওপর — যাতে তোমরা তাকওয়া অর্জন করতে পারো।" (সূরা আল-বাকারা: ১৮৩)\nএই মাসে কুরআন নাজিল হয়েছে, এই মাসেই লাইলাতুল কদর — হাজার মাসের চেয়ে উত্তম এক রাত। রোজাদারের জন্য জান্নাতে রয়েছে বিশেষ দরজা "রাইয়ান" (সহিহ বুখারি: ১৮৯৬)। রমজানকে কাজে লাগানোর উপায়: পাঁচ ওয়াক্ত নামাজ জামাতে, প্রতিদিন কুরআন তিলাওয়াত, তারাবি, শেষ দশকে ইতিকাফ ও কদর অন্বেষণ, বেশি বেশি দোয়া ও সদকা।' }
+];
+$('articleList').innerHTML = ARTICLES.map(function(a){
+  var paras = a.b.split('\n').map(function(p){ return '<p>' + p + '</p>'; }).join('');
+  return '<details class="acc"><summary>' + a.t + '</summary><div class="body">' + paras + '</div></details>';
+}).join('');
+
+/* ---------- Quran shikkha: letters ---------- */
+var LETTERS = [['ا','আলিফ'],['ب','বা'],['ت','তা'],['ث','সা'],['ج','জিম'],['ح','হা'],['خ','খা'],['د','দাল'],['ذ','যাল'],['ر','রা'],['ز','যা'],['س','সিন'],['ش','শিন'],['ص','সাদ'],['ض','দাদ'],['ط','ত্বা'],['ظ','যোয়া'],['ع','আইন'],['غ','গাইন'],['ف','ফা'],['ق','ক্বাফ'],['ك','কাফ'],['ل','লাম'],['م','মিম'],['ن','নুন'],['ه','হা'],['و','ওয়াও'],['ي','ইয়া'],['ء','হামজা']];
+$('letterGrid').innerHTML = LETTERS.map(function(L){
+  return '<div style="border:1px solid var(--line); border-radius:12px; padding:10px 4px; text-align:center; background:var(--card)"><div style="font-family:Amiri,serif; font-size:32px; line-height:1.3; color:var(--green-800)">' + L[0] + '</div><div style="font-size:14px; font-weight:600">' + L[1] + '</div></div>';
+}).join('');
+
+/* ---------- Taleem ---------- */
+var TALEEM = [
+ { t:'আজকের তালিম: নিয়তের গুরুত্ব', b:'সব আমলের ভিত্তি হলো নিয়ত। কোনো কাজ বাইরে থেকে যত বড়ই হোক, নিয়ত বিশুদ্ধ না হলে আল্লাহর কাছে তার মূল্য নেই। আবার ছোট্ট একটি কাজও খাঁটি নিয়তের কারণে পাহাড়সম সওয়াবের হয়। তাই প্রতিটি কাজের আগে নিজেকে প্রশ্ন করুন: আমি এটি কার জন্য করছি?', s:'সহিহ বুখারি: ১; সহিহ মুসলিম: ১৯০৭' },
+ { t:'আজকের তালিম: সত্যবাদিতা', b:'সত্য মানুষকে পুণ্যের দিকে নিয়ে যায়, আর পুণ্য জান্নাতের দিকে। যে ব্যক্তি সত্য বলতে থাকে, আল্লাহর কাছে সে "সিদ্দিক" (পরম সত্যবাদী) হিসেবে লিখিত হয়। আর মিথ্যা পাপের দিকে নিয়ে যায়, পাপ জাহান্নামের দিকে।', s:'সহিহ বুখারি: ৬০৯৪; সহিহ মুসলিম: ২৬০৭' },
+ { t:'আজকের তালিম: রাগ নিয়ন্ত্রণ', b:'প্রকৃত শক্তিশালী সে নয় যে কুস্তিতে হারাতে পারে; প্রকৃত শক্তিশালী সে, যে রাগের সময় নিজেকে নিয়ন্ত্রণ করতে পারে। রাগ এলে ওযু করুন, দাঁড়িয়ে থাকলে বসুন, বসে থাকলে শুয়ে পড়ুন — শয়তান আগুন থেকে সৃষ্টি, আর আগুন পানিতে নেভে।', s:'সহিহ বুখারি: ৬১১৪; সুনানে আবু দাউদ: ৪৭৮২' },
+ { t:'আজকের তালিম: প্রতিবেশীর হক', b:'জিবরাইল (আ.) রাসূলুল্লাহ ﷺ-কে প্রতিবেশী সম্পর্কে এত বেশি উপদেশ দিতেন যে তিনি ভেবেছিলেন প্রতিবেশীকে উত্তরাধিকারী বানানো হবে। প্রতিবেশী ক্ষুধার্ত থাকতে নিজে পেট ভরে খাওয়া পূর্ণ ঈমানের পরিচয় নয়।', s:'সহিহ বুখারি: ৬০১৪; সহিহ মুসলিম: ৪৭' },
+ { t:'আজকের তালিম: সময়ের মূল্য', b:'দুটি নেয়ামতের ব্যাপারে অধিকাংশ মানুষ প্রতারিত: সুস্থতা ও অবসর সময়। সময় একবার গেলে আর ফিরে আসে না। প্রতিদিন অন্তত কিছু সময় কুরআন, যিকির ও দ্বীন শেখার জন্য নির্দিষ্ট করুন — ছোট কিন্তু নিয়মিত আমলই আল্লাহর প্রিয়।', s:'সহিহ বুখারি: ৬৪১২, ৬৪৬৪' },
+ { t:'আজকের তালিম: গীবত থেকে বাঁচা', b:'গীবত হলো ভাইয়ের এমন দোষ তার অনুপস্থিতিতে বলা, যা শুনলে সে কষ্ট পায় — তা সত্য হলেও গীবত; মিথ্যা হলে তা বুহতান (অপবাদ), আরও বড় গুনাহ। কুরআনে গীবতকে মৃত ভাইয়ের মাংস খাওয়ার সঙ্গে তুলনা করা হয়েছে।', s:'সহিহ মুসলিম: ২৫৮৯; সূরা আল-হুজুরাত: ১২' },
+ { t:'আজকের তালিম: কৃতজ্ঞতা', b:'যে মানুষের প্রতি কৃতজ্ঞতা প্রকাশ করে না, সে আল্লাহর প্রতিও কৃতজ্ঞ হয় না। আল্লাহ প্রতিশ্রুতি দিয়েছেন: "তোমরা কৃতজ্ঞতা প্রকাশ করলে আমি অবশ্যই তোমাদের আরও বাড়িয়ে দেব।" প্রতিদিন ঘুমানোর আগে দিনের তিনটি নেয়ামতের কথা মনে করে শুকরিয়া আদায় করুন।', s:'সুনানে তিরমিযি: ১৯৫৪; সূরা ইবরাহিম: ৭' },
+ { t:'আজকের তালিম: সদকা ও হাসিমুখ', b:'প্রতিটি ভালো কাজই সদকা। ভাইয়ের সঙ্গে হাসিমুখে সাক্ষাৎ করাও সদকা। পথ থেকে কষ্টদায়ক জিনিস সরিয়ে দেওয়াও সদকা। অর্থ না থাকলেও সদকার দরজা বন্ধ নয় — প্রতিদিন অন্তত একটি ভালো কাজ সদকার নিয়তে করুন।', s:'সহিহ মুসলিম: ১০০৯' }
+];
+(function renderTaleem(){
+  var today = TALEEM[dayIndex() % TALEEM.length];
+  $('taleemToday').innerHTML = '<article class="hcard" style="border-color:var(--gold)"><span class="cat">আজকের তালিম</span><h3>' + today.t.replace('আজকের তালিম: ', '') + '</h3><p>' + today.b + '</p><p class="src">সূত্র: ' + today.s + '</p></article>';
+  $('taleemList').innerHTML = TALEEM.map(function(l){
+    return '<article class="hcard"><h3>' + l.t.replace('আজকের তালিম: ', '') + '</h3><p>' + l.b + '</p><p class="src">সূত্র: ' + l.s + '</p></article>';
+  }).join('');
+})();
+
+/* ---------- Sunnah ---------- */
+var SUNNAH = [
+ { t:'মিসওয়াক করা', d:'প্রতি নামাজের ওযুর সময় ও ঘুম থেকে উঠে মিসওয়াক করা সুন্নাত। রাসূলুল্লাহ ﷺ বলেছেন, উম্মতের ওপর কষ্টকর না হলে তিনি প্রতি নামাজের সময় মিসওয়াকের নির্দেশ দিতেন।', s:'সহিহ বুখারি: ৮৮৭; সহিহ মুসলিম: ২৫২' },
+ { t:'ডান দিক থেকে শুরু করা', d:'জুতা পরা, চুল আঁচড়ানো, পবিত্রতা অর্জন ও সব ভালো কাজ ডান দিক থেকে শুরু করা সুন্নাত; আর বাম হাতে খাওয়া-পান করা নিষেধ।', s:'সহিহ বুখারি: ১৬৮; সহিহ মুসলিম: ২০২০' },
+ { t:'খাবারের সুন্নাত', d:'খাবার আগে বিসমিল্লাহ বলা, ডান হাতে ও নিজের সামনে থেকে খাওয়া, আঙুল ও প্লেট চেটে খাওয়া এবং শেষে আলহামদুলিল্লাহ বলা। পেট ভরে না খেয়ে এক-তৃতীয়াংশ খাবার, এক-তৃতীয়াংশ পানি ও এক-তৃতীয়াংশ শ্বাসের জন্য রাখার উপদেশ রয়েছে।', s:'সহিহ মুসলিম: ২০২২; সুনানে তিরমিযি: ২৩৮০' },
+ { t:'সালাম দেওয়া', d:'পরিচিত-অপরিচিত সবার সঙ্গে সালাম বিনিময় করা ও সালামের জবাব দেওয়া। সালাম ছড়িয়ে দেওয়া জান্নাতে প্রবেশের মাধ্যম।', s:'সহিহ মুসলিম: ৫৪' },
+ { t:'ঘুমের সুন্নাত', d:'ওযু করে ঘুমানো, ডান কাতে শোয়া, আয়াতুল কুরসি ও তিন কুল পড়ে ফুঁ দেওয়া এবং ঘুমের দোয়া পড়া।', s:'সহিহ বুখারি: ২৪৭, ৫০১০' },
+ { t:'জুমার দিনের সুন্নাত', d:'গোসল করা, পরিষ্কার পোশাক ও সুগন্ধি ব্যবহার, তাড়াতাড়ি মসজিদে যাওয়া, সূরা আল-কাহফ পড়া এবং বেশি বেশি দরুদ পাঠ করা।', s:'সহিহ বুখারি: ৮৭৭; সুনানে আবু দাউদ: ১০৪৭' },
+ { t:'দরুদ পাঠ', d:'রাসূলুল্লাহ ﷺ-এর ওপর একবার দরুদ পড়লে আল্লাহ তার ওপর দশবার রহমত বর্ষণ করেন। জুমার দিন ও রাতে দরুদ বেশি পড়ার বিশেষ তাগিদ রয়েছে।', s:'সহিহ মুসলিম: ৪০৮' },
+ { t:'রোগী দেখতে যাওয়া', d:'অসুস্থ মুসলিম ভাইকে দেখতে যাওয়া ও তার জন্য দোয়া করা সুন্নাত এবং জান্নাতের ফল আহরণের মতো সওয়াবের কাজ।', s:'সহিহ মুসলিম: ২৫৬৮' },
+ { t:'হাঁচির জবাব', d:'হাঁচি দিয়ে "আলহামদুলিল্লাহ" বলা, শ্রোতা "ইয়ারহামুকাল্লাহ" বলবে, হাঁচিদাতা বলবে "ইয়াহদিকুমুল্লাহু ওয়া ইউসলিহু বালাকুম"।', s:'সহিহ বুখারি: ৬২২৪' },
+ { t:'রাতে তাহাজ্জুদ ও বিতর', d:'রাতের শেষ তৃতীয়াংশে উঠে তাহাজ্জুদ পড়া ও বিতর দিয়ে রাত শেষ করা সুন্নাত। আল্লাহ রাতের শেষ অংশে দুনিয়ার আসমানে এসে দোয়া কবুলের ঘোষণা দেন।', s:'সহিহ বুখারি: ১১৪৫' },
+ { t:'কথা কম ও ভালো কথা', d:'যে আল্লাহ ও আখিরাতের দিনে বিশ্বাস করে, সে যেন ভালো কথা বলে অথবা চুপ থাকে। অপ্রয়োজনীয় কথা থেকে বিরত থাকা ইসলামের সৌন্দর্য।', s:'সহিহ বুখারি: ৬০১৮; সুনানে তিরমিযি: ২৩১৭' },
+ { t:'মসজিদে যাওয়ার আদব', d:'ধীরে-সুস্থে মসজিদে যাওয়া, প্রবেশের সময় ডান পা আগে দিয়ে দোয়া পড়া এবং দুই রাকাত তাহিয়্যাতুল মসজিদ পড়ে বসা।', s:'সহিহ বুখারি: ৬৩৫; সহিহ মুসলিম: ৭১৩' }
+];
+$('sunnahList').innerHTML = SUNNAH.map(function(x){
+  return '<article class="hcard"><h3>' + x.t + '</h3><p>' + x.d + '</p><p class="src">সূত্র: ' + x.s + '</p></article>';
+}).join('');
+
+/* ---------- Amal tracker ---------- */
+var amal = { roza: false, tahajjud: false, sadaka: false, quranMin: 0 };
+function renderAmal(){
+  var box = $('amalBody'); if (!box) return;
+  var now = nowFrame(); var c = curLoc();
+  var t = prayerTimes(now, c.lat, c.lng, c.tz);
+  var list = [['fajr','ফজর'],['dhuhr','যোহর'],['asr','আসর'],['maghrib','মাগরিব'],['isha','এশা']];
+  var done = 0, html = '<p style="margin-top:0"><b>' + new Intl.DateTimeFormat('bn-BD', { weekday:'long', day:'numeric', month:'long' }).format(now) + '</b> — পাঁচ ওয়াক্ত নামাজ</p>';
+  list.forEach(function(p){
+    if (tracker[p[0]]) done++;
+    html += '<div class="tk-row"><span class="nm">' + p[1] + '</span><span class="tm">' + fmtTime(t[p[0]]) + '</span><button class="tk' + (tracker[p[0]] ? ' done' : '') + '" data-tk="' + p[0] + '">' + (tracker[p[0]] ? '✓ পড়েছি' : 'পড়া হয়নি') + '</button></div>';
+  });
+  var extras = [['roza','আজকের রোজা / নফল রোজা'],['tahajjud','তাহাজ্জুদ'],['sadaka','সদকা / দান']];
+  html += '<p style="margin:16px 0 6px"><b>অন্যান্য আমল</b></p>';
+  extras.forEach(function(x){
+    if (amal[x[0]]) done++;
+    html += '<div class="tk-row"><span class="nm">' + x[1] + '</span><button class="tk' + (amal[x[0]] ? ' done' : '') + '" data-amal="' + x[0] + '">' + (amal[x[0]] ? '✓ হয়েছে' : 'হয়নি') + '</button></div>';
+  });
+  if (amal.quranMin >= 10) done++;
+  html += '<div class="tk-row"><span class="nm">কুরআন তিলাওয়াত (মিনিট)</span><span><input type="number" id="amalMin" min="0" value="' + amal.quranMin + '" style="width:80px" /> <button class="tk" id="amalMinSave">রাখুন</button></span></div>';
+  html += '<div class="tk-row"><span class="nm">আজকের যিকির (তাসবিহ থেকে)</span><span class="tm">' + bn(tasbih.total) + ' বার</span></div>';
+  var pct = Math.round(done / 9 * 100);
+  html += '<div style="margin-top:16px"><div style="display:flex; justify-content:space-between; font-size:14px; color:var(--ink-2)"><span>আজকের আমলের অগ্রগতি</span><b>' + bn(pct) + '%</b></div><div style="height:12px; border-radius:8px; background:var(--line); overflow:hidden; margin-top:6px"><div style="height:100%; width:' + pct + '%; background:linear-gradient(90deg, var(--green-700), var(--gold)); border-radius:8px"></div></div><p class="sub" style="margin:8px 0 0">মোট ৯টি আমলের মধ্যে ' + bn(done) + 'টি সম্পন্ন। আল্লাহ আপনার আমল কবুল করুন।</p></div>';
+  box.innerHTML = html;
+}
+$('amalBody').addEventListener('click', function(e){
+  var tk = e.target.closest('[data-tk]');
+  if (tk){ var k = tk.getAttribute('data-tk'); tracker[k] = !tracker[k]; renderAmal(); renderTracker(); return; }
+  var am = e.target.closest('[data-amal]');
+  if (am){ var k2 = am.getAttribute('data-amal'); amal[k2] = !amal[k2]; renderAmal(); return; }
+  if (e.target.closest('#amalMinSave')){ amal.quranMin = Math.max(0, parseInt($('amalMin').value, 10) || 0); renderAmal(); toast('তিলাওয়াতের সময় রাখা হয়েছে'); }
+});
+document.addEventListener('click', function(e){ if (e.target.closest('[data-goto="amal"]')) setTimeout(renderAmal, 40); });
+renderAmal();
+
+/* ---------- Roza view ---------- */
+$('rozaViewList').innerHTML = ROZA.map(function(r){
+  return '<article class="hcard"><h3>' + r.t + '</h3><p>' + r.d + '</p><p class="src">সূত্র: ' + r.s + '</p></article>';
+}).join('');
+$('rozaDuas').innerHTML = DUAS.filter(function(d){ return d.t.indexOf('সেহরি') === 0 || d.t.indexOf('ইফতার') === 0; }).map(duaCard).join('');
+function tickRoza(){
+  var sEl = $('rozaSehri'); if (!sEl) return;
+  var now = nowFrame(); var c = curLoc();
+  var t = prayerTimes(now, c.lat, c.lng, c.tz);
+  sEl.textContent = fmtTime(t.fajr - 10/60);
+  $('rozaIftar').textContent = fmtTime(t.maghrib);
+  var hp = (typeof hijriParts === 'function') ? hijriParts(now) : null;
+  $('rozaNote').textContent = 'লোকেশন: ' + c.name + (hp ? ' • আজ হিজরি ' + hp.day + ' ' + hp.month + ' ' + hp.year : '');
+}
+setInterval(tickRoza, 1000); tickRoza();
+$('ramadanTableBtn').addEventListener('click', function(){
+  var now = nowFrame(); var c = curLoc(); var start = null;
+  for (var i = -40; i < 380 && !start; i++){
+    var dt = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
+    var h = hijriOf(dt);
+    if (h && h.month === 9 && h.day === 1) start = dt;
+  }
+  if (!start){ $('ramadanTable').innerHTML = '<p class="loadmsg">তারিখ হিসাব করা যায়নি।</p>'; return; }
+  var rows = '';
+  for (var k = 0; k < 30; k++){
+    var d2 = new Date(start.getFullYear(), start.getMonth(), start.getDate() + k);
+    var tt = prayerTimes(d2, c.lat, c.lng, c.tz);
+    rows += '<tr><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + bn(k + 1) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + new Intl.DateTimeFormat('bn-BD', { weekday:'short', day:'numeric', month:'short' }).format(d2) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + fmtTime(tt.fajr - 10/60) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + fmtTime(tt.maghrib) + '</td></tr>';
+  }
+  $('ramadanTable').innerHTML = '<h4 style="margin:4px 0 8px; text-align:center">রমজানের ৩০ দিনের সময়সূচি — ' + c.name + '</h4><div style="overflow-x:auto"><table style="width:100%; border-collapse:collapse; font-size:14.5px"><thead><tr><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">রোজা</th><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">ত
