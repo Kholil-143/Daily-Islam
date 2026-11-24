@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_name">Daily Islam — নামাজের সময়</string>
+    <string name="widget_description">নামাজের সময়, লাইভ ঘড়ি এবং ইংরেজি, বাংলা ও হিজরি তারিখ</string>
+    <string name="widget_config_title">উইজেটের জন্য জেলা বাছুন</string>
+</resources>
