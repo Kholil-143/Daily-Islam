@@ -79,3 +79,39 @@ PYEOF
 
 grep -q "PrayerWidgetProvider" "$MANIFEST"
 echo "Widget installation complete."
+
+# --- App launcher icon ---------------------------------------------------
+# The Capacitor template ships a default launcher icon. Replace it with the
+# Daily Islam icon stored (base64, split at 80,000 chars where needed) under
+# icon/res/ in this repo: legacy + round icons and the adaptive foreground
+# for every density, plus the adaptive background colour (#005143, the
+# icon's own deep green).
+echo "Installing Daily Islam launcher icon..."
+ICON_RES="$ROOT/icon/res"
+if [ -d "$ICON_RES" ]; then
+  for density_dir in "$ICON_RES"/mipmap-*; do
+    density="$(basename "$density_dir")"
+    mkdir -p "$APP_MAIN/res/$density"
+    for b64 in "$density_dir"/*.png.b64; do
+      [ -e "$b64" ] || continue
+      out="$APP_MAIN/res/$density/$(basename "${b64%.b64}")"
+      base64 --decode "$b64" > "$out"
+      echo "  $density/$(basename "$out")"
+    done
+    for first in "$density_dir"/*.png.b64.part-0; do
+      [ -e "$first" ] || continue
+      target="$(basename "$first" .part-0)"
+      out="$APP_MAIN/res/$density/${target%.b64}"
+      cat "$density_dir/$target".part-* | base64 --decode > "$out"
+      echo "  $density/$(basename "$out")"
+    done
+  done
+  if [ -f "$ICON_RES/values/ic_launcher_background.xml" ]; then
+    mkdir -p "$APP_MAIN/res/values"
+    cp "$ICON_RES/values/ic_launcher_background.xml" "$APP_MAIN/res/values/"
+    echo "  values/ic_launcher_background.xml"
+  fi
+  echo "Launcher icon installation complete."
+else
+  echo "WARNING: $ICON_RES not found; default Capacitor icon kept." >&2
+fi
