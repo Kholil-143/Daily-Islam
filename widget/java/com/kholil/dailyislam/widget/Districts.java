@@ -25,6 +25,7 @@ public final class Districts {
             new District("বান্দরবান", "Bandarban", 22.1953, 92.2184),
             new District("বরগুনা", "Barguna", 22.0953, 90.1121),
             new District("বরিশাল", "Barishal", 22.7010, 90.3535),
+            new District("ভাঙ্গা, ফরিদপুর", "Bhanga, Faridpur", 23.3736, 90.0272),
             new District("ভোলা", "Bhola", 22.6859, 90.6482),
             new District("বগুড়া", "Bogura", 24.8510, 89.3711),
             new District("ব্রাহ্মণবাড়িয়া", "Brahmanbaria", 23.9571, 91.1116),

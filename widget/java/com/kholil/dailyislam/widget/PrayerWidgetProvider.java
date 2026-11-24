@@ -24,7 +24,9 @@ import java.util.TimeZone;
  * the chosen district's prayer times for today, the next prayer with the
  * remaining time (calculated at update time), and a refresh button.
  * The district is chosen in {@link WidgetConfigActivity} and stored in
- * SharedPreferences; Dhaka is the default.
+ * SharedPreferences; Bhanga, Faridpur (the owner's home area) is the
+ * default. Tapping the district line on the widget reopens the picker,
+ * so the district can be changed at any time.
  */
 public class PrayerWidgetProvider extends AppWidgetProvider {
 
@@ -35,9 +37,9 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
 
     private static final String ACTION_REFRESH = "com.kholil.dailyislam.widget.ACTION_REFRESH";
 
-    private static final double DEFAULT_LATITUDE = 23.8103; // Dhaka
-    private static final double DEFAULT_LONGITUDE = 90.4125;
-    private static final String DEFAULT_DISTRICT = "ঢাকা";
+    private static final double DEFAULT_LATITUDE = 23.3736; // Bhanga, Faridpur
+    private static final double DEFAULT_LONGITUDE = 90.0272;
+    private static final String DEFAULT_DISTRICT = "ভাঙ্গা, ফরিদপুর";
 
     private static final String[] WEEKDAYS_BN = {
             "রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"
@@ -102,7 +104,7 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
             dates.append(" • ").append(hijri);
         }
         views.setTextViewText(R.id.tv_dates, dates.toString());
-        views.setTextViewText(R.id.tv_district, "জেলা: " + district);
+        views.setTextViewText(R.id.tv_district, "জেলা: " + district + " — বদলাতে এখানে ট্যাপ করুন");
 
         // Prayer times
         views.setTextViewText(R.id.tv_fajr, BengaliDate.formatTime(times.fajr));
@@ -121,6 +123,16 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
         PendingIntent refreshPending = PendingIntent.getBroadcast(context, 0, refreshIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         views.setOnClickPendingIntent(R.id.btn_refresh, refreshPending);
+
+        // Tapping the district line reopens the district picker, so the
+        // location can be changed at any time (not only when the widget
+        // is first placed).
+        Intent configIntent = new Intent(context, WidgetConfigActivity.class);
+        configIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);
+        configIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        PendingIntent configPending = PendingIntent.getActivity(context, appWidgetId + 1000,
+                configIntent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        views.setOnClickPendingIntent(R.id.tv_district, configPending);
 
         // Tapping the widget body opens the app
         Intent launch = context.getPackageManager().getLaunchIntentForPackage(context.getPackageName());
