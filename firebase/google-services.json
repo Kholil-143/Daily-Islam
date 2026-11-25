@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "577116188002",
+    "project_id": "daily-islam-1dd85",
+    "storage_bucket": "daily-islam-1dd85.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577116188002:android:cf45970e26504aa0b5103b",
+        "android_client_info": {
+          "package_name": "com.kholil.dailyislam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577116188002-rklbi0t8h2lpld1raqo17he6jf2m2jf9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kholil.dailyislam",
+            "certificate_hash": "4e03f50230895ed1195e987fb488f50126acb6fc"
+          }
+        },
+        {
+          "client_id": "577116188002-do00qtvm1ogn9qg2fptfn93rboudppcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCovHvaFOhWuTY9lyAIJQQckb-_FePOCoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "577116188002-do00qtvm1ogn9qg2fptfn93rboudppcs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

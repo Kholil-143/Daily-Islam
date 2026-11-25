@@ -115,3 +115,6 @@ if [ -d "$ICON_RES" ]; then
 else
   echo "WARNING: $ICON_RES not found; default Capacitor icon kept." >&2
 fi
+
+# --- Firebase / Google Sign-In -------------------------------------------
+bash "$ROOT/firebase/install-firebase.sh"

@@ -1,1 +1,13 @@
-{"appId":"com.kholil.dailyislam","appName":"Daily Islam","webDir":"www"}
+{
+  "appId": "com.kholil.dailyislam",
+  "appName": "Daily Islam",
+  "webDir": "www",
+  "plugins": {
+    "FirebaseAuthentication": {
+      "skipNativeAuth": false,
+      "providers": [
+        "google.com"
+      ]
+    }
+  }
+}
