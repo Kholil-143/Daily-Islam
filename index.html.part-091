@@ -1,0 +1,93 @@
+UrSHRpfsB5ManOdaIa0Gan111yJe4iXAR1yShzXZ0XYDGT4oUJTMZEZsEcz+2jJb50C+C+zteVknbqplkFC225//wVQI7RB3j/aVRZJDgBKbsLpn5p9sJel+t0kUj46jFoLQGCLP8OcaoChjcUhSy2g3Zu+DbZR/5JcI0jG6IxbFsaUGQiDSRxq4OH7qrzRZ9jEjZ28m5WmlB7y5ShtS7qBbLDUQjpDsuzndPfPcU7x6992cHY5G/wsXnr38B+lBBNI7HpjjNOFXMRaeZpXAyqYZSRNVT2nyVumwR5deZ+/agbQvTkJapScI6mCnaNBnNGu4Hgcx+5rWkGnUSCI7kv2uzkyEig5mjpAcip1exm+PHuYaCsddvdXc4A2rKVPGNssITqpBVTc6TNikMb6G+mZdA+sYGscRO4nal26oVGcELeysiFcTMFg73B1Kup6e9MNHrkSRXMfVtMqfK9KFe7Se86Zft0/hNpyse6MMhmVqBhLAPoA0xIJd7wmn2f11G7FqGqIno0KXmkB+W9u9xOM39RwdFIJw9YBrZRpEQEXWQ1Dwa5wEyr23vqW062GmS3Zo9ryH6phw88rojIxlCTUf7dkjdC6FxHt93xx0QCyjgrSNg9GhOQrvL08UvCy8tllW6HyAKeerlDhyQ20SwTwvQH/N+PxCHNm7FYmoFZmLIuIzcn68zAm6sqZ1MtGl/dzZw3ui76XxU4bFFo+4E782+uO+VW+9j3HnDZZ0HuXFC2ur5vVk7QCOjPYI9S3aM9Y5KoQ06NDbfjTG2t7d41IVkByRSgBMxUI98Rp/KhXXjqkI3X8q2IKX1ZCjw9giXG9HR+3IV2Ult2/eSXZwQRlCee8D2FhBk95Vhrzu3Jm6aWXLQvonAuU379/pJx3UbHaoDPOPAXNjgmXkY2wyxiUBS3caUGaX9TPy+vcPYN6XrVd+q3WtlLBtTSK7+w/1Ev4tJeK3Nt78oIdfFY5iRmIilHL2xBz/2CHyow/NR092n15+gMvrukJk/aBz3/kv/RCs6/rtc9T+9PnxL4K/k/v/v+VX++74LPtbOh/zBTzp/j7+I7/uTD3e0/jx7EQ4AxQ/8lqO0nD+07fbnrbr5Q/7CH/OGIMIf9Bv/oB9MfvQzQd6DHv1xv5offvf8776sMfnf9utP9Dz98B+Dv9Rb+thtiu97Y/iBn4F/xu/ku38X/tA94WNPLv6bVCuHj6afTkD/f7oAfXp9ev2py59Pr0+vT69Pr0+vT69Pr0+vT69Pr0+vT69Pr0+vT69Pr0+vT69Pr0+vT69Pr0+vT69Pr0+vT69Pr0+vT69Pr0+vv8bX/w8OaweUSj8LeQAAAABJRU5ErkJggg==';
+function wrapLines(ctx, text, maxW){
+  var words = String(text).split(/\s+/), lines = [], cur = '';
+  words.forEach(function(w){
+    var test = cur ? cur + ' ' + w : w;
+    if (ctx.measureText(test).width > maxW && cur){ lines.push(cur); cur = w; }
+    else cur = test;
+  });
+  if (cur) lines.push(cur);
+  return lines;
+}
+function makeCard(opts){
+  var W = 1080, H = 1080;
+  var cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+  var ctx = cv.getContext('2d');
+  var grad = ctx.createLinearGradient(0, 0, W, H);
+  grad.addColorStop(0, '#07301f'); grad.addColorStop(0.55, '#0b4a30'); grad.addColorStop(1, '#06231a');
+  ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
+  ctx.strokeStyle = '#c9a24b'; ctx.lineWidth = 5; ctx.strokeRect(34, 34, W - 68, H - 68);
+  ctx.lineWidth = 1.6; ctx.strokeRect(52, 52, W - 104, H - 104);
+  ctx.textAlign = 'center';
+  if (cardLogoImg.complete && cardLogoImg.naturalWidth){
+    ctx.save();
+    ctx.beginPath(); ctx.arc(W/2, 148, 62, 0, Math.PI * 2); ctx.clip();
+    ctx.drawImage(cardLogoImg, W/2 - 62, 86, 124, 124);
+    ctx.restore();
+    ctx.strokeStyle = '#c9a24b'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(W/2, 148, 62, 0, Math.PI * 2); ctx.stroke();
+  }
+  ctx.fillStyle = '#e3c878'; ctx.font = '700 36px "Hind Siliguri", sans-serif';
+  ctx.fillText('Daily Islam', W/2, 268);
+  var maxW = 880, arSize = 62, bnSize = 43, arLines = [], bnLines = [], total = 0;
+  function measure(){
+    ctx.font = arSize + 'px Amiri, serif'; arLines = wrapLines(ctx, opts.ar, maxW);
+    ctx.font = bnSize + 'px "Hind Siliguri", sans-serif'; bnLines = wrapLines(ctx, opts.bnText, maxW);
+    total = arLines.length * arSize * 1.95 + 34 + bnLines.length * bnSize * 1.62 + 30 + 40;
+    return total;
+  }
+  measure();
+  while (total > 560 && arSize > 28){ arSize -= 4; bnSize = Math.max(25, bnSize - 2); measure(); }
+  var y = 330 + Math.max(0, (580 - total) / 2) + arSize;
+  ctx.fillStyle = '#f7ead0'; ctx.font = arSize + 'px Amiri, serif';
+  arLines.forEach(function(ln){ ctx.fillText(ln, W/2, y); y += arSize * 1.95; });
+  y += 34 - arSize * 0.4;
+  ctx.fillStyle = '#ffffff'; ctx.font = bnSize + 'px "Hind Siliguri", sans-serif';
+  bnLines.forEach(function(ln){ ctx.fillText(ln, W/2, y); y += bnSize * 1.62; });
+  y += 30;
+  ctx.fillStyle = '#e3c878'; ctx.font = '600 33px "Hind Siliguri", sans-serif';
+  ctx.fillText(opts.src, W/2, y);
+  ctx.fillStyle = '#c9a24b'; ctx.font = '28px "Hind Siliguri", sans-serif';
+  ctx.fillText('কুরআন ও সুন্নাহর আলোকে জীবন গড়ুন', W/2, 992);
+  var url = cv.toDataURL('image/png');
+  $('cardImg').src = url;
+  $('cardDownload').href = url;
+  $('cardModal').style.display = 'flex';
+}
+function openCard(opts){
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ makeCard(opts); });
+  else makeCard(opts);
+}
+$('cardClose').addEventListener('click', function(){ $('cardModal').style.display = 'none'; });
+$('cardModal').addEventListener('click', function(e){ if (e.target === this) this.style.display = 'none'; });
+document.addEventListener('click', function(e){
+  var ca = e.target.closest('[data-card-ayah]');
+  if (ca){
+    var p = ca.getAttribute('data-card-ayah').split(':'); var si = +p[0], ai = +p[1];
+    if (typeof QURAN === 'undefined' || !QURAN){ toast('কুরআন লোড হয়নি — আবার চেষ্টা করুন'); return; }
+    var a = QURAN.surahs[si].a[ai];
+    openCard({ ar: a[0], bnText: a[1], src: 'সূরা ' + SURA_BN[si] + ' — আয়াত ' + bn(ai + 1) });
+    return;
+  }
+  var ch = e.target.closest('[data-card-hadith]');
+  if (ch){
+    var title = ch.getAttribute('data-card-hadith'), h = null;
+    HADITHS.forEach(function(x){ if (x.t === title) h = x; });
+    if (h) openCard({ ar: h.ar, bnText: h.bn, src: 'সূত্র: ' + h.s });
+  }
+});
+</script>
+<script>
+/* ================= Widget refresh button ================= */
+$('refreshBtn').addEventListener('click', function(){
+  var btn = this;
+  btn.classList.remove('spin'); void btn.offsetWidth; btn.classList.add('spin');
+  updateClock();
+  renderPrayer();
+  if (typeof tickRoza === 'function') tickRoza();
+  if (typeof tickRamadan === 'function') tickRamadan();
+  toast('ঘড়ি, তারিখ ও নামাজের সময় আপডেট হয়েছে');
+});
+</script>
+</body>
+</html>
