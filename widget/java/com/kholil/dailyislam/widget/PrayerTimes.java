@@ -55,6 +55,12 @@ public final class PrayerTimes {
         r.asr = fixHour(r.asr + adjust);
         r.maghrib = fixHour(r.maghrib + adjust);
         r.isha = fixHour(r.isha + adjust);
+        // Islamic Foundation calendar precautionary (ihtiyat) adjustments,
+        // matching the app: Fajr +1, Dhuhr +3, Maghrib +3, Isha +1 minutes.
+        r.fajr = fixHour(r.fajr + 1.0 / 60.0);
+        r.dhuhr = fixHour(r.dhuhr + 3.0 / 60.0);
+        r.maghrib = fixHour(r.maghrib + 3.0 / 60.0);
+        r.isha = fixHour(r.isha + 1.0 / 60.0);
         return r;
     }
 
