@@ -10,7 +10,7 @@ set -euo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 APP_MAIN="$ROOT/android/app/src/main"
 MANIFEST="$APP_MAIN/AndroidManifest.xml"
-MAINACT="$APP_MAIN/java/com/kholil/dailyislam/MainActivity.java"
+MAINACT="$APP_MAIN/java/com/kholil/muslimpath/MainActivity.java"
 
 if [ ! -f "$MANIFEST" ] || [ ! -f "$MAINACT" ]; then
   echo "ERROR: generated android project not found. Run 'npx cap add android' first." >&2
@@ -18,9 +18,9 @@ if [ ! -f "$MANIFEST" ] || [ ! -f "$MAINACT" ]; then
 fi
 
 echo "Copying DailyNotify Java sources..."
-mkdir -p "$APP_MAIN/java/com/kholil/dailyislam/notify"
-cp "$ROOT"/notify/java/com/kholil/dailyislam/notify/*.java \
-   "$APP_MAIN/java/com/kholil/dailyislam/notify/"
+mkdir -p "$APP_MAIN/java/com/kholil/muslimpath/notify"
+cp "$ROOT"/notify/java/com/kholil/muslimpath/notify/*.java \
+   "$APP_MAIN/java/com/kholil/muslimpath/notify/"
 
 echo "Patching AndroidManifest.xml (permissions + receivers)..."
 python3 - "$MANIFEST" <<'PYEOF'
@@ -71,7 +71,7 @@ if 'import com.getcapacitor.BridgeActivity;' not in s:
 s = s.replace('import com.getcapacitor.BridgeActivity;',
               'import android.os.Bundle;\n'
               'import com.getcapacitor.BridgeActivity;\n'
-              'import com.kholil.dailyislam.notify.DailyNotifyPlugin;', 1)
+              'import com.kholil.muslimpath.notify.DailyNotifyPlugin;', 1)
 new_body = ('public class MainActivity extends BridgeActivity {\n'
             '    @Override\n'
             '    public void onCreate(Bundle savedInstanceState) {\n'

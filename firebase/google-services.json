@@ -41,6 +41,43 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577116188002:android:a660dd33f5155383b5103b",
+        "android_client_info": {
+          "package_name": "com.kholil.muslimpath"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577116188002-hhbvcfiqmlnrjlq1pstm7g746fohn081.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kholil.muslimpath",
+            "certificate_hash": "4e03f50230895ed1195e987fb488f50126acb6fc"
+          }
+        },
+        {
+          "client_id": "577116188002-do00qtvm1ogn9qg2fptfn93rboudppcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCovHvaFOhWuTY9lyAIJQQckb-_FePOCoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "577116188002-do00qtvm1ogn9qg2fptfn93rboudppcs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

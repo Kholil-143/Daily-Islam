@@ -16,12 +16,12 @@ APK বানানোর সময় GitHub Actions workflow নিজে থ�
 
 ## ফাইলের তালিকা
 
-- `java/com/kholil/dailyislam/widget/PrayerWidgetProvider.java` — মূল উইজেট
-- `java/com/kholil/dailyislam/widget/WidgetConfigActivity.java` — জেলা বাছাইয়ের পর্দা
-- `java/com/kholil/dailyislam/widget/Districts.java` — বাংলাদেশের ৬৪ জেলার নাম ও অক্ষাংশ/দ্রাঘিমাংশ
-- `java/com/kholil/dailyislam/widget/PrayerTimes.java` — নামাজের সময়ের হিসাব
+- `java/com/kholil/muslimpath/widget/PrayerWidgetProvider.java` — মূল উইজেট
+- `java/com/kholil/muslimpath/widget/WidgetConfigActivity.java` — জেলা বাছাইয়ের পর্দা
+- `java/com/kholil/muslimpath/widget/Districts.java` — বাংলাদেশের ৬৪ জেলার নাম ও অক্ষাংশ/দ্রাঘিমাংশ
+- `java/com/kholil/muslimpath/widget/PrayerTimes.java` — নামাজের সময়ের হিসাব
   (সৌর অবস্থানের প্রমিত অ্যালগরিদম; ফজর/এশা ১৮°, আসর হানাফি পদ্ধতিতে)
-- `java/com/kholil/dailyislam/widget/BengaliDate.java` — বাংলা তারিখ ও বাংলা সংখ্যা
+- `java/com/kholil/muslimpath/widget/BengaliDate.java` — বাংলা তারিখ ও বাংলা সংখ্যা
 - `res/layout/widget_prayer.xml` — উইজেটের নকশা
 - `res/layout/widget_config.xml` — জেলা বাছাইয়ের পর্দার নকশা
 - `res/xml/prayer_widget_info.xml` — উইজেটের মেটা তথ্য (৩০ মিনিট পরপর অটো আপডেট)
