@@ -875,6 +875,11 @@
   <section class="view" id="view-quran">
     <div id="quranListWrap">
       <h2 class="sec">পবিত্র কুরআন</h2>
+      <div class="card" style="margin-top:18px; text-align:center">
+        <h3 style="margin:0 0 6px">📖 হিফজ কোরআন</h3>
+        <p class="sub" style="margin:0 0 12px">বাংলাদেশের মাদরাসায় ব্যবহৃত ১৫ লাইনের হাফেজি কুরআন শরীফ — হুবহু ছাপার বইয়ের পৃষ্ঠা অনুযায়ী পড়ুন। পারা বা সূরা বেছে সরাসরি সেই পৃষ্ঠায় যান, আর পৃষ্ঠা ওল্টাতে ছবির ওপর ডানে-বামে সোয়াইপ করুন।</p>
+        <button class="btn gold" id="hifzOpenBtn" style="width:100%">হিফজ কোরআন খুলুন</button>
+      </div>
       <p class="sub">সম্পূর্ণ ১১৪ সূরা — আরবি পাঠ, বাংলা অর্থ (অনুবাদ: মুহিউদ্দীন খান) ও প্রতি আয়াতের তিলাওয়াত অডিও (ক্বারী বাছাইয়ের সুবিধাসহ)। "পারা অনুযায়ী" চাপ দিলে ১–৩০ পারার আলাদা তালিকা পাবেন — যেকোনো পারা বেছে পড়া যাবে। যেসব আয়াতের তাফসির সংকলিত আছে, সেগুলোর অর্থের নিচে <b>"তাফসির দেখুন"</b> বোতাম পাবেন।</p>
       <div class="seg" role="group" aria-label="তালিকার ধরন">
         <button id="segSurah" aria-pressed="true">সূরা অনুযায়ী</button>
@@ -883,11 +888,6 @@
       <input class="search" type="text" id="surahSearch" placeholder="সূরা খুঁজুন — নাম বা নম্বর লিখুন…" aria-label="সূরা খুঁজুন" />
       <div class="slist" id="surahList"><p class="loadmsg">কুরআনের তথ্য লোড হচ্ছে…</p></div>
       <div class="slist hidden" id="juzList"></div>
-      <div class="card" style="margin-top:18px; text-align:center">
-        <h3 style="margin:0 0 6px">📖 হিফজ কোরআন</h3>
-        <p class="sub" style="margin:0 0 12px">বাংলাদেশের মাদরাসায় ব্যবহৃত ১৫ লাইনের হাফেজি কুরআন শরীফ — হুবহু ছাপার বইয়ের পৃষ্ঠা অনুযায়ী পড়ুন। পারা বা সূরা বেছে সরাসরি সেই পৃষ্ঠায় যান, আর পৃষ্ঠা ওল্টাতে ছবির ওপর ডানে-বামে সোয়াইপ করুন।</p>
-        <button class="btn gold" id="hifzOpenBtn" style="width:100%">হিফজ কোরআন খুলুন</button>
-      </div>
     </div>
     <div id="readerWrap" class="hidden">
       <div class="reader-head">
