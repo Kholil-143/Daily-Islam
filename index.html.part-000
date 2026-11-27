@@ -594,9 +594,15 @@
   .hijri-banner{ text-align:center; margin-top:18px; }
   .hb-main{
     font-family:"Noto Sans Bengali","Hind Siliguri",sans-serif; font-size:clamp(25px,6.4vw,36px); font-weight:700;
-    color:#fdf6da; text-shadow:0 2px 14px rgba(0,0,0,.55); line-height:1.35;
+    color:#8a6d1f; text-shadow:none; line-height:1.35;
   }
-  .hb-sub{ color:var(--gold-2); font-size:14.5px; margin-top:3px; text-shadow:0 1px 8px rgba(0,0,0,.6); }
+  .hb-sub{ color:#8a6d1f; font-size:14.5px; margin-top:3px; text-shadow:none; }
+  /* Dark/blue themes keep the pale banner colours (light theme uses the deep gold above) */
+  @media (prefers-color-scheme: dark){ .hb-main{ color:#fdf6da; text-shadow:0 2px 14px rgba(0,0,0,.55); } .hb-sub{ color:var(--gold-2); text-shadow:0 1px 8px rgba(0,0,0,.6); } }
+  :root[data-theme="dark"] .hb-main, :root[data-theme="blue"] .hb-main{ color:#fdf6da; text-shadow:0 2px 14px rgba(0,0,0,.55); }
+  :root[data-theme="dark"] .hb-sub, :root[data-theme="blue"] .hb-sub{ color:var(--gold-2); text-shadow:0 1px 8px rgba(0,0,0,.6); }
+  :root[data-theme="light"] .hb-main{ color:#8a6d1f; text-shadow:none; }
+  :root[data-theme="light"] .hb-sub{ color:#8a6d1f; text-shadow:none; }
   .hijri-banner .profile-chip{ margin-top:10px; }
 
   /* ---------- Waqt card ---------- */
@@ -963,10 +969,4 @@
         <p style="text-align:center; margin:12px 0 0">
           <button class="btn gold" id="compassBtn">কম্পাস চালু করুন</button>
         </p>
-        <p class="sub" style="text-align:center; margin:8px 0 0" id="compassMsg">কম্পাস বন্ধ আছে — নিচের কোণ দেখে দিক মিলিয়ে নিন।</p>
-      </div>
-      <div class="card">
-        <h3 style="margin-top:0">কিবলার দিকের তথ্য</h3>
-        <p>শহর: <b id="qiblaCity">ভাঙা, ফরিদপুর</b></p>
-        <p>কিবলার কোণ (উত্তর থেকে ঘড়ির কাঁটার দিকে): <b id="qiblaAngle" style="font-size:20px">—°</b></p>
-        <p>কাবা শরিফের দূ
+        <p class="sub
