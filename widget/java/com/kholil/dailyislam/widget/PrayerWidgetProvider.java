@@ -7,7 +7,13 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Build;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StrikethroughSpan;
 import android.widget.RemoteViews;
 
 import com.kholil.dailyislam.R;
@@ -97,13 +103,13 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
         String weekday = WEEKDAYS_BN[now.get(Calendar.DAY_OF_WEEK) - 1];
         String gregorian = new SimpleDateFormat("dd MMMM yyyy", Locale.ENGLISH).format(now.getTime());
         String bengali = BengaliDate.formatBengaliDate(now);
-        String hijri = hijriDate(now);
-        StringBuilder dates = new StringBuilder();
+        CharSequence hijri = hijriDisplay(now, times.maghrib);
+        SpannableStringBuilder dates = new SpannableStringBuilder();
         dates.append(weekday).append(" • ").append(gregorian).append('\n').append(bengali);
-        if (!hijri.isEmpty()) {
+        if (hijri.length() > 0) {
             dates.append(" • ").append(hijri);
         }
-        views.setTextViewText(R.id.tv_dates, dates.toString());
+        views.setTextViewText(R.id.tv_dates, dates);
         views.setTextViewText(R.id.tv_district, "জেলা: " + district + " — বদলাতে এখানে ট্যাপ করুন");
 
         // Prayer times
@@ -179,27 +185,62 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
         return BengaliDate.bnNum(m) + " মিনিট";
     }
 
-    /** Hijri date via the Umm al-Qura calendar (API 24+), minus one day for
-     *  Bangladesh local moon sighting — the same reckoning as the in-app date,
-     *  e.g. "১৬ জমাদিউস সানি ১৪৪৮ হিজরি". */
-    private static String hijriDate(Calendar now) {
+    /** BD Hijri {day, monthIndex, year} for a civil day, via the Umm al-Qura
+     *  calendar (API 24+), minus one day for Bangladesh local moon sighting —
+     *  the same reckoning as the in-app date. Null when unavailable. */
+    private static int[] hijriParts(Calendar day) {
         if (Build.VERSION.SDK_INT < 24) {
-            return "";
+            return null;
         }
         try {
             android.icu.util.Calendar islamic = android.icu.util.Calendar.getInstance(
                     new android.icu.util.ULocale("en@calendar=islamic-umalqura"));
-            islamic.setTimeInMillis(now.getTimeInMillis());
+            islamic.setTimeInMillis(day.getTimeInMillis());
             islamic.add(android.icu.util.Calendar.DAY_OF_MONTH, -1); // Bangladesh: one day behind Umm al-Qura
-            int day = islamic.get(android.icu.util.Calendar.DAY_OF_MONTH);
+            int d = islamic.get(android.icu.util.Calendar.DAY_OF_MONTH);
             int month = islamic.get(android.icu.util.Calendar.MONTH);
             int year = islamic.get(android.icu.util.Calendar.YEAR);
             if (month < 0 || month >= HIJRI_MONTHS.length) {
-                return "";
+                return null;
             }
-            return BengaliDate.bnNum(day) + " " + HIJRI_MONTHS[month] + " " + BengaliDate.bnNum(year) + " হিজরি";
+            return new int[]{d, month, year};
         } catch (Exception e) {
+            return null;
+        }
+    }
+
+    private static String hijriPlain(int[] h) {
+        return BengaliDate.bnNum(h[0]) + " " + HIJRI_MONTHS[h[1]] + " " + BengaliDate.bnNum(h[2]) + " হিজরি";
+    }
+
+    /** Hijri date display with Khalilur's Maghrib rule: the Hijri day begins
+     *  at Maghrib, so from Maghrib until midnight the OLD day number is shown
+     *  struck through in red with the NEW day number beside it (month/year
+     *  are the new date's), e.g. "১৬ ১৭ জমাদিউস সানি ১৪৪৮ হিজরি" with ১৬ in
+     *  red struck through. From midnight to the next Maghrib, plain. */
+    private static CharSequence hijriDisplay(Calendar now, double maghribHours) {
+        int[] oldH = hijriParts(now);
+        if (oldH == null) {
             return "";
         }
+        double nowHours = now.get(Calendar.HOUR_OF_DAY)
+                + now.get(Calendar.MINUTE) / 60.0
+                + now.get(Calendar.SECOND) / 3600.0;
+        if (nowHours >= maghribHours) {
+            Calendar tomorrow = (Calendar) now.clone();
+            tomorrow.add(Calendar.DAY_OF_MONTH, 1);
+            int[] newH = hijriParts(tomorrow);
+            if (newH != null) {
+                String oldDay = BengaliDate.bnNum(oldH[0]);
+                String text = oldDay + " " + BengaliDate.bnNum(newH[0]) + " "
+                        + HIJRI_MONTHS[newH[1]] + " " + BengaliDate.bnNum(newH[2]) + " হিজরি";
+                SpannableString ss = new SpannableString(text);
+                ss.setSpan(new StrikethroughSpan(), 0, oldDay.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                ss.setSpan(new ForegroundColorSpan(Color.rgb(0xD3, 0x2F, 0x2F)), 0, oldDay.length(),
+                        Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                return ss;
+            }
+        }
+        return hijriPlain(oldH);
     }
 }
