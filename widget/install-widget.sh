@@ -130,17 +130,17 @@ fi
 # The Capacitor template defaults to versionCode 1 / versionName "1.0", which
 # is what Settings > App info showed for every release so far. Set the real
 # release version here (this script runs after `cap sync`, before the build).
-echo "Setting app version (versionName 2.13, versionCode 33)..."
+echo "Setting app version (versionName 2.14, versionCode 34)..."
 python3 - "$ROOT/android/app/build.gradle" <<'PYEOF'
 import sys, re
 path = sys.argv[1]
 s = open(path).read()
-s, n1 = re.subn(r'versionCode\s+\d+', 'versionCode 33', s, count=1)
-s, n2 = re.subn(r'versionName\s+"[^"]*"', 'versionName "2.13"', s, count=1)
+s, n1 = re.subn(r'versionCode\s+\d+', 'versionCode 34', s, count=1)
+s, n2 = re.subn(r'versionName\s+"[^"]*"', 'versionName "2.14"', s, count=1)
 if n1 != 1 or n2 != 1:
     sys.exit('ERROR: versionCode/versionName not found in ' + path)
 open(path, 'w').write(s)
-print('app/build.gradle: versionCode 33, versionName "2.13"')
+print('app/build.gradle: versionCode 34, versionName "2.14"')
 PYEOF
 
 # --- Firebase / Google Sign-In -------------------------------------------

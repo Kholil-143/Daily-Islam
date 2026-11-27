@@ -1,5 +1,6 @@
 package com.kholil.muslimpath.widget;
 
+import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
@@ -14,6 +15,7 @@ import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.StrikethroughSpan;
+import android.view.View;
 import android.widget.RemoteViews;
 
 import com.kholil.muslimpath.R;
@@ -42,6 +44,8 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
     public static final String KEY_LONGITUDE = "longitude";
 
     private static final String ACTION_REFRESH = "com.kholil.muslimpath.widget.ACTION_REFRESH";
+    private static final String ACTION_TICK = "com.kholil.muslimpath.widget.ACTION_MINUTE_TICK";
+    private static final int TICK_REQUEST_CODE = 4242;
 
     private static final double DEFAULT_LATITUDE = 23.3736; // Bhanga, Faridpur
     private static final double DEFAULT_LONGITUDE = 90.0272;
@@ -59,19 +63,70 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
     private static final String[] PRAYER_NAMES = {"ফজর", "সূর্যোদয়", "যোহর", "আসর", "মাগরিব", "এশা"};
 
     @Override
+    public void onEnabled(Context context) {
+        super.onEnabled(context);
+        scheduleNextMinuteTick(context);
+    }
+
+    @Override
+    public void onDisabled(Context context) {
+        cancelMinuteTick(context);
+        super.onDisabled(context);
+    }
+
+    @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         for (int appWidgetId : appWidgetIds) {
             updateWidget(context, appWidgetManager, appWidgetId);
         }
+        // Keep the "next prayer in X minutes" countdown live: the system's
+        // updatePeriodMillis can only refresh every 30 minutes, so chain a
+        // one-shot alarm to the next minute boundary after every update.
+        scheduleNextMinuteTick(context);
     }
 
     @Override
     public void onReceive(Context context, Intent intent) {
         super.onReceive(context, intent);
-        if (intent != null && ACTION_REFRESH.equals(intent.getAction())) {
+        if (intent != null && (ACTION_REFRESH.equals(intent.getAction())
+                || ACTION_TICK.equals(intent.getAction()))) {
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             int[] ids = manager.getAppWidgetIds(new ComponentName(context, PrayerWidgetProvider.class));
             onUpdate(context, manager, ids);
+        }
+    }
+
+    private static PendingIntent minuteTickIntent(Context context) {
+        Intent intent = new Intent(context, PrayerWidgetProvider.class);
+        intent.setAction(ACTION_TICK);
+        return PendingIntent.getBroadcast(context, TICK_REQUEST_CODE, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+    }
+
+    /** Schedule a refresh just after the next minute boundary. */
+    static void scheduleNextMinuteTick(Context context) {
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        if (alarmManager == null) {
+            return;
+        }
+        long nowMs = System.currentTimeMillis();
+        long nextMinuteMs = nowMs - (nowMs % 60000L) + 60000L + 250L;
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                alarmManager.setAndAllowWhileIdle(AlarmManager.RTC, nextMinuteMs, minuteTickIntent(context));
+            } else {
+                alarmManager.set(AlarmManager.RTC, nextMinuteMs, minuteTickIntent(context));
+            }
+        } catch (Exception e) {
+            // If the alarm cannot be set, the 30-minute system updates and
+            // the manual refresh button still keep the widget current.
+        }
+    }
+
+    private static void cancelMinuteTick(Context context) {
+        AlarmManager alarmManager = (AlarmManager) context.getSystemService(Context.ALARM_SERVICE);
+        if (alarmManager != null) {
+            alarmManager.cancel(minuteTickIntent(context));
         }
     }
 
@@ -120,6 +175,18 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
         views.setTextViewText(R.id.tv_sunset, BengaliDate.formatTime(times.maghrib - 3.0 / 60.0));
         views.setTextViewText(R.id.tv_maghrib, BengaliDate.formatTime(times.maghrib));
         views.setTextViewText(R.id.tv_isha, BengaliDate.formatTime(times.isha));
+
+        // Ramadan only: extra সাহরি / ইফতার rows, using the app's own
+        // convention (sehri ends 10 minutes before Fajr; iftar is Maghrib).
+        // Outside Ramadan the row is GONE. Ramadan is Islamic month 9,
+        // index 8 in the 0-based hijriParts month.
+        int[] todayHijri = hijriParts(now);
+        boolean ramadan = todayHijri != null && todayHijri[1] == 8;
+        views.setViewVisibility(R.id.row_ramadan, ramadan ? View.VISIBLE : View.GONE);
+        if (ramadan) {
+            views.setTextViewText(R.id.tv_sehri, BengaliDate.formatTime(times.fajr - 10.0 / 60.0));
+            views.setTextViewText(R.id.tv_iftar, BengaliDate.formatTime(times.maghrib));
+        }
 
         // Next prayer + remaining time (at this update moment)
         views.setTextViewText(R.id.tv_next, nextPrayerText(now, times, latitude, longitude, timeZone));

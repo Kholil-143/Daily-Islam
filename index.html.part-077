@@ -1,4 +1,4 @@
-ass="ar" style="display:block">سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، وَتَبَارَكَ اسْمُكَ، وَتَعَالَىٰ جَدُّكَ، وَلَا إِلَٰهَ غَيْرُكَ</span>এরপর আউযুবিল্লাহ ও বিসমিল্লাহ পড়ে সূরা আল-ফাতিহা এবং অন্য একটি সূরা/আয়াত পড়ুন।</li>' +
+াহ ও বিসমিল্লাহ পড়ে সূরা আল-ফাতিহা এবং অন্য একটি সূরা/আয়াত পড়ুন।</li>' +
  '<li><b>রুকু:</b> "আল্লাহু আকবার" বলে রুকুতে যান; কমপক্ষে তিনবার বলুন — <span class="ar" style="display:block">سُبْحَانَ رَبِّيَ الْعَظِيمِ</span></li>' +
  '<li><b>কওমা:</b> "সামিআল্লাহু লিমান হামিদাহ" বলে সোজা হয়ে দাঁড়ান এবং বলুন — <span class="ar" style="display:block">رَبَّنَا لَكَ الْحَمْدُ</span></li>' +
  '<li><b>সিজদা:</b> "আল্লাহু আকবার" বলে দুটি সিজদা করুন; প্রতিটিতে কমপক্ষে তিনবার বলুন — <span class="ar" style="display:block">سُبْحَانَ رَبِّيَ الْأَعْلَىٰ</span>দুই সিজদার মাঝে কিছুক্ষণ বসুন।</li>' +
@@ -254,4 +254,12 @@ var SPECIAL_DAYS = [
  { m:12, d:10, t:'ঈদুল আজহা', d:'কুরবানির ঈদ; হযরত ইবরাহিম (আ.)-এর ত্যাগের স্মরণ' }
 ];
 function hijriOf(d){
-  var h = hijriBD(d);
+  var h = hijriBD(d); if (!h) return null;
+  return { day: h.day, month: h.monthNum, year: h.year };
+}
+function renderDays(){
+  var now = dhakaNow();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var rows = SPECIAL_DAYS.map(function(sd){
+    var found = null;
+  

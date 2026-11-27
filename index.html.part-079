@@ -1,4 +1,4 @@
-িশ্চয় কষ্টের সঙ্গেই স্বস্তি রয়েছে — কষ্টের পরে নয়, সঙ্গে। অর্থাৎ প্রতিটি সংকটের ভেতরেই মুক্তির বীজ থাকে; একটি কষ্ট দুটি স্বস্তিকে হারাতে পারে না।',
+থাকে; একটি কষ্ট দুটি স্বস্তিকে হারাতে পারে না।',
  '94:6': 'আগের আয়াতের বক্তব্য জোর দিয়ে পুনরাবৃত্তি করা হয়েছে, যাতে রাসূল ﷺ ও প্রতিটি মুমিন নিশ্চিত থাকে: কষ্ট স্থায়ী নয়, স্বস্তি অবশ্যম্ভাবী।',
  '97:1': 'লাইলাতুল কদরে পুরো কুরআন লাওহে মাহফুজ থেকে প্রথম আসমানে নাজিল হয়; এরপর ২৩ বছরে ধাপে ধাপে রাসূল ﷺ-এর ওপর অবতীর্ণ হয়। (তাফসিরে ইবনে কাসির)',
  '97:3': 'এই এক রাতের ইবাদত হাজার মাস (৮৩ বছর ৪ মাস) এর ইবাদতের চেয়ে উত্তম — এমন ব্যক্তির জন্যও সম্ভব যার পুরো জীবনই ৮৩ বছর নয়। এটি উম্মতে মুহাম্মদির জন্য বিশেষ অনুগ্রহ।',
@@ -284,4 +284,6 @@ $('ramadanTableBtn').addEventListener('click', function(){
   if (!start){ $('ramadanTable').innerHTML = '<p class="loadmsg">তারিখ হিসাব করা যায়নি।</p>'; return; }
   var rows = '';
   for (var k = 0; k < 30; k++){
-    var d2 = new Date(start.getFullYear(), start.getMonth(), start.getDat
+    var d2 = new Date(start.getFullYear(), start.getMonth(), start.getDate() + k);
+    var tt = prayerTimes(d2, c.lat, c.lng, c.tz);
+    rows += '<tr><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + bn(k + 1) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + new Intl.DateTimeFormat('bn-BD', { week

@@ -1,12 +1,4 @@
- if (!h) return null;
-  return { day: h.day, month: h.monthNum, year: h.year };
-}
-function renderDays(){
-  var now = dhakaNow();
-  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  var rows = SPECIAL_DAYS.map(function(sd){
-    var found = null;
-    for (var i = 0; i < 380; i++){
+  for (var i = 0; i < 380; i++){
       var dt = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
       var h = hijriOf(dt);
       if (h && h.month === sd.m && h.day === sd.d){ found = { date: dt, away: i }; break; }
@@ -192,7 +184,7 @@ function renderProfile(){
       '<div style="max-width:400px; margin:0 auto">' +
       '<button class="gbtn" id="googleBtn">' + GOOGLE_G + 'Google দিয়ে সাইন ইন</button>' +
       '<p id="googleNote" class="sub" style="margin:10px 0 0; display:none"></p>' +
-      '<p class="sub" style="margin:8px 0 0">অ্যাপ সংস্করণ: v2.13</p>' +
+      '<p class="sub" style="margin:8px 0 0">অ্যাপ সংস্করণ: v2.14</p>' +
       '<p style="margin:10px 0 0"><a class="btn" href="https://github.com/Kholil-143/Muslim-Path/releases/latest/download/Muslim-Path.apk">⬇ সর্বশেষ আপডেট ডাউনলোড / ইনস্টল করুন</a></p>' +
       '<div style="display:flex; align-items:center; gap:10px; margin:18px 0"><span style="flex:1; height:1px; background:var(--line)"></span><span style="color:var(--ink-2); font-size:13.5px">অথবা নাম দিয়ে প্রোফাইল</span><span style="flex:1; height:1px; background:var(--line)"></span></div>' +
       '<input type="text" id="pfName" placeholder="আপনার নাম লিখুন" style="width:100%; margin-bottom:10px" maxlength="40" />' +
@@ -231,7 +223,7 @@ function renderProfile(){
     '<div class="st"><b>' + bn(tasbih.total) + '</b><span>মোট যিকির</span></div>' +
     '<div class="st"><b>' + bn(BOOKMARKS.length) + '</b><span>বুকমার্ক</span></div>' +
     '</div>' +
-    '<p class="sub" style="margin:12px 0 0">অ্যাপ সংস্করণ: v2.13</p>' +
+    '<p class="sub" style="margin:12px 0 0">অ্যাপ সংস্করণ: v2.14</p>' +
       '<p style="margin:10px 0 0"><a class="btn" href="https://github.com/Kholil-143/Muslim-Path/releases/latest/download/Muslim-Path.apk">⬇ সর্বশেষ আপডেট ডাউনলোড / ইনস্টল করুন</a></p>' +
     '<p style="margin:16px 0 0"><button class="btn ghost" id="pfOut">প্রোফাইল থেকে বের হয়ে যান</button></p>' +
     '</div>' +
@@ -302,4 +294,4 @@ var TAFSIR_AYAH = {
  '65:3': 'যে আল্লাহর ওপর তাওয়াক্কুল (ভরসা) করে, আল্লাহ তার জন্য যথেষ্ট হন এবং এমন উৎস থেকে রিজিক দেন যা সে কল্পনাও করেনি। তাওয়াক্কুল অর্থ চেষ্টা করে ফলাফল আল্লাহর হাতে ছেড়ে দেওয়া।',
  '67:1': 'সার্বভৌম কর্তৃত্ব একমাত্র আল্লাহর হাতে; তিনি সবকিছুর ওপর ক্ষমতাবান। "তাবারাকা" অর্থ তাঁর কল্যাণ ও মাহাত্ম্য অপরিসীম।',
  '67:2': 'মৃত্যু ও জীবন সৃষ্টির উদ্দেশ্য পরীক্ষা: কে সবচেয়ে উত্তম আমল করে — আমলের পরিমাণ নয়, মান (ইখলাস ও সুন্নাহ অনুযায়ী হওয়া) ই এখানে বিবেচ্য।',
- '94:5': 'ন
+ '94:5': 'নিশ্চয় কষ্টের সঙ্গেই স্বস্তি রয়েছে — কষ্টের পরে নয়, সঙ্গে। অর্থাৎ প্রতিটি সংকটের ভেতরেই মুক্তির বীজ 
