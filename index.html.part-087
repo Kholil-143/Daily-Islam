@@ -1,4 +1,7 @@
-লাস ও সুন্নাহ অনুযায়ী হওয়া) ই এখানে বিবেচ্য।',
+করা হচ্ছে: এত নেয়ামতের পরও কোনটি অস্বীকার করবে? এটি কৃতজ্ঞতার দিকে বারবার আহ্বান।',
+ '65:3': 'যে আল্লাহর ওপর তাওয়াক্কুল (ভরসা) করে, আল্লাহ তার জন্য যথেষ্ট হন এবং এমন উৎস থেকে রিজিক দেন যা সে কল্পনাও করেনি। তাওয়াক্কুল অর্থ চেষ্টা করে ফলাফল আল্লাহর হাতে ছেড়ে দেওয়া।',
+ '67:1': 'সার্বভৌম কর্তৃত্ব একমাত্র আল্লাহর হাতে; তিনি সবকিছুর ওপর ক্ষমতাবান। "তাবারাকা" অর্থ তাঁর কল্যাণ ও মাহাত্ম্য অপরিসীম।',
+ '67:2': 'মৃত্যু ও জীবন সৃষ্টির উদ্দেশ্য পরীক্ষা: কে সবচেয়ে উত্তম আমল করে — আমলের পরিমাণ নয়, মান (ইখলাস ও সুন্নাহ অনুযায়ী হওয়া) ই এখানে বিবেচ্য।',
  '94:5': 'নিশ্চয় কষ্টের সঙ্গেই স্বস্তি রয়েছে — কষ্টের পরে নয়, সঙ্গে। অর্থাৎ প্রতিটি সংকটের ভেতরেই মুক্তির বীজ থাকে; একটি কষ্ট দুটি স্বস্তিকে হারাতে পারে না।',
  '94:6': 'আগের আয়াতের বক্তব্য জোর দিয়ে পুনরাবৃত্তি করা হয়েছে, যাতে রাসূল ﷺ ও প্রতিটি মুমিন নিশ্চিত থাকে: কষ্ট স্থায়ী নয়, স্বস্তি অবশ্যম্ভাবী।',
  '97:1': 'লাইলাতুল কদরে পুরো কুরআন লাওহে মাহফুজ থেকে প্রথম আসমানে নাজিল হয়; এরপর ২৩ বছরে ধাপে ধাপে রাসূল ﷺ-এর ওপর অবতীর্ণ হয়। (তাফসিরে ইবনে কাসির)',
@@ -261,25 +264,4 @@ document.addEventListener('click', function(e){ if (e.target.closest('[data-goto
 renderAmal();
 
 /* ---------- Roza view ---------- */
-$('rozaViewList').innerHTML = ROZA.map(function(r){
-  return '<article class="hcard"><h3>' + r.t + '</h3><p>' + r.d + '</p><p class="src">সূত্র: ' + r.s + '</p></article>';
-}).join('');
-$('rozaDuas').innerHTML = DUAS.filter(function(d){ return d.t.indexOf('সেহরি') === 0 || d.t.indexOf('ইফতার') === 0; }).map(duaCard).join('');
-function tickRoza(){
-  var sEl = $('rozaSehri'); if (!sEl) return;
-  var now = nowFrame(); var c = curLoc();
-  var t = prayerTimes(now, c.lat, c.lng, c.tz);
-  sEl.textContent = fmtTime(t.fajr - 10/60);
-  $('rozaIftar').textContent = fmtTime(t.maghrib);
-  var hp = (typeof hijriParts === 'function') ? hijriParts(now) : null;
-  $('rozaNote').textContent = 'লোকেশন: ' + c.name + (hp ? ' • আজ হিজরি ' + hp.day + ' ' + hp.month + ' ' + hp.year : '');
-}
-setInterval(tickRoza, 1000); tickRoza();
-$('ramadanTableBtn').addEventListener('click', function(){
-  var now = nowFrame(); var c = curLoc(); var start = null;
-  for (var i = -40; i < 380 && !start; i++){
-    var dt = new Date(now.getFullYear(), now.getMonth(), now.getDate() + i);
-    var h = hijriOf(dt);
-    if (h && h.month === 9 && h.day === 1) start = dt;
-  }
-  if (!start){ $('ramadanTable').innerHTML = '<p class="loadmsg">তারিখ হিসাব করা
+$('rozaViewList').innerHTML = ROZA.map(functi

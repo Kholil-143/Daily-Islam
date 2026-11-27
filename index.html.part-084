@@ -1,4 +1,10 @@
-p><p class="src">সূত্র: ' + d.s + '</p></article>';
+bn:'আল্লাহর নামে (শুরু করছি), যাঁর নামের বরকতে আসমান-জমিনের কোনো কিছুই ক্ষতি করতে পারে না; তিনি সর্বশ্রোতা, সর্বজ্ঞ।', s:'সুনানে আবু দাউদ: ৫০৮৮; সুনানে তিরমিযি: ৩৩৮৮', n:'সকাল-সন্ধ্যা ৩ বার' },
+ { t:'হাসবুনাল্লাহ', ar:'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ', bn:'আল্লাহই আমাদের জন্য যথেষ্ট, এবং তিনি কতই না উত্তম কর্মবিধায়ক!', s:'সূরা আলে-ইমরান: ১৭৩; সহিহ বুখারি: ৪৫৬৩', n:'' }
+];
+function duaCard(d){
+  var cnt = d.n ? ' <span class="cnt">' + d.n + '</span>' : '';
+  var marked = (typeof isBookmarked === 'function') && isBookmarked('dua:' + d.t);
+  return '<article class="hcard"><button class="bmkbtn" data-bmd="' + esc(d.t) + '">' + (marked ? '✓ বুকমার্ক করা' : 'বুকমার্ক') + '</button><h3>' + d.t + cnt + '</h3><p class="ar">' + d.ar + '</p><p>' + d.bn + '</p><p class="src">সূত্র: ' + d.s + '</p></article>';
 }
 function renderDuas(filter){
   var list = DUAS.filter(function(d){ return !filter || (d.t + d.bn).indexOf(filter) > -1; });
@@ -359,19 +365,4 @@ function tickRamadan(){
   else if (now < iftar){ target = iftar; lbl = 'ইফতার হতে বাকি'; }
   else {
     var tom = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-    var tt = prayerTimes(tom, c.lat, c.lng, c.tz);
-    target = timeToDate(tom, tt.fajr - 10/60); lbl = 'আগামীকালের সেহরি শেষ হতে বাকি';
-  }
-  var diff = Math.max(0, Math.floor((target - now) / 1000));
-  $('ramadanCd').textContent = bn(pad2(Math.floor(diff/3600))) + ':' + bn(pad2(Math.floor((diff%3600)/60))) + ':' + bn(pad2(diff%60));
-  $('ramadanNextLbl').textContent = lbl + ' —';
-  var hp = hijriParts(now);
-  if (hp){
-    $('ramadanHijri').textContent = 'আজ হিজরি: ' + hp.day + ' ' + hp.month + ' ' + hp.year + ' হিজরি • জেলা: ' + c.name;
-    $('ramadanNote').textContent = hp.month === 'রমজান'
-      ? 'মাহে রমজান মোবারক! আজ রমজানের ' + hp.day + ' তারিখ। আল্লাহ আমাদের রোজা, তারাবি ও ইবাদত কবুল করুন।'
-      : 'এখন রমজান মাস নয় — তবে এই সময়গুলো দিয়েই সারা বছরের নফল রোজার (সোমবার, বৃহস্পতিবার, আইয়ামে বীজ) সেহরি-ইফতারের হিসাব করা যায়।';
-  }
-}
-setInterval(tickRamadan, 1000);
-tickRama
+    var tt = prayerTimes(tom, c
