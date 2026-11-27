@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Widget colours — LIGHT (white) theme.
+  The dark (black) theme lives in values-night/widget_colors.xml with the
+  same colour names; Android picks the right set automatically from the
+  phone's day/night mode, so the widget follows the system theme.
+-->
+<resources>
+    <!-- White background, no border -->
+    <color name="widget_background">#FFFFFF</color>
+
+    <!-- Near-black main text (clock + prayer times) on white -->
+    <color name="widget_text_primary">#1B1B1B</color>
+    <!-- Deep green for the small labels (prayer names, district line) -->
+    <color name="widget_text_secondary">#3E6B58</color>
+    <!-- Grey-green for the dates line -->
+    <color name="widget_text_dates">#44554D</color>
+    <!-- Deep gold accent (title + next-prayer line), dark enough for white -->
+    <color name="widget_accent">#8C6D00</color>
+</resources>

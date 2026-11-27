@@ -25,11 +25,21 @@ cp "$ROOT"/widget/java/com/kholil/dailyislam/widget/*.java \
 
 echo "Copying widget resources..."
 mkdir -p "$APP_MAIN/res/layout" "$APP_MAIN/res/xml" \
-         "$APP_MAIN/res/drawable" "$APP_MAIN/res/values"
+         "$APP_MAIN/res/drawable" "$APP_MAIN/res/values" \
+         "$APP_MAIN/res/drawable-night" "$APP_MAIN/res/values-night"
 cp "$ROOT"/widget/res/layout/*.xml   "$APP_MAIN/res/layout/"
 cp "$ROOT"/widget/res/xml/*.xml      "$APP_MAIN/res/xml/"
 cp "$ROOT"/widget/res/drawable/*.xml "$APP_MAIN/res/drawable/"
 cp "$ROOT"/widget/res/values/*.xml   "$APP_MAIN/res/values/"
+# Night (dark-theme) variants: Android picks these automatically when the
+# phone is in dark mode, giving the widget its black theme; the default
+# values/ set is the white (light) theme.
+if [ -d "$ROOT/widget/res/drawable-night" ]; then
+  cp "$ROOT"/widget/res/drawable-night/*.xml "$APP_MAIN/res/drawable-night/"
+fi
+if [ -d "$ROOT/widget/res/values-night" ]; then
+  cp "$ROOT"/widget/res/values-night/*.xml "$APP_MAIN/res/values-night/"
+fi
 
 echo "Registering widget receiver + config activity in AndroidManifest.xml..."
 python3 - "$MANIFEST" <<'PYEOF'

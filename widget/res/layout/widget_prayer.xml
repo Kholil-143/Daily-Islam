@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Muslim Path"
-            android:textColor="#F5C86B"
+            android:textColor="@color/widget_accent"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:format12Hour="hh:mm:ss a"
             android:format24Hour="HH:mm:ss"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/widget_text_primary"
             android:textSize="14sp"
             android:textStyle="bold" />
 
@@ -49,7 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:textColor="#D8EDE4"
+        android:textColor="@color/widget_text_dates"
         android:textSize="10sp" />
 
     <TextView
@@ -57,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
-        android:textColor="#F5C86B"
+        android:textColor="@color/widget_accent"
         android:textSize="12sp"
         android:textStyle="bold" />
 
@@ -78,14 +78,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ফজর"
-                android:textColor="#9FC9B8"
+                android:textColor="@color/widget_text_secondary"
                 android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_fajr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/widget_text_primary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -101,14 +101,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="সূর্যোদয়"
-                android:textColor="#9FC9B8"
+                android:textColor="@color/widget_text_secondary"
                 android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_sunrise"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/widget_text_primary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -124,14 +124,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="যোহর"
-                android:textColor="#9FC9B8"
+                android:textColor="@color/widget_text_secondary"
                 android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_dhuhr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/widget_text_primary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -154,14 +154,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="আসর"
-                android:textColor="#9FC9B8"
+                android:textColor="@color/widget_text_secondary"
                 android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_asr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/widget_text_primary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -177,14 +177,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="সূর্যাস্ত"
-                android:textColor="#9FC9B8"
+                android:textColor="@color/widget_text_secondary"
                 android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_sunset"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/widget_text_primary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -200,14 +200,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="মাগরিব"
-                android:textColor="#9FC9B8"
+                android:textColor="@color/widget_text_secondary"
                 android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_maghrib"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/widget_text_primary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -223,14 +223,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="এশা"
-                android:textColor="#9FC9B8"
+                android:textColor="@color/widget_text_secondary"
                 android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_isha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/widget_text_primary"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -241,6 +241,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:textColor="#9FC9B8"
+        android:textColor="@color/widget_text_secondary"
         android:textSize="10sp" />
 </LinearLayout>

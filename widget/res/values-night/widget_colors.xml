@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Widget colours — DARK (black) theme.
+  Used automatically when the phone is in night/dark mode; the names match
+  values/widget_colors.xml (light theme) one-to-one.
+-->
+<resources>
+    <!-- Black background, no border -->
+    <color name="widget_background">#000000</color>
+
+    <!-- White main text (clock + prayer times) on black -->
+    <color name="widget_text_primary">#FFFFFF</color>
+    <!-- Soft mint for the small labels (prayer names, district line) -->
+    <color name="widget_text_secondary">#9FC9B8</color>
+    <!-- Pale mint-white for the dates line -->
+    <color name="widget_text_dates">#D8EDE4</color>
+    <!-- Gold accent (title + next-prayer line) -->
+    <color name="widget_accent">#F5C86B</color>
+</resources>
