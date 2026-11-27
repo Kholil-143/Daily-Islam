@@ -1,276 +1,167 @@
-াইল তৈরি করলেও এগুলো থাকবে।</p>' +
-        BOOKMARKS.map(function(b, i){
-          return '<button class="bmk" data-open-bmk="' + i + '"><span>🔖</span><span>' + esc(b.label) + '<small>' + esc(b.sub) + '</small></span><span class="del" data-del-bmk="' + i + '" role="button" aria-label="বুকমার্ক সরান">✕</span></button>';
-        }).join('') + '</div>';
-    }
-    $('pfCreate').addEventListener('click', function(){
-      var name = $('pfName').value.trim();
-      if (!name){ toast('আগে আপনার নাম লিখুন'); $('pfName').focus(); return; }
-      PROFILE = { name: name };
-      try { localStorage.setItem('di_profile', JSON.stringify(PROFILE)); } catch(e){}
-      renderProfileChip(); renderProfile();
-      toast('স্বাগতম, ' + name + '! আপনার প্রোফাইল তৈরি হয়েছে');
-    });
+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faLdcH6sn+H5V9hfsbfEvTL291TwRb6nDPBdp/aNoFblZFAWVdvUErtbBH8LVd+Lf7BXw38YCbVfh7cN4R1VsuIY1MunyN6GInMefWMgD+6a0v2Xv2S7T4NSv4w8Y3FrqXi2QSQwvbszW9jCcgiMsAWdx95iBgHaB1J8HLuHsTl+YwrQ0S3a2a6rvft5ns4/PMNjsDKlPd7Lqn+R9HY96SnbRSFa+8PjBKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigApDjFLSHpQAoPeigdBRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABQOtFFADs96Wm9qUEAUALSE4pM0GgAJzSUUUAFFFFABRRRQAUoOKSigAoopcGgBKKKKACiiigBwJxQTim0UAKDilzTaKAH0UzNOBzQAE4pC1IaKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKD0ooPSgAHIoxRGwYcHinYNADaKdtFJkCgBMUpFCkHoadQAyilI5oIxQAlFA54pcGgBPeinY45owBQA2ilOKSgAooxzilxQAlFLt96NtACUoHrQAc0ufegBCKSnAg0EGgBtFFHFABRR16Uu2gBKUDNG33ozg0ABGBSUoOeKTBoAKKXBpeAaAEHWnUg60HkUAIaSlAoyFPWgBKKU8nrRt9aAEopdtISBxQAUUDnvSge9ACUUpGKSgAooAzS7aAEopSPekoAKKcKMUANooPFFACgZNBFKAOxooAbRTttJj3oASinCk280AJRTiKaSB1IoAKKKUAmgBKRuhp22grweaAP//Z';
+function wrapLines(ctx, text, maxW){
+  var words = String(text).split(/\s+/), lines = [], cur = '';
+  words.forEach(function(w){
+    var test = cur ? cur + ' ' + w : w;
+    if (ctx.measureText(test).width > maxW && cur){ lines.push(cur); cur = w; }
+    else cur = test;
+  });
+  if (cur) lines.push(cur);
+  return lines;
+}
+function makeCard(opts){
+  var W = 1080, H = 1080;
+  var cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+  var ctx = cv.getContext('2d');
+  var grad = ctx.createLinearGradient(0, 0, W, H);
+  grad.addColorStop(0, '#07301f'); grad.addColorStop(0.55, '#0b4a30'); grad.addColorStop(1, '#06231a');
+  ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
+  ctx.strokeStyle = '#c9a24b'; ctx.lineWidth = 5; ctx.strokeRect(34, 34, W - 68, H - 68);
+  ctx.lineWidth = 1.6; ctx.strokeRect(52, 52, W - 104, H - 104);
+  ctx.textAlign = 'center';
+  if (cardLogoImg.complete && cardLogoImg.naturalWidth){
+    ctx.save();
+    ctx.beginPath(); ctx.arc(W/2, 148, 62, 0, Math.PI * 2); ctx.clip();
+    ctx.drawImage(cardLogoImg, W/2 - 62, 86, 124, 124);
+    ctx.restore();
+    ctx.strokeStyle = '#c9a24b'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(W/2, 148, 62, 0, Math.PI * 2); ctx.stroke();
+  }
+  ctx.fillStyle = '#e3c878'; ctx.font = '700 36px "Hind Siliguri", sans-serif';
+  ctx.fillText('Muslim Path', W/2, 268);
+  var maxW = 880, arSize = 62, bnSize = 43, arLines = [], bnLines = [], total = 0;
+  function measure(){
+    ctx.font = arSize + 'px Amiri, serif'; arLines = wrapLines(ctx, opts.ar, maxW);
+    ctx.font = bnSize + 'px "Hind Siliguri", sans-serif'; bnLines = wrapLines(ctx, opts.bnText, maxW);
+    total = arLines.length * arSize * 1.95 + 34 + bnLines.length * bnSize * 1.62 + 30 + 40;
+    return total;
+  }
+  measure();
+  while (total > 560 && arSize > 28){ arSize -= 4; bnSize = Math.max(25, bnSize - 2); measure(); }
+  var y = 330 + Math.max(0, (580 - total) / 2) + arSize;
+  ctx.fillStyle = '#f7ead0'; ctx.font = arSize + 'px Amiri, serif';
+  arLines.forEach(function(ln){ ctx.fillText(ln, W/2, y); y += arSize * 1.95; });
+  y += 34 - arSize * 0.4;
+  ctx.fillStyle = '#ffffff'; ctx.font = bnSize + 'px "Hind Siliguri", sans-serif';
+  bnLines.forEach(function(ln){ ctx.fillText(ln, W/2, y); y += bnSize * 1.62; });
+  y += 30;
+  ctx.fillStyle = '#e3c878'; ctx.font = '600 33px "Hind Siliguri", sans-serif';
+  ctx.fillText(opts.src, W/2, y);
+  ctx.fillStyle = '#c9a24b'; ctx.font = '28px "Hind Siliguri", sans-serif';
+  ctx.fillText('কুরআন ও সুন্নাহর আলোকে জীবন গড়ুন', W/2, 992);
+  var url = cv.toDataURL('image/png');
+  $('cardImg').src = url;
+  $('cardDownload').href = url;
+  $('cardModal').style.display = 'flex';
+}
+function openCard(opts){
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ makeCard(opts); });
+  else makeCard(opts);
+}
+$('cardClose').addEventListener('click', function(){ $('cardModal').style.display = 'none'; });
+$('cardModal').addEventListener('click', function(e){ if (e.target === this) this.style.display = 'none'; });
+document.addEventListener('click', function(e){
+  var ca = e.target.closest('[data-card-ayah]');
+  if (ca){
+    var p = ca.getAttribute('data-card-ayah').split(':'); var si = +p[0], ai = +p[1];
+    if (typeof QURAN === 'undefined' || !QURAN){ toast('কুরআন লোড হয়নি — আবার চেষ্টা করুন'); return; }
+    var a = QURAN.surahs[si].a[ai];
+    openCard({ ar: a[0], bnText: a[1], src: 'সূরা ' + SURA_BN[si] + ' — আয়াত ' + bn(ai + 1) });
     return;
   }
-  var initial = PROFILE.name.trim().charAt(0) || 'ম';
-  var bmkHtml = BOOKMARKS.length ? BOOKMARKS.map(function(b, i){
-    return '<button class="bmk" data-open-bmk="' + i + '"><span>🔖</span><span>' + esc(b.label) + '<small>' + esc(b.sub) + '</small></span><span class="del" data-del-bmk="' + i + '" role="button" aria-label="বুকমার্ক সরান">✕</span></button>';
-  }).join('') : '<p class="sub" style="margin:0">এখনো কোনো বুকমার্ক নেই। কুরআন পড়ার সময় "বুকমার্ক করুন" বা হাদিস কার্ডের "বুকমার্ক" বোতামে চাপ দিলে এখানে জমা হবে।</p>';
-  box.innerHTML = '<div class="card" style="text-align:center; padding:24px 20px">' +
-    '<div class="avatar">' + esc(initial) + '</div>' +
-    '<h3 style="margin:10px 0 2px; font-size:22px">' + esc(PROFILE.name) + '</h3>' +
-    '<p class="sub" style="margin:0">' + (PROFILE.google ? ('Google অ্যাকাউন্ট' + (PROFILE.email ? ' • ' + esc(PROFILE.email) : '')) : 'সেশন প্রোফাইল • গেস্ট অ্যাকাউন্ট') + '</p>' +
-    (PROFILE.google ? '' : '<div style="max-width:400px; margin:14px auto 0"><button class="gbtn" id="googleBtn2">' + GOOGLE_G + 'Google দিয়ে সাইন ইন</button><p id="googleNote2" class="sub" style="margin:10px 0 0; display:none"></p></div>') +
-    '<div class="pstats">' +
-    '<div class="st"><b>' + bn(trackerDoneCount()) + '/৫</b><span>আজকের নামাজ</span></div>' +
-    '<div class="st"><b>' + bn(tasbih.total) + '</b><span>মোট যিকির</span></div>' +
-    '<div class="st"><b>' + bn(BOOKMARKS.length) + '</b><span>বুকমার্ক</span></div>' +
-    '</div>' +
-    '<p class="sub" style="margin:12px 0 0">অ্যাপ সংস্করণ: v2.8</p>' +
-      '<p style="margin:10px 0 0"><a class="btn" href="https://github.com/Kholil-143/Daily-Islam/releases/latest/download/Daily-Islam.apk">⬇ সর্বশেষ আপডেট ডাউনলোড / ইনস্টল করুন</a></p>' +
-    '<p style="margin:16px 0 0"><button class="btn ghost" id="pfOut">প্রোফাইল থেকে বের হয়ে যান</button></p>' +
-    '</div>' +
-    '<div class="card" style="margin-top:12px"><h3 style="margin-top:0">আমার বুকমার্ক</h3>' + bmkHtml + '</div>';
-  var gb2 = $('googleBtn2'); if (gb2) gb2.addEventListener('click', googleSignInFn);
-  $('pfOut').addEventListener('click', function(){
-      if (PROFILE && PROFILE.google && window.Capacitor){
-        faCall('signOut').catch(function(){});
-      }
-      try { localStorage.removeItem('di_profile'); } catch(e){}
-    PROFILE = null;
-    renderProfileChip(); renderProfile();
-    toast('আপনি গেস্ট হিসেবে আছেন');
-  });
-}
-$('profileChip').addEventListener('click', function(){ showView('profile'); renderProfile(); });
-(function profileTile(){
-  var grid = $('featureGridSeba');
-  var b = document.createElement('button');
-  b.className = 'htile';
-  b.innerHTML = '<span class="hic c8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1.4-3.4 4.2-5 7.5-5s6.1 1.6 7.5 5"/></svg></span><span>আমার প্রোফাইল</span>';
-  b.addEventListener('click', function(){ showView('profile'); renderProfile(); });
-  grid.appendChild(b);
-})();
-renderProfileChip();
-renderProfile();
-if (window.Capacitor){
-  faCall('getCurrentUser').then(function(r){
-    var u = r && r.user;
-    if (u){
-      PROFILE = { name: u.displayName || (u.email ? u.email.split('@')[0] : 'ব্যবহারকারী'), email: u.email || '', photo: u.photoUrl || '', google: true };
-      try { localStorage.setItem('di_profile', JSON.stringify(PROFILE)); } catch(e){}
-      renderProfileChip(); renderProfile();
-    }
-  }).catch(function(){});
-}
-</script>
-<script>
-/* ================= Per-ayah tafsir ================= */
-var TAFSIR_AYAH = {
- '1:1': 'প্রতিটি ভালো কাজ আল্লাহর নামে শুরু করাই সুন্নাত। "রহমান" অর্থ যাঁর দয়া দুনিয়ায় সব সৃষ্টিকে বেষ্টন করে আছে; "রহিম" অর্থ যিনি আখিরাতে বিশেষভাবে মুমিনদের প্রতি দয়ালু। (তাফসিরে ইবনে কাসির)',
- '1:2': 'সব ধরনের প্রশংসা ও কৃতজ্ঞতা একমাত্র আল্লাহরই প্রাপ্য, কারণ তিনি সমগ্র বিশ্বজগতের সৃষ্টিকর্তা, মালিক ও প্রতিপালক — ধীরে ধীরে সবকিছুকে পূর্ণতার দিকে নিয়ে যান।',
- '1:3': 'আল্লাহর রহমতের বিশালতা আবার স্মরণ করানো হয়েছে, যাতে বান্দা ভয়ের পাশাপাশি আশা নিয়েও তাঁর দিকে এগিয়ে যায়।',
- '1:4': 'প্রতিদান দিবস (কিয়ামত) এর একচ্ছত্র মালিক আল্লাহ; সেদিন কারো কোনো কর্তৃত্ব থাকবে না। এই আয়াত মানুষকে জবাবদিহিতার ভয়ে সৎকর্মে উদ্বুদ্ধ করে।',
- '1:5': 'তাওহিদের সারকথা: ইবাদত (নামাজ, রোজা, দোয়া, মানত ইত্যাদি) শুধু আল্লাহর জন্যই এবং সাহায্যও চাইতে হবে শুধু তাঁর কাছেই। প্রথমে ইবাদতের কথা, পরে সাহায্য চাওয়ার কথা — কারণ ইবাদতই উদ্দেশ্য, সাহায্য তার উপায়।',
- '1:6': 'সিরাতুল মুস্তাকিম অর্থাৎ সরল পথ — যা আল্লাহর সন্তুষ্টি ও জান্নাত পর্যন্ত পৌঁছে দেয়। এটাই সূরা ফাতিহার প্রধান দোয়া; তাই এই সূরা ছাড়া নামাজ হয় না।',
- '1:7': 'নেয়ামতপ্রাপ্তরা হলেন নবী, সিদ্দিক, শহীদ ও সালেহিন (সূরা আন-নিসা: ৬৯)। "মাগদুব" অর্থ যারা জেনে-বুঝে সত্য প্রত্যাখ্যান করে আল্লাহর গজবের পাত্র হয়েছে; "দাল্লিন" অর্থ যারা অজ্ঞতায় পথভ্রষ্ট হয়েছে। মুসলিম প্রতিদিন নামাজে এই দুই পথ থেকে বাঁচার দোয়া করে।',
- '2:45': 'সবর (ধৈর্য) ও নামাজ — এই দুটিকে আল্লাহ সাহায্য লাভের মাধ্যম বানিয়েছেন। নামাজে মনোযোগী (খাশিয়িন) ছাড়া অন্যদের কাছে এটি ভারী মনে হয়।',
- '2:152': 'আল্লাহকে স্মরণ (যিকির, নামাজ, কুরআন তিলাওয়াত) করলে আল্লাহও বান্দাকে স্মরণ করেন — অর্থাৎ রহমত ও মাগফিরাত দান করেন। নেয়ামতের কৃতজ্ঞতা করা ওয়াজিব; অকৃতজ্ঞতা গুনাহ।',
- '2:153': 'বিপদে ধৈর্য ও নামাজের মাধ্যমে সাহায্য চাওয়ার নির্দেশ। "আল্লাহ ধৈর্যশীলদের সঙ্গে আছেন" — অর্থাৎ তাঁর সাহায্য, তাওফিক ও রহমত তাদের সঙ্গে থাকে।',
- '2:155': 'ভয়, ক্ষুধা, জান-মাল ও ফল-ফসলের ক্ষতি দিয়ে পরীক্ষা অবশ্যম্ভাবী — এটি মুমিনের জীবনের নিয়ম। সুসংবাদ কেবল ধৈর্যশীলদের জন্য।',
- '2:156': 'ধৈর্যশীলদের পরিচয়: বিপদে তারা বলে "ইন্না লিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন" — আমরা আল্লাহরই এবং তাঁর দিকেই ফিরে যাব। এই বাক্যে তাওহিদ, আত্মসমর্পণ ও আখিরাতের বিশ্বাস নিহিত।',
- '2:185': 'রমজান মাসেই কুরআন নাজিল শুরু হয়; এই মাসে রোজা ফরজ। অসুস্থ ও মুসাফিরের জন্য ছাড় রয়েছে — পরে কাজা করতে হবে। "আল্লাহ তোমাদের জন্য সহজতা চান, কঠিনতা চান না" — শরিয়তের একটি মৌলিক নীতি।',
- '2:186': 'আল্লাহ বান্দার অতি নিকটে; দোয়াকারীর দোয়া তিনি কবুল করেন। শর্ত হলো তাঁর ডাকে সাড়া দেওয়া ও ঈমান রাখা — তাহলেই সঠিক পথ পাওয়া যায়।',
- '2:201': 'এটি সবচেয়ে সর্বাঙ্গীণ দোয়া: দুনিয়ার কল্যাণ (সুস্থতা, হালাল রিজিক, নেক আমল), আখিরাতের কল্যাণ (জান্নাত) এবং জাহান্নাম থেকে মুক্তি — তিনটিই একসঙ্গে চাওয়া হয়েছে। রাসূলুল্লাহ ﷺ এই দোয়া বেশি পড়তেন।',
- '2:255': 'আয়াতুল কুরসি — কুরআনের শ্রেষ্ঠ আয়াতগুলোর একটি। এতে আল্লাহর একত্ব, চিরঞ্জীবতা, সবকিছুর ধারণ-ক্ষমতা, ঘুম-তন্দ্রা থেকে পবিত্রতা, আসমান-জমিনের মালিকানা, তাঁর অনুমতি ছাড়া সুপারিশের অসম্ভবতা, সর্বব্যাপী জ্ঞান এবং কুরসির (তাঁর জ্ঞান ও কর্তৃত্বের) বিশালতা বর্ণিত হয়েছে। (তাফসিরে ইবনে কাসির)',
- '2:256': 'ধর্মে কোনো জবরদস্তি নেই — হেদায়েত ও গোমরাহি স্পষ্ট হয়ে যাওয়ার পর ঈমান স্বেচ্ছায় গ্রহণের বিষয়। তাগুত (আল্লাহ ছাড়া যার ইবাদত করা হয়) কে অস্বীকার করে আল্লাহর প্রতি ঈমান আনলেই মজবুত হাতল ধরা হয়।',
- '2:257': 'আল্লাহ মুমিনদের অভিভাবক (ওলি); তিনি তাদের কুফর ও অজ্ঞতার অন্ধকার থেকে ঈমানের আলোতে বের করে আনেন। বিপরীতে কাফেরদের অভিভাবক তাগুত, যারা তাদের আলো থেকে অন্ধকারে নিয়ে যায়।',
- '2:285': 'রাসূল ﷺ ও মুমিনগণ আল্লাহ, ফেরেশতা, কিতাবসমূহ ও রাসূলগণের প্রতি ঈমান এনেছেন — রাসূলদের মধ্যে কোনো পার্থক্য (কাউকে মানা, কাউকে অস্বীকার) করেন না। "শুনলাম ও আনুগত্য করলাম" — এটাই মুমিনের জবাব।',
- '2:286': 'আল্লাহ কাউকে তার সাধ্যের বাইরে দায়িত্ব দেন না। প্রত্যেকে নিজের অর্জিত পুণ্য ও পাপের ফল পাবে। আয়াতের শেষাংশের দোয়াগুলো আল্লাহ নিজে শিখিয়ে দিয়েছেন; হাদিসে এসেছে, রাতে এই দুই আয়াত (২৮৫–২৮৬) পড়লে তা যথেষ্ট হয়। (সহিহ বুখারি: ৫০০৯)',
- '3:26': 'সব রাজত্ব ও ক্ষমতার প্রকৃত মালিক আল্লাহ; তিনি যাকে চান ক্ষমতা ও সম্মান দেন, যার থেকে চান ছিনিয়ে নেন। দুনিয়ার উত্থান-পতন তাঁর ইচ্ছার অধীন — তাই ক্ষমতাবানদের ভয়ে নয়, আল্লাহর ভয়েই চলতে হয়।',
- '3:139': 'উহুদের পরাজয়ের পর মুসলিমদের সান্ত্বনা: দুর্বল হয়ো না, দুঃখ করো না — সত্যিকারের মুমিন হলে চূড়ান্ত বিজয় তোমাদেরই। পরাজয় সাময়িক পরীক্ষা মাত্র।',
- '13:28': 'অন্তরের প্রকৃত প্রশান্তি (তুমানিনা) পাওয়া যায় আল্লাহর যিকিরে — দুনিয়ার সম্পদ ও ভোগে নয়। যিকির অর্থ নামাজ, কুরআন তিলাওয়াত ও আল্লাহর স্মরণের সব রূপ।',
- '14:7': 'আল্লাহর ঘোষণা: নেয়ামতের কৃতজ্ঞতা (শুকর) করলে তিনি নেয়ামত আরও বাড়িয়ে দেন; আর অকৃতজ্ঞতা করলে তাঁর শাস্তি কঠিন। শুকর হয় অন্তরের স্বীকৃতি, মুখের প্রশংসা ও নেয়ামতকে সৎকাজে ব্যবহারের মাধ্যমে।',
- '36:58': 'জান্নাতবাসীদের জন্য সবচেয়ে বড় সম্মান: পরম দয়ালু রবের পক্ষ থেকে সরাসরি "সালাম" — শান্তির অভিবাদন। সব নেয়ামতের ঊর্ধ্বে এই মর্যাদা।',
- '40:60': 'আল্লাহ নিজে দোয়ার আহ্বান করে কবুলের প্রতিশ্রুতি দিয়েছেন। হাদিসে এসেছে, "দোয়াই ইবাদত" (তিরমিযি: ২৯৬৯)। যারা অহংকারে ইবাদত থেকে মুখ ফিরিয়ে নেয়, তাদের জন্য অপমানজনক জাহান্নামের হুশিয়ারি রয়েছে।',
- '55:13': 'সূরা আর-রাহমানে এই আয়াতটি ৩১ বার এসেছে। প্রতিটি নেয়ামত বর্ণনার পর মানুষ ও জিন — উভয় সম্প্রদায়কে প্রশ্ন করা হচ্ছে: এত নেয়ামতের পরও কোনটি অস্বীকার করবে? এটি কৃতজ্ঞতার দিকে বারবার আহ্বান।',
- '65:3': 'যে আল্লাহর ওপর তাওয়াক্কুল (ভরসা) করে, আল্লাহ তার জন্য যথেষ্ট হন এবং এমন উৎস থেকে রিজিক দেন যা সে কল্পনাও করেনি। তাওয়াক্কুল অর্থ চেষ্টা করে ফলাফল আল্লাহর হাতে ছেড়ে দেওয়া।',
- '67:1': 'সার্বভৌম কর্তৃত্ব একমাত্র আল্লাহর হাতে; তিনি সবকিছুর ওপর ক্ষমতাবান। "তাবারাকা" অর্থ তাঁর কল্যাণ ও মাহাত্ম্য অপরিসীম।',
- '67:2': 'মৃত্যু ও জীবন সৃষ্টির উদ্দেশ্য পরীক্ষা: কে সবচেয়ে উত্তম আমল করে — আমলের পরিমাণ নয়, মান (ইখলাস ও সুন্নাহ অনুযায়ী হওয়া) ই এখানে বিবেচ্য।',
- '94:5': 'নিশ্চয় কষ্টের সঙ্গেই স্বস্তি রয়েছে — কষ্টের পরে নয়, সঙ্গে। অর্থাৎ প্রতিটি সংকটের ভেতরেই মুক্তির বীজ থাকে; একটি কষ্ট দুটি স্বস্তিকে হারাতে পারে না।',
- '94:6': 'আগের আয়াতের বক্তব্য জোর দিয়ে পুনরাবৃত্তি করা হয়েছে, যাতে রাসূল ﷺ ও প্রতিটি মুমিন নিশ্চিত থাকে: কষ্ট স্থায়ী নয়, স্বস্তি অবশ্যম্ভাবী।',
- '97:1': 'লাইলাতুল কদরে পুরো কুরআন লাওহে মাহফুজ থেকে প্রথম আসমানে নাজিল হয়; এরপর ২৩ বছরে ধাপে ধাপে রাসূল ﷺ-এর ওপর অবতীর্ণ হয়। (তাফসিরে ইবনে কাসির)',
- '97:3': 'এই এক রাতের ইবাদত হাজার মাস (৮৩ বছর ৪ মাস) এর ইবাদতের চেয়ে উত্তম — এমন ব্যক্তির জন্যও সম্ভব যার পুরো জীবনই ৮৩ বছর নয়। এটি উম্মতে মুহাম্মদির জন্য বিশেষ অনুগ্রহ।',
- '97:4': 'এই রাতে ফেরেশতাগণ ও "রূহ" (জিবরাইল আ.) আল্লাহর হুকুমে প্রতিটি নির্ধারিত বিষয় নিয়ে পৃথিবীতে অবতরণ করেন — তাই রাতটি বরকতময়।',
- '97:5': 'ফজর উদয় পর্যন্ত পুরো রাতটাই শান্তি ও কল্যাণে ভরা; শয়তানের অনিষ্ট থেকে এটি সুরক্ষিত রাত।',
- '103:1': 'আল্লাহ সময়ের শপথ করেছেন — সময় মানুষের জীবনের মূলধন; তা কাজে লাগানো বা নষ্ট করার ওপরই সাফল্য-ব্যর্থতা নির্ভর করে।',
- '103:2': 'সমগ্র মানবজাতি ক্ষতির মধ্যে রয়েছে — কারণ জীবন নামের পুঁজি প্রতিদিন কমছে, অথচ অধিকাংশ মানুষ তা আখিরাতের কাজে লাগায় না।',
- '103:3': 'ক্ষতি থেকে বাঁচার চার শর্ত: (১) ঈমান, (২) নেক আমল, (৩) পরস্পরকে সত্যের উপদেশ (দাওয়াত ও সৎকাজের আদেশ), (৪) পরস্পরকে ধৈর্যের উপদেশ। শুধু নিজে ভালো হওয়া যথেষ্ট নয় — অন্যকে ভালোর দিকে ডাকাও শর্ত।',
- '108:1': 'কাউসার অর্থ প্রচুর কল্যাণ; বিশেষভাবে জান্নাতে রাসূলুল্লাহ ﷺ-কে দেওয়া হাউজ/নহরের নাম কাউসার। মক্কার কাফেররা তাঁকে "আবতার" (নির্বংশ) বলায় সান্ত্বনা হিসেবে এই সূরা নাজিল হয়।',
- '108:2': 'নেয়ামতের শুকরিয়া: নামাজ শুধু আল্লাহর জন্য এবং কুরবানিও শুধু তাঁর নামে — ইবাদতে কাউকে শরিক করা যাবে না।',
- '108:3': 'প্রকৃত নির্বংশ তারাই যারা রাসূল ﷺ-এর শত্রু; আর তাঁর নাম ও বাণী যুগে যুগে জীবিত থাকবে — ইতিহাসই এর প্রমাণ।',
- '109:6': 'তাওহিদে কোনো আপস নেই: কাফেররা প্রস্তাব দিয়েছিল এক বছর একে অপরের উপাস্যের ইবাদত করার — তার জবাবে এই স্পষ্ট ঘোষণা। নিজের ধর্মে অবিচল থাকা ও অন্যের ধর্মে হস্তক্ষেপ না করা — দুটোই এখানে শিক্ষা।',
- '112:1': 'আল্লাহ এক ও অদ্বিতীয় — তাঁর সত্তা, গুণাবলি ও ইবাদতে কোনো শরিক নেই। এই সূরা তাওহিদের বিশুদ্ধ ঘোষণা।',
- '112:2': '"সামাদ" অর্থ: তিনি সবার প্রয়োজন পূরণকারী, সবাই তাঁর মুখাপেক্ষী; অথচ তিনি কারো মুখাপেক্ষী নন, তাঁর কোনো অভাব নেই।',
- '112:3': 'আল্লাহ কাউকে জন্ম দেননি এবং তাঁকেও জন্ম দেওয়া হয়নি — সন্তান ও পিতা-মাতার সম্পর্ক থেকে তিনি পবিত্র। এটি খ্রিস্টান ও মুশরিকদের ভ্রান্ত ধারণার জবাব।',
- '112:4': 'তাঁর সমতুল্য, সমকক্ষ বা সদৃশ কেউ নেই — কোনো দিক থেকেই সৃষ্টির সঙ্গে তাঁর তুলনা চলে না।',
- '113:1': 'ভোরের রবের কাছে আশ্রয় — যিনি অন্ধকার বিদীর্ণ করে আলো আনেন, তিনিই সব অনিষ্ট দূর করতে সক্ষম। এই সূরা ও সূরা আন-নাস মিলে "মুআওয়িযাতাইন"; সকাল-সন্ধ্যায় পড়া সুন্নাত।',
- '114:1': 'মানুষের রব, বাদশাহ ও ইলাহ — এই তিনটি গুণ উল্লেখ করে আশ্রয় চাওয়া হয়েছে গোপনে কুমন্ত্রণাদাতা শয়তানের থেকে, যে মানুষের বুকে ওয়াসওয়াসা দিয়ে পিছিয়ে যায়। কুরআনের শেষ সূরাটি সুরক্ষার দোয়া দিয়ে শেষ হয়েছে।'
-};
-$('readerBody').addEventListener('click', function(e){
-  var b = e.target.closest('[data-tafsir]'); if (!b) return;
-  var box = $('tfs-' + b.getAttribute('data-tafsir'));
-  if (!box) return;
-  box.classList.toggle('hidden');
-  b.textContent = box.classList.contains('hidden') ? 'তাফসির দেখুন' : 'তাফসির লুকান';
-});
-</script>
-<script>
-/* ================= New sections: tilawat, kitab, articles, quran shikkha, taleem, amal, roza, sunnah, mosque, bayan, fitra, hijri calendar, dua bookmarks, last read ================= */
-
-/* ---------- Tilawat (full-surah audio) ---------- */
-var tilSurah = null;
-function tilUrl(n){ return 'https://cdn.mp3quran.net/audio/maher-muaiqly/r1/' + ('00' + n).slice(-3) + '.mp3'; }
-function buildTilawat(){
-  if (typeof QURAN === 'undefined' || !QURAN) return;
-  var q = ($('tilSearch').value || '').trim();
-  var html = '';
-  QURAN.surahs.forEach(function(s, i){
-    if (q && (SURA_BN[i] + ' ' + s.n).indexOf(q) === -1) return;
-    var playing = tilSurah === s.n && !player.paused;
-    html += '<button class="srow" data-til="' + s.n + '"><span class="sno">' + bn(s.n) + '</span><span class="tt"><b>সূরা ' + SURA_BN[i] + ' (' + s.ar + ')</b><span>' + bn(s.cnt) + ' আয়াত • ' + (s.rev === 'Makki' ? 'মাক্কী' : 'মাদানী') + '</span></span><span style="font-weight:700; color:var(--gold)">' + (playing ? '❚❚ চলছে' : '▶ শুনুন') + '</span></button>';
-  });
-  $('tilList').innerHTML = html || '<p class="loadmsg">কিছু পাওয়া যায়নি।</p>';
-}
-loadQuran(function(){ buildTilawat(); });
-$('tilSearch').addEventListener('input', buildTilawat);
-$('tilReciter').addEventListener('change', function(){ toast('তিলাওয়াতে শুধু ক্বারী মাহের আল-মুয়াইকলির তিলাওয়াত রয়েছে'); });
-$('tilList').addEventListener('click', function(e){
-  var b = e.target.closest('[data-til]'); if (!b) return;
-  var n = +b.getAttribute('data-til');
-  if (tilSurah === n && !player.paused){ player.pause(); }
-  else { stopAudio(); tilSurah = n; playAudioSmart(tilUrl(n)); }
-  setTimeout(buildTilawat, 80);
-});
-player.addEventListener('ended', function(){ if (tilSurah){ tilSurah = null; buildTilawat(); } });
-player.addEventListener('pause', function(){ if (tilSurah && currentView === 'tilawat') setTimeout(buildTilawat, 80); });
-
-/* v2.7: Maher Al-Muaiqly full-surah audio auto-downloads in the background for offline listening */
-var tilDlStarted = false;
-function autoDownloadTilawat(){
-  if (tilDlStarted || !('caches' in window)) return; tilDlStarted = true;
-  var status = $('audioDlStatus');
-  function upd(done){
-    if (!status) return;
-    status.textContent = done >= 114
-      ? '✅ পুরো কোরআনের তিলাওয়াত অফলাইনের জন্য ডাউনলোড সম্পূর্ণ — এখন নেট ছাড়াই শোনা যাবে।'
-      : '⬇ অফলাইনের জন্য তিলাওয়াত ডাউনলোড হচ্ছে… ' + bn(done) + '/১১৪ সূরা (নিজে নিজেই হচ্ছে)';
+  var ch = e.target.closest('[data-card-hadith]');
+  if (ch){
+    var title = ch.getAttribute('data-card-hadith'), h = null;
+    HADITHS.forEach(function(x){ if (x.t === title) h = x; });
+    if (h) openCard({ ar: h.ar, bnText: h.bn, src: 'সূত্র: ' + h.s });
   }
-  caches.open(AUDIO_CACHE).then(function(cache){
-    var n = 1, done = 0;
-    function next(){
-      if (n > 114){ upd(114); return; }
-      var url = tilUrl(n);
-      cache.match(url).then(function(m){
-        if (m){ done++; upd(done); n++; next(); }
-        else {
-          cache.add(url).then(function(){ done++; upd(done); n++; setTimeout(next, 120); })
-            .catch(function(){ setTimeout(next, 900); });
-        }
-      }).catch(function(){ setTimeout(next, 900); });
+});
+</script>
+<script>
+/* ================= Widget refresh button ================= */
+$('refreshBtn').addEventListener('click', function(){
+  var btn = this;
+  btn.classList.remove('spin'); void btn.offsetWidth; btn.classList.add('spin');
+  updateClock();
+  renderPrayer();
+  if (typeof tickRoza === 'function') tickRoza();
+  if (typeof tickRamadan === 'function') tickRamadan();
+  toast('ঘড়ি, তারিখ ও নামাজের সময় আপডেট হয়েছে');
+});
+</script>
+
+<script>
+/* ============ Daily ayah & hadith notifications (v2.9) ============ */
+(function(){
+  var KEY = 'di_daily_notif';
+  function enabled(){ try { return localStorage.getItem(KEY) !== '0'; } catch(e){ return true; } }
+  function native(method, opts){
+    var C = window.Capacitor;
+    if (!C || !C.nativePromise) return Promise.reject(new Error('no bridge'));
+    return C.nativePromise('DailyNotify', method, opts || {});
+  }
+  function snippet(t, n){ t = String(t || ''); return t.length > n ? t.slice(0, n - 1) + '\u2026' : t; }
+  function buildItems(){
+    if (typeof QURAN === 'undefined' || !QURAN || typeof HADITHS === 'undefined' || typeof SURA_BN === 'undefined') return null;
+    var flat = [];
+    QURAN.surahs.forEach(function(su, si){ su.a.forEach(function(a, ai){ flat.push([si, ai, a]); }); });
+    var base = dayIndex(), now = Date.now(), items = [];
+    for (var k = 0; k < 7; k++){
+      var N = base + k, t = N * 86400000; /* 06:00 Asia/Dhaka == 00:00 UTC */
+      if (t <= now + 60000) continue;
+      var p = flat[N % flat.length];
+      var src = 'সূরা ' + SURA_BN[p[0]] + ', আয়াত ' + bn(p[1] + 1);
+      items.push({ id: (N % 100000) * 2, epochMs: t, title: 'আজকের আয়াত',
+        body: src + ' \u2014 ' + snippet(p[2][1], 80),
+        bigText: p[2][1] + '\n\u2014 ' + src });
+      var h = HADITHS[N % HADITHS.length];
+      items.push({ id: (N % 100000) * 2 + 1, epochMs: t, title: 'আজকের হাদিস',
+        body: h.s + ' \u2014 ' + snippet(h.bn, 80),
+        bigText: h.bn + '\n\u2014 ' + h.s });
     }
-    next();
-  }).catch(function(){});
-}
-setTimeout(autoDownloadTilawat, 3500);
-
-/* ---------- Kitab ---------- */
-var KITAB = [
- { t:'রিয়াদুস সালেহিন', a:'ইমাম আবু যাকারিয়া আন-নববি (রহ.) (মৃ. ৬৭৬ হি.)', d:'কুরআনের আয়াত ও প্রায় ১,৯০০ হাদিসের অনন্য সংকলন — তাকওয়া, সবর, সত্যবাদিতা, পিতামাতার হক, প্রতিবেশীর হকসহ দৈনন্দিন জীবনের প্রায় সব বিষয়ে অধ্যায় সাজানো। ঘরের তালিম ও ব্যক্তিগত পাঠের জন্য সবচেয়ে উপযোগী বইগুলোর একটি।' },
- { t:'ফিকহুস সুন্নাহ', a:'সাইয়েদ সাবেক (রহ.)', d:'ইবাদতের ফিকহ — পবিত্রতা, নামাজ, রোজা, যাকাত ও হজের মাসআলা কুরআন-হাদিসের দলিলসহ সহজ ভাষায়। চার মাযহাবের মতামতের তুলনামূলক আলোচনাও রয়েছে।' },
- { t:'বেহেশতি জেওর', a:'মাওলানা আশরাফ আলী থানভি (রহ.)', d:'মহিলাদের জন্য রচিত বিখ্যাত ফিকহের বই — ঈমান, ইবাদত, বিবাহ, পর্দা ও দৈনন্দিন জীবনের মাসআলা। উপমহাদেশের ঘরে ঘরে পঠিত।' },
- { t:'ফাজায়েলে আমল', a:'শায়খুল হাদিস মাওলানা মুহাম্মদ জাকারিয়া কান্ধলভি (রহ.)', d:'নামাজ, কুরআন তিলাওয়াত, যিকির, রমজান, হজ ও দাওয়াতের ফজিলত-বিষয়ক হাদিসের সংকলন — ফাজায়েলে কুরআন, ফাজায়েলে নামাজ, ফাজায়েলে রমজান ইত্যাদি খণ্ডে বিভক্ত; তালিমের মজলিসে বহুল পঠিত।' },
- { t:'আর-রাহিকুল মাখতুম (সীরাতে নববি)', a:'আল্লামা সফিউর রহমান মোবারকপুরি (রহ.)', d:'রাসূলুল্লাহ ﷺ-এর পূর্ণাঙ্গ জীবনী — জন্ম থেকে ওফাত পর্যন্ত ধারাবাহিক ও প্রামাণ্য বর্ণনা। মক্কা শরিফে অনুষ্ঠিত বিশ্ব সীরাত প্রতিযোগিতায় প্রথম পুরস্কারপ্রাপ্ত গ্রন্থ।' },
- { t:'তাফসিরে মারফুল কুরআন', a:'মুফতি মুহাম্মদ শাফি (রহ.)', d:'উর্দু ভাষায় রচিত সহজ ও নির্ভরযোগ্য তাফসির; বাংলা অনুবাদও বহুল প্রচলিত। প্রতি সূরার সারসংক্ষেপ ও আয়াতের ব্যাখ্যা সাধারণ পাঠকের উপযোগী করে লেখা।' },
- { t:'তাফসিরে ইবনে কাসির', a:'হাফিজ ইমাদুদ্দিন ইবনে কাসির (রহ.) (মৃ. ৭৭৪ হি.)', d:'সবচেয়ে প্রসিদ্ধ আছারভিত্তিক তাফসির — কুরআনের আয়াত দিয়ে আয়াতের ব্যাখ্যা, হাদিস ও সাহাবিদের বর্ণনার ভিত্তিতে তাফসির। গভীর অধ্যয়নের জন্য অপরিহার্য।' },
- { t:'হিসনুল মুসলিম', a:'ড. সাইদ ইবন আলি আল-কাহতানি', d:'কুরআন ও সহিহ হাদিস থেকে সংকলিত দৈনন্দিন দোয়া ও যিকিরের ছোট্ট কিন্তু অমূল্য বই — সকাল-সন্ধ্যার আমল, ঘুম, খাবার, সফরসহ জীবনের প্রতিটি মুহূর্তের দোয়া।' }
-];
-var KITAB_PDF = {
- 'রিয়াদুস সালেহিন': { pdf: 'https://archive.org/download/riyad-us-saliheen-in-bangla/riyad-us-saliheen-in-bangla.pdf' },
- 'ফিকহুস সুন্নাহ': { pdf: 'https://archive.org/download/DownloadFiqhUsSunnah/Download%20Fiqh%20us%20Sunnah.pdf' },
- 'বেহেশতি জেওর': { pdf: 'https://archive.org/download/BehestiZeware/Behesti%20Zeware.pdf' },
- 'ফাজায়েলে আমল': { pdfs: ['https://archive.org/download/offlinedeeniapp_202107/fazail%20Amal%201.pdf', 'https://archive.org/download/offlinedeeniapp_202107/Fazail%20Amal%202.pdf'] },
- 'আর-রাহিকুল মাখতুম (সীরাতে নববি)': { pdf: 'https://archive.org/download/ArRahikulMakhtumBangla/Ar%20Rahikul%20Makhtum_Bangla.pdf' },
- 'তাফসিরে মারফুল কুরআন': { pdfs: ['https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%201.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%202.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%203.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%204.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%205.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%206.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%207.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%208.pdf'] },
- 'তাফসিরে ইবনে কাসির': { pdfs: ['https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-01.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-02.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-03.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-04.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-05.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-06.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-07.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-08.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-09.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-10.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-11.pdf'] },
- 'হিসনুল মুসলিম': { pdf: 'https://archive.org/download/ShobdeShobdeHisnulMuslim/Shobde%20Shobde%20Hisnul%20Muslim.pdf' },
-};
-var KITAB_EXTRA = [
- { t:'সহিহ বুখারি', a:'ইমাম মুহাম্মদ ইবনে ইসমাইল আল-বুখারি (রহ.)', d:'সবচেয়ে নির্ভরযোগ্য হাদিসের কিতাব — ইমাম বুখারি (রহ.) ষোলো বছরে প্রায় ছয় লাখ হাদিস থেকে বাছাই করে সংকলন করেন।', pdf:'https://archive.org/download/MankindAtLoss_gmail/%E0%A6%B8%E0%A6%B9%E0%A7%80%E0%A6%B9%E0%A7%81%E0%A6%B2%20%E0%A6%AC%E0%A7%81%E0%A6%96%E0%A6%BE%E0%A6%B0%E0%A7%80-%E0%A6%B8%E0%A6%AC%20%E0%A6%96%E0%A6%A3%E0%A7%8D%E0%A6%A1%20%E0%A6%8F%E0%A6%95%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A7%87%20%28%E0%A6%A4%E0%A6%93%E0%A6%B9%E0%A7%80%E0%A6%A6%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B6%E0%A6%A8%E0%A7%80%29.pdf' },
- { t:'সহিহ মুসলিম', a:'ইমাম মুসলিম ইবনে হাজ্জাজ (রহ.)', d:'দ্বিতীয় সর্বাধিক নির্ভরযোগ্য হাদিস-সংকলন; বিষয়ভিত্তিক সুন্দর বিন্যাসের জন্য প্রসিদ্ধ।', pdfs:['https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-1.pdf', 'https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-2.pdf', 'https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-3.pdf', 'https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-4.pdf', 'https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-5.pdf', 'https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-6.pdf'] },
- { t:'সুনানে আবু দাউদ', a:'ইমাম আবু দাউদ (রহ.)', d:'ফিকহি মাসআলার হাদিসের প্রধান সংকলন — সিহাহ সিত্তার অন্যতম।', pdfs:['https://archive.org/download/hadith-books-bangla/sunan-abu-dawood-bangla-vol-1.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-abu-dawood-bangla-vol-2.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-abu-dawood-bangla-vol-3.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-abu-dawood-bangla-vol-4.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-abu-dawood-bangla-vol-5.pdf'] },
- { t:'সুনানে তিরমিযি', a:'ইমাম আবু ঈসা আত-তিরমিযি (রহ.)', d:'হাদিসের মান (সহিহ, হাসান, জয়িফ) উল্লেখসহ অনন্য সংকলন; শামায়েল অংশে রাসূলুল্লাহ ﷺ-এর আকৃতি ও স্বভাবের বর্ণনা।', pdfs:['https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-1.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-2.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-3.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-4.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-5.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-6.pdf'] },
- { t:'সুনানে নাসায়ি', a:'ইমাম আহমদ ইবনে শুআইব আন-নাসায়ি (রহ.)', d:'সনদের কঠোর যাচাইয়ের জন্য প্রসিদ্ধ হাদিস-সংকলন।', pdfs:['https://archive.org/download/hadith-books-bangla/sunan-nasai-bangla-vol-1.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-nasai-bangla-vol-2.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-nasai-bangla-vol-3.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-nasai-bangla-vol-4.pdf'] },
- { t:'সুনানে ইবনে মাজাহ', a:'ইমাম ইবনে মাজাহ (রহ.)', d:'সিহাহ সিত্তার ষষ্ঠ কিতাব — ফিতনা, যুহদ ও ব্যবসা-বাণিজ্যের অধ্যায়ে সমৃদ্ধ।', pdf:'https://archive.org/download/SunanIbnMajah-1/SunanIbnMajah-1.pdf' },
- { t:'মুয়াত্তা ইমাম মালিক', a:'ইমাম মালিক ইবনে আনাস (রহ.)', d:'সবচেয়ে প্রাচীন হাদিস ও ফিকহের কিতাবগুলোর একটি — মদিনার আমল ও ফতোয়ার দলিল।', pdfs:['https://archive.org/download/MuwattaImamMalikBanglaDownloadPart01/Muwatta%20Imam%20Malik%20Bangla%20Download%20%20%28Part%2001%29.pdf', 'https://archive.org/download/MuwattaImamMalikBanglaDownloadPart01/MuwattaImamMalikBanglaDownloadpart02.pdf'] },
- { t:'মিশকাতুল মাসাবিহ', a:'খতিব তিবরিযি (রহ.)', d:'বিষয়ভিত্তিক হাদিসের বিখ্যাত সংকলন — মাদরাসার পাঠ্যক্রমের অন্যতম প্রধান কিতাব।', pdfs:['https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-1%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-2%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-3%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-4%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-5%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-6%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-7%29.pdf'] },
- { t:'বুলুগুল মারাম', a:'হাফিজ ইবনে হাজার আসকালানি (রহ.)', d:'আহকামের হাদিসের সংক্ষিপ্ত ও প্রসিদ্ধ সংকলন।' },
- { t:'শামায়েলে তিরমিযি', a:'ইমাম তিরমিযি (রহ.)', d:'রাসূলুল্লাহ ﷺ-এর আকৃতি, পোশাক, খাদ্য, আচরণ ও দৈনন্দিন জীবনের মনোমুগ্ধকর বর্ণনা।', pdf:'https://archive.org/download/zubdah-tu-shamael-eng-moulana-mohammad/Zubdah%20tu%20Shamael%20eng%20Moulana%20Mohammad%20%28www.alqurantranslation.com%29.pdf' },
- { t:'আল-হিদায়া', a:'বুরহানুদ্দিন মারগিনানি (রহ.)', d:'হানাফি ফিকহের সবচেয়ে প্রসিদ্ধ ও নির্ভরযোগ্য কিতাব — দাওরায়ে হাদিসের আগের জামাতগুলোতে পঠিত।' },
- { t:'মুখতাসারুল কুদুরি', a:'ইমাম আবুল হুসাইন আল-কুদুরি (রহ.)', d:'হানাফি ফিকহের প্রাথমিক ও মৌলিক কিতাব — ইবাদত থেকে লেনদেন পর্যন্ত সব অধ্যায়।' },
- { t:'নুরুল ইজাহ', a:'হাসান ইবনে আম্মার আশ-শুরুনবুলালি (রহ.)', d:'ইবাদতের মাসআলার সহজ ও সংক্ষিপ্ত কিতাব — ফিকহ শেখার শুরুতে পঠিত।' },
- { t:'কানযুদ দাকায়েক', a:'হাফিজুদ্দিন আন-নাসাফি (রহ.)', d:'হানাফি ফিকহের সংক্ষিপ্ত মৌলিক মতন।' },
- { t:'শরহুল আকাইদ', a:'সাদুদ্দিন তাফতাযানি (রহ.)', d:'আকিদার প্রসিদ্ধ কিতাব — ইমাম নাসাফির আকাইদের ওপর তাফতাযানির ব্যাখ্যা।' },
- { t:'আকিদাতুত তাহাবিয়া', a:'ইমাম আবু জাফর আত-তাহাবি (রহ.)', d:'আহলে সুন্নাতের আকিদার মৌলিক ও সর্বাধিক গৃহীত গ্রন্থের বাংলা ব্যাখ্যা।', pdf:'https://archive.org/download/sharhul-aqidah-al-tahawiyyah-islamic-book-bangla-islamic-book/%E0%A6%B6%E0%A6%BE%E0%A6%B0%E0%A6%B9%E0%A7%81%E0%A6%B2%20%E0%A6%86%E0%A6%95%E0%A7%8D%E0%A6%AC%E0%A7%80%E0%A6%A6%E0%A6%BE%20%E0%A6%86%E0%A6%A4-%E0%A6%A4%E0%A7%8D%E0%A6%AC%E0%A6%B9%E0%A6%BE%E0%A6%AC%E0%A7%80%E0%A7%9F%E0%A6%BE%20%E0%A7%A7%E0%A6%AE%20%E0%A6%96%E0%A6%A3%E0%A7%8D%E0%A6%A1%2C%20sharhul%20aqidah%20al%20tahawiyyah%20%E0%A7%A7%2C%20islamic%20book%2C%20bangla%20islamic%20book%2C%20%E0%A6%87%E0%A6%B8%E0%A6%B2%E0%A6%BE%E0%A6%AE%E0%A7%80%20%E0%A6%AC%E0%A6%87%2C.pdf' },
- { t:'তাফসিরে জালালাইন', a:'জালালুদ্দিন মহল্লি ও জালালুদ্দিন সুয়ুতি (রহ.)', d:'দুই জালালুদ্দিনের রচিত সংক্ষিপ্ত ও প্রসিদ্ধ তাফসির — মাদরাসায় বহুল পঠিত।', pdfs:['https://archive.org/download/Tafsir-Jalalain-Bangla/Tafsir%20Jalalain%20Bangla%20%28Part-1%29.pdf', 'https://archive.org/download/Tafsir-Jalalain-Bangla/Tafsir%20Jalalain%20Bangla%20%28Part-2%29.pdf', 'https://archive.org/download/Tafsir-Jalalain-Bangla/Tafsir%20Jalalain%20Bangla%20%28Part-3%29.pdf', 'https://archive.org/download/Tafsir-Jalalain-Bangla/Tafsir%20Jalalain%20Bangla%20%28Part-4%29.pdf', 'https://archive.org/download/Tafsir-Jalalain-Bangla/Tafsir%20Jalalain%20Bangla%20%28Part-5%29.pdf', 'https://archive.org/download/Tafsir-Jalalain-Bangla/Tafsir%20Jalalain%20Bangla%20%28Part-6%29.pdf', 'https://archive.org/download/Tafsir-Jalalain-Bangla/Tafsir%20Jalalain%20Bangla%20%28Part-7%29.pdf'] },
- { t:'হেদায়েতুন নাহু', a:'সরফ-নাহুর প্রসিদ্ধ কিতাব', d:'আরবি ব্যাকরণ (নাহু) শেখার প্রসিদ্ধ কিতাব — বাংলা ব্যাখ্যাসহ।', pdf:'https://archive.org/download/HedayatunNahuBangla/Hedayatun%20Nahu%20Bangla.pdf' },
- { t:'কাফিয়া', a:'ইবনে হাজিব (রহ.)', d:'ইবনে হাজিবের নাহুর বিখ্যাত মতন — ব্যাকরণের গভীর অধ্যয়নের ভিত্তি।', pdf:'https://archive.org/download/msa-al-kafiya-ibn-al-hajib/Kafiya.pdf' },
- { t:'মিযানুস সরফ', a:'সরফের প্রাথমিক কিতাব', d:'আরবি সরফ (শব্দরূপ) শেখার প্রাথমিক কিতাব — প্রশ্নোত্তরে সাজানো।', pdf:'https://archive.org/download/proshnottore-mizanus-sorof-eleyas-salman/proshnottore-mizanus-sorof-eleyas-salman%20.pdf' },
- { t:'তালিমুল ইসলাম', a:'মুফতি কিফায়াতুল্লাহ (রহ.)', d:'ঈমান, ইবাদত ও আখলাকের প্রাথমিক শিক্ষার প্রসিদ্ধ বই — প্রশ্নোত্তর আকারে।', pdf:'https://archive.org/download/TalimulIslam/Talimul%20Islam.pdf' },
- { t:'ফাজায়েলে সাদাকাত', a:'মাওলানা মুহাম্মদ জাকারিয়া কান্ধলভি (রহ.)', d:'দান-সদকা ও যাকাতের ফজিলত-বিষয়ক হাদিসের সংকলন।' },
- { t:'হায়াতুস সাহাবা', a:'মাওলানা মুহাম্মদ ইউসুফ কান্ধলভি (রহ.)', d:'সাহাবায়ে কেরামের জীবন ও ত্যাগের বিশাল সংকলন — ঈমানি জীবন গড়ার অনন্য উপকরণ।', pdfs:['https://archive.org/download/HaytusSahaba0305part/1.HayatusSahabah1stPartWithInteractiveLinkWww.eelm.weebly.com.pdf', 'https://archive.org/download/HaytusSahaba0305part/HayatusSahabah02.pdf', 'https://archive.org/download/HaytusSahaba0305part/Hayatus%20Sahabah%2003.pdf', 'https://archive.org/download/HaytusSahaba0305part/HayatusSahabah04.pdf', 'https://archive.org/download/HaytusSahaba0305part/Hayatus%20Sahabah%2005.pdf'] },
- { t:'মুনতাখাব হাদিস', a:'মাওলানা মুহাম্মদ ইউসুফ কান্ধলভি (রহ.)', d:'ঈমান, নামাজ, ইলম, যিকির, ইকরাম ও দাওয়াত — ছয় গুণের ওপর বাছাইকৃত হাদিসের সংকলন।', pdf:'https://archive.org/download/azharmea-www.eelm.weebly.com-skype-id-azharmea/Muntakhab%20Hadith.pdf' },
- { t:'কাসাসুন নাবিয়্যিন', a:'সাইয়েদ আবুল হাসান আলী নদভি (রহ.)', d:'নবীদের কাহিনি দিয়ে আরবি শেখার বিশ্ববিখ্যাত বই — শিশু ও শিক্ষার্থীদের জন্য।' },
- { t:'উসুলুশ শাশি', a:'নিযামুদ্দিন আশ-শাশি (রহ.)', d:'উসুলে ফিকহের প্রাথমিক ও প্রসিদ্ধ কিতাব।' },
- { t:'নুরুল আনওয়ার', a:'মোল্লা জীবন (রহ.)', d:'উসুলে ফিকহের গভীর অধ্যয়নের প্রসিদ্ধ কিতাব — মোল্লা জীবনের রচনা।' },
- { t:'শরহে বেকায়া', a:'ওবায়দুল্লাহ ইবনে মাসউদ (রহ.)', d:'হানাফি ফিকহের বিকায়া মতনের ব্যাখ্যাগ্রন্থ।' },
- { t:'ফিকহুল আকবার', a:'ইমাম আবু হানিফা (রহ.)', d:'ইমাম আবু হানিফা (রহ.)-এর প্রতি আরোপিত আকিদার মৌলিক রচনা।' },
- { t:'রওজাতুল আদব', a:'আরবি সাহিত্যের কিতাব', d:'আরবি সাহিত্য (আদব) শেখার প্রসিদ্ধ কিতাব — ব্যাখ্যাসহ।', pdf:'https://archive.org/download/Misbahilibrary_gmail_20180902/%D8%B1%D9%88%D8%B6%DB%83%20%D8%A7%D9%84%D8%A7%D8%AF%D8%A8%20%D8%A7%D9%88%D9%84%20%D8%B4%D8%B1%D8%AD%20%D9%81%DB%8C%D8%B6%20%D8%A7%D9%84%D8%A7%D8%AF%D8%A8%20%D8%A7%D9%88%D9%84.pdf' },
- { t:'সীরাতে খাতামুল আম্বিয়া', a:'মুফতি মুহাম্মদ শাফি (রহ.)', d:'মুফতি মুহাম্মদ শাফি (রহ.)-এর রচিত সংক্ষিপ্ত ও নির্ভরযোগ্য সীরাতগ্রন্থ।' },
- { t:'মাবাদিউল আরাবিয়া', a:'রশিদ আশ-শারতুনি', d:'আরবি ভাষা ও ব্যাকরণ শেখার ধারাবাহিক পাঠ্যবই।' },
- { t:'ইলমুস সরফ', a:'সরফের কিতাব', d:'সরফের বিস্তারিত কিতাব — শব্দরূপ ও ধাতু বিশ্লেষণ।', pdf:'https://archive.org/download/ilm_us_sarf_aakherain_al_bushra/ILM_US_SARF_AAKHERAIN_AL_BUSHRA.pdf' },
- { t:'তাইসিরুল মান্তিক', a:'যুক্তিবিদ্যার প্রাথমিক কিতাব', d:'যুক্তিবিদ্যা (মান্তিক) শেখার সহজ প্রাথমিক কিতাব।' },
- { t:'দেওয়ানে মুতানাব্বি', a:'আবুত তাইয়েব আল-মুতানাব্বি', d:'আরবি সাহিত্যের শ্রেষ্ঠ কবি মুতানাব্বির কাব্যসংকলন — আদবের পাঠ্যক্রমে পঠিত।', pdf:'https://archive.org/download/510241252-the-diwan-of-abu-tayyib-ahmad-ibn-al-husain-ibn-al-hasan-al-kindi-al-j/510241252-The-diwan-of-Abu-Tayyib-Ahmad-ibn-al-Husain-ibn-al-Hasan-al-Kindi-al-Ju-fi-al-Mutanabbi-translated-with-comments-by-Arthur-Wormhoudt.pdf' },
- { t:'মুখতারাত', a:'আরবি আদবের সংকলন', d:'আরবি গদ্য-সাহিত্যের বাছাইকৃত পাঠের সংকলন (মুখতারাত মিন আদাবিল আরব)।', pdf:'https://archive.org/download/mukhtarat_min_adab_il_arab_nashriat_e_islam/MUKHTARAT_MIN_ADAB_IL_ARAB_NASHRIAT_E_ISLAM.pdf' },
- { t:'সহিহ হাদিসে কুদসি', a:'হাদিসে কুদসির সংকলন', d:'হাদিসে কুদসির বাংলা সংকলন — যেসব হাদিসে আল্লাহ নিজে বাণী দিয়েছেন।', pdf:'https://archive.org/download/0968-pdf-islam-translation-bengali-language-sahih-hadise-qudsi/0968%20pdf%20%20islam%20translation%20bengali%20language%20%20%20%20%20sahih_hadise_qudsi.pdf' },
- { t:'চল্লিশ হাদিস (আরবাইন)', a:'ইমাম নববি (রহ.)', d:'ইমাম নববি (রহ.)-এর বিখ্যাত চল্লিশ হাদিসের সংকলন।' },
- { t:'তাফসিরে উসমানি', a:'আল্লামা শাব্বির আহমদ উসমানি (রহ.)', d:'আল্লামা শাব্বির আহমদ উসমানি (রহ.)-এর তাফসির — শায়খুল হিন্দের অনুবাদের টীকা।' },
- { t:'ফতোয়ায়ে আলমগিরি', a:'বাদশাহ আওরঙ্গজেবের নির্দেশে সংকলিত', d:'হানাফি ফিকহের বিশাল ফতোয়া-সংকলন (ফতোয়ায়ে হিন্দিয়া)।' },
-];
-var KITAB_ALL = KITAB.concat(KITAB_EXTRA);
-function kitabLinks(k){
-  var src = k.pdfs ? { pdfs: k.pdfs } : (k.pdf ? { pdf: k.pdf } : (KITAB_PDF[k.t] || null));
-  if (!src) return '';
-  var h = '<p style="margin:10px 0 0; display:flex; flex-wrap:wrap; gap:8px">';
-  if (src.pdfs) src.pdfs.forEach(function(u, i){ h += '<a class="btn" href="' + u + '" target="_blank" rel="noopener">📖 পিডিএফ — খণ্ড ' + bn(i + 1) + '</a>'; });
-  else h += '<a class="btn" href="' + src.pdf + '" target="_blank" rel="noopener">📖 পিডিএফ পড়ুন / ডাউনলোড</a>';
-  return h + '</p>';
-}
-function renderKitab(){
-  var q = (($('kitabSearch') || {}).value || '').trim();
-  var list = KITAB_ALL.filter(function(k){ return !q || (k.t + ' ' + k.a).indexOf(q) > -1; });
-  $('kitabList').innerHTML = list.length ? list.map(function(k){
-    return '<article class="hcard"><span class="cat">ইসলামিক বই</span><h3>' + k.t + '</h3><p style="color:var(--gold); font-weight:600; margin:0 0 6px">' + k.a + '</p><p style="margin:0">' + k.d + '</p>' + kitabLinks(k) + '</article>';
-  }).join('') : '<p class="loadmsg">কিছু পাওয়া যায়নি।</p>';
-}
-$('kitabSearch').addEventListener('input', renderKitab);
-renderKitab();
-
-/* ---------- Articles ---------- */
-var ARTICLES = [
- { t:'তাওহিদ: ঈমানের ভিত্তি', b:'তাওহিদ অর্থ আল্লাহকে তাঁর সত্তা, গুণাবলি, কাজ ও ইবাদতে এক ও অদ্বিতীয় মানা। সব নবী-রাসূলের দাওয়াতের মূল কথাই ছিল এটি: "তোমরা আল্লাহর ইবাদত করো, তিনি ছাড়া তোমাদের কোনো ইলাহ নেই।" (সূরা আল-আরাফ: ৫৯)\nতাওহিদ শুধু মুখের স্বীকৃতি নয় — ইবাদতের প্রতিটি কাজ (নামাজ, রোজা, দোয়া, কুরবানি, মানত) শুধু আল্লাহর জন্য নির্দিষ্ট করা এবং সাহায্য ও ভরসা একমাত্র তাঁর ওপর রাখাই এর প্রাণ। যে অন্তরে তাওহিদ প্রতিষ্ঠিত, সে অন্তরে সৃষ্টির ভয় ও লোভ জায়গা পায় না।' },
- { t:'নামাজ: মুমিনের মিরাজ', b:'পাঁচ ওয়াক্ত নামাজ ইসলামের দ্বিতীয় স্তম্ভ এবং মিরাজের রাতে উম্মতকে দেওয়া আল্লাহর বিশেষ উপহার। আল্লাহ বলেন, "নিশ্চয় নামাজ অশ্লীল ও মন্দ কাজ থেকে বিরত রাখে।" (সূরা আল-আনকাবুত: ৪৫)\nনামাজ শুধু একটি আচার নয় — এটি দিনে পাঁচবার আল্লাহর সামনে দাঁড়িয়ে নিজের হিসাব নেওয়ার সুযোগ। যে নামাজ খুশু-খুযুসহ আদায় করা হয়, তা মানুষের চরিত্র বদলে দেয়: সময়নিষ্ঠা, পবিত্রতা, ধৈর্য ও বিনয় — সব গুণই নামাজ থেকে জন্ম নেয়। তাই হাদিসে এসেছে, কিয়ামতের দিন সর্বপ্রথম নামাজের হিসাব নেওয়া হবে। (সুনানে তিরমিযি: ৪১৩)' },
- { t:'পিতামাতার হক ও খেদমত', b:'আল্লাহ তাঁর নিজের ইবাদতের নির্দেশের ঠিক পরেই পিতামাতার প্রতি সদ্ব্যবহারের নির্দেশ দিয়েছেন (সূরা আল-ইসরা: ২৩) — এ থেকেই বোঝা যায় এই হকের মর্যাদা কত উচ্চ। এমনকি তাঁদের কোনো কথায় "উফ" শব্দটুকুও বলতে নিষেধ করা হয়েছে।\nরাসূলুল্লাহ ﷺ বলেছেন, "পিতা-মাতার সন্তুষ্টিতেই আল্লাহর সন্তুষ্টি, আর তাঁদের অসন্তুষ্টিতে আল্লাহর অসন্তুষ্টি।" (সুনানে তিরমিযি: ১৮৯৯) বৃদ্ধ বয়সে তাঁদের খেদমত জান্নাত লাভের সবচেয়ে সহজ পথগুলোর একটি — যে পিতামাতা উভয়কে বা একজনকে বৃদ্ধ অবস্থায় পেয়েও জান্নাত অর্জন করতে পারল না, তার জন্য হাদিসে দুঃখ প্রকাশ করা হয়েছে। (সহিহ মুসলিম: ২৫৫১)' },
- { t:'সদকা: যে দানে সম্পদ বাড়ে', b:'সদকা শুধু টাকা দেওয়া নয় — প্রতিটি ভালো কাজই সদকা: মুখের হাসি, পথ থেকে কষ্টদায়ক জিনিস সরানো, ভালো কথা বলা — সবই সদকার অন্তর্ভুক্ত। (সহিহ মুসলিম: ১০০৯) আল্লাহ প্রতিশ্রুতি দিয়েছেন, সদকার বিনিময়ে তিনি বহুগুণ বাড়িয়ে দেবেন (সূরা আল-বাকারা: ২৬১)।\nরাসূলুল্লাহ ﷺ বলেছেন, "সদকা করলে সম্পদ কমে না।" (সহিহ মুসলিম: ২৫৮৮) গোপনে দান করা সর্বোত্তম, কারণ তা রিয়া থেকে মুক্ত; আর নিয়মিত ছোট দান আল্লাহর কাছে প্রিয় — "আল্লাহর কাছে সবচেয়ে প্রিয় আমল হলো যা নিয়মিত করা হয়, যদিও তা কম হয়।" (সহিহ বুখারি: ৬৪৬৪)' },
- { t:'রমজান: আত্মশুদ্ধির প্রশিক্ষণের মাস', b:'রমজান কেবল না-খেয়ে থাকার মাস নয় — এটি তাকওয়া অর্জনের প্রশিক্ষণকাল। আল্লাহ বলেন, "তোমাদের ওপর রোজা ফরজ করা হয়েছে, যেমন ফরজ করা হয়েছিল তোমাদের পূর্ববর্তীদের ওপর — যাতে তোমরা তাকওয়া অর্জন করতে পারো।" (সূরা আল-বাকারা: ১৮৩)\nএই মাসে কুরআন নাজিল হয়েছে, এই মাসেই লাইলাতুল কদর — হাজার মাসের চেয়ে উত্তম এক রাত। রোজাদারের জন্য জান্নাতে রয়েছে বিশেষ দরজা "রাইয়ান" (সহিহ বুখারি: ১৮৯৬)। রমজা
+    return items;
+  }
+  var done = false, permAsked = false;
+  function schedule(){
+    if (done || !enabled()) return;
+    var items = buildItems();
+    if (!items) return;
+    done = true;
+    if (!permAsked){
+      permAsked = true;
+      try { if (!localStorage.getItem('di_notif_perm_asked')){ localStorage.setItem('di_notif_perm_asked', '1'); native('requestPermission', {}).catch(function(){}); } } catch(e){}
+    }
+    native('schedule', { items: items }).catch(function(){ done = false; });
+  }
+  function syncBtn(){
+    var b = document.getElementById('dailyNotifBtn');
+    if (!b) return;
+    var on = enabled();
+    b.textContent = 'নোটিফিকেশন: ' + (on ? 'অন' : 'অফ');
+    b.className = on ? 'btn gold' : 'btn ghost';
+  }
+  var btn = document.getElementById('dailyNotifBtn');
+  if (btn) btn.addEventListener('click', function(){
+    var on = !enabled();
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch(e){}
+    syncBtn();
+    if (on){
+      native('requestPermission', {}).catch(function(){}).then(function(){ done = false; schedule(); });
+      toast('প্রতিদিনের আয়াত ও হাদিসের নোটিফিকেশন অন');
+    } else {
+      native('cancelAll', {}).catch(function(){});
+      toast('নোটিফিকেশন অফ করা হয়েছে');
+    }
+  });
+  syncBtn();
+  schedule();
+  var tries = 0;
+  var iv = setInterval(function(){
+    tries++;
+    if (done || tries > 40){ clearInterval(iv); return; }
+    schedule();
+  }, 1500);
+})();
+</script>
+</body>
+</html>

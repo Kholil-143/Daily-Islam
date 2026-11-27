@@ -1,332 +1,377 @@
-puCnh+CmsOCmleCnhyDgpqTgpr7gpqbgp4fgprAg4KaV4KeD4Kak4KaV4Kaw4KeN4KauIOCmpuCnh+CmluCmvuCmqOCnh+CmviDgprngp5/gpaQiXSxbItmB2Y7ZhdmO2YYg2YrZjti52ZLZhdmO2YTZkiDZhdmQ2KvZktmC2Y7Yp9mE2Y4g2LDZjtix2ZHZjtip2Y0g2K7ZjtmK2ZLYsdmL263YpyDZitmO2LHZjtmH2Y/bpSIsIuCmheCmpOCmg+CmquCmsCDgppXgp4fgpokg4KaF4Kaj4KeBIOCmquCmsOCmv+CmruCmvuCmoyDgprjgp47gppXgprDgp43gpq4g4KaV4Kaw4Kay4KeHIOCmpOCmviDgpqbgp4fgppbgpqTgp4cg4Kaq4Ka+4Kas4KeHIl0sWyLZiNmO2YXZjtmGINmK2Y7YudmS2YXZjtmE2ZIg2YXZkNir2ZLZgtmO2KfZhNmOINiw2Y7YsdmR2Y7YqdmN26Ig2LTZjtix2ZHZi9ut2Kcg2YrZjtix2Y7Zh9mP26UiLCLgpo/gpqzgpoIg4KaV4KeH4KaJIOCmheCmo+CngSDgpqrgprDgpr/gpq7gpr7gpqMg4KaF4Ka44KeO4KaV4Kaw4KeN4KauIOCmleCmsOCmsuCnhyDgpqTgpr7gppMg4Kam4KeH4KaW4Kak4KeHIOCmquCmvuCmrOCnh+ClpCJdXX0seyJuIjoxMDAsImFyIjoi2KfZhNi52Y7Yp9iv2ZDZitmO2KfYqtmQIiwiZW4iOiJBbC1BYWRpeWFhdCIsInJldiI6Ik1ha2tpIiwiY250IjoxMSwianV6IjpbWzAsMzBdXSwiYSI6W1si2KjZkNiz2ZLZhdmQINmx2YTZhNmR2Y7Zh9mQINmx2YTYsdmR2Y7YrdmS2YXZjtmw2YbZkCDZsdmE2LHZkdmO2K3ZkNmK2YXZkCDZiNmO2bHZhNmS2LnZjtmw2K/ZkNmK2Y7ZsNiq2ZAg2LbZjtio2ZLYrdmL263YpyIsIuCmtuCmquCmpSDgpongprDgp43gpqfgp43gpqzgprbgp43gpqzgpr7gprjgp4cg4Kaa4Kay4Kau4Ka+4KaoIOCmheCmtuCnjeCmrOCmuOCmruCnguCmueCnh+CmsCwiXSxbItmB2Y7ZsdmE2ZLZhdmP2YjYsdmQ2YrZjtmw2KrZkCDZgtmO2K/Zktit2YvbrdinIiwi4KaF4Kak4KaD4Kaq4KawIOCmleCnjeCmt+CngeCmsOCmvuCmmOCmvuCmpOCnhyDgpoXgppfgp43gpqjgpr/gpqzgpr/gpprgp43gppvgp4HgprDgppUg4KaF4Ka24KeN4Kas4Ka44Kau4KeC4Ka54KeH4KawIl0sWyLZgdmO2bHZhNmS2YXZj9i62ZDZitix2Y7ZsNiq2ZAg2LXZj9io2ZLYrdmL263YpyIsIuCmheCmpOCmg+CmquCmsCDgpqrgp43gprDgpq3gpr7gpqTgppXgpr7gprLgp4cg4KaG4KaV4KeN4Kaw4Kau4Kaj4KaV4Ka+4Kaw4KeAIOCmheCmtuCnjeCmrOCmuOCmruCnguCmueCnh+CmsCJdLFsi2YHZjtij2Y7Yq9mO2LHZktmG2Y4g2KjZkNmH2ZDbpiDZhtmO2YLZkti52YvbrdinIiwi4KaTIOCmr+CmvuCmsOCmviDgprjgp4cg4Ka44Kau4Kef4KeHIOCmp+CngeCmsuCmvyDgpongp47gppXgp43gprfgpr/gpqrgp43gpqQg4KaV4Kaw4KeHIl0sWyLZgdmO2YjZjtiz2Y7Yt9mS2YbZjiDYqNmQ2YfZkNumINis2Y7ZhdmS2LnZi9inIiwi4KaF4Kak4KaD4Kaq4KawIOCmr+CmvuCmsOCmviDgprbgppXgp43gprDgpqbgprLgp4fgprAg4KaF4Kat4KeN4Kav4Kao4KeN4Kak4Kaw4KeHIOCmouCngeCmleCnhyDgpqrgp5zgp4ctIl0sWyLYpdmQ2YbZkdmOINmx2YTZktil2ZDZhtiz2Y7ZsNmG2Y4g2YTZkNix2Y7YqNmR2ZDZh9mQ26Yg2YTZjtmD2Y7ZhtmP2YjYr9mM260iLCLgpqjgpr/gprbgp43gpprgp58g4Kau4Ka+4Kao4KeB4Ka3IOCmpOCmvuCmsCDgpqrgpr7gprLgpqjgppXgprDgp43gpqTgpr7gprAg4Kaq4KeN4Kaw4Kak4Ka/IOCmheCmleCng+CmpOCmnOCnjeCmnuClpCJdLFsi2YjZjtil2ZDZhtmR2Y7Zh9mP26Ug2LnZjtmE2Y7ZidmwINiw2Y7ZsNmE2ZDZg9mOINmE2Y7YtNmO2YfZkNmK2K/ZjNutIiwi4KaP4Kas4KaCIOCmuOCnhyDgpoXgpqzgprbgp43gpq8g4KaPIOCmrOCmv+Cmt+Cnn+CnhyDgpoXgpqzgprngpr/gpqQiXSxbItmI2Y7YpdmQ2YbZkdmO2YfZj9ulINmE2ZDYrdmP2KjZkdmQINmx2YTZktiu2Y7ZitmS2LHZkCDZhNmO2LTZjtiv2ZDZitiv2YwiLCLgpo/gpqzgpoIg4Ka44KeHIOCmqOCmv+CmtuCnjeCmmuCmv+CmpOCmhyDgpqfgpqgt4Ka44Kau4KeN4Kaq4Kam4KeH4KawIOCmreCmvuCmsuCmrOCmvuCmuOCmvuCnnyDgpq7gpqTgp43gpqTgpaQiXSxbItueINij2Y7ZgdmO2YTZjtinINmK2Y7YudmS2YTZjtmF2Y8g2KXZkNiw2Y7YpyDYqNmP2LnZktir2ZDYsdmOINmF2Y7YpyDZgdmQ2Ykg2bHZhNmS2YLZj9io2Y/ZiNix2ZAiLCLgprjgp4cg4KaV4Ka/IOCmnOCmvuCmqOCnhyDgpqjgpr4sIOCmr+CmluCmqCDgppXgpqzgprDgp4cg4Kav4Ka+IOCmhuCmm+Cnhywg4Kak4Ka+IOCmieCmpOCnjeCmpeCmv+CmpCDgprngpqzgp4ciXSxbItmI2Y7YrdmP2LXZkdmQ2YTZjiDZhdmO2Kcg2YHZkNmJINmx2YTYtdmR2Y/Yr9mP2YjYsdmQIiwi4KaP4Kas4KaCIOCmheCmqOCnjeCmpOCmsOCnhyDgpq/gpr4g4KaG4Kab4KeHLCDgpqTgpr4g4KaF4Kaw4KeN4Kac4KaoIOCmleCmsOCmviDgprngpqzgp4c/Il0sWyLYpdmQ2YbZkdmOINix2Y7YqNmR2Y7Zh9mP2YUg2KjZkNmH2ZDZhdmSINmK2Y7ZiNmS2YXZjtim2ZDYsNmN26Ig2YTZkdmO2K7Zjtio2ZDZitix2YzboiIsIuCmuOCnh+CmpuCmv+CmqCDgpqTgpr7gpqbgp4fgprAg4KaV4Ka/IOCmueCmrOCnhywg4Ka44KeHIOCmuOCmruCnjeCmquCmsOCnjeCmleCnhyDgpqTgpr7gpqbgp4fgprAg4Kaq4Ka+4Kay4Kao4KaV4Kaw4KeN4Kak4Ka+IOCmuOCmrOCmv+CmtuCnh+CmtyDgppzgp43gpp7gpr7gpqTgpaQiXV19LHsibiI6MTAxLCJhciI6Itin2YTZgtmO2KfYsdmQ2LnZjtip2ZAiLCJlbiI6IkFsLVFhYXJpJ2EiLCJyZXYiOiJNYWtraSIsImNudCI6MTEsImp1eiI6W1swLDMwXV0sImEiOltbItio2ZDYs9mS2YXZkCDZsdmE2YTZkdmO2YfZkCDZsdmE2LHZkdmO2K3ZktmF2Y7ZsNmG2ZAg2bHZhNix2ZHZjtit2ZDZitmF2ZAg2bHZhNmS2YLZjtin2LHZkNi52Y7YqdmPIiwi4KaV4Kaw4Ka+4KaY4Ka+4Kak4KaV4Ka+4Kaw4KeALCJdLFsi2YXZjtinINmx2YTZktmC2Y7Yp9ix2ZDYudmO2KnZjyIsIuCmleCmsOCmvuCmmOCmvuCmpOCmleCmvuCmsOCngCDgppXgpr8/Il0sWyLZiNmO2YXZjtin2ZMg2KPZjtiv2ZLYsdmO2YnZsNmD2Y4g2YXZjtinINmx2YTZktmC2Y7Yp9ix2ZDYudmO2KnZjyIsIuCmleCmsOCmvuCmmOCmvuCmpOCmleCmvuCmsOCngCDgprjgpq7gp43gpqrgprDgp43gppXgp4cg4KaG4Kaq4Kao4Ka/IOCmleCmvyDgppzgpr7gpqjgp4fgpqggPyJdLFsi2YrZjtmI2ZLZhdmOINmK2Y7Zg9mP2YjZhtmPINmx2YTZhtmR2Y7Yp9iz2Y8g2YPZjtmx2YTZktmB2Y7YsdmO2KfYtNmQINmx2YTZktmF2Y7YqNmS2KvZj9mI2KvZkCIsIuCmr+Cnh+CmpuCmv+CmqCDgpq7gpr7gpqjgp4Hgprcg4Ka54Kas4KeHIOCmrOCmv+CmleCnjeCmt+Cmv+CmquCnjeCmpCDgpqrgpqTgpoLgppfgp4fgprAg4Kau4KakIl0sWyLZiNmO2KrZjtmD2Y/ZiNmG2Y8g2bHZhNmS2KzZkNio2Y7Yp9mE2Y8g2YPZjtmx2YTZkti52ZDZh9mS2YbZkCDZsdmE2ZLZhdmO2YbZgdmP2YjYtNmQIiwi4KaP4Kas4KaCIOCmquCmsOCnjeCmrOCmpOCmruCmvuCmsuCmviDgprngpqzgp4cg4Kan4KeB4Kao4Ka/4KakIOCmsOCmmeCnjeCml+CngOCmqCDgpqrgprbgpq7gp4fgprAg4Kau4Kak4KWkIl0sWyLZgdmO2KPZjtmF2ZHZjtinINmF2Y7ZhiDYq9mO2YLZj9mE2Y7YqtmSINmF2Y7ZiNmO2bDYstmQ2YrZhtmP2YfZj9ulIiwi4KaF4Kak4KaP4KasIOCmr+CmvuCmsCDgpqrgpr7gprLgp43gprLgpr4g4Kat4Ka+4Kaw4KeAIOCmueCmrOCnhywiXSxbItmB2Y7Zh9mP2YjZjiDZgdmQ2Ykg2LnZkNmK2LTZjtip2Y3boiDYsdmR2Y7Yp9i22ZDZitmO2KnZjduiIiwi4Ka44KeHIOCmuOCngeCmluCngOCmnOCngOCmrOCmqCDgpq/gpr7gpqrgpqgg4KaV4Kaw4Kas4KeH4KWkIl0sWyLZiNmO2KPZjtmF2ZHZjtinINmF2Y7ZhtmSINiu2Y7ZgdmR2Y7YqtmSINmF2Y7ZiNmO2bDYstmQ2YrZhtmP2YfZj9ulIiwi4KaG4KawIOCmr+CmvuCmsCDgpqrgpr7gprLgp43gprLgpr4g4Ka54Ka+4Kay4KaV4Ka+IOCmueCmrOCnhywiXSxbItmB2Y7Yo9mP2YXZkdmP2YfZj9ulINmH2Y7Yp9mI2ZDZitmO2KnZjNutIiwi4Kak4Ka+4KawIOCmoOCmv+CmleCmvuCmqOCmviDgprngpqzgp4cg4Ka54Ka+4Kas4Ka/4Kef4Ka+4KWkIl0sWyLZiNmO2YXZjtin2ZMg2KPZjtiv2ZLYsdmO2YnZsNmD2Y4g2YXZjtinINmH2ZDZitmO2YfZkiIsIuCmhuCmquCmqOCmvyDgppzgpr7gpqjgp4fgpqgg4Kak4Ka+IOCmleCmvz8iXSxbItmG2Y7Yp9ix2Ywg2K3Zjtin2YXZkNmK2Y7YqdmM26IiLCLgpqrgp43gprDgppzgp43gppzgp43gpqzgprLgpr/gpqQg4KaF4KaX4KeN4Kao4Ka/ISJdXX0seyJuIjoxMDIsImFyIjoi2KfZhNiq2ZHZjtmD2Y7Yp9ir2Y/YsdmQIiwiZW4iOiJBdC1UYWthYXRodXIiLCJyZXYiOiJNYWtraSIsImNudCI6OCwianV6IjpbWzAsMzBdXSwiYSI6W1si2KjZkNiz2ZLZhdmQINmx2YTZhNmR2Y7Zh9mQINmx2YTYsdmR2Y7YrdmS2YXZjtmw2YbZkCDZsdmE2LHZkdmO2K3ZkNmK2YXZkCDYo9mO2YTZktmH2Y7Zidmw2YPZj9mF2Y8g2bHZhNiq2ZHZjtmD2Y7Yp9ir2Y/YsdmPIiwi4Kaq4KeN4Kaw4Ka+4Kaa4KeB4Kaw4KeN4Kav4KeH4KawIOCmsuCmvuCmsuCmuOCmviDgpqTgp4fgpr7gpq7gpr7gpqbgp4fgprDgppXgp4cg4KaX4Ka+4Kar4KeH4KayIOCmsOCmvuCmluCnhywiXSxbItit2Y7YqtmR2Y7ZidmwINiy2Y/YsdmS2KrZj9mF2Y8g2bHZhNmS2YXZjtmC2Y7Yp9io2ZDYsdmOIiwi4KaP4Kau4Kao4KaV4Ka/LCDgpqTgp4fgpr7gpq7gprDgpr4g4KaV4Kas4Kaw4Ka44KeN4Kal4Ka+4Kao4KeHIOCmquCnjOCmm+CnhyDgpq/gpr7gppPgpaQiXSxbItmD2Y7ZhNmR2Y7YpyDYs9mO2YjZktmB2Y4g2KrZjti52ZLZhNmO2YXZj9mI2YbZjiIsIuCmj+Cmn+CmviDgppXgppbgpqjgppMg4KaJ4Kaa4Ka/4KakIOCmqOCnn+ClpCDgpqTgp4fgpr7gpq7gprDgpr4g4Ka44Kak4KeN4Kak4KeN4Kas4Kaw4KaHIOCmnOCnh+CmqOCnhyDgpqjgp4fgpqzgp4fgpaQiXSxbItir2Y/ZhdmR2Y4g2YPZjtmE2ZHZjtinINiz2Y7ZiNmS2YHZjiDYqtmO2LnZktmE2Y7ZhdmP2YjZhtmOIiwi4KaF4Kak4KaD4Kaq4KawIOCmj+Cmn+CmviDgppXgppbgpqjgppMg4KaJ4Kaa4Ka/4KakIOCmqOCnn+ClpCDgpqTgp4fgpr7gpq7gprDgpr4g4Ka44Kak4KeN4Kak4KeN4Kas4Kaw4KaHIOCmnOCnh+CmqOCnhyDgpqjgp4fgpqzgp4fgpaQiXSxbItmD2Y7ZhNmR2Y7YpyDZhNmO2YjZkiDYqtmO2LnZktmE2Y7ZhdmP2YjZhtmOINi52ZDZhNmS2YXZjiDZsdmE2ZLZitmO2YLZkNmK2YbZkCIsIuCmleCmluCmqOCmhyDgpqjgp587IOCmr+CmpuCmvyDgpqTgp4fgpr7gpq7gprDgpr4g4Kao4Ka/4Ka24KeN4Kaa4Ka/4KakIOCmnOCmvuCmqOCmpOCnh+ClpCJdLFsi2YTZjtiq2Y7YsdmO2YjZj9mG2ZHZjiDZsdmE2ZLYrNmO2K3ZkNmK2YXZjiIsIuCmpOCnh+CmvuCmruCmsOCmviDgpoXgpqzgprbgp43gpq/gpocg4Kac4Ka+4Ka54Ka+4Kao4KeN4Kao4Ka+4KauIOCmpuCnh+CmluCmrOCnhywiXSxbItir2Y/ZhdmR2Y4g2YTZjtiq2Y7YsdmO2YjZj9mG2ZHZjtmH2Y7YpyDYudmO2YrZktmG2Y4g2bHZhNmS2YrZjtmC2ZDZitmG2ZAiLCLgpoXgpqTgpoPgpqrgprAg4Kak4KeH4Ka+4Kau4Kaw4Ka+IOCmpOCmviDgpoXgpqzgprbgp43gpq/gpocg4Kam4KeH4KaW4Kas4KeHIOCmpuCmv+CmrOCnjeCmryDgpqrgp43gprDgpqTgp43gpq/gp5/gp4csIl0sWyLYq9mP2YXZkdmOINmE2Y7YqtmP2LPZktmA2ZTZjtmE2Y/ZhtmR2Y4g2YrZjtmI2ZLZhdmO2KbZkNiw2Y0g2LnZjtmG2ZAg2bHZhNmG2ZHZjti52ZDZitmF2ZAiLCLgpo/gprDgpqrgprAg4KaF4Kas4Ka24KeN4Kav4KaHIOCmuOCnh+CmpuCmv+CmqCDgpqTgp4fgpr7gpq7gprDgpr4g4Kao4KeH4Kef4Ka+4Kau4KakIOCmuOCmruCnjeCmquCmsOCnjeCmleCnhyDgppzgpr/gppzgp43gpp7gpr7gprjgpr/gpqQg4Ka54Kas4KeH4KWkIl1dfSx7Im4iOjEwMywiYXIiOiLYp9mE2LnZjti126HYsdmQIiwiZW4iOiJBbC1Bc3IiLCJyZXYiOiJNYWtraSIsImNudCI6MywianV6IjpbWzAsMzBdXSwiYSI6W1si2KjZkNiz2ZLZhdmQINmx2YTZhNmR2Y7Zh9mQINmx2YTYsdmR2Y7YrdmS2YXZjtmw2YbZkCDZsdmE2LHZkdmO2K3ZkNmK2YXZkCDZiNmO2bHZhNmS2LnZjti12ZLYsdmQIiwi4KaV4Ka44KauIOCmr+CngeCml+Cnh+CmsCAo4Ka44Kau4Kef4KeH4KawKSwiXSxbItil2ZDZhtmR2Y4g2bHZhNmS2KXZkNmG2LPZjtmw2YbZjiDZhNmO2YHZkNmJINiu2Y/Ys9mS2LHZjSIsIuCmqOCmv+CmtuCnjeCmmuCnnyDgpq7gpr7gpqjgp4Hgprcg4KaV4KeN4Ka34Kak4Ka/4KaX4KeN4Kaw4Ka44KeN4KakOyJdLFsi2KXZkNmE2ZHZjtinINmx2YTZkdmO2LDZkNmK2YbZjiDYodmO2KfZhdmO2YbZj9mI2KfbnyDZiNmO2LnZjtmF2ZDZhNmP2YjYp9ufINmx2YTYtdmR2Y7ZsNmE2ZDYrdmO2bDYqtmQINmI2Y7YqtmO2YjZjtin2LXZjtmI2ZLYp9ufINio2ZDZsdmE2ZLYrdmO2YLZkdmQINmI2Y7YqtmO2YjZjtin2LXZjtmI2ZLYp9ufINio2ZDZsdmE2LXZkdmO2KjZktix2ZAiLCLgppXgpr/gpqjgp43gpqTgp4Eg4Kak4Ka+4Kaw4Ka+IOCmqOCnnywg4Kav4Ka+4Kaw4Ka+IOCmrOCmv+CmtuCnjeCmrOCmvuCmuCDgprjgp43gpqXgpr7gpqrgpqgg4KaV4Kaw4KeHIOCmkyDgprjgp47gppXgprDgp43gpq4g4KaV4Kaw4KeHIOCmj+CmrOCmgiDgpqrgprDgprjgp43gpqrgprDgppXgp4cg4Kak4Ka+4KaV4KeA4KamIOCmleCmsOCnhyDgprjgpqTgp43gpq/gp4fgprAg4KaP4Kas4KaCIOCmpOCmvuCmleCngOCmpiDgppXgprDgp4cg4Ka44Kas4Kaw4KeH4Kaw4KWkIl1dfSx7Im4iOjEwNCwiYXIiOiLYp9mE2YfZj9mF2Y7YstmO2KnZkCIsImVuIjoiQWwtSHVtYXphIiwicmV2IjoiTWFra2kiLCJjbnQiOjksImp1eiI6W1swLDMwXV0sImEiOltbItio2ZDYs9mS2YXZkCDZsdmE2YTZkdmO2YfZkCDZsdmE2LHZkdmO2K3ZktmF2Y7ZsNmG2ZAg2bHZhNix2ZHZjtit2ZDZitmF2ZAg2YjZjtmK2ZLZhNmM260g2YTZkdmQ2YPZj9mE2ZHZkCDZh9mP2YXZjtiy2Y7YqdmN26Ig2YTZkdmP2YXZjtiy2Y7YqdmNIiwi4Kaq4KeN4Kaw4Kak4KeN4Kav4KeH4KaVIOCmquCmtuCnjeCmmuCmvuCmpOCnhyDgppMg4Ka44Kau4KeN4Kau4KeB4KaW4KeHIOCmquCmsOCmqOCmv+CmqOCnjeCmpuCmvuCmleCmvuCmsOCngOCmsCDgpqbgp4HgprDgp43gpq3gp4fgpr7gppcsIl0sWyLZsdmE2ZHZjtiw2ZDZiSDYrNmO2YXZjti52Y4g2YXZjtin2YTZi9ut2Kcg2YjZjti52Y7Yr9mR2Y7Yr9mO2YfZj9ulIiwi4Kav4KeHIOCmheCmsOCnjeCmpSDgprjgpp7gp43gpprgpr/gpqQg4KaV4Kaw4KeHIOCmkyDgppfgpqPgpqjgpr4g4KaV4Kaw4KeHIl0sWyLZitmO2K3Zktiz2Y7YqNmPINij2Y7ZhtmR2Y4g2YXZjtin2YTZjtmH2Y/bpdmTINij2Y7YrtmS2YTZjtiv2Y7Zh9mP26UiLCLgprjgp4cg4Kau4Kao4KeHIOCmleCmsOCnhyDgpq/gp4csIOCmpOCmvuCmsCDgpoXgprDgp43gpqUg4Kaa4Ka/4Kaw4KaV4Ka+4KayIOCmpOCmvuCmsCDgprjgpr7gpqXgp4cg4Kal4Ka+4KaV4Kas4KeHISJdLFsi2YPZjtmE2ZHZjtinINuWINmE2Y7ZitmP2Ybbotio2Y7YsNmO2YbZkdmOINmB2ZDZiSDZsdmE2ZLYrdmP2LfZjtmF2Y7YqdmQIiwi4KaV4KaW4Kao4KaTIOCmqOCmviwg4Ka44KeHIOCmheCmrOCmtuCnjeCmr+CmhyDgpqjgpr/gppXgp43gprfgpr/gpqrgp43gpqQg4Ka54Kas4KeHIOCmquCmv+Cmt+CnjeCmn+CmleCmvuCmsOCngOCmsCDgpq7gpqfgp43gpq/gp4fgpaQiXSxbItmI2Y7ZhdmO2KfZkyDYo9mO2K/Zktix2Y7Zidmw2YPZjiDZhdmO2Kcg2bHZhNmS2K3Zj9i32Y7ZhdmO2KnZjyIsIuCmhuCmquCmqOCmvyDgppXgpr8g4Kac4Ka+4Kao4KeH4KaoLCDgpqrgpr/gprfgp43gpp/gppXgpr7gprDgp4Ag4KaV4Ka/PyJdLFsi2YbZjtin2LHZjyDZsdmE2YTZkdmO2YfZkCDZsdmE2ZLZhdmP2YjZgtmO2K/Zjtip2Y8iLCLgpo/gpp/gpr4g4KaG4Kay4KeN4Kay4Ka+4Ka54KawIOCmquCnjeCmsOCmnOCnjeCmnOCnjeCmrOCmsuCmv+CmpCDgpoXgppfgp43gpqjgpr8sIl0sWyLZsdmE2ZHZjtiq2ZDZiSDYqtmO2LfZkdmO2YTZkNi52Y8g2LnZjtmE2Y7ZiSDZsdmE2ZLYo9mO2YHZktmA2ZTZkNiv2Y7YqdmQIiwi4Kav4Ka+IOCmueCng+CmpuCnnyDgpqrgprDgp43gpq/gpqjgp43gpqQg4Kaq4KeM4Kab4Kas4KeH4KWkIl0sWyLYpdmQ2YbZkdmO2YfZjtinINi52Y7ZhNmO2YrZktmH2ZDZhSDZhdmR2Y/YpNmS2LXZjtiv2Y7YqdmM260iLCLgpo/gpqTgp4cg4Kak4Ka+4Kam4KeH4Kaw4KaV4KeHIOCmrOCnh+CmgeCmp+CnhyDgpqbgp4fgp5/gpr4g4Ka54Kas4KeHLCJdLFsi2YHZkNmJINi52Y7ZhdmO2K/ZjduiINmF2ZHZj9mF2Y7Yr9mR2Y7Yr9mO2KnZjdutIiwi4Kay4Kau4KeN4Kas4Ka+IOCmsuCmruCnjeCmrOCmviDgppbgp4HgpoHgpp/gpr/gpqTgp4fgpaQiXV19LHsibiI6MTA1LCJhciI6Itin2YTZgdmQ2YrZhNmQIiwiZW4iOiJBbC1GaWwiLCJyZXYiOiJNYWtraSIsImNudCI6NSwianV6IjpbWzAsMzBdXSwiYSI6W1si2KjZkNiz2ZLZhdmQINmx2YTZhNmR2Y7Zh9mQINmx2YTYsdmR2Y7YrdmS2YXZjtmw2YbZkCDZsdmE2LHZkdmO2K3ZkNmK2YXZkCDYo9mO2YTZjtmF2ZIg2KrZjtix2Y4g2YPZjtmK2ZLZgdmOINmB2Y7YudmO2YTZjiDYsdmO2KjZkdmP2YPZjiDYqNmQ2KPZjti12ZLYrdmO2bDYqNmQINmx2YTZktmB2ZDZitmE2ZAiLCLgpobgpqrgpqjgpr8g4KaV4Ka/IOCmpuCnh+CmluCnh+CmqOCmqOCmvyDgpobgpqrgpqjgpr7gprAg4Kaq4Ka+4Kay4Kao4KaV4Kaw4KeN4Kak4Ka+IOCmueCmuOCnjeCmpOCngOCmrOCmvuCmueCmv+CmqOCngOCmsCDgprjgpr7gpqXgp4cg4KaV4Ka/4Kaw4KeC4KaqIOCmrOCnjeCmr+CmrOCmueCmvuCmsCDgppXgprDgp4fgppvgp4fgpqg/Il0sWyLYo9mO2YTZjtmF2ZIg2YrZjtis2ZLYudmO2YTZkiDZg9mO2YrZktiv2Y7Zh9mP2YXZkiDZgdmQ2Ykg2KrZjti22ZLZhNmQ2YrZhNmN26IiLCLgpqTgpr/gpqjgpr8g4KaV4Ka/IOCmpOCmvuCmpuCnh+CmsCDgpprgppXgp43gprDgpr7gpqjgp43gpqQg4Kao4Ka44KeN4Kav4Ka+4KeOIOCmleCmsOCnhyDgpqbgp4fgpqjgpqjgpr8/Il0sWyLZiNmO2KPZjtix2ZLYs9mO2YTZjiDYudmO2YTZjtmK2ZLZh9mQ2YXZkiDYt9mO2YrZktix2YvYpyDYo9mO2KjZjtin2KjZkNmK2YTZjiIsIuCmpOCmv+CmqOCmvyDgpqTgpr7gpqbgp4fgprAg4KaJ4Kaq4KawIOCmquCnjeCmsOCnh+CmsOCmoyDgppXgprDgp4fgppvgp4fgpqgg4Kad4Ka+4KaB4KaV4KeHIOCmneCmvuCmgeCmleCnhyDgpqrgpr7gppbgp4AsIl0sWyLYqtmO2LHZktmF2ZDZitmH2ZDZhSDYqNmQ2K3ZkNis2Y7Yp9ix2Y7YqdmN26Ig2YXZkdmQ2YYg2LPZkNis2ZHZkNmK2YTZjduiIiwi4Kav4Ka+4Kaw4Ka+IOCmpOCmvuCmpuCnh+CmsCDgpongpqrgprAg4Kaq4Ka+4Kal4Kaw4KeH4KawIOCmleCmguCmleCmsCDgpqjgpr/gppXgp43gprfgp4fgpqog4KaV4Kaw4Kab4Ka/4Kay4KWkIl0sWyLZgdmO2KzZjti52Y7ZhNmO2YfZj9mF2ZIg2YPZjti52Y7YtdmS2YHZjduiINmF2ZHZjtij2ZLZg9mP2YjZhNmN260iLCLgpoXgpqTgpoPgpqrgprAg4Kak4Ka/4Kao4Ka/IOCmpOCmvuCmpuCnh+CmsOCmleCnhyDgpq3gppXgp43gprfgpr/gpqQg4Kak4KeD4Kaj4Ka44Kam4KeD4Ka2IOCmleCmsOCnhyDgpqbgp4fgpqjgpaQiXV19LHsibiI6MTA2LCJhciI6ItmC2Y/YsdmO2Yrbodi02Y0iLCJlbiI6IlF1cmFpc2giLCJyZXYiOiJNYWtraSIsImNudCI6NCwianV6IjpbWzAsMzBdXSwiYSI6W1si2KjZkNiz2ZLZhdmQINmx2YTZhNmR2Y7Zh9mQINmx2YTYsdmR2Y7YrdmS2YXZjtmw2YbZkCDZsdmE2LHZkdmO2K3ZkNmK2YXZkCDZhNmQ2KXZkNmK2YTZjtmw2YHZkCDZgtmP2LHZjtmK2ZLYtNmNIiwi4KaV4KeH4Ka+4Kaw4Ka+4KaH4Ka24KeH4KawIOCmhuCmuOCmleCnjeCmpOCmv+CmsCDgppXgpr7gprDgpqPgp4csIl0sWyLYpdmQ26bZhNmO2bDZgdmQ2YfZkNmF2ZIg2LHZkNit2ZLZhNmO2KnZjiDZsdmE2LTZkdmQ2KrZjtin2ZPYodmQINmI2Y7ZsdmE2LXZkdmO2YrZktmB2ZAiLCLgpobgprjgppXgp43gpqTgpr/gprAg4KaV4Ka+4Kaw4Kaj4KeHIOCmpOCmvuCmpuCnh+CmsCDgprbgp4DgpqQg4KaTIOCml+CnjeCmsOCngOCmt+CnjeCmruCmleCmvuCmsuCngOCmqCDgprjgpqvgprDgp4fgprDgpaQiXSxbItmB2Y7ZhNmS2YrZjti52ZLYqNmP2K/Zj9mI2KfbnyDYsdmO2KjZkdmOINmH2Y7ZsNiw2Y7YpyDZsdmE2ZLYqNmO2YrZktiq2ZAiLCLgpoXgpqTgpo/gpqwg4Kak4Ka+4Kaw4Ka+IOCmr+Cnh+CmqCDgpo/gpqzgpr7gpqbgpqQg4KaV4Kaw4KeHIOCmj+CmhyDgppjgprDgp4fgprAg4Kaq4Ka+4Kay4Kao4KaV4Kaw4KeN4Kak4Ka+4KawIl0sWyLZsdmE2ZHZjtiw2ZDZidmTINij2Y7Yt9mS2LnZjtmF2Y7Zh9mP2YUg2YXZkdmQ2YYg2KzZj9mI2LnZjduiINmI2Y7YodmO2KfZhdmO2YbZjtmH2Y/ZhSDZhdmR2ZDZhtmSINiu2Y7ZiNmS2YHZjdutIiwi4Kav4Ka/4Kao4Ka/IOCmpOCmvuCmpuCnh+CmsOCmleCnhyDgppXgp43gprfgp4Hgpqfgpr7gp58g4KaG4Ka54Ka+4KawIOCmpuCmv+Cnn+Cnh+Cmm+Cnh+CmqCDgpo/gpqzgpoIg4Kav4KeB4Kam4KeN4Kan4Kat4KeA4Kak4Ka/IOCmpeCnh+CmleCnhyDgpqTgpr7gpqbgp4fgprDgppXgp4cg4Kao4Ka/4Kaw4Ka+4Kaq4KamIOCmleCmsOCnh+Cmm+Cnh+CmqOClpCJdXX0seyJuIjoxMDcsImFyIjoi2KfZhNmF2Y7Yp9i52Y/ZiNmG2ZAiLCJlbiI6IkFsLU1hYSd1biIsInJldiI6Ik1ha2tpIiwiY250Ijo3LCJqdXoiOltbMCwzMF1dLCJhIjpbWyLYqNmQ2LPZktmF2ZAg2bHZhNmE2ZHZjtmH2ZAg2bHZhNix2ZHZjtit2ZLZhdmO2bDZhtmQINmx2YTYsdmR2Y7YrdmQ2YrZhdmQINij2Y7YsdmO2KHZjtmK2ZLYqtmOINmx2YTZkdmO2LDZkNmJINmK2Y/Zg9mO2LDZkdmQ2KjZjyDYqNmQ2bHZhNiv2ZHZkNmK2YbZkCIsIuCmhuCmquCmqOCmvyDgppXgpr8g4Kam4KeH4KaW4KeH4Kab4KeH4KaoIOCmpOCmvuCmleCnhywg4Kav4KeHIOCmrOCmv+CmmuCmvuCmsOCmpuCmv+CmrOCmuOCmleCnhyDgpq7gpr/gpqXgp43gpq/gpr4g4Kas4Kay4KeHPyJdLFsi2YHZjtiw2Y7ZsNmE2ZDZg9mOINmx2YTZkdmO2LDZkNmJINmK2Y7Yr9mP2LnZkdmPINmx2YTZktmK2Y7YqtmQ2YrZhdmOIiwi4Ka44KeHIOCmuOCnh+CmhyDgpqzgp43gpq/gppXgp43gpqTgpr8sIOCmr+CnhyDgpo/gpqTgp4Dgpq7gppXgp4cg4KaX4Kay4Ka+IOCmp+CmvuCmleCnjeCmleCmviDgpqbgp4fgp58iXSxbItmI2Y7ZhNmO2Kcg2YrZjtit2Y/YttmR2Y8g2LnZjtmE2Y7ZidmwINi32Y7YudmO2KfZhdmQINmx2YTZktmF2ZDYs9mS2YPZkNmK2YbZkCIsIuCmj+CmrOCmgiDgpq7gpr/gprjgppXgp4DgpqjgppXgp4cg4KaF4Kao4KeN4KaoIOCmpuCmv+CmpOCnhyDgpongp47gprjgpr7gprngpr/gpqQg4KaV4Kaw4KeHIOCmqOCmvuClpCJdLFsi2YHZjtmI2Y7ZitmS2YTZjNutINmE2ZHZkNmE2ZLZhdmP2LXZjtmE2ZHZkNmK2YbZjiIsIuCmheCmpOCmj+CmrCDgpqbgp4HgprDgp43gpq3gp4fgpr7gppcg4Ka44KeH4Ka44KasIOCmqOCmvuCmruCmvuCmr+CngOCmsCwiXSxbItmx2YTZkdmO2LDZkNmK2YbZjiDZh9mP2YXZkiDYudmO2YYg2LXZjtmE2Y7Yp9iq2ZDZh9mQ2YXZkiDYs9mO2KfZh9mP2YjZhtmOIiwi4Kav4Ka+4Kaw4Ka+IOCmpOCmvuCmpuCnh+CmsCDgpqjgpr7gpq7gpr7gpq8g4Ka44Kau4KeN4Kas4Kao4KeN4Kan4KeHIOCmrOCnhy3gppbgpqzgprA7Il0sWyLZsdmE2ZHZjtiw2ZDZitmG2Y4g2YfZj9mF2ZIg2YrZj9ix2Y7Yp9mT2KHZj9mI2YbZjiIsIuCmr+CmvuCmsOCmviDgpqTgpr4g4Kay4KeH4Ka+4KaVLeCmpuCnh+CmluCmvuCmqOCnh+CmvuCmsCDgppzgpqjgp43gpq8g4KaV4Kaw4KeHIl0sWyLZiNmO2YrZjtmF2ZLZhtmO2LnZj9mI2YbZjiDZsdmE2ZLZhdmO2KfYudmP2YjZhtmOIiwi4KaP4Kas4KaCIOCmqOCmv+CmpOCnjeCmryDgpqzgp43gpq/gpqzgprngpr7gprDgp43gpq/gp43gpq8g4Kas4Ka44KeN4Kak4KeBIOCmheCmqOCnjeCmr+CmleCnhyDgpqbgp4fgp58g4Kao4Ka+4KWkIl1dfSx7Im4iOjEwOCwiYXIiOiLYp9mE2YPZjtmI26HYq9mO2LHZkCIsImVuIjoiQWwtS2F3dGhhciIsInJldiI6Ik1ha2tpIiwiY250IjozLCJqdXoiOltbMCwzMF1dLCJhIjpbWyLYqNmQ2LPZktmF2ZAg2bHZhNmE2ZHZjtmH2ZAg2bHZhNix2ZHZjtit2ZLZhdmO2bDZhtmQINmx2YTYsdmR2Y7YrdmQ2YrZhdmQINil2ZDZhtmR2Y7Yp9mTINij2Y7YudmS2LfZjtmK2ZLZhtmO2bDZg9mOINmx2YTZktmD2Y7ZiNmS2KvZjtix2Y4iLCLgpqjgpr/gprbgp43gpprgp58g4KaG4Kau4Ka/IOCmhuCmquCmqOCmvuCmleCnhyDgppXgpr7gppPgprjgpr7gprAg4Kam4Ka+4KaoIOCmleCmsOCnh+Cmm+Cmv+ClpCJdLFsi2YHZjti12Y7ZhNmR2ZAg2YTZkNix2Y7YqNmR2ZDZg9mOINmI2Y7ZsdmG2ZLYrdmO2LHZkiIsIuCmheCmpOCmj+CmrCDgpobgpqrgpqjgpr7gprAg4Kaq4Ka+4Kay4Kao4KaV4Kaw4KeN4Kak4Ka+4KawIOCmieCmpuCnjeCmpuCnh+CmtuCnjeCmr+CnhyDgpqjgpr7gpq7gpr7gpq8g4Kaq4Kec4KeB4KaoIOCmj+CmrOCmgiDgppXgp4fgpr7gprDgpqzgpr7gpqjgp4Ag4KaV4Kaw4KeB4Kao4KWkIl0sWyLYpdmQ2YbZkdmOINi02Y7Yp9mG2ZDYptmO2YPZjiDZh9mP2YjZjiDZsdmE2ZLYo9mO2KjZktiq2Y7YsdmPIiwi4Kav4KeHIOCmhuCmquCmqOCmvuCmsCDgprbgpqTgp43gprDgp4EsIOCmuOCnh+CmhyDgpqTgp4fgpr4g4Kay4KeH4Kac4KaV4Ka+4Kaf4Ka+LCDgpqjgpr/gprDgp43gpqzgpoLgprbgpaQiXV19LHsibiI6MTA5LCJhciI6Itin2YTZg9mO2KfZgdmQ2LHZj9mI2YbZjiIsImVuIjoiQWwtS2FhZmlyb29uIiwicmV2IjoiTWFra2kiLCJjbnQiOjYsImp1eiI6W1swLDMwXV0sImEiOltbItio2ZDYs9mS2YXZkCDZsdmE2YTZkdmO2YfZkCDZsdmE2LHZkdmO2K3ZktmF2Y7ZsNmG2ZAg2bHZhNix2ZHZjtit2ZDZitmF2ZAg2YLZj9mE2ZIg2YrZjtmw2ZPYo9mO2YrZkdmP2YfZjtinINmx2YTZktmD2Y7ZsNmB2ZDYsdmP2YjZhtmOIiwi4Kas4Kay4KeB4KaoLCDgprngp4cg4KaV4Ka+4Kar4KeH4Kaw4KaV4KeC4KayLCJdLFsi2YTZjtin2ZMg2KPZjti52ZLYqNmP2K/ZjyDZhdmO2Kcg2KrZjti52ZLYqNmP2K/Zj9mI2YbZjiIsIuCmhuCmruCmvyDgpo/gpqzgpr7gpqbgpqQg4KaV4Kaw4Ka/4Kao4Ka+LCDgpqTgp4fgpr7gpq7gprDgpr4g4Kav4Ka+4KawIOCmj+CmrOCmvuCmpuCmpCDgppXgprDgpaQiXSxbItmI2Y7ZhNmO2KfZkyDYo9mO2YbYqtmP2YXZkiDYudmO2bDYqNmQ2K/Zj9mI2YbZjiDZhdmO2KfZkyDYo9mO2LnZktio2Y/Yr9mPIiwi4KaP4Kas4KaCIOCmpOCnh+CmvuCmruCmsOCmvuCmkyDgpo/gpqzgpr7gpqbgpqTgppXgpr7gprDgp4Ag4Kao4KaTLCDgpq/gpr7gprAg4KaP4Kas4Ka+4Kam4KakIOCmhuCmruCmvyDgppXgprDgpr8iXSxbItmI2Y7ZhNmO2KfZkyDYo9mO2YbZjtin26Ag2LnZjtin2KjZkNiv2YzbrSDZhdmR2Y7YpyDYudmO2KjZjtiv2KrZkdmP2YXZkiIsIuCmj+CmrOCmgiDgpobgpq7gpr8g4KaP4Kas4Ka+4Kam4Kak4KaV4Ka+4Kaw4KeAIOCmqOCmhywg4Kav4Ka+4KawIOCmj+CmrOCmvuCmpuCmpCDgpqTgp4fgpr7gpq7gprDgpr4g4KaV4Kaw4KWkIl0sWyLZiNmO2YTZjtin2ZMg2KPZjtmG2KrZj9mF2ZIg2LnZjtmw2KjZkNiv2Y/ZiNmG2Y4g2YXZjtin2ZMg2KPZjti52ZLYqNmP2K/ZjyIsIuCmpOCnh+CmvuCmruCmsOCmviDgpo/gpqzgpr7gpqbgpqTgppXgpr7gprDgp4Ag4Kao4KaTLCDgpq/gpr7gprAg4KaP4Kas4Ka+4Kam4KakIOCmhuCmruCmvyDgppXgprDgpr/gpaQiXSxbItmE2Y7Zg9mP2YXZkiDYr9mQ2YrZhtmP2YPZj9mF2ZIg2YjZjtmE2ZDZidmOINiv2ZDZitmG2ZAiLCLgpqTgp4fgpr7gpq7gpr7gpqbgp4fgprAg4KaV4Kaw4KeN4KauIOCmkyDgppXgprDgp43gpq7gpqvgprIg4Kak4KeH4Ka+4Kau4Ka+4Kam4KeH4KawIOCmnOCmqOCnjeCmr+CnhyDgpo/gpqzgpoIg4KaG4Kau4Ka+4KawIOCmleCmsOCnjeCmriDgppMg4KaV4Kaw4KeN4Kau4Kar4KayIOCmhuCmruCmvuCmsCDgppzgpqjgp43gpq/gp4fgpaQiXV19LHsibiI6MTEwLCJhciI6Itin2YTZhtmR2Y7Ytduh2LHZkCIsImVuIjoiQW4tTmFzciIsInJldiI6Ik1hZGFuaSIsImNudCI6MywianV6IjpbWzAsMzBdXSwiYSI6W1si2KjZkNiz2ZLZhdmQINmx2YTZhNmR2Y7Zh9mQINmx2YTYsdmR2Y7YrdmS2YXZjtmw2YbZkCDZsdmE2LHZkdmO2K3ZkNmK2YXZkCDYpdmQ2LDZjtinINis2Y7Yp9mT2KHZjiDZhtmO2LXZktix2Y8g2bHZhNmE2ZHZjtmH2ZAg2YjZjtmx2YTZktmB2Y7YqtmS2K3ZjyIsIuCmr+CmluCmqCDgpobgprjgpqzgp4cg4KaG4Kay4KeN4Kay4Ka+4Ka54KawIOCmuOCmvuCmueCmvuCmr+CnjeCmryDgppMg4Kas4Ka/4Kac4KefIl0sWyLZiNmO2LHZjtij2Y7ZitmS2KrZjiDZsdmE2YbZkdmO2KfYs9mOINmK2Y7Yr9mS2K7Zj9mE2Y/ZiNmG2Y4g2YHZkNmJINiv2ZDZitmG2ZAg2bHZhNmE2ZHZjtmH2ZAg2KPZjtmB2ZLZiNmO2KfYrNmL263YpyIsIuCmj+CmrOCmgiDgpobgpqrgpqjgpr8g4Kau4Ka+4Kao4KeB4Ka34KaV4KeHIOCmpuCmsuCnhyDgpqbgprLgp4cg4KaG4Kay4KeN4Kay4Ka+4Ka54KawIOCmpuCnjeCmrOCngOCmqOCnhyDgpqrgp43gprDgpqzgp4fgprYg4KaV4Kaw4Kak4KeHIOCmpuCnh+CmluCmrOCnh+CmqCwiXSxbItmB2Y7Ys9mO2KjZkdmQ2K3ZkiDYqNmQ2K3ZjtmF2ZLYr9mQINix2Y7YqNmR2ZDZg9mOINmI2Y7Zsdiz2ZLYqtmO2LrZktmB2ZDYsdmS2YfZjyDbmiDYpdmQ2YbZkdmO2YfZj9ulINmD2Y7Yp9mG2Y4g2KrZjtmI2ZHZjtin2KjZi9ui2KciLCLgpqTgppbgpqgg4KaG4Kaq4Kao4Ka/IOCmhuCmquCmqOCmvuCmsCDgpqrgpr7gprLgpqjgppXgprDgp43gpqTgpr7gprAg4Kaq4Kas4Ka/4Kak4KeN4Kaw4Kak4Ka+IOCmrOCmsOCnjeCmo+CmqOCmviDgppXgprDgp4Hgpqgg4KaP4Kas4KaCIOCmpOCmvuCmgeCmsCDgppXgpr7gppvgp4cg4KaV4KeN4Ka34Kau4Ka+IOCmquCnjeCmsOCmvuCmsOCnjeCmpeCmqOCmviDgppXgprDgp4HgpqjgpaQg4Kao4Ka/4Ka24KeN4Kaa4KefIOCmpOCmv+CmqOCmvyDgppXgp43gprfgpq7gpr7gppXgpr7gprDgp4DgpaQiXV19LHsibiI6MTExLCJhciI6Itin2YTZhdmO2LPZjtiv2ZAiLCJlbiI6IkFsLU1hc2FkIiwicmV2IjoiTWFra2kiLCJjbnQiOjUsImp1eiI6W1swLDMwXV0sImEiOltbItio2ZDYs9mS2YXZkCDZsdmE2YTZkdmO2YfZkCDZsdmE2LHZkdmO2K3ZktmF2Y7ZsNmG2ZAg2bHZhNix2ZHZjtit2ZDZitmF2ZAg2KrZjtio2ZHZjtiq2ZIg2YrZjtiv2Y7Yp9mTINij2Y7YqNmQ2Ykg2YTZjtmH2Y7YqNmN26Ig2YjZjtiq2Y7YqNmR2Y4iLCLgpobgpqzgp4Eg4Kay4Ka+4Ka54Ka+4Kas4KeH4KawIOCmueCmuOCnjeCmpOCmpuCnjeCmrOCnnyDgpqfgp43gpqzgpoLgprgg4Ka54KeH4Ka+4KaVIOCmj+CmrOCmgiDgpqfgp43gpqzgpoLgprgg4Ka54KeH4Ka+4KaVIOCmuOCnhyDgpqjgpr/gppzgp4csIl0sWyLZhdmO2KfZkyDYo9mO2LrZktmG2Y7ZidmwINi52Y7ZhtmS2YfZjyDZhdmO2KfZhNmP2YfZj9ulINmI2Y7ZhdmO2Kcg2YPZjtiz2Y7YqNmOIiwi4KaV4KeH4Ka+4KaoIOCmleCmvuCmnOCnhyDgpobgprjgp4fgpqjgpr8g4Kak4Ka+4KawIOCmp+CmqC3gprjgpq7gp43gpqrgpqYg4KaTIOCmr+CmviDgprjgp4cg4KaJ4Kaq4Ka+4Kaw4KeN4Kac4KaoIOCmleCmsOCnh+Cmm+Cnh+ClpCJdLFsi2LPZjtmK2Y7YtdmS2YTZjtmJ2bAg2YbZjtin2LHZi9ut2Kcg2LDZjtin2KrZjiDZhNmO2YfZjtio2Y3boiIsIuCmuOCmpOCnjeCmrOCmsOCmhyDgprjgp4cg4Kaq4KeN4Kaw4Kas4KeH4Ka2IOCmleCmsOCmrOCnhyDgprLgp4fgprLgpr/gprngpr7gpqgg4KaF4KaX4KeN4Kao4Ka/4Kak4KeHIl0sWyLZiNmO2bHZhdmS2LHZjtij2Y7YqtmP2YfZj9ulINit2Y7ZhdmR2Y7Yp9mE2Y7YqdmOINmx2YTZktit2Y7Yt9mO2KjZkCIsIuCmj+CmrOCmgiDgpqTgpr7gprAg4Ka44KeN4Kak4KeN4Kaw4KeA4KaTLeCmr+CnhyDgpofgpqjgp43gpqfgpqgg4Kas4Ka54KaoIOCmleCmsOCnhywiXSxbItmB2ZDZiSDYrNmQ2YrYr9mQ2YfZjtinINit2Y7YqNmS2YTZjNutINmF2ZHZkNmGINmF2ZHZjtiz2Y7Yr9mN260iLCLgpqTgpr7gprAg4KaX4Kay4Kam4KeH4Ka24KeHIOCmluCmsOCnjeCmnOCngeCmsOCnh+CmsCDgprDgprbgpr8g4Kao4Ka/4Kef4KeH4KWkIl1dfSx7Im4iOjExMiwiYXIiOiLYp9mE2KXZkNiu26HZhNmO2KfYtdmQIiwiZW4iOiJBbC1Ja2hsYWFzIiwicmV2IjoiTWFra2kiLCJjbnQiOjQsImp1eiI6W1swLDMwXV0sImEiOltbItio2ZDYs9mS2YXZkCDZsdmE2YTZkdmO2YfZkCDZsdmE2LHZkdmO2K3ZktmF2Y7ZsNmG2ZAg2bHZhNix2ZHZjtit2ZDZitmF2ZAg2YLZj9mE2ZIg2YfZj9mI2Y4g2bHZhNmE2ZHZjtmH2Y8g2KPZjtit2Y7Yr9mMIiwi4Kas4Kay4KeB4KaoLCDgpqTgpr/gpqjgpr8g4KaG4Kay4KeN4Kay4Ka+4Ka5LCDgpo/gppUsIl0sWyLZsdmE2YTZkdmO2YfZjyDZsdmE2LXZkdmO2YXZjtiv2Y8iLCLgpobgprLgp43gprLgpr7gprkg4KaF4Kau4KeB4KaW4Ka+4Kaq4KeH4KaV4KeN4Ka34KeALCJdLFsi2YTZjtmF2ZIg2YrZjtmE2ZDYr9mSINmI2Y7ZhNmO2YXZkiDZitmP2YjZhNmO2K/ZkiIsIuCmpOCmv+CmqOCmvyDgppXgpr7gpongppXgp4cg4Kac4Kao4KeN4KauIOCmpuCnh+CmqOCmqOCmvyDgpo/gpqzgpoIg4KaV4KeH4KaJIOCmpOCmvuCmleCnhyDgppzgpqjgp43gpq4g4Kam4KeH4Kef4Kao4Ka/Il0sWyLZiNmO2YTZjtmF2ZIg2YrZjtmD2Y/ZhiDZhNmR2Y7Zh9mP26Ug2YPZj9mB2Y/ZiNmL2Kcg2KPZjtit2Y7Yr9mM26IiLCLgpo/gpqzgpoIg4Kak4Ka+4KawIOCmuOCmruCmpOCngeCmsuCnjeCmryDgppXgp4fgpokg4Kao4KeH4KaH4KWkIl1dfSx7Im4iOjExMywiYXIiOiLYp9mE2YHZjtmE2Y7ZgtmQIiwiZW4iOiJBbC1GYWxhcSIsInJldiI6Ik1ha2tpIiwiY250Ijo1LCJqdXoiOltbMCwzMF1dLCJhIjpbWyLYqNmQ2LPZktmF2ZAg2bHZhNmE2ZHZjtmH2ZAg2bHZhNix2ZHZjtit2ZLZhdmO2bDZhtmQINmx2YTYsdmR2Y7YrdmQ2YrZhdmQINmC2Y/ZhNmSINij2Y7YudmP2YjYsNmPINio2ZDYsdmO2KjZkdmQINmx2YTZktmB2Y7ZhNmO2YLZkCIsIuCmrOCmsuCngeCmqCwg4KaG4Kau4Ka/IOCmhuCmtuCnjeCmsOCnnyDgppfgp43gprDgprngpqMg4KaV4Kaw4Kab4Ka/IOCmquCnjeCmsOCmreCmvuCmpOCnh+CmsCDgpqrgpr7gprLgpqjgppXgprDgp43gpqTgpr7gprAsIl0sWyLZhdmQ2YYg2LTZjtix2ZHZkCDZhdmO2Kcg2K7ZjtmE2Y7ZgtmOIiwi4Kak4Ka/4Kao4Ka/IOCmr+CmviDgprjgp4Pgprfgp43gpp/gpr8g4KaV4Kaw4KeH4Kab4KeH4KaoLCDgpqTgpr7gprAg4KaF4Kao4Ka/4Ka34KeN4KafIOCmpeCnh+CmleCnhywiXSxbItmI2Y7ZhdmQ2YYg2LTZjtix2ZHZkCDYutmO2KfYs9mQ2YLZjSDYpdmQ2LDZjtinINmI2Y7ZgtmO2KjZjiIsIuCmheCmqOCnjeCmp+CmleCmvuCmsCDgprDgpr7gpqTgp43gprDgpr/gprAg4KaF4Kao4Ka/4Ka34KeN4KafIOCmpeCnh+CmleCnhywg4Kav4KaW4KaoIOCmpOCmviDgprjgpq7gpr7gppfgpqQg4Ka54KefLCJdLFsi2YjZjtmF2ZDZhiDYtNmO2LHZkdmQINmx2YTZhtmR2Y7ZgdmR2Y7ZsNir2Y7ZsNiq2ZAg2YHZkNmJINmx2YTZkti52Y/ZgtmO2K/ZkCIsIuCml+CnjeCmsOCmqOCnjeCmpeCmv+CmpOCnhyDgpqvgp4HgpoHgp47gppXgpr7gprAg4Kam4Ka/4Kef4KeHIOCmnOCmvuCmpuCngeCmleCmvuCmsOCmv+CmqOCngOCmpuCnh+CmsCDgpoXgpqjgpr/gprfgp43gpp8g4Kal4KeH4KaV4KeHIl0sWyLZiNmO2YXZkNmGINi02Y7YsdmR2ZAg2K3Zjtin2LPZkNiv2Y0g2KXZkNiw2Y7YpyDYrdmO2LPZjtiv2Y4iLCLgpo/gpqzgpoIg4Ka54Ka/4KaC4Ka44KeB4KaV4KeH4KawIOCmheCmqOCmv+Cmt+CnjeCmnyDgpqXgp4fgppXgp4cg4Kav4KaW4KaoIOCmuOCnhyDgprngpr/gpoLgprjgpr4g4KaV4Kaw4KeH4KWkIl1dfSx7Im4iOjExNCwiYXIiOiLYp9mE2YbZkdmO2KfYs9mQIiwiZW4iOiJBbi1OYWFzIiwicmV2IjoiTWFra2kiLCJjbnQiOjYsImp1eiI6W1swLDMwXV0sImEiOltbItio2ZDYs9mS2YXZkCDZsdmE2YTZkdmO2YfZkCDZsdmE2LHZkdmO2K3ZktmF2Y7ZsNmG2ZAg2bHZhNix2ZHZjtit2ZDZitmF2ZAg2YLZj9mE2ZIg2KPZjti52Y/ZiNiw2Y8g2KjZkNix2Y7YqNmR2ZAg2bHZhNmG2ZHZjtin2LPZkCIsIuCmrOCmsuCngeCmqCwg4KaG4Kau4Ka/IOCmhuCmtuCnjeCmsOCnnyDgppfgp43gprDgprngpqMg4KaV4Kaw4Ka/4Kak4KeH4Kab4Ka/IOCmruCmvuCmqOCngeCmt+Cnh+CmsCDgpqrgpr7gprLgpqjgppXgprDgp43gpqTgpr7gprAsIl0sWyLZhdmO2YTZkNmD2ZAg2bHZhNmG2ZHZjtin2LPZkCIsIuCmruCmvuCmqOCngeCmt+Cnh+CmsCDgpoXgpqfgpr/gpqrgpqTgpr/gprAsIl0sWyLYpdmQ2YTZjtmw2YfZkCDZsdmE2YbZkdmO2KfYs9mQIiwi4Kau4Ka+4Kao4KeB4Ka34KeH4KawIOCmruCmvuKAmeCmrOCngeCmpuCnh+CmsCJdLFsi2YXZkNmGINi02Y7YsdmR2ZAg2bHZhNmS2YjZjtiz2ZLZiNmO2KfYs9mQINmx2YTZktiu2Y7ZhtmR2Y7Yp9iz2ZAiLCLgpqTgpr7gprAg4KaF4Kao4Ka/4Ka34KeN4KafIOCmpeCnh+CmleCnhywg4Kav4KeHIOCmleCngeCmruCmqOCnjeCmpOCnjeCmsOCmo+CmviDgpqbgp4fgp58g4KaTIOCmhuCmpOCnjeCmqOCml+Cnh+CmvuCmquCmqCDgppXgprDgp4csIl0sWyLZsdmE2ZHZjtiw2ZDZiSDZitmP2YjZjtiz2ZLZiNmQ2LPZjyDZgdmQ2Ykg2LXZj9iv2Y/ZiNix2ZAg2bHZhNmG2ZHZjtin2LPZkCIsIuCmr+CnhyDgppXgp4Hgpq7gpqjgp43gpqTgp43gprDgpqPgpr4g4Kam4KeH4KefIOCmruCmvuCmqOCngeCmt+Cnh+CmsCDgpoXgpqjgp43gpqTgprDgp4ciXSxbItmF2ZDZhtmOINmx2YTZktis2ZDZhtmR2Y7YqdmQINmI2Y7ZsdmE2YbZkdmO2KfYs9mQIiwi4Kac4KeN4Kas4Ka/4Kao4KeH4KawIOCmruCmp+CnjeCmryDgpqXgp4fgppXgp4cg4KaF4Kal4Kas4Ka+IOCmruCmvuCmqOCngeCmt+Cnh+CmsCDgpq7gpqfgp43gpq8g4Kal4KeH4KaV4KeH4KWkIl1dfV19').then(function(r){ return r.json(); }).then(function(j){
-    QURAN = j; buildSurahList(); buildJuzList(); renderDailyAyah(); cb && cb();
-  }).catch(function(){
-    $('surahList').innerHTML = '<p class="loadmsg">কুরআনের তথ্য লোড করা যায়নি। ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।</p>';
-  });
+p><p class="src">সূত্র: ' + d.s + '</p></article>';
 }
-function globalAyah(surahIdx, ayahIdx){
-  var g = 1;
-  for (var i = 0; i < surahIdx; i++) g += QURAN.surahs[i].cnt;
-  return g + ayahIdx;
+function renderDuas(filter){
+  var list = DUAS.filter(function(d){ return !filter || (d.t + d.bn).indexOf(filter) > -1; });
+  $('duaList').innerHTML = list.length ? list.map(duaCard).join('') : '<p class="loadmsg">কিছু পাওয়া যায়নি।</p>';
 }
-function buildSurahList(){
-  var html = '';
-  QURAN.surahs.forEach(function(s, i){
-    html += '<button class="sitem" data-surah="' + i + '"><span class="no"><i>' + bn(s.n) + '</i></span>' +
-      '<span class="tt"><b>সূরা ' + SURA_BN[i] + '</b><span>' + (s.rev === 'Makki' ? 'মাক্কী' : 'মাদানী') + ' • ' + bn(s.cnt) + ' আয়াত</span></span>' +
-      '<span class="arn">' + esc(s.ar) + '</span></button>';
-  });
-  $('surahList').innerHTML = html;
-}
-function juzSegments(){
-  var segs = [];
-  for (var j = 1; j <= 30; j++) segs.push([]);
-  QURAN.surahs.forEach(function(s, si){
-    for (var b = 0; b < s.juz.length; b++){
-      var start = s.juz[b][0], juz = s.juz[b][1];
-      var end = (b + 1 < s.juz.length) ? s.juz[b + 1][0] - 1 : s.cnt - 1;
-      segs[juz - 1].push({ s: si, from: start, to: end });
-    }
-  });
-  return segs;
-}
-var JUZ_SEGS = null;
-function buildJuzList(){
-  JUZ_SEGS = juzSegments();
-  var html = '';
-  JUZ_SEGS.forEach(function(seg, j){
-    var first = seg[0], fs = QURAN.surahs[first.s];
-    var cnt = 0; seg.forEach(function(x){ cnt += x.to - x.from + 1; });
-    html += '<button class="sitem" data-juzopen="' + j + '"><span class="no"><i>' + bn(j + 1) + '</i></span>' +
-      '<span class="tt"><b>পারা ' + bn(j + 1) + ' — ' + JUZ_NAMES[j] + '</b><span>শুরু: সূরা ' + SURA_BN[first.s] + ', আয়াত ' + bn(first.from + 1) + ' • মোট ' + bn(cnt) + ' আয়াত</span></span></button>';
-  });
-  $('juzList').innerHTML = html;
-}
-function switchQuranTab(tab){
-  quranTab = tab;
-  $('segSurah').setAttribute('aria-pressed', tab === 'surah' ? 'true' : 'false');
-  $('segJuz').setAttribute('aria-pressed', tab === 'juz' ? 'true' : 'false');
-  $('surahList').classList.toggle('hidden', tab !== 'surah');
-  $('juzList').classList.toggle('hidden', tab !== 'juz');
-  $('surahSearch').style.display = tab === 'surah' ? '' : 'none';
-  if (!QURAN) loadQuran();
-}
-$('segSurah').addEventListener('click', function(){ switchQuranTab('surah'); });
-$('segJuz').addEventListener('click', function(){ switchQuranTab('juz'); });
-$('surahSearch').addEventListener('input', function(){
-  var q = this.value.trim();
-  document.querySelectorAll('#surahList .sitem').forEach(function(el){
-    el.style.display = (!q || el.textContent.indexOf(q) > -1) ? '' : 'none';
-  });
-});
-$('surahList').addEventListener('click', function(e){
-  var b = e.target.closest('[data-surah]'); if (b) openReader('surah', +b.getAttribute('data-surah'));
-});
-$('juzList').addEventListener('click', function(e){
-  var b = e.target.closest('[data-juzopen]'); if (b) openReader('juz', +b.getAttribute('data-juzopen'));
-});
-function ayahHTML(si, ai){
-  var s = QURAN.surahs[si], a = s.a[ai];
-  var g = globalAyah(si, ai);
-  var tf = (typeof TAFSIR_AYAH !== 'undefined') ? TAFSIR_AYAH[(si + 1) + ':' + (ai + 1)] : null;
-  var tHtml = tf ? '<button class="play" data-tafsir="' + g + '">তাফসির দেখুন</button><div class="tfs hidden" id="tfs-' + g + '"><b>সংক্ষিপ্ত তাফসির:</b> ' + tf + '</div>' : '';
-  return '<div class="ayah" id="ayah-' + g + '"><div class="top"><span class="ano">' + bn(ai + 1) + '</span>' +
-    '<span><button class="play" data-lr="' + si + ':' + ai + '">থামার চিহ্ন</button> <button class="play" data-card-ayah="' + si + ':' + ai + '">ছবি কার্ড</button> <button class="play" data-play="' + g + '">▶ শুনুন</button></span></div>' +
-    '<p class="arabic">' + esc(a[0]) + ' ۝</p><p class="bangla">' + esc(a[1]) + '</p>' + tHtml + '</div>';
-}
-function openReader(mode, idx){
-  loadQuran(function(){
-    readerState = { mode: mode, idx: idx };
-    stopAudio();
-    $('quranListWrap').classList.add('hidden');
-    $('readerWrap').classList.remove('hidden');
-    var body = '', title = '', meta = '';
-    if (mode === 'surah'){
-      var s = QURAN.surahs[idx];
-      title = 'সূরা ' + SURA_BN[idx] + ' (' + s.ar + ')';
-      meta = 'সূরা নম্বর: ' + bn(s.n) + ' • ' + (s.rev === 'Makki' ? 'মাক্কী' : 'মাদানী') + ' • মোট ' + bn(s.cnt) + ' আয়াত';
-      if (idx !== 8 && idx !== 0) body += '<div class="bismillah">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>';
-      if (idx === 0) body += '<p class="sub" style="text-align:center">সূরা আল-ফাতিহার প্রথম আয়াতটিই বিসমিল্লাহ।</p>';
-      if (typeof TAFSIR !== 'undefined' && TAFSIR[idx]) body += '<div class="quiz-exp" style="margin:12px 0"><b>সংক্ষিপ্ত তাফসির ও পরিচিতি:</b> ' + TAFSIR[idx] + '</div>';
-      for (var i = 0; i < s.cnt; i++) body += ayahHTML(idx, i);
-      body += '<div class="surah-end">صَدَقَ ٱللَّهُ ٱلْعَظِيم</div>';
-      playCtx = { mode: 'surah', list: [] };
-      for (var k = 0; k < s.cnt; k++) playCtx.list.push(globalAyah(idx, k));
-    } else {
-      var seg = JUZ_SEGS[idx];
-      title = 'পারা ' + bn(idx + 1) + ' — ' + JUZ_NAMES[idx];
-      meta = 'এই পারায় ' + bn(seg.length) + 'টি অংশ রয়েছে';
-      playCtx = { mode: 'juz', list: [] };
-      seg.forEach(function(part){
-        var s2 = QURAN.surahs[part.s];
-        body += '<h3 style="font-family:\'Noto Sans Bengali\',\'Hind Siliguri\',sans-serif; margin:18px 0 2px">সূরা ' + SURA_BN[part.s] + ' — আয়াত ' + bn(part.from + 1) + ' থেকে ' + bn(part.to + 1) + '</h3>';
-        if (part.from === 0 && part.s !== 8 && part.s !== 0) body += '<div class="bismillah">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>';
-        for (var i2 = part.from; i2 <= part.to; i2++){ body += ayahHTML(part.s, i2); playCtx.list.push(globalAyah(part.s, i2)); }
-      });
-    }
-    $('readerTitle').textContent = title;
-    $('readerMeta').textContent = meta;
-    $('readerBody').innerHTML = body;
-    $('prevPartBtn').textContent = mode === 'surah' ? '← আগের সূরা' : '← আগের পারা';
-    $('nextPartBtn').textContent = mode === 'surah' ? 'পরের সূরা →' : 'পরের পারা →';
-    $('prevPartBtn').disabled = idx === 0;
-    if (typeof syncBookmarkBtn === 'function') syncBookmarkBtn();
-    if (typeof setLastRead === 'function'){
-      if (mode === 'surah') setLastRead(mode, idx, idx, 0);
-      else if (typeof JUZ_SEGS !== 'undefined' && JUZ_SEGS[idx] && JUZ_SEGS[idx][0]) setLastRead(mode, idx, JUZ_SEGS[idx][0].s, JUZ_SEGS[idx][0].from);
-    }
-    $('nextPartBtn').disabled = idx === (mode === 'surah' ? 113 : 29);
-    window.scrollTo({ top: 0 });
-  });
-}
-$('readerBack').addEventListener('click', function(){
-  stopAudio();
-  $('readerWrap').classList.add('hidden');
-  $('quranListWrap').classList.remove('hidden');
-});
-$('prevPartBtn').addEventListener('click', function(){ if (readerState.idx > 0) openReader(readerState.mode, readerState.idx - 1); });
-$('nextPartBtn').addEventListener('click', function(){
-  var max = readerState.mode === 'surah' ? 113 : 29;
-  if (readerState.idx < max) openReader(readerState.mode, readerState.idx + 1);
-});
-
-/* ---- audio ---- */
-var playingG = null, playAllOn = false;
-var AUDIO_CACHE = 'di-audio-v1';
-function cacheAudio(url){
-  if (!('caches' in window)) return;
-  caches.open(AUDIO_CACHE).then(function(c){
-    c.match(url).then(function(m){ if (!m) c.add(url).catch(function(){}); });
-  }).catch(function(){});
-}
-function playAudioSmart(url){
-  function go(){ var p = player.play(); if (p && p.catch) p.catch(function(){ toast('অডিও চালানো যায়নি — ইন্টারনেট সংযোগ দেখুন'); }); }
-  if (!('caches' in window)){ player.src = url; go(); return; }
-  caches.open(AUDIO_CACHE).then(function(c){ return c.match(url); }).then(function(res){
-    if (res){ res.blob().then(function(b){ player.src = URL.createObjectURL(b); go(); }); }
-    else { player.src = url; go(); cacheAudio(url); }
-  }).catch(function(){ player.src = url; go(); });
-}
-var RECITER = 'ar.alafasy';
-function audioUrl(g){ return 'https://cdn.islamic.network/quran/audio/128/' + RECITER + '/' + g + '.mp3'; }
-$('reciterSel').addEventListener('change', function(){
-  RECITER = this.value;
-  if (playingG !== null){ var g = playingG, all = playAllOn; playAyah(g, all); }
-  toast('ক্বারী পরিবর্তন করা হয়েছে');
-});
-function markPlaying(){
-  document.querySelectorAll('.ayah .play').forEach(function(b){
-    var on = +b.getAttribute('data-play') === playingG;
-    b.classList.toggle('playing', on);
-    b.innerHTML = on ? '⏸ চলছে…' : '▶ শুনুন';
-  });
-  $('playAllBtn').textContent = playAllOn ? '⏸ থামান' : '▶ পুরো অংশ শুনুন';
-}
-function playAyah(g, autoNext){
-  playingG = g; playAllOn = !!autoNext;
-  playAudioSmart(audioUrl(g));
-  if (playCtx && playCtx.list){ var ci = playCtx.list.indexOf(g); if (ci > -1){ for (var cj = ci + 1; cj < Math.min(ci + 4, playCtx.list.length); cj++) cacheAudio(audioUrl(playCtx.list[cj])); } }
-  markPlaying();
-  var el = $('ayah-' + g);
-  if (el) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
-}
-function stopAudio(){
-  player.pause(); playingG = null; playAllOn = false; markPlaying();
-}
-player.addEventListener('ended', function(){
-  if (playAllOn && playCtx && playingG){
-    var i = playCtx.list.indexOf(playingG);
-    if (i > -1 && i < playCtx.list.length - 1){ playAyah(playCtx.list[i + 1], true); return; }
-  }
-  playingG = null; playAllOn = false; markPlaying();
-});
-$('readerBody').addEventListener('click', function(e){
-  var b = e.target.closest('[data-play]'); if (!b) return;
-  var g = +b.getAttribute('data-play');
-  if (playingG === g && !player.paused){ stopAudio(); } else { playAyah(g, false); }
-});
-$('playAllBtn').addEventListener('click', function(){
-  if (playAllOn){ stopAudio(); return; }
-  if (playCtx && playCtx.list.length) playAyah(playCtx.list[0], true);
-});
-/* ---- daily ayah ---- */
-function dayIndex(){ var n = dhakaNow(); return Math.floor(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) / 86400000); }
-function renderDailyAyah(){
-  if (!QURAN) return;
-  var flat = [];
-  QURAN.surahs.forEach(function(s, si){ s.a.forEach(function(a, ai){ flat.push([si, ai]); }); });
-  var pick = flat[dayIndex() % flat.length];
-  var s = QURAN.surahs[pick[0]], a = s.a[pick[1]];
-  $('dailyAyahAr').textContent = a[0];
-  $('dailyAyahBn').textContent = a[1];
-  $('dailyAyahSrc').textContent = '— সূরা ' + SURA_BN[pick[0]] + ', আয়াত ' + bn(pick[1] + 1);
-}
-loadQuran();
+$('duaSearch').addEventListener('input', function(){ renderDuas(this.value.trim()); });
+renderDuas('');
 </script>
 <script>
-/* ================= Hadith ================= */
+/* ================= Qibla ================= */
+var KAABA = { lat: 21.4225, lng: 39.8262 };
+function qiblaBearing(lat, lng){
+  var dLng = dtr(KAABA.lng - lng);
+  var y = Math.sin(dLng);
+  var x = Math.cos(dtr(lat)) * Math.tan(dtr(KAABA.lat)) - Math.sin(dtr(lat)) * Math.cos(dLng);
+  return fixA(rtd(Math.atan2(y, x)));
+}
+function haversineKm(lat1, lng1, lat2, lng2){
+  var R = 6371, dLat = dtr(lat2 - lat1), dLng = dtr(lng2 - lng1);
+  var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(dtr(lat1)) * Math.cos(dtr(lat2)) * Math.sin(dLng/2) * Math.sin(dLng/2);
+  return Math.round(R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+}
+var deviceHeading = null, compassOn = false;
+function renderQibla(){
+  var c = curLoc();
+  var b = qiblaBearing(c.lat, c.lng);
+  var rot = (deviceHeading === null) ? b : b - deviceHeading;
+  $('qiblaNeedle').style.transform = 'translate(-50%,-100%) rotate(' + rot + 'deg)';
+  $('compassDial').style.transform = 'rotate(' + (deviceHeading === null ? 0 : -deviceHeading) + 'deg)';
+  $('qiblaAngle').textContent = bn(Math.round(b)) + '°';
+}
+function updateQiblaInfo(){
+  var c = curLoc();
+  $('qiblaCity').textContent = c.name;
+  $('qiblaDist').textContent = bn(haversineKm(c.lat, c.lng, KAABA.lat, KAABA.lng).toLocaleString('en-IN')) + ' কিমি (প্রায়)';
+  renderQibla();
+}
+function onOrient(e){
+  var h = null;
+  if (typeof e.webkitCompassHeading === 'number') h = e.webkitCompassHeading;
+  else if (e.alpha !== null) h = 360 - e.alpha;
+  if (h !== null){ deviceHeading = h; renderQibla(); }
+}
+$('compassBtn').addEventListener('click', function(){
+  if (compassOn){
+    window.removeEventListener('deviceorientationabsolute', onOrient);
+    window.removeEventListener('deviceorientation', onOrient);
+    compassOn = false; deviceHeading = null;
+    $('compassBtn').textContent = 'কম্পাস চালু করুন';
+    $('compassMsg').textContent = 'কম্পাস বন্ধ আছে — নিচের কোণ দেখে দিক মিলিয়ে নিন।';
+    renderQibla(); return;
+  }
+  function start(){
+    window.addEventListener('deviceorientationabsolute', onOrient);
+    window.addEventListener('deviceorientation', onOrient);
+    compassOn = true;
+    $('compassBtn').textContent = 'কম্পাস বন্ধ করুন';
+    $('compassMsg').textContent = 'কম্পাস চালু হয়েছে — ফোন ঘোরালে তীর কিবলার দিকেই থাকবে। সোনালি তীর যেদিকে, সেদিকেই কিবলা।';
+  }
+  if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function'){
+    DeviceOrientationEvent.requestPermission().then(function(res){
+      if (res === 'granted') start(); else toast('কম্পাসের অনুমতি দেওয়া হয়নি');
+    }).catch(function(){ toast('এই ডিভাইসে কম্পাস পাওয়া যায়নি'); });
+  } else if (typeof DeviceOrientationEvent !== 'undefined'){ start(); }
+  else { toast('এই ডিভাইসে কম্পাস সেন্সর নেই'); }
+});
+updateQiblaInfo();
 
-/* ---------- Big hadith collections (v2.7): thousands of hadith in Bengali ---------- */
-var hbCache = {}, hbCur = 'ben-bukhari', hbShown = 0, hbFiltered = [], hbStarted = false;
-function hbFetch(id){
-  if (hbCache[id]) return Promise.resolve(hbCache[id]);
-  var url = 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/' + id + '.json';
-  var p;
-  if ('caches' in window){
-    p = caches.open('di-hadith-v1').then(function(c){
-      return c.match(url).then(function(m){
-        if (m) return m;
-        return fetch(url).then(function(r){ try { c.put(url, r.clone()); } catch(e){} return r; });
-      });
-    }).then(function(r){ return r.json(); });
-  } else { p = fetch(url).then(function(r){ return r.json(); }); }
-  return p.then(function(d){ hbCache[id] = d; return d; });
-}
-function hbSections(d){
-  var secs = (d.metadata && d.metadata.sections) || {};
-  var html = '<option value="">সব অধ্যায়</option>';
-  Object.keys(secs).forEach(function(k){ if (secs[k]) html += '<option value="' + k + '">' + esc(secs[k]) + '</option>'; });
-  $('hbSecSel').innerHTML = html;
-}
-function hbApply(){
-  var d = hbCache[hbCur]; if (!d) return;
-  var sec = $('hbSecSel').value, q = ($('hbSearch').value || '').trim();
-  hbFiltered = (d.hadiths || []).filter(function(h){
-    if (sec && String((h.reference || {}).book) !== sec) return false;
-    if (q && (h.text || '').indexOf(q) === -1) return false;
-    return true;
-  });
-  hbShown = 0; $('hbList').innerHTML = ''; hbRenderMore();
-  $('hbStatus').textContent = 'মোট ' + bn(hbFiltered.length) + 'টি হাদিস পাওয়া গেছে';
-}
-function hbRenderMore(){
-  var d = hbCache[hbCur]; if (!d) return;
-  var secs = (d.metadata && d.metadata.sections) || {};
-  var chunk = hbFiltered.slice(hbShown, hbShown + 30); hbShown += chunk.length;
-  var html = chunk.map(function(h){
-    var ref = h.reference || {};
-    var secName = secs[ref.book] || '';
-    return '<article class="hcard"><p style="margin:0 0 6px"><b>হাদিস নং ' + bn(h.hadithnumber) + '</b>' + (secName ? ' <span class="src">' + esc(secName) + '</span>' : '') + '</p><p style="margin:0">' + esc(h.text || '') + '</p></article>';
-  }).join('');
-  $('hbList').insertAdjacentHTML('beforeend', html);
-  $('hbMore').style.display = hbShown < hbFiltered.length ? 'block' : 'none';
-}
-function hbLoadBook(id){
-  hbCur = id;
-  $('hbStatus').textContent = 'কিতাব লোড হচ্ছে… (প্রথমবার একটু সময় লাগতে পারে)';
-  $('hbList').innerHTML = ''; $('hbMore').style.display = 'none';
-  hbFetch(id).then(function(d){ hbSections(d); hbApply(); })
-    .catch(function(){ $('hbStatus').textContent = 'লোড করা যায়নি — ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।'; });
-}
-$('hbBookSel').addEventListener('change', function(){ hbLoadBook(this.value); });
-$('hbSecSel').addEventListener('change', hbApply);
-$('hbSearch').addEventListener('input', hbApply);
-$('hbMore').addEventListener('click', hbRenderMore);
-setInterval(function(){ if (!hbStarted && currentView === 'hadith'){ hbStarted = true; hbLoadBook('ben-bukhari'); } }, 800);
-
-var HADITHS = [
- { c:'ঈমান ও নিয়ত', t:'নিয়তের ওপর আমলের ভিত্তি', ar:'إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَىٰ', bn:'সব আমলের ফলাফল নিয়তের ওপর নির্ভরশীল, আর প্রত্যেক মানুষ তাই পাবে যার সে নিয়ত করেছে।', s:'সহিহ বুখারি: ১; সহিহ মুসলিম: ১৯০৭' },
- { c:'ঈমান ও নিয়ত', t:'দ্বীনের ভিত্তি কল্যাণকামিতা', ar:'الدِّينُ النَّصِيحَةُ', bn:'দ্বীন হলো কল্যাণকামিতা — আল্লাহর জন্য, তাঁর কিতাবের জন্য, তাঁর রাসূলের জন্য, মুসলিম শাসকদের জন্য এবং সর্বসাধারণ মুসলিমের জন্য।', s:'সহিহ মুসলিম: ৫৫' },
- { c:'চরিত্র ও আচরণ', t:'সেরা মুসলিম কে', ar:'الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ', bn:'প্রকৃত মুসলিম সেই ব্যক্তি, যার জিহ্বা ও হাত থেকে অন্য মুসলিমরা নিরাপদ থাকে।', s:'সহিহ বুখারি: ১০; সহিহ মুসলিম: ৪০' },
- { c:'চরিত্র ও আচরণ', t:'নিজের জন্য যা পছন্দ, ভাইয়ের জন্যও তাই', ar:'لَا يُؤْمِنُ أَحَدُكُمْ حَتَّىٰ يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ', bn:'তোমাদের কেউ পূর্ণ মুমিন হতে পারবে না, যতক্ষণ না সে নিজের জন্য যা পছন্দ করে, তার ভাইয়ের জন্যও তা-ই পছন্দ করে।', s:'সহিহ বুখারি: ১৩; সহিহ মুসলিম: ৪৫' },
- { c:'চরিত্র ও আচরণ', t:'রাগ নিয়ন্ত্রণই প্রকৃত শক্তি', ar:'لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ', bn:'কুস্তিতে জয়ী ব্যক্তি শক্তিশালী নয়; প্রকৃত শক্তিশালী সেই ব্যক্তি, যে রাগের সময় নিজেকে নিয়ন্ত্রণ করতে পারে।', s:'সহিহ বুখারি: ৬১১৪; সহিহ মুসলিম: ২৬০৯' },
- { c:'চরিত্র ও আচরণ', t:'সত্য ও মিথ্যা', ar:'إِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ، وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ، وَإِنَّ الْكَذِبَ يَهْدِي إِلَى الْفُجُورِ، وَإِنَّ الْفُجُورَ يَهْدِي إِلَى النَّارِ', bn:'সত্য সৎকর্মের দিকে পথ দেখায়, আর সৎকর্ম জান্নাতের দিকে নিয়ে যায়। আর মিথ্যা পাপের দিকে পথ দেখায়, আর পাপ জাহান্নামের দিকে নিয়ে যায়।', s:'সহিহ বুখারি: ৬০৯৪; সহিহ মুসলিম: ২৬০৭' },
- { c:'নামাজ', t:'নামাজ দ্বীনের স্তম্ভ', ar:'رَأْسُ الْأَمْرِ الْإِسْلَامُ، وَعَمُودُهُ الصَّلَاةُ، وَذِرْوَةُ سَنَامِهِ الْجِهَادُ', bn:'সবকিছুর মূল হলো ইসলাম, তার স্তম্ভ হলো নামাজ, আর তার সর্বোচ্চ শিখর হলো জিহাদ (আল্লাহর পথে সংগ্রাম)।', s:'সুনানে তিরমিযি: ২৬১৬ (সহিহ)' },
- { c:'নামাজ', t:'প্রথম হিসাব হবে নামাজের', ar:'إِنَّ أَوَّلَ مَا يُحَاسَبُ بِهِ الْعَبْدُ يَوْمَ الْقِيَامَةِ مِنْ عَمَلِهِ صَلَاتُهُ', bn:'কিয়ামতের দিন বান্দার আমলের মধ্যে সর্বপ্রথম নামাজের হিসাব নেওয়া হবে।', s:'সুনানে তিরমিযি: ৪১৩; সুনানে আবু দাউদ: ৮৬৪' },
- { c:'নামাজ', t:'জামাতে নামাজের ফজিলত', ar:'صَلَاةُ الْجَمَاعَةِ تَفْضُلُ صَلَاةَ الْفَذِّ بِسَبْعٍ وَعِشْرِينَ دَرَجَةً', bn:'জামাতে নামাজ পড়া একাকী নামাজ পড়ার চেয়ে সাতাশ গুণ বেশি মর্যাদাপূর্ণ।', s:'সহিহ বুখারি: ৬৪৫; সহিহ মুসলিম: ৬৫০' },
- { c:'কুরআন', t:'কুরআন শেখা ও শেখানো', ar:'خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ', bn:'তোমাদের মধ্যে সর্বোত্তম সেই ব্যক্তি, যে কুরআন শেখে এবং শেখায়।', s:'সহিহ বুখারি: ৫০২৭' },
- { c:'কুরআন', t:'কুরআন পাঠের প্রতিদান', ar:'مَنْ قَرَأَ حَرْفًا مِنْ كِتَابِ اللَّهِ فَلَهُ بِهِ حَسَنَةٌ، وَالْحَسَنَةُ بِعَشْرِ أَمْثَالِهَا', bn:'যে ব্যক্তি আল্লাহর কিতাব থেকে একটি হরফ পড়বে, তার জন্য একটি নেকি রয়েছে; আর প্রতিটি নেকি দশ গুণ বাড়িয়ে দেওয়া হয়।', s:'সুনানে তিরমিযি: ২৯১০ (সহিহ)' },
- { c:'কুরআন', t:'দুই আয়াতের আমল', ar:'الآيَتَانِ مِنْ آخِرِ سُورَةِ الْبَقَرَةِ، مَنْ قَرَأَهُمَا فِي لَيْلَةٍ كَفَتَاهُ', bn:'সূরা আল-বাকারার শেষ দুই আয়াত — যে ব্যক্তি রাতে তা পড়বে, তা তার জন্য যথেষ্ট হবে।', s:'সহিহ বুখারি: ৫০০৯; সহিহ মুসলিম: ৮০৭' },
- { c:'যিকির ও দোয়া', t:'সেরা যিকির', ar:'أَفْضَلُ الذِّكْرِ لَا إِلَٰهَ إِلَّا اللَّهُ، وَأَفْضَلُ الدُّعَاءِ الْحَمْدُ لِلَّهِ', bn:'সর্বোত্তম যিকির হলো "লা ইলাহা ইল্লাল্লাহ", আর সর্বোত্তম দোয়া হলো "আলহামদুলিল্লাহ"।', s:'সুনানে তিরমিযি: ৩৩৮৩' },
- { c:'যিকির ও দোয়া', t:'হালকা অথচ ভারী দুটি বাক্য', ar:'كَلِمَتَانِ خَفِيفَتَانِ عَلَى اللِّسَانِ، ثَقِيلَتَانِ فِي الْمِيزَانِ، حَبِيبَتَانِ إِلَى الرَّحْمَٰنِ: سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ', bn:'দুটি বাক্য জিহ্বায় হালকা, মিজানে (পাল্লায়) ভারী এবং দয়াময়ের কাছে প্রিয়: "সুবহানাল্লাহি ওয়া বিহামদিহি" ও "সুবহানাল্লাহিল আজিম"।', s:'সহিহ বুখারি: ৬৬৮২; সহিহ মুসলিম: ২৬৯৪' },
- { c:'যিকির ও দোয়া', t:'দোয়া কবুলের সময়', ar:'إِنَّ فِي اللَّيْلِ لَسَاعَةً لَا يُوَافِقُهَا رَجُلٌ مُسْلِمٌ يَسْأَلُ اللَّهَ خَيْرًا مِنْ أَمْرِ الدُّنْيَا وَالْآخِرَةِ إِلَّا أَعْطَاهُ إِيَّاهُ', bn:'রাতের মধ্যে এমন একটি মুহূর্ত আছে, কোনো মুসলিম দুনিয়া-আখিরাতের কল্যাণ চেয়ে দোয়া করলে আল্লাহ তাকে তা দান করেন।', s:'সহিহ মুসলিম: ৭৫৭' },
- { c:'সদকা ও দান', t:'হাসিমুখও সদকা', ar:'كُلُّ مَعْرُوفٍ صَدَقَةٌ', bn:'প্রতিটি ভালো কাজই সদকা। (অন্য বর্ণনায়: ভাইয়ের সামনে হাসিমুখে থাকাও সদকা।)', s:'সহিহ বুখারি: ৬০২১; সহিহ মুসলিম: ১০০৫' },
- { c:'সদকা ও দান', t:'সদকায় সম্পদ কমে না', ar:'مَا نَقَصَتْ صَدَقَةٌ مِنْ مَالٍ', bn:'সদকা করলে সম্পদ কমে না।', s:'সহিহ মুসলিম: ২৫৮৮' },
- { c:'পরিবার ও সমাজ', t:'মায়ের পায়ের নিচে জান্নাত', ar:'الْجَنَّةُ تَحْتَ أَقْدَامِ الْأُمَّهَاتِ', bn:'জান্নাত মায়েদের পায়ের নিচে। (অর্থাৎ মায়ের সেবা ও সন্তুষ্টির মাধ্যমে জান্নাত লাভ হয়।)', s:'সুনানে নাসায়ি: ৩১০৪; মুসনাদে আহমাদ: ১৫৫৭৭' },
- { c:'পরিবার ও সমাজ', t:'প্রতিবেশীর হক', ar:'مَا زَالَ جِبْرِيلُ يُوصِينِي بِالْجَارِ حَتَّىٰ ظَنَنْتُ أَنَّهُ سَيُوَرِّثُهُ', bn:'জিবরাইল (আ.) আমাকে প্রতিবেশী সম্পর্কে এত বেশি উপদেশ দিতে থাকলেন যে, আমি মনে করলাম তিনি প্রতিবেশীকে উত্তরাধিকারী বানিয়ে দেবেন।', s:'সহিহ বুখারি: ৬০১৪; সহিহ মুসলিম: ২৬২৪'.replace(/ih/g,'হি') },
- { c:'জ্ঞান', t:'জ্ঞান অন্বেষণ ফরজ', ar:'طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَىٰ كُلِّ مُسْلِمٍ', bn:'জ্ঞান অন্বেষণ করা প্রতিটি মুসলিমের ওপর ফরজ।', s:'সুনানে ইবনে মাজাহ: ২২৪ (সহিহ)' },
- { c:'জ্ঞান', t:'জ্ঞানীর মর্যাদা', ar:'مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ', bn:'যে ব্যক্তি জ্ঞান অন্বেষণের পথে চলে, আল্লাহ তার জন্য জান্নাতের পথ সহজ করে দেন।', s:'সহিহ মুসলিম: ২৬৯৯' },
- { c:'তাওবা ও ক্ষমা', t:'আল্লাহর ক্ষমার হাত', ar:'إِنَّ اللَّهَ يَبْسُطُ يَدَهُ بِاللَّيْلِ لِيَتُوبَ مُسِيءُ النَّهَارِ، وَيَبْسُطُ يَدَهُ بِالنَّهَارِ لِيَتُوبَ مُسِيءُ اللَّيْلِ', bn:'আল্লাহ রাতে তাঁর হাত প্রসারিত করেন, যাতে দিনের পাপী তাওবা করে; আর দিনে হাত প্রসারিত করেন, যাতে রাতের পাপী তাওবা করে।', s:'সহিহ মুসলিম: ২৭৫৯'.replace(/ih/g,'হি') },
- { c:'ধৈর্য ও কৃতজ্ঞতা', t:'মুমিনের অবস্থা বিস্ময়কর', ar:'عَجَبًا لِأَمْرِ الْمُؤْمِنِ، إِنَّ أَمْرَهُ كُلَّهُ خَيْرٌ، إِنْ أَصَابَتْهُ سَرَّاءُ شَكَرَ فَكَانَ خَيْرًا لَهُ، وَإِنْ أَصَابَتْهُ ضَرَّاءُ صَبَرَ فَكَانَ خَيْرًا لَهُ', bn:'মুমিনের অবস্থা বিস্ময়কর! তার সব অবস্থাই কল্যাণকর: সুখ এলে সে কৃতজ্ঞতা প্রকাশ করে — তা তার জন্য কল্যাণ; আর দুঃখ এলে সে ধৈর্য ধারণ করে — তাও তার জন্য কল্যাণ।', s:'সহিহ মুসলিম: ২৯৯৯'.replace(/ih/g,'হি') },
- { c:'রোজা', t:'রোজাদারের জন্য বিশেষ দরজা', ar:'إِنَّ فِي الْجَنَّةِ بَابًا يُقَالُ لَهُ الرَّيَّانُ، يَدْخُلُ مِنْهُ الصَّائِمُونَ يَوْمَ الْقِيَامَةِ', bn:'জান্নাতে "রাইয়ান" নামে একটি দরজা আছে; কিয়ামতের দিন সেই দরজা দিয়ে রোজাদাররা প্রবেশ করবে।', s:'সহিহ বুখারি: ১৮৯৬; সহিহ মুসলিম: ১১৫২' }
+/* ================= Tasbih ================= */
+var DHIKRS = [
+  { ar:'سُبْحَانَ اللَّهِ', bn:'সুবহানাল্লাহ — আল্লাহ পবিত্র', target:33 },
+  { ar:'الْحَمْدُ لِلَّهِ', bn:'আলহামদুলিল্লাহ — সব প্রশংসা আল্লাহর', target:33 },
+  { ar:'اللَّهُ أَكْبَرُ', bn:'আল্লাহু আকবার — আল্লাহ সবচেয়ে বড়', target:34 },
+  { ar:'لَا إِلَٰهَ إِلَّا اللَّهُ', bn:'লা ইলাহা ইল্লাল্লাহ — আল্লাহ ছাড়া কোনো ইলাহ নেই', target:100 },
+  { ar:'أَسْتَغْفِرُ اللَّهَ', bn:'আস্তাগফিরুল্লাহ — আমি আল্লাহর কাছে ক্ষমা চাই', target:100 },
+  { ar:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ', bn:'সুবহানাল্লাহি ওয়া বিহামদিহি', target:100 },
+  { ar:'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ', bn:'লা হাওলা ওয়ালা কুওয়াতা ইল্লা বিল্লাহ', target:100 },
+  { ar:'اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ', bn:'দরুদ শরিফ — আল্লাহুম্মা সাল্লি আলা মুহাম্মদ', target:100 }
 ];
-function hadithCard(h){
-  var marked = (typeof isBookmarked === 'function') && isBookmarked('hadith:' + h.t);
-  return '<article class="hcard"><button class="bmkbtn" data-bmh="' + esc(h.t) + '">' + (marked ? '✓ বুকমার্ক করা' : 'বুকমার্ক') + '</button><span class="cat">' + h.c + '</span><h3>' + h.t + '</h3>' +
-    '<p class="ar">' + h.ar + '</p><p>' + h.bn + '</p><p class="src">সূত্র: ' + h.s + '</p><p style="margin:8px 0 0"><button class="play" data-card-hadith="' + esc(h.t) + '">ছবি কার্ড বানান</button></p></article>';
-}
-function renderHadiths(filter){
-  var list = HADITHS.filter(function(h){
-    return !filter || (h.t + h.bn + h.c).indexOf(filter) > -1;
+var tasbih = { di: 0, count: 0, total: 0, cycle: 0 };
+function renderTasbih(){
+  var d = DHIKRS[tasbih.di];
+  $('dhikrAr').textContent = d.ar;
+  $('dhikrBn').textContent = d.bn;
+  $('tasbihCount').textContent = bn(tasbih.count);
+  $('tasbihTarget').textContent = bn(d.target) + ' বার';
+  $('tasbihTotal').textContent = bn(tasbih.total);
+  $('tasbihCycle').textContent = bn(tasbih.cycle);
+  document.querySelectorAll('#dhikrChips button').forEach(function(b, i){
+    b.setAttribute('aria-pressed', i === tasbih.di ? 'true' : 'false');
   });
-  $('hadithList').innerHTML = list.length ? list.map(hadithCard).join('') : '<p class="loadmsg">কিছু পাওয়া যায়নি।</p>';
 }
-$('hadithSearch').addEventListener('input', function(){ renderHadiths(this.value.trim()); });
-renderHadiths('');
-(function dailyHadith(){
-  var h = HADITHS[dayIndex() % HADITHS.length];
-  $('dailyHadithAr').textContent = h.ar;
-  $('dailyHadithBn').textContent = h.bn;
-  $('dailyHadithSrc').textContent = '— ' + h.s;
+(function initTasbih(){
+  var html = '';
+  DHIKRS.forEach(function(d, i){ html += '<button data-dhikr="' + i + '">' + d.bn.split(' — ')[0] + '</button>'; });
+  $('dhikrChips').innerHTML = html;
+  $('dhikrChips').addEventListener('click', function(e){
+    var b = e.target.closest('[data-dhikr]'); if (!b) return;
+    tasbih.di = +b.getAttribute('data-dhikr'); tasbih.count = 0; renderTasbih();
+  });
+  $('tapBtn').addEventListener('click', function(){
+    tasbih.count++; tasbih.total++;
+    if (navigator.vibrate) navigator.vibrate(12);
+    if (tasbih.count >= DHIKRS[tasbih.di].target){
+      tasbih.cycle++;
+      if (navigator.vibrate) navigator.vibrate([60, 40, 60]);
+      toast('আলহামদুলিল্লাহ! ' + bn(DHIKRS[tasbih.di].target) + ' বার পূর্ণ হয়েছে');
+      tasbih.count = 0;
+    }
+    renderTasbih();
+  });
+  $('tasbihUndo').addEventListener('click', function(){ if (tasbih.count > 0){ tasbih.count--; tasbih.total--; } renderTasbih(); });
+  $('tasbihReset').addEventListener('click', function(){ tasbih.count = 0; tasbih.total = 0; tasbih.cycle = 0; renderTasbih(); toast('তাসবিহ শূন্য করা হয়েছে'); });
+  renderTasbih();
 })();
 
-/* ================= Duas ================= */
-var DUAS = [
- { t:'ঘুমানোর দোয়া', ar:'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا', bn:'হে আল্লাহ! আপনার নামেই আমি মৃত্যুবরণ করি (ঘুমাই) এবং জীবিত হই (জাগি)।', s:'সহিহ বুখারি: ৬৩২৪', n:'' },
- { t:'ঘুম থেকে জাগার দোয়া', ar:'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ', bn:'সব প্রশংসা আল্লাহর, যিনি আমাদের মৃত্যুর (ঘুমের) পর জীবন দান করেছেন; আর তাঁর দিকেই পুনরুত্থান।', s:'সহিহ বুখারি: ৬৩২৫', n:'' },
- { t:'খাবার শুরুর দোয়া', ar:'بِسْمِ اللَّهِ وَعَلَىٰ بَرَكَةِ اللَّهِ', bn:'আল্লাহর নামে এবং আল্লাহর বরকতের ওপর (শুরু করছি)। শুরুতে ভুলে গেলে মাঝে বলুন: "বিসমিল্লাহি আওয়ালাহু ওয়া আখিরাহু"।', s:'সুনানে আবু দাউদ: ৩৭৬৭; সুনানে তিরমিযি: ১৮৫৮', n:'' },
- { t:'খাবার শেষের দোয়া', ar:'الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِينَ', bn:'সব প্রশংসা আল্লাহর, যিনি আমাদের খাইয়েছেন, পান করিয়েছেন এবং মুসলিম বানিয়েছেন।', s:'সুনানে আবু দাউদ: ৩৮৫০; সুনানে তিরমিযি: ৩৪৫৭', n:'' },
- { t:'ঘর থেকে বের হওয়ার দোয়া', ar:'بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ', bn:'আল্লাহর নামে (বের হচ্ছি), আল্লাহর ওপর ভরসা করলাম; আল্লাহর সাহায্য ছাড়া কোনো শক্তি ও সামর্থ্য নেই।', s:'সুনানে আবু দাউদ: ৫০৯৫; সুনানে তিরমিযি: ৩৪২৬', n:'' },
- { t:'ঘরে প্রবেশের দোয়া', ar:'بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَىٰ رَبِّنَا تَوَكَّلْنَا', bn:'আল্লাহর নামে আমরা প্রবেশ করলাম, আল্লাহর নামে আমরা বের হয়েছিলাম এবং আমাদের রবের ওপরই আমরা ভরসা করি। এরপর পরিবারের লোকদের সালাম দেবে।', s:'সুনানে আবু দাউদ: ৫০৯৬', n:'' },
- { t:'মসজিদে প্রবেশের দোয়া', ar:'اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ', bn:'হে আল্লাহ! আমার জন্য আপনার রহমতের দরজাগুলো খুলে দিন।', s:'সহিহ মুসলিম: ৭১৩', n:'' },
- { t:'মসজিদ থেকে বের হওয়ার দোয়া', ar:'اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ', bn:'হে আল্লাহ! আমি আপনার অনুগ্রহ প্রার্থনা করছি।', s:'সহিহ মুসলিম: ৭১৩', n:'' },
- { t:'বাথরুমে প্রবেশের দোয়া', ar:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ', bn:'হে আল্লাহ! আমি আপনার কাছে আশ্রয় চাই দুষ্ট জিন ও জিন্নী থেকে।', s:'সহিহ বুখারি: ১৪২; সহিহ মুসলিম: ৩৭৫', n:'' },
- { t:'বাথরুম থেকে বের হওয়ার দোয়া', ar:'غُفْرَانَكَ', bn:'(হে আল্লাহ!) আপনার ক্ষমা প্রার্থনা করছি।', s:'সুনানে আবু দাউদ: ৩০; সুনানে তিরমিযি: ৭', n:'' },
- { t:'পোশাক পরার দোয়া', ar:'الْحَمْدُ لِلَّهِ الَّذِي كَسَانِي هَٰذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ', bn:'সব প্রশংসা আল্লাহর, যিনি আমাকে এই পোশাক পরিয়েছেন এবং আমার কোনো শক্তি-সামর্থ্য ছাড়াই তা রিজিক হিসেবে দিয়েছেন।', s:'সুনানে আবু দাউদ: ৪০২৩ (হাসান)', n:'' },
- { t:'আয়নায় দেখার দোয়া', ar:'اللَّهُمَّ كَمَا حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي', bn:'হে আল্লাহ! আপনি যেমন আমার গঠন সুন্দর করেছেন, তেমনি আমার চরিত্রও সুন্দর করুন।', s:'মুসনাদে আহমাদ: ২৪৩৯২ (সহিহ)', n:'' },
- { t:'সফরের দোয়া', ar:'سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَٰذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ، وَإِنَّا إِلَىٰ رَبِّنَا لَمُنْقَلِبُونَ', bn:'পবিত্র তিনি, যিনি এটিকে আমাদের অধীন করে দিয়েছেন, অথচ আমরা তা করতে সক্ষম ছিলাম না; আর নিশ্চয় আমরা আমাদের রবের দিকে ফিরে যাব।', s:'সূরা আয-যুখরুফ: ১৩–১৪; সহিহ মুসলিম: ১৩৪২', n:'' },
- { t:'বিপদ ও দুশ্চিন্তার দোয়া', ar:'لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ', bn:'আপনি ছাড়া কোনো ইলাহ নেই; আপনি পবিত্র; নিশ্চয় আমি জালিমদের অন্তর্ভুক্ত হয়েছি। (হযরত ইউনুস আ.-এর দোয়া)', s:'সূরা আল-আম্বিয়া: ৮৭; সুনানে তিরমিযি: ৩৫০৫', n:'' },
- { t:'দুঃখ ও ঋণ থেকে মুক্তির দোয়া', ar:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْبُخْلِ وَالْجُبْنِ، وَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ', bn:'হে আল্লাহ! আমি আপনার কাছে আশ্রয় চাই দুশ্চিন্তা ও দুঃখ থেকে, অক্ষমতা ও অলসতা থেকে, কৃপণতা ও ভীরুতা থেকে, ঋণের বোঝা ও মানুষের জুলুম থেকে।', s:'সহিহ বুখারি: ৬৩৬৯', n:'' },
- { t:'পিতা-মাতার জন্য দোয়া', ar:'رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا', bn:'হে আমার রব! তাঁদের (পিতা-মাতা) প্রতি দয়া করুন, যেমন তাঁরা শৈশবে আমাকে লালন-পালন করেছেন।', s:'সূরা আল-ইসরা: ২৪', n:'' },
- { t:'দুনিয়া ও আখিরাতের কল্যাণের দোয়া', ar:'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ', bn:'হে আমাদের রব! আমাদের দুনিয়াতে কল্যাণ দিন, আখিরাতেও কল্যাণ দিন এবং জাহান্নামের আগুন থেকে রক্ষা করুন।', s:'সূরা আল-বাকারা: ২০১', n:'' },
- { t:'রোগমুক্তির দোয়া', ar:'اللَّهُمَّ رَبَّ النَّاسِ، أَذْ
+/* ================= Quiz ================= */
+var QUIZ = [
+ { q:'পবিত্র কুরআনের সর্বপ্রথম অবতীর্ণ সূরা কোনটি?', o:['সূরা আল-ফাতিহা','সূরা আল-আলাক','সূরা আল-মুদ্দাসসির','সূরা আল-বাকারা'], a:1, e:'হেরা গুহায় সর্বপ্রথম সূরা আল-আলাকের প্রথম পাঁচটি আয়াত ("ইকরা বিসমি রাব্বিক...") অবতীর্ণ হয়।', s:'সহিহ বুখারি: ৩; সূরা আল-আলাক: ১–৫' },
+ { q:'কুরআনের সবচেয়ে বড় (দীর্ঘতম) সূরা কোনটি?', o:['সূরা আলে-ইমরান','সূরা আন-নিসা','সূরা আল-বাকারা','সূরা আল-মায়িদা'], a:2, e:'সূরা আল-বাকারা কুরআনের দীর্ঘতম সূরা — এতে ২৮৬টি আয়াত রয়েছে এবং এটি মাদানী সূরা।', s:'সূরা আল-বাকারা (২৮৬ আয়াত)' },
+ { q:'কুরআনে মোট কয়টি সূরা আছে?', o:['১১০টি','১১৪টি','১১৬টি','১২০টি'], a:1, e:'পবিত্র কুরআনে মোট ১১৪টি সূরা ও ৬২৩৬টি আয়াত রয়েছে (আয়াত গণনায় সামান্য মতভেদ আছে)।', s:'মুসহাফে উসমানি অনুযায়ী' },
+ { q:'কোন সূরাকে "কুরআনের হৃদয়" বলা হয়?', o:['সূরা আর-রাহমান','সূরা আল-মুলক','সূরা ইয়াসিন','সূরা আল-কাহফ'], a:2, e:'রাসূলুল্লাহ ﷺ বলেছেন: "প্রতিটি জিনিসের একটি হৃদয় আছে, আর কুরআনের হৃদয় হলো সূরা ইয়াসিন।"', s:'সুনানে তিরমিযি: ২৮৮৭' },
+ { q:'সর্বপ্রথম ওহি অবতীর্ণ হয় কোন গুহায়?', o:['সাওর গুহা','হেরা গুহা','কাহফ গুহা','উহুদ গুহা'], a:1, e:'মক্কার জাবালে নূর পাহাড়ের হেরা গুহায় রমজান মাসে প্রথম ওহি অবতীর্ণ হয়।', s:'সহিহ বুখারি: ৩' },
+ { q:'ইসলামের স্তম্ভ মোট কয়টি?', o:['৪টি','৫টি','৬টি','৭টি'], a:1, e:'ইসলামের স্তম্ভ পাঁচটি: কালিমা শাহাদাত, নামাজ, যাকাত, রোজা ও হজ।', s:'সহিহ বুখারি: ৮; সহিহ মুসলিম: ১৬' },
+ { q:'ফেরেশতাদের মধ্যে ওহি বহনকারী প্রধান ফেরেশতা কে?', o:['মিকাইল (আ.)','ইসরাফিল (আ.)','জিবরাইল (আ.)','আজরাইল (আ.)'], a:2, e:'জিবরাইল (আ.) আল্লাহর ওহি নবী-রাসূলদের কাছে পৌঁছে দিতেন।', s:'সূরা আল-বাকারা: ৯৭' },
+ { q:'হযরত মুহাম্মদ ﷺ-এর জন্মস্থান কোথায়?', o:['মদিনা','তায়েফ','মক্কা','জেরুজালেম'], a:2, e:'রাসূলুল্লাহ ﷺ ৫৭০ খ্রিস্টাব্দে (হাতির বছর) মক্কা নগরীতে জন্মগ্রহণ করেন।', s:'সীরাতে ইবনে হিশাম' },
+ { q:'হিজরতের সময় রাসূলুল্লাহ ﷺ-এর সঙ্গী কে ছিলেন?', o:['হযরত উমর (রা.)','হযরত আলী (রা.)','হযরত আবু বকর (রা.)','হযরত উসমান (রা.)'], a:2, e:'মক্কা থেকে মদিনায় হিজরতের সময় হযরত আবু বকর সিদ্দিক (রা.) রাসূলুল্লাহ ﷺ-এর সঙ্গী ছিলেন; সাওর গুহায় তাঁরা তিন দিন অবস্থান করেন।', s:'সূরা আত-তাওবা: ৪০; সহিহ বুখারি: ৩৬৫৩' },
+ { q:'সর্বপ্রথম ইসলাম গ্রহণকারী নারী কে?', o:['হযরত আয়েশা (রা.)','হযরত খাদিজা (রা.)','হযরত ফাতিমা (রা.)','হযরত হাফসা (রা.)'], a:1, e:'রাসূলুল্লাহ ﷺ-এর স্ত্রী হযরত খাদিজা (রা.) সর্বপ্রথম ইসলাম গ্রহণ করেন এবং ওহির খবর শুনে তিনিই প্রথম সান্ত্বনা দেন।', s:'সহিহ বুখারি: ৩' },
+ { q:'বদরের যুদ্ধে মুসলিম সৈন্য সংখ্যা কত ছিল?', o:['৩১৩ জন','৫০০ জন','১০০০ জন','৩০০০ জন'], a:0, e:'২ হিজরির ১৭ রমজান বদরের যুদ্ধে মুসলিম বাহিনীতে ৩১৩ জন সাহাবি ছিলেন, বিপরীতে কুরাইশরা ছিল প্রায় ১০০০।', s:'সহিহ মুসলিম: ১৭৬৩; সীরাত' },
+ { q:'কুরআনে নাম উল্লেখ আছে এমন একমাত্র নারী কে?', o:['আসিয়া (আ.)','মারইয়াম (আ.)','হাওয়া (আ.)','সারা (আ.)'], a:1, e:'কুরআনে সরাসরি নাম উল্লেখ আছে একমাত্র হযরত মারইয়াম (আ.)-এর; তাঁর নামে একটি সূরাও (সূরা মারইয়াম) রয়েছে।', s:'সূরা মারইয়াম; সূরা আলে-ইমরান: ৪২' },
+ { q:'কোন নবীকে "খলিলুল্লাহ" (আল্লাহর বন্ধু) বলা হয়?', o:['হযরত মুসা (আ.)','হযরত ইবরাহিম (আ.)','হযরত ঈসা (আ.)','হযরত নূহ (আ.)'], a:1, e:'আল্লাহ হযরত ইবরাহিম (আ.)-কে খলিল (অন্তরঙ্গ বন্ধু) হিসেবে গ্রহণ করেছেন।', s:'সূরা আন-নিসা: ১২৫' },
+ { q:'কাবা শরিফ প্রথম কে নির্মাণ করেন (প্রচলিত বর্ণনা অনুযায়ী)?', o:['হযরত ইসমাইল (আ.) একা','হযরত ইবরাহিম ও ইসমাইল (আ.)','হযরত আদম (আ.)','কুরাইশ গোত্র'], a:1, e:'হযরত ইবরাহিম (আ.) ও তাঁর পুত্র হযরত ইসমাইল (আ.) কাবা শরিফের ভিত্তি উত্তোলন ও নির্মাণ করেন।', s:'সূরা আল-বাকারা: ১২৭' },
+ { q:'রমজানের কোন রাত হাজার মাসের চেয়ে উত্তম?', o:['শবে বরাত','শবে মিরাজ','লাইলাতুল কদর','শবে আশুরা'], a:2, e:'লাইলাতুল কদর হাজার মাসের চেয়েও উত্তম; রমজানের শেষ দশকের বেজোড় রাতগুলোতে এটি অন্বেষণ করতে বলা হয়েছে।', s:'সূরা আল-কদর: ৩; সহিহ বুখারি: ২০১৭' },
+ { q:'মিরাজের রাতে কয় ওয়াক্ত নামাজ ফরজ হয়?', o:['৩ ওয়াক্ত','৪ ওয়াক্ত','৫ ওয়াক্ত','৭ ওয়াক্ত'], a:2, e:'মিরাজের রাতে প্রথমে ৫০ ওয়াক্ত থেকে কমিয়ে দৈনিক পাঁচ ওয়াক্ত নামাজ ফরজ করা হয়।', s:'সহিহ বুখারি: ৩৪৯; সহিহ মুসলিম: ১৬২' },
+ { q:'কুরআনে কোন সূরায় বিসমিল্লাহ নেই?', o:['সূরা আল-আনফাল','সূরা আত-তাওবা','সূরা ইউনুস','সূরা হুদ'], a:1, e:'সূরা আত-তাওবার শুরুতে বিসমিল্লাহ লেখা ও পড়া হয় না। অন্যদিকে সূরা আন-নামলের ৩০ নম্বর আয়াতের ভেতরে বিসমিল্লাহ রয়েছে।', s:'তাফসিরে ইবনে কাসির; সহিহ বুখারি: ৪৩৬৪ (প্রসঙ্গ)' },
+ { q:'আয়াতুল কুরসি কোন সূরার আয়াত?', o:['সূরা আল-বাকারা: ২৫৫','সূরা আলে-ইমরান: ১৮','সূরা আল-ইখলাস: ১','সূরা ইয়াসিন: ৫৮'], a:0, e:'আয়াতুল কুরসি সূরা আল-বাকারার ২৫৫ নম্বর আয়াত; এটি কুরআনের অন্যতম শ্রেষ্ঠ আয়াত।', s:'সূরা আল-বাকারা: ২৫৫; সহিহ মুসলিম: ৮১০' },
+ { q:'সর্বশেষ অবতীর্ণ পূর্ণ সূরা কোনটি বলে প্রসিদ্ধ?', o:['সূরা আন-নাসর','সূরা আল-মায়িদা','সূরা আত-তাওবা','সূরা আল-ফাতহ'], a:0, e:'সূরা আন-নাসরকে সর্বশেষ অবতীর্ণ পূর্ণ সূরা বলা হয়; এটি রাসূলুল্লাহ ﷺ-এর ইন্তিকালের অল্পকাল আগে অবতীর্ণ হয়।', s:'সহিহ বুখারি: ৪২৯৪' },
+ { q:'হযরত আদম (আ.)-এর পর দ্বিতীয় নবী কে?', o:['হযরত ইদরিস (আ.)','হযরত নূহ (আ.)','হযরত শীষ (আ.)','হযরত হুদ (আ.)'], a:2, e:'প্রসিদ্ধ বর্ণনা অনুযায়ী হযরত আদম (আ.)-এর পুত্র হযরত শীষ (আ.) তাঁর পরে নবী হন; এরপর হযরত ইদরিস (আ.) ও হযরত নূহ (আ.)।', s:'তারিখ ও সীরাতের কিতাবসমূহ' },
+ { q:'দৈনিক ফরজ নামাজ মোট কত রাকাত?', o:['১২ রাকাত','১৭ রাকাত','২০ রাকাত','৩২ রাকাত'], a:1, e:'ফজর ২ + যোহর ৪ + আসর ৪ + মাগরিব ৩ + এশা ৪ = মোট ১৭ রাকাত ফরজ।', s:'সহিহ বুখারি: ৩৪৯ (পাঁচ ওয়াক্ত ফরজ)' },
+ { q:'যাকাতের হার শতকরা কত?', o:['১%','২%','২.৫%','৫%'], a:2, e:'নিসাব পরিমাণ সম্পদ এক বছর থাকলে মোট সম্পদের ২.৫% (চল্লিশ ভাগের এক ভাগ) যাকাত দিতে হয়।', s:'সহিহ বুখারি: ১৪৫৪; সূরা আত-তাওবা: ৬০' },
+ { q:'কোন শহরকে "মদিনাতুন নবী" বলা হয়?', o:['মক্কা','তায়েফ','ইয়াসরিব (মদিনা)','খায়বার'], a:2, e:'হিজরতের পর ইয়াসরিবের নাম হয় মদিনাতুন নবী (নবীর শহর), সংক্ষেপে মদিনা।', s:'সহিহ বুখারি: ১৮৭১' },
+ { q:'উহুদের যুদ্ধ কোন হিজরি সালে হয়?', o:['২ হিজরি','৩ হিজরি','৫ হিজরি','৬ হিজরি'], a:1, e:'উহুদের যুদ্ধ ৩ হিজরির শাওয়াল মাসে সংঘটিত হয়; এতে ৭০ জন সাহাবি শহীদ হন।', s:'সীরাতে ইবনে হিশাম; সহিহ বুখারি: ৪০৪৩' },
+ { q:'কুরআন সংকলন (এক খণ্ডে গ্রন্থন) প্রথম কার খিলাফতে হয়?', o:['হযরত উমর (রা.)','হযরত আবু বকর (রা.)','হযরত উসমান (রা.)','হযরত আলী (রা.)'], a:1, e:'ইয়ামামার যুদ্ধে অনেক হাফেজ শহীদ হলে হযরত উমর (রা.)-এর পরামর্শে খলিফা আবু বকর (রা.)-এর আমলে যায়েদ ইবনে সাবিত (রা.) কুরআন সংকলন করেন। পরে উসমান (রা.)-এর আমলে প্রমিত অনুলিপি তৈরি হয়।', s:'সহিহ বুখারি: ৪৯৮৬' }
+];
+var quizState = { order: [], pos: 0, score: 0, answered: false };
+function quizStart(){
+  quizState.order = QUIZ.map(function(_, i){ return i; });
+  for (var i = quizState.order.length - 1; i > 0; i--){
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = quizState.order[i]; quizState.order[i] = quizState.order[j]; quizState.order[j] = tmp;
+  }
+  quizState.pos = 0; quizState.score = 0;
+  quizRender();
+}
+function quizRender(){
+  var card = $('quizCard');
+  if (quizState.pos >= quizState.order.length){
+    var total = quizState.order.length;
+    var msg = quizState.score === total ? 'মাশাআল্লাহ! সব উত্তর সঠিক হয়েছে।' :
+      quizState.score >= total * 0.7 ? 'খুব ভালো! আলহামদুলিল্লাহ।' :
+      quizState.score >= total * 0.4 ? 'ভালো চেষ্টা! আরও পড়লে আরও ভালো হবে, ইনশাআল্লাহ।' :
+      'চেষ্টা চালিয়ে যান — কুরআন-হাদিসের জ্ঞান ধীরে ধীরে বাড়বে, ইনশাআল্লাহ।';
+    card.innerHTML = '<div style="text-align:center; padding:14px 0">' +
+      '<div style="font-size:52px; font-weight:700; color:var(--green-800)">' + bn(quizState.score) + '/' + bn(total) + '</div>' +
+      '<p style="font-size:18px; font-weight:600">' + msg + '</p>' +
+      '<button class="btn gold" id="quizAgain">আবার খেলুন</button></div>';
+    $('quizAgain').addEventListener('click', quizStart);
+    return;
+  }
+  var item = QUIZ[quizState.order[quizState.pos]];
+  quizState.answered = false;
+  var opts = '';
+  item.o.forEach(function(o, i){ opts += '<button class="quiz-opt" data-opt="' + i + '">' + o + '</button>'; });
+  card.innerHTML = '<div class="qmeta"><span>প্রশ্ন ' + bn(quizState.pos + 1) + '/' + bn(quizState.order.length) + '</span><span>স্কোর: ' + bn(quizState.score) + '</span></div>' +
+    '<h3 style="margin:4px 0 10px; font-size:19.5px">' + item.q + '</h3>' + opts + '<div id="quizExp"></div>';
+}
+$('quizCard').addEventListener('click', function(e){
+  var b = e.target.closest('[data-opt]'); if (!b || quizState.answered) return;
+  quizState.answered = true;
+  var item = QUIZ[quizState.order[quizState.pos]];
+  var pick = +b.getAttribute('data-opt');
+  var btns = document.querySelectorAll('#quizCard .quiz-opt');
+  btns.forEach(function(x, i){
+    if (i === item.a) x.classList.add('right');
+    else if (i === pick) x.classList.add('wrong');
+    x.disabled = true;
+  });
+  if (pick === item.a){ quizState.score++; toast('সঠিক উত্তর! মাশাআল্লাহ'); }
+  else toast('সঠিক উত্তর: ' + item.o[item.a]);
+  $('quizExp').innerHTML = '<div class="quiz-exp"><b>ব্যাখ্যা:</b> ' + item.e + '<br /><span style="color:var(--ink-2)">সূত্র: ' + item.s + '</span></div>' +
+    '<p style="margin:14px 0 0; text-align:right"><button class="btn gold" id="quizNext">' + (quizState.pos + 1 >= quizState.order.length ? 'ফলাফল দেখুন' : 'পরের প্রশ্ন →') + '</button></p>';
+  $('quizNext').addEventListener('click', function(){ quizState.pos++; quizRender(); });
+});
+quizStart();
+</script>
+<script>
+/* ================= 99 Names ================= */
+var NAMES99 = [
+ ['الرَّحْمَنُ','আর-রাহমান','পরম দয়ালু'],['الرَّحِيمُ','আর-রাহিম','অতি দয়ালু'],['الْمَلِكُ','আল-মালিক','সর্বাধিপতি'],['الْقُدُّوسُ','আল-কুদ্দুস','পরম পবিত্র'],['السَّلَامُ','আস-সালাম','শান্তি ও নিরাপত্তাদাতা'],['الْمُؤْمِنُ','আল-মুমিন','নিরাপত্তা ও ঈমানদাতা'],['الْمُهَيْمِنُ','আল-মুহাইমিন','রক্ষণাবেক্ষণকারী'],['الْعَزِيزُ','আল-আজিজ','পরাক্রমশালী'],['الْجَبَّارُ','আল-জাব্বার','মহাপরাক্রমশালী'],['الْمُتَكَبِّرُ','আল-মুতাকাব্বির','সর্বশ্রেষ্ঠ গৌরবের অধিকারী'],['الْخَالِقُ','আল-খালিক','সৃষ্টিকর্তা'],['الْبَارِئُ','আল-বারি','উদ্ভাবক'],['الْمُصَوِّرُ','আল-মুসাওয়ির','আকৃতিদাতা'],['الْغَفَّارُ','আল-গাফফার','মহাক্ষমাশীল'],['الْقَهَّارُ','আল-কাহহার','মহাপরাক্রান্ত'],['الْوَهَّابُ','আল-ওয়াহহাব','মহাদাতা'],['الرَّزَّاقُ','আর-রাজ্জাক','রিজিকদাতা'],['الْفَتَّاحُ','আল-ফাত্তাহ','বিজয় ও ফয়সালাদাতা'],['الْعَلِيمُ','আল-আলিম','সর্বজ্ঞ'],['الْقَابِضُ','আল-কাবিদ','রিজিক সংকীর্ণকারী'],['الْبَاسِطُ','আল-বাসিত','রিজিক প্রশস্তকারী'],['الْخَافِضُ','আল-খাফিদ','অবনতকারী'],['الرَّافِعُ','আর-রাফি','উন্নতকারী'],['الْمُعِزُّ','আল-মুইজ','সম্মানদাতা'],['الْمُذِلُّ','আল-মুজিল','অসম্মানকারী'],['السَّمِيعُ','আস-সামি','সর্বশ্রোতা'],['الْبَصِيرُ','আল-বাসির','সর্বদ্রষ্টা'],['الْحَكَمُ','আল-হাকাম','ন্যায়বিচারক'],['الْعَدْلُ','আল-আদল','পরিপূর্ণ ন্যায়পরায়ণ'],['اللَّطِيفُ','আল-লাতিফ','সূক্ষ্মদর্শী ও সদয়'],['الْخَبِيرُ','আল-খাবির','সব খবর রাখেন'],['الْحَلِيمُ','আল-হালিম','মহাধৈর্যশীল'],['الْعَظِيمُ','আল-আজিম','মহান'],['الْغَفُورُ','আল-গাফুর','পরম ক্ষমাশীল'],['الشَّكُورُ','আশ-শাকুর','কৃতজ্ঞতার উত্তম প্রতিদানদাতা'],['الْعَلِيُّ','আল-আলিয়্যু','সুউচ্চ'],['الْكَبِيرُ','আল-কাবির','সুমহান'],['الْحَفِيظُ','আল-হাফিজ','মহারক্ষক'],['الْمُقِيتُ','আল-মুকিত','আহার ও শক্তিদাতা'],['الْحَسِيبُ','আল-হাসিব','হিসাব গ্রহণকারী'],['الْجَلِيلُ','আল-জালিল','মহিমান্বিত'],['الْكَرِيمُ','আল-কারিম','মহানুভব দাতা'],['الرَّقِيبُ','আর-রাকিব','সতর্ক পর্যবেক্ষক'],['الْمُجِيبُ','আল-মুজিব','দোয়া কবুলকারী'],['الْوَاسِعُ','আল-ওয়াসি','সর্বব্যাপী'],['الْحَكِيمُ','আল-হাকিম','প্রজ্ঞাময়'],['الْوَدُودُ','আল-ওয়াদুদ','পরম প্রেমময়'],['الْمَجِيدُ','আল-মাজিদ','মহাগৌরবময়'],['الْبَاعِثُ','আল-বায়িস','পুনরুত্থানকারী'],['الشَّهِيدُ','আশ-শাহিদ','সর্বসাক্ষী'],['الْحَقُّ','আল-হাক্ক','পরম সত্য'],['الْوَكِيلُ','আল-ওয়াকিল','কর্মবিধায়ক ও নির্ভরযোগ্য'],['الْقَوِيُّ','আল-কাওয়িয়্যু','মহাশক্তিধর'],['الْمَتِينُ','আল-মাতিন','সুদৃঢ় শক্তির অধিকারী'],['الْوَلِيُّ','আল-ওয়ালিয়্যু','অভিভাবক ও বন্ধু'],['الْحَمِيدُ','আল-হামিদ','সর্বপ্রশংসিত'],['الْمُحْصِي','আল-মুহসি','সবকিছুর হিসাবরক্ষক'],['الْمُبْدِئُ','আল-মুবদি','প্রথম সৃষ্টিকারী'],['الْمُعِيدُ','আল-মুয়িদ','পুনঃসৃষ্টিকারী'],['الْمُحْيِي','আল-মুহয়ি','জীবনদাতা'],['الْمُمِيتُ','আল-মুমিত','মৃত্যুদাতা'],['الْحَيُّ','আল-হাইয়্যু','চিরঞ্জীব'],['الْقَيُّومُ','আল-কাইয়্যুম','সবকিছুর ধারক ও সংরক্ষক'],['الْوَاجِدُ','আল-ওয়াজিদ','সবকিছু লাভকারী'],['الْمَاجِدُ','আল-মাজিদ','মহিমান্বিত'],['الْوَاحِدُ','আল-ওয়াহিদ','এক ও অদ্বিতীয়'],['الصَّمَدُ','আস-সামাদ','অমুখাপেক্ষী, সবাই তাঁর মুখাপেক্ষী'],['الْقَادِرُ','আল-কাদির','সর্বশক্তিমান'],['الْمُقْتَدِرُ','আল-মুকতাদির','পূর্ণ ক্ষমতাবান'],['الْمُقَدِّمُ','আল-মুকাদ্দিম','অগ্রসরকারী'],['الْمُؤَخِّرُ','আল-মুআখখির','পেছনে সরিয়ে দেন যাকে ইচ্ছা'],['الْأَوَّلُ','আল-আউয়াল','সর্বপ্রথম'],['الْآخِرُ','আল-আখির','সর্বশেষ'],['الظَّاهِرُ','আজ-জাহির','সর্বপ্রকাশিত'],['الْبَاطِنُ','আল-বাতিন','সর্বগোপন'],['الْوَالِي','আল-ওয়ালি','সর্বকর্তৃত্বের অধিকারী'],['الْمُتَعَالِي','আল-মুতাআলি','সুউচ্চ মর্যাদাবান'],['الْبَرُّ','আল-বারর','পরম কল্যাণকারী'],['التَّوَّابُ','আত-তাওয়াব','তাওবা কবুলকারী'],['الْمُنْتَقِمُ','আল-মুনতাকিম','প্রতিশোধ গ্রহণকারী'],['الْعَفُوُّ','আল-আফুওয়ু','পরম মার্জনাকারী'],['الرَّؤُوفُ','আর-রাউফ','পরম স্নেহশীল'],['مَالِكُ الْمُلْكِ','মালিকুল মুলক','সার্বভৌমত্বের অধিপতি'],['ذُو الْجَلَالِ وَالْإِكْرَامِ','জুল জালালি ওয়াল ইকরাম','মহিমা ও সম্মানের অধিকারী'],['الْمُقْسِطُ','আল-মুকসিত','ন্যায়পরায়ণ'],['الْجَامِعُ','আল-জামি','একত্রকারী'],['الْغَنِيُّ','আল-গানিয়্যু','অভাবমুক্ত ধনী'],['الْمُغْنِي','আল-মুগনি','ধনী বানানকারী'],['الْمَانِعُ','আল-মানি','প্রতিরোধকারী'],['الضَّارُّ','আদ-দারর','ক্ষতি পৌঁছানোর ক্ষমতাবান'],['النَّافِعُ','আন-নাফি','উপকারকারী'],['النُّورُ','আন-নূর','আলো ও জ্যোতি'],['الْهَادِي','আল-হাদি','পথপ্রদর্শক'],['الْبَدِيعُ','আল-বাদি','অতুলনীয় উদ্ভাবক'],['الْبَاقِي','আল-বাকি','চিরস্থায়ী'],['الْوَارِثُ','আল-ওয়ারিস','সবকিছুর উত্তরাধিকারী'],['الرَّشِيدُ','আর-রাশিদ','সঠিক পথ নির্দেশক'],['الصَّبُورُ','আস-সাবুর','মহাধৈর্যশীল']
+];
+$('namesGrid').innerHTML = NAMES99.map(function(n, i){
+  return '<div class="name-card"><div class="n">' + bn(i + 1) + '</div><div class="a">' + n[0] + '</div><div class="t">' + n[1] + '</div><div class="m">' + n[2] + '</div></div>';
+}).join('');
+
+/* ================= Kalima ================= */
+var KALIMAS = [
+ { t:'প্রথম কালিমা — তাইয়্যিবা', ar:'لَا إِلَٰهَ إِلَّا اللَّهُ مُحَمَّدٌ رَسُولُ اللَّهِ', bn:'আল্লাহ ছাড়া কোনো ইলাহ (উপাস্য) নেই; মুহাম্মদ ﷺ আল্লাহর রাসূল।' },
+ { t:'দ্বিতীয় কালিমা — শাহাদাত', ar:'أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ', bn:'আমি সাক্ষ্য দিচ্ছি যে, আল্লাহ ছাড়া কোনো ইলাহ নেই; তিনি এক, তাঁর কোনো শরিক নেই। আর আমি সাক্ষ্য দিচ্ছি যে, মুহাম্মদ ﷺ তাঁর বান্দা ও রাসূল।' },
+ { t:'তৃতীয় কালিমা — তামজিদ', ar:'سُبْحَانَ اللَّهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلَٰهَ إِلَّا اللَّهُ وَاللَّهُ أَكْبَرُ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ', bn:'আল্লাহ পবিত্র, সব প্রশংসা আল্লাহর, আল্লাহ ছাড়া কোনো ইলাহ নেই, আল্লাহ সবচেয়ে বড়। মহান ও সুমহান আল্লাহর সাহায্য ছাড়া কোনো শক্তি ও সামর্থ্য নেই।' },
+ { t:'চতুর্থ কালিমা — তাওহিদ', ar:'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، يُحْيِي وَيُمِيتُ، وَهُوَ حَيٌّ لَا يَمُوتُ أَبَدًا أَبَدًا، ذُو الْجَلَالِ وَالْإِكْرَامِ، بِيَدِهِ الْخَيْرُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ', bn:'আল্লাহ ছাড়া কোনো ইলাহ নেই; তিনি এক, তাঁর কোনো শরিক নেই। সব রাজত্ব তাঁরই, সব প্রশংসা তাঁরই। তিনি জীবন দেন ও মৃত্যু দেন; তিনি চিরঞ্জীব, কখনো মরবেন না। তিনি মহিমা ও সম্মানের অধিকারী; সব কল্যাণ তাঁর হাতে; তিনি সবকিছুর ওপর ক্ষমতাবান।' },
+ { t:'পঞ্চম কালিমা — আস্তাগফার', ar:'أَسْتَغْفِرُ اللَّهَ رَبِّي مِنْ كُلِّ ذَنْبٍ أَذْنَبْتُهُ عَمَدًا أَوْ خَطَأً، سِرًّا أَوْ عَلَانِيَةً، وَأَتُوبُ إِلَيْهِ مِنَ الذَّنْبِ الَّذِي أَعْلَمُ وَمِنَ الذَّنْبِ الَّذِي لَا أَعْلَمُ، إِنَّكَ أَنْتَ عَلَّامُ الْغُيُوبِ وَسَتَّارُ الْعُيُوبِ وَغَفَّارُ الذُّنُوبِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ الْعَلِيِّ الْعَظِيمِ', bn:'আমি আমার রব আল্লাহর কাছে ক্ষমা চাই প্রতিটি গুনাহ থেকে — যা আমি ইচ্ছাকৃত বা ভুলে, গোপনে বা প্রকাশ্যে করেছি। আমি তাওবা করছি সেই গুনাহ থেকে যা আমি জানি এবং যা জানি না। নিশ্চয় আপনিই অদৃশ্যের মহাজ্ঞানী, দোষ-ত্রুটি গোপনকারী ও গুনাহ ক্ষমাকারী। মহান আল্লাহর সাহায্য ছাড়া কোনো শক্তি ও সামর্থ্য নেই।' },
+ { t:'ষষ্ঠ কালিমা — রাদ্দে কুফর', ar:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ أَنْ أُشْرِكَ بِكَ شَيْئًا وَأَنَا أَعْلَمُ بِهِ، وَأَسْتَغْفِرُكَ لِمَا لَا أَعْلَمُ بِهِ، تُبْتُ عَنْهُ، وَتَبَرَّأْتُ مِنَ الْكُفْرِ وَالشِّرْكِ وَالْكَذِبِ وَالْغِيبَةِ وَالْبِدْعَةِ وَالنَّمِيمَةِ وَالْفَوَاحِشِ وَالْبُهْتَانِ وَالْمَعَاصِي كُلِّهَا، وَأَسْلَمْتُ، وَأَقُولُ لَا إِلَٰهَ إِلَّا اللَّهُ مُحَمَّدٌ رَسُولُ اللَّهِ', bn:'হে আল্লাহ! আমি আপনার কাছে আশ্রয় চাই এ থেকে যে, জেনে-শুনে আপনার সঙ্গে কিছু শরিক করি; আর যা আমি জানি না, তার জন্য আপনার কাছে ক্ষমা চাই। আমি তা থেকে তাওবা করলাম; কুফর, শিরক, মিথ্যা, গিবত, বিদআত, চুগলখোরি, অশ্লীলতা, অপবাদ ও সব ধরনের গুনাহ থেকে নিজেকে মুক্ত ঘোষণা করলাম। আমি ইসলাম গ্রহণ করলাম এবং বলছি: আল্লাহ ছাড়া কোনো ইলাহ নেই; মুহাম্মদ ﷺ আল্লাহর রাসূল।' }
+];
+$('kalimaList').innerHTML = KALIMAS.map(function(k){
+  return '<article class="hcard"><h3>' + k.t + '</h3><p class="ar">' + k.ar + '</p><p>' + k.bn + '</p></article>';
+}).join('');
+
+/* ================= Namaz Shikkha ================= */
+var SHIKKHA = '' +
+ '<details class="acc" open><summary>ওযু করার নিয়ম (ধারাবাহিক ধাপ)</summary><div class="body">' +
+ '<p>নিয়ত করে "বিসমিল্লাহ" বলে শুরু করুন। ওযুর ফরজ চারটি: পুরো মুখ ধোয়া, কনুইসহ দুই হাত ধোয়া, মাথার চারভাগের একভাগ মাসেহ করা এবং টাখনুসহ দুই পা ধোয়া। সুন্নাত তরিকা অনুযায়ী ধাপগুলো:</p>' +
+ '<ol class="steps">' +
+ '<li>দুই হাত কব্জি পর্যন্ত তিনবার ধুয়ে নিন।</li>' +
+ '<li>তিনবার কুলি করুন ও নাকে পানি দিয়ে তিনবার ঝাড়ুন।</li>' +
+ '<li>পুরো মুখ (কপালের চুলের গোড়া থেকে থুতনি, এক কান থেকে অপর কান) তিনবার ধুয়ে নিন।</li>' +
+ '<li>প্রথমে ডান হাত, পরে বাম হাত কনুইসহ তিনবার ধুয়ে নিন।</li>' +
+ '<li>ভেজা হাতে পুরো মাথা একবার মাসেহ করুন; কান ও ঘাড়ও মাসেহ করুন।</li>' +
+ '<li>প্রথমে ডান পা, পরে বাম পা টাখনুসহ তিনবার ধুয়ে নিন।</li>' +
+ '</ol>' +
+ '<p class="ar">أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ، اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ</p>' +
+ '<p>ওযুর পরের এই দোয়া পড়া সুন্নাত (সহিহ মুসলিম: ২৩৪; সুনানে তিরমিযি: ৫৫)।</p></div></details>' +
+
+ '<details class="acc"><summary>পাঁচ ওয়াক্ত নামাজের রাকাত সংখ্যা</summary><div class="body">' +
+ '<table class="rakat"><thead><tr><th>ওয়াক্ত</th><th>সুন্নাত (আগে)</th><th>ফরজ</th><th>সুন্নাত (পরে)</th><th>নফল/বিতর</th></tr></thead><tbody>' +
+ '<tr><th>ফজর</th><td>২</td><td>২</td><td>—</td><td>—</td></tr>' +
+ '<tr><th>যোহর</th><td>৪</td><td>৪</td><td>২</td><td>২ নফল</td></tr>' +
+ '<tr><th>আসর</th><td>৪ (গায়রে মুয়াক্কাদা)</td><td>৪</td><td>—</td><td>—</td></tr>' +
+ '<tr><th>মাগরিব</th><td>—</td><td>৩</td><td>২</td><td>২ নফল</td></tr>' +
+ '<tr><th>এশা</th><td>৪ (গায়রে মুয়াক্কাদা)</td><td>৪</td><td>২</td><td>২ নফল + ৩ বিতর (ওয়াজিব)</td></tr>' +
+ '<tr><th>জুমা (শুক্রবার)</th><td>৪</td><td>২</td><td>৪ + ২</td><td>—</td></tr>' +
+ '</tbody></table>' +
+ '<p>দৈনিক ফরজ মোট ১৭ রাকাত। বিতর নামাজ হানাফি মাযহাবে ওয়াজিব।</p></div></details>' +
+
+ '<details class="acc"><summary>নামাজ পড়ার ধারাবাহিক ধাপ (এক রাকাতের বিবরণ)</summary><div class="body">' +
+ '<ol class="steps">' +
+ '<li><b>নিয়ত ও তাকবিরে তাহরিমা:</b> কিবলামুখী হয়ে দাঁড়িয়ে নিয়ত করুন; দুই হাত কান/কাঁধ পর্যন্ত উঠিয়ে "আল্লাহু আকবার" বলে নামাজ শুরু করুন।</li>' +
+ '<li><b>কিয়াম:</b> হাত বেঁধে সানা পড়ুন — <span class="ar" style="display:block">سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، وَتَبَارَكَ اسْمُكَ، وَتَعَالَىٰ جَدُّكَ، وَلَا إِلَٰهَ غَيْرُكَ</span>এরপর আউযুবিল্লাহ ও বিসমিল্লাহ পড়ে সূরা আল-ফাতিহা এবং অন্য একটি সূরা/আয়াত পড়ুন।</li>' +
+ '<li><b>রুকু:</b> "আল্লাহু আকবার" বলে রুকুতে যান; কমপক্ষে তিনবার বলুন — <span class="ar" style="display:block">سُبْحَانَ رَبِّيَ الْعَظِيمِ</span></li>' +
+ '<li><b>কওমা:</b> "সামিআল্লাহু লিমান হামিদাহ" বলে সোজা হয়ে দাঁড়ান এবং বলুন — <span class="ar" style="display:block">رَبَّنَا لَكَ الْحَمْدُ</span></li>' +
+ '<li><b>সিজদা:</b> "আল্লাহু আকবার" বলে দুটি সিজদা করুন; প্রতিটিতে কমপক্ষে তিনবার বলুন — <span class="ar" style="display:block">سُبْحَانَ رَبِّيَ الْأَعْلَىٰ</span>দুই সিজদার মাঝে কিছুক্ষণ বসুন।</li>' +
+ '<li><b>দ্বিতীয় রাকাত:</b> একইভাবে দ্বিতীয় রাকাত আদায় করুন।</li>' +
+ '<li><b>তাশাহহুদ:</b> দ্বিতীয় রাকাতে বসে আত্তাহিয়্যাতু পড়ুন — <span class="ar" style="display:block">التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ</span></li>' +
+ '<li><b>দরুদ ও দোয়া মাসুরা (শেষ বৈঠকে):</b> দরুদে ইবরাহিম পড়ুন — <span class="ar" style="display:block">اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ وَعَلَىٰ آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَىٰ إِبْرَاهِيمَ وَعَلَىٰ آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ، اللَّهُمَّ بَارِكْ عَلَىٰ مُحَمَّدٍ وَعَلَىٰ آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَىٰ إِبْرَاهِيمَ وَعَلَىٰ آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ</span>এরপর দোয়া মাসুরা: <span class="ar" style="display:block">اللَّهُمَّ إِنِّي ظَلَمْتُ نَفْسِي ظُلْمًا كَثِيرًا، وَلَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ، فَاغْفِرْ لِي مَغْفِرَةً مِنْ عِنْدِكَ وَارْحَمْنِي، إِنَّكَ أَنْتَ الْغَفُورُ الرَّحِيمُ</span></li>' +
+ '<li><b>সালাম:</b> ডানে ও বামে "আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহ" বলে নামাজ শেষ করুন।</li>' +
+ '</ol>' +
+ '<p>তিন ও চার রাকাতবিশিষ্ট নামাজে মাঝের বৈঠকে শুধু তাশাহহুদ পড়ে উঠে যান এবং শেষ বৈঠকে তাশাহহুদ, দরুদ ও দোয়া মাসুরা পড়ে সালাম ফেরান। বিস্তারিত শেখার জন্য নির্ভরযোগ্য আলেম বা সহিহ নামাজ শিক্ষার বই অনুসরণ করুন।</p></div></details>' +
+
+ '<details class="acc"><summary>নামাজের ফরজ, ওয়াজিব ও কিছু জরুরি মাসআলা</summary><div class="body">' +
+ '<p><b>নামাজের বাইরে ফরজ (শর্ত) ৭টি:</b> শরীর পবিত্র হওয়া, পোশাক পবিত্র হওয়া, নামাজের জায়গা পবিত্র হওয়া, সতর ঢাকা, কিবলামুখী হওয়া, ওয়াক্ত হওয়া ও নিয়ত করা।</p>' +
+ '<p><b>নামাজের ভেতরে ফরজ (রুকন) ৬টি:</b> তাকবিরে তাহরিমা, কিয়াম (দাঁড়ানো), কিরাত (কুরআন পড়া), রুকু, দুই সিজদা ও শেষ বৈঠকে তাশাহহুদ পরিমাণ বসা।</p>' +
+ '<p>ফরজ ছুটে গেলে নামাজ হবে না; ওয়াজিব ছুটে গেলে সাহু সিজদা দিতে হয়। মহিলাদের সতর: মুখ, হাত ও পা ছাড়া পুরো শরীর; পুরুষদের সতর: নাভি থেকে হাঁটু পর্যন্ত।</p></div></details>';
+$('shikkhaBody').innerHTML = SHIKKHA;
+
+/* ================= Zakat ================= */
+function money(n){ return '৳ ' + bn(Math.round(n).toLocaleString('en-IN')); }
+$('zCalc').addEventListener('click', function(){
+  function v(id){ return Math.max(0, parseFloat($(id).value) || 0); }
+  var total = v('zCash') + v('zGold') + v('zSilver') + v('zBiz');
+  var debt = v('zDebt');
+  var nisab = v('zNisab');
+  var net = total - debt;
+  var box = $('zResult');
+  box.classList.remove('hidden');
+  if (nisab <= 0){
+    box.innerHTML = 'নিসাবের পরিমাণ লিখুন (আজকের বাজারদরে প্রায় ৬১২ গ্রাম রূপার দাম) — তাহলেই সঠিক হিসাব করা যাবে।<br />আপনার মোট সম্পদ: <b>' + money(total) + '</b>, ঋণ বাদে: <b>' + money(net) + '</b>';
+    return;
+  }
+  if (net < nisab){
+    box.innerHTML = 'আপনার যাকাতযোগ্য সম্পদ <b>' + money(net) + '</b> — যা নিসাব (' + money(nisab) + ') এর কম। তাই আপনার ওপর যাকাত ফরজ নয়। তবে ইচ্ছা করলে নফল সদকা করতে পারেন — সদকায় সম্পদ কমে না (সহিহ মুসলিম: ২৫৮৮)।';
+  } else {
+    var z = net * 0.025;
+    box.innerHTML = 'মোট সম্পদ: <b>' + money(total) + '</b> • ঋণ: <b>' + money(debt) + '</b> • যাকাতযোগ্য: <b>' + money(net) + '</b><br />আপনার যাকাতের পরিমাণ:<div class="amt">' + money(z) + '</div>এই অর্থ যাকাতের হকদারদের (গরিব, মিসকিন প্রমুখ — সূরা আত-তাওবা: ৬০) কাছে পৌঁছে দিন।';
+  }
+});
+</script>
+<script>
+/* ================= Tafsir (নির্বাচিত সূরা) ================= */
+var TAFSIR = {
+  0: 'সূরা আল-ফাতিহা কুরআনের প্রথম সূরা ও সব নামাজের অপরিহার্য অংশ; একে "উম্মুল কুরআন" (কুরআনের মা) ও "আস-সাবউল মাসানি" বলা হয়। এতে আল্লাহর প্রশংসা, তাঁর দয়া ও মালিকানার ঘোষণা, ইবাদত ও সাহায্য শুধু তাঁর কাছেই চাওয়া এবং সরল পথের হেদায়েতের দোয়া — পুরো কুরআনের মূল বার্তার সারসংক্ষেপ রয়েছে। (তাফসিরে ইবনে কাসির)',
+  1: 'সূরা আল-বাকারা কুরআনের দীর্ঘতম সূরা (২৮৬ আয়াত, মাদানী)। এতে ঈমান, নামাজ, রোজা, হজ, যাকাত, বিবাহ-তালাক, ব্যবসা-বাণিজ্য, সুদ নিষিদ্ধকরণসহ জীবনের প্রায় সব ক্ষেত্রের বিধান এসেছে। এর মধ্যে আয়াতুল কুরসি (২৫৫) কুরআনের শ্রেষ্ঠ আয়াতগুলোর একটি, আর শেষ দুই আয়াত (২৮৫–২৮৬) রাতে পড়লে যথেষ্ট হওয়ার সুসংবাদ হাদিসে এসেছে। (সহিহ বুখারি: ৫০০৯)',
+  17: 'সূরা আল-কাহফ (মাক্কী, ১১০ আয়াত) — এতে আসহাবে কাহফ, হযরত মুসা ও খিজির (আ.), যুলকারনাইন এবং দুই বাগানের মালিকের ঘটনা বর্ণিত হয়েছে, যা ফিতনা থেকে বাঁচার শিক্ষা দেয়। জুমার দিন এই সূরা পড়লে দুই জুমার মাঝে নূর (আলো) লাভের কথা হাদিসে এসেছে। (সুনানে বায়হাকি; মুসনাদে হাকিম: ২/৩৬৮)',
+  35: 'সূরা ইয়াসিনকে (মাক্কী, ৮৩ আয়াত) রাসূলুল্লাহ ﷺ "কুরআনের হৃদয়" বলেছেন। এতে তাওহিদ, রিসালাত ও আখিরাতের প্রমাণ, একটি জনপদের ঘটনা এবং মৃত্যুর পরের জীবনের চিত্র ফুটে উঠেছে। (সুনানে তিরমিযি: ২৮৮৭)',
+  54: 'সূরা আর-রাহমান (৭৮ আয়াত) — "কুরআনের অলংকার" নামে পরিচিত। এতে আল্লাহর অসংখ্য নেয়ামতের বর্ণনার পাশাপাশি "তোমরা তোমাদের রবের কোন কোন নেয়ামতকে অস্বীকার করবে?" — এই আয়াতটি ৩১ বার পুনরাবৃত্ত হয়েছে, যা মানুষ ও জিনকে কৃতজ্ঞতার দিকে আহ্বান করে।',
+  66: 'সূরা আল-মুলক (মাক্কী, ৬৭ আয়াত) — আল্লাহর সার্বভৌম ক্ষমতা ও সৃষ্টির নিখুঁত ব্যবস্থাপনা বর্ণিত হয়েছে। রাতে ঘুমানোর আগে এই সূরা পড়ার অভ্যাস করা সুন্নাত; হাদিসে একে কবরের আজাব থেকে রক্ষাকারী ও সুপারিশকারী বলা হয়েছে। (সুনানে তিরমিযি: ২৮৯১)',
+  96: 'সূরা আল-কদর (মাক্কী, ৫ আয়াত) — লাইলাতুল কদরের মর্যাদা বর্ণিত: এই এক রাত হাজার মাসের (৮৩ বছরের বেশি) ইবাদতের চেয়ে উত্তম। এই রাতে ফেরেশতারা ও জিবরাইল (আ.) পৃথিবীতে অবতরণ করেন এবং ফজর পর্যন্ত শান্তি বিরাজ করে। (সূরা আল-কদর: ১–৫)',
+  102: 'সূরা আল-আসর (মাক্কী, ৩ আয়াত) — সময়ের শপথ করে বলা হয়েছে: সব মানুষ ক্ষতির মধ্যে, তারা ছাড়া যারা ঈমান আনে, সৎকাজ করে, পরস্পরকে সত্যের ও ধৈর্যের উপদেশ দেয়। ইমাম শাফেয়ি (রহ.) বলেছেন, মানুষ চিন্তা করলে শুধু এই সূরাই তাদের জন্য যথেষ্ট হতো।',
+  107: 'সূরা আল-কাউসার (মাক্কী, ৩ আয়াত) — কুরআনের সবচেয়ে ছোট সূরা। "কাউসার" হলো জান্নাতে রাসূলুল্লাহ ﷺ-কে দেওয়া বিশেষ নহর/হাউজ ও প্রচুর কল্যাণ। এতে নামাজ ও কুরবানির নির্দেশ এবং শত্রুদেরই নির্বংশ হওয়ার ঘোষণা এসেছে।',
+  108: 'সূরা আল-কাফিরুন (মাক্কী, ৬ আয়াত) — তাওহিদের স্পষ্ট ঘোষণা: ইবাদতে কোনো আপস নেই — "তোমাদের ধর্ম তোমাদের জন্য, আমার ধর্ম আমার জন্য।" একে কুরআনের এক-চতুর্থাংশের সমতুল্য বলা হয়েছে হাদিসে। (সুনানে তিরমিযি: ৩৪০৫)',
+  111: 'সূরা আল-ইখলাস (মাক্কী, ৪ আয়াত) — আল্লাহর একত্বের বিশুদ্ধ বর্ণনা: তিনি এক, অমুখাপেক্ষী; তিনি কাউকে জন্ম দেননি, তাঁকেও জন্ম দেওয়া হয়নি; তাঁর সমতুল্য কেউ নেই। এই সূরা কুরআনের এক-তৃতীয়াংশের সমান মর্যাদা রাখে। (সহিহ বুখারি: ৫০১৩)'.replace('ih','হি'),
+  112: 'সূরা আল-ফালাক (মাক্কী, ৫ আয়াত) — ভোরের রবের কাছে সব সৃষ্টির অনিষ্ট, অন্ধকারের অনিষ্ট, জাদুকরদের অনিষ্ট ও হিংসুকের হিংসা থেকে আশ্রয় চাওয়ার দোয়া। সূরা আন-নাসের সঙ্গে মিলিয়ে এ দুটিকে "মুআওয়িযাতাইন" বলা হয়; সকাল-সন্ধ্যায় তিনবার করে পড়া সুন্নাত।',
+  113: 'সূরা আন-নাস (মাক্কী, ৬ আয়াত) — কুরআনের শেষ সূরা। মানুষের রব, বাদশাহ ও ইলাহের কাছে শয়তানের কুমন্ত্রণা থেকে আশ্রয় চাওয়া হয়েছে — যে শয়তান মানুষের অন্তরে কুমন্ত্রণা দিয়ে সরে পড়ে, জিন হোক বা মানুষ।'
+};
+
+/* ================= Theme toggle ================= */
+var THEME_ORDER = ['light', 'dark', 'blue'];
+var THEME_NAMES = { light: 'সাদা', dark: 'কালো', blue: 'রয়েল ব্লু' };
+function currentTheme(){
+  var t = document.documentElement.getAttribute('data-theme');
+  if (t === 'light' || t === 'dark' || t === 'blue') return t;
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+function syncThemeBtns(){
+  var t = currentTheme();
+  document.querySelectorAll('[data-settheme]').forEach(function(b){
+    b.setAttribute('aria-pressed', b.getAttribute('data-settheme') === t ? 'true' : 'false');
+  });
+}
+function applyTheme(t, silent){
+  document.documentElement.setAttribute('data-theme', t);
+  try { localStorage.setItem('di_theme', t); } catch(e){}
+  syncThemeBtns();
+  if (!silent) toast(THEME_NAMES[t] + ' থিম চালু হয়েছে');
+}
+$('themeBtn').addEventListener('click', function(){
+  var i = THEME_ORDER.indexOf(currentTheme());
+  applyTheme(THEME_ORDER[(i + 1) % THEME_ORDER.length]);
+});
+document.querySelectorAll('[data-settheme]').forEach(function(b){
+  b.addEventListener('click', function(){ applyTheme(b.getAttribute('data-settheme')); });
+});
+syncThemeBtns();
+$('setAlarmBtn').addEventListener('click', function(){ showView('prayer'); });
+$('setAccountBtn').addEventListener('click', function(){ showView('profile'); });
+
+/* ================= Ramadan ================= */
+(function ramadanTile(){
+  var grid = $('featureGridSeba');
+  var b = document.createElement('button');
+  b.className = 'htile'; b.setAttribute('data-goto', 'ramadan');
+  b.innerHTML = '<span class="hic c7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13.2A8.2 8.2 0 1 1 10.8 4a6.6 6.6 0 0 0 9.2 9.2z"/><path d="M17.5 4.5l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z" fill="currentColor" stroke="none"/></svg></span><span>রমজান</span>';
+  grid.insertBefore(b, grid.children[8] || null);
+})();
+function hijriParts(d){
+  var h = hijriBD(d); if (!h) return null;
+  return { day: bn(h.day), month: h.month, year: bn(h.year) };
+}
+function tickRamadan(){
+  if (currentView !== 'ramadan' && !$('ramadanCd')) return;
+  var now = nowFrame();
+  var c = curLoc();
+  var t = prayerTimes(now, c.lat, c.lng, c.tz);
+  var sehri = timeToDate(now, t.fajr - 10/60);
+  var iftar = timeToDate(now, t.maghrib);
+  $('sehriTime').textContent = fmtTime(t.fajr - 10/60);
+  $('iftarTime').textContent = fmtTime(t.maghrib);
+  var target, lbl;
+  if (now < sehri){ target = sehri; lbl = 'সেহরি শেষ হতে বাকি'; }
+  else if (now < iftar){ target = iftar; lbl = 'ইফতার হতে বাকি'; }
+  else {
+    var tom = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    var tt = prayerTimes(tom, c.lat, c.lng, c.tz);
+    target = timeToDate(tom, tt.fajr - 10/60); lbl = 'আগামীকালের সেহরি শেষ হতে বাকি';
+  }
+  var diff = Math.max(0, Math.floor((target - now) / 1000));
+  $('ramadanCd').textContent = bn(pad2(Math.floor(diff/3600))) + ':' + bn(pad2(Math.floor((diff%3600)/60))) + ':' + bn(pad2(diff%60));
+  $('ramadanNextLbl').textContent = lbl + ' —';
+  var hp = hijriParts(now);
+  if (hp){
+    $('ramadanHijri').textContent = 'আজ হিজরি: ' + hp.day + ' ' + hp.month + ' ' + hp.year + ' হিজরি • জেলা: ' + c.name;
+    $('ramadanNote').textContent = hp.month === 'রমজান'
+      ? 'মাহে রমজান মোবারক! আজ রমজানের ' + hp.day + ' তারিখ। আল্লাহ আমাদের রোজা, তারাবি ও ইবাদত কবুল করুন।'
+      : 'এখন রমজান মাস নয় — তবে এই সময়গুলো দিয়েই সারা বছরের নফল রোজার (সোমবার, বৃহস্পতিবার, আইয়ামে বীজ) সেহরি-ইফতারের হিসাব করা যায়।';
+  }
+}
+setInterval(tickRamadan, 1000);
+tickRama
