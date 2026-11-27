@@ -147,7 +147,7 @@ $('readerBody').addEventListener('click', function(e){
 
 /* ---------- Tilawat (full-surah audio) ---------- */
 var tilSurah = null;
-function tilUrl(n){ return 'https://cdn.mp3quran.net/audio/maher-muaiqly/r3/' + ('00' + n).slice(-3) + '.mp3'; }
+function tilUrl(n){ return 'https://cdn.mp3quran.net/audio/maher-muaiqly/r1/' + ('00' + n).slice(-3) + '.mp3'; }
 function buildTilawat(){
   if (typeof QURAN === 'undefined' || !QURAN) return;
   var q = ($('tilSearch').value || '').trim();
