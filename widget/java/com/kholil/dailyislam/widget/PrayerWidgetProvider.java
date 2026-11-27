@@ -185,7 +185,7 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
             return "";
         }
         try {
-            android.icu.util.UmmAlQuraCalendar islamic = new android.icu.util.UmmAlQuraCalendar();
+            android.icu.util.IslamicCalendar islamic = new android.icu.util.IslamicCalendar();
             islamic.setTimeInMillis(now.getTimeInMillis() - 86400000L); // Bangladesh local moon sighting: one day behind Umm al-Qura
             int day = islamic.get(android.icu.util.Calendar.DAY_OF_MONTH);
             int month = islamic.get(android.icu.util.Calendar.MONTH);
