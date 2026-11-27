@@ -883,6 +883,11 @@
       <input class="search" type="text" id="surahSearch" placeholder="সূরা খুঁজুন — নাম বা নম্বর লিখুন…" aria-label="সূরা খুঁজুন" />
       <div class="slist" id="surahList"><p class="loadmsg">কুরআনের তথ্য লোড হচ্ছে…</p></div>
       <div class="slist hidden" id="juzList"></div>
+      <div class="card" style="margin-top:18px; text-align:center">
+        <h3 style="margin:0 0 6px">📖 হিফজ কোরআন</h3>
+        <p class="sub" style="margin:0 0 12px">বাংলাদেশের মাদরাসায় ব্যবহৃত ১৫ লাইনের হাফেজি কুরআন শরীফ — হুবহু ছাপার বইয়ের পৃষ্ঠা অনুযায়ী পড়ুন। পারা বা সূরা বেছে সরাসরি সেই পৃষ্ঠায় যান, আর পৃষ্ঠা ওল্টাতে ছবির ওপর ডানে-বামে সোয়াইপ করুন।</p>
+        <button class="btn gold" id="hifzOpenBtn" style="width:100%">হিফজ কোরআন খুলুন</button>
+      </div>
     </div>
     <div id="readerWrap" class="hidden">
       <div class="reader-head">
@@ -911,6 +916,32 @@
         <button class="btn" id="nextPartBtn">পরেরটি →</button>
       </div>
     </div>
+    <div id="hifzWrap" class="hidden">
+      <div class="reader-head">
+        <button class="btn ghost" id="hifzBack">← তালিকায় ফিরুন</button>
+        <h3>হিফজ কোরআন</h3>
+        <button class="btn gold" id="hifzBookmarkBtn">🔖 বুকমার্ক করুন</button>
+      </div>
+      <p class="sub">১৫ লাইনের হাফেজি কুরআন শরীফ (মোট ৬১০ পৃষ্ঠা)। নিচের তালিকা থেকে পারা বা সূরা বাছলেই সেই পৃষ্ঠা খুলবে। পৃষ্ঠা ওল্টাতে ছবির ওপর ডানে-বামে সোয়াইপ করুন — একবার দেখা পৃষ্ঠা সেভ হয়ে থাকে, পরে নেট ছাড়াও পড়া যাবে।</p>
+      <div class="seg" role="group" aria-label="হিফজ তালিকার ধরন">
+        <button id="hifzSegPara" aria-pressed="true">পারা অনুযায়ী (৩০ পারা)</button>
+        <button id="hifzSegSurah" aria-pressed="false">সূরা অনুযায়ী (১১৪ সূরা)</button>
+      </div>
+      <div class="slist" id="hifzParaList" style="margin-top:12px"></div>
+      <div class="slist hidden" id="hifzSurahList" style="margin-top:12px"></div>
+      <div class="card" style="margin-top:14px">
+        <div id="hifzStage" style="touch-action:pan-y; text-align:center">
+          <img id="hifzImg" alt="হাফেজি কুরআন শরীফের পৃষ্ঠা" style="max-width:100%; height:auto; border-radius:6px" />
+        </div>
+        <p class="sub" id="hifzPageInfo" style="text-align:center; margin:10px 0 0"></p>
+        <p class="sub" style="text-align:center; margin:4px 0 0">← পৃষ্ঠা ওল্টাতে সোয়াইপ করুন →</p>
+        <div style="display:flex; gap:8px; margin-top:10px">
+          <input class="search" type="number" id="hifzGotoInput" min="1" max="610" placeholder="পৃষ্ঠা নম্বর লিখুন (১–৬১০)" aria-label="পৃষ্ঠা নম্বর" style="flex:1; margin:0" />
+          <button class="btn" id="hifzGotoBtn">পৃষ্ঠায় যান</button>
+        </div>
+        <p class="sub" id="hifzBookmarkInfo" style="margin:8px 0 0"></p>
+      </div>
+    </div>
   </section>
 
   
@@ -921,50 +952,4 @@
     <input class="search" type="text" id="hadithSearch" placeholder="হাদিস খুঁজুন…" aria-label="হাদিস খুঁজুন" />
     <div id="hadithList"></div>
     <h3 class="sec" style="margin-top:28px">বড় হাদিসের কিতাবসমূহ — হাজার হাজার হাদিস</h3>
-    <p class="sub">ছয়টি প্রসিদ্ধ হাদিসের কিতাবের পূর্ণ বাংলা অনুবাদ — অধ্যায় অনুযায়ী পড়ুন বা খুঁজুন। প্রথমবার খুললে কিতাবটি ডাউনলোড হয়ে সেভ হয়ে যায়, পরে অফলাইনেও পড়া যাবে।</p>
-    <div class="controls">
-      <label>কিতাব
-        <select id="hbBookSel">
-          <option value="ben-bukhari">সহিহ বুখারি</option>
-          <option value="ben-muslim">সহিহ মুসলিম</option>
-          <option value="ben-abudawud">সুনানে আবু দাউদ</option>
-          <option value="ben-tirmidhi">সুনানে তিরমিযি</option>
-          <option value="ben-nasai">সুনানে নাসায়ি</option>
-          <option value="ben-ibnmajah">সুনানে ইবনে মাজাহ</option>
-        </select>
-      </label>
-      <label>অধ্যায়
-        <select id="hbSecSel"><option value="">সব অধ্যায়</option></select>
-      </label>
-    </div>
-    <input class="search" type="text" id="hbSearch" placeholder="এই কিতাবে হাদিস খুঁজুন…" aria-label="কিতাবে হাদিস খুঁজুন" />
-    <p class="sub" id="hbStatus"></p>
-    <div id="hbList"></div>
-    <button class="btn ghost" id="hbMore" style="display:none; width:100%; margin-top:10px">আরও হাদিস দেখুন</button>
-  </section>
-
-  <!-- ================= DUA ================= -->
-  <section class="view" id="view-dua">
-    <h2 class="sec">দৈনন্দিন ও মাসনুন দোয়া</h2>
-    <p class="sub">ঘুম, খাবার, ঘর থেকে বের হওয়া থেকে শুরু করে বিপদ-আপদের দোয়া — আরবি, বাংলা অর্থ ও সূত্রসহ। যেসব দোয়া নির্দিষ্ট সংখ্যায় পড়তে হয়, সেগুলোর সংখ্যা দেওয়া আছে।</p>
-    <input class="search" type="text" id="duaSearch" placeholder="দোয়া খুঁজুন…" aria-label="দোয়া খুঁজুন" />
-    <div id="duaList"></div>
-  </section>
-
-  <!-- ================= QIBLA ================= -->
-  <section class="view" id="view-qibla">
-    <h2 class="sec">কিবলা নির্ণয়</h2>
-    <p class="sub">আপনার অবস্থান থেকে পবিত্র কাবা শরিফের দিক। ফোনের কম্পাস চালু করলে তীরটি সরাসরি কিবলার দিকে ঘুরবে।</p>
-    <div class="qibla-flex">
-      <div class="card">
-        <div class="compass" aria-label="কিবলা কম্পাস">
-          <div class="ring"></div>
-          <div class="dial" id="compassDial">
-            <span class="dir">উ</span><span class="dir e">পূ</span><span class="dir s">দ</span><span class="dir w">প</span>
-            <span class="kaaba" aria-hidden="true">🕋</span>
-          </div>
-          <div class="needle" id="qiblaNeedle"></div>
-          <div class="pin"></div>
-        </div>
-        <p style="text-align:center; margin:12px 0 0">
-          <button class="btn gold" id="compassBtn">কম্পা
+    <p class="sub">ছয়টি প্রসিদ্ধ হাদিসের কিতাবের পূর্ণ বাংলা অনুবাদ — অধ্যায় অনুযায়ী পড়ুন বা খুঁজুন। প
