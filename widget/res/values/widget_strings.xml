@@ -3,4 +3,6 @@
     <string name="widget_name">Muslim Path — নামাজের সময়</string>
     <string name="widget_description">নামাজের সময়, লাইভ ঘড়ি এবং ইংরেজি, বাংলা ও হিজরি তারিখ</string>
     <string name="widget_config_title">উইজেটের জন্য জেলা বাছুন</string>
+    <string name="widget_name_compact">Muslim Path — ছোট উইজেট</string>
+    <string name="widget_description_compact">এক নজরে নামাজের সময়: হিজরি ও বাংলা তারিখ, পরের ওয়াক্ত, সূর্যোদয়-সূর্যাস্ত আর আগামীকালের বৃষ্টির খবর</string>
 </resources>

@@ -75,6 +75,20 @@ snippet = """
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
             </intent-filter>
         </activity>
+
+        <!-- Second, compact widget design (v2.15): no configure activity,
+             so it places immediately with the default district. -->
+        <receiver
+            android:name=".widget.CompactPrayerWidgetProvider"
+            android:exported="false"
+            android:label="@string/widget_name_compact">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/compact_widget_info" />
+        </receiver>
 """
 
 anchor = "</application>"
@@ -88,6 +102,33 @@ print("AndroidManifest.xml patched.")
 PYEOF
 
 grep -q "PrayerWidgetProvider" "$MANIFEST"
+grep -q "CompactPrayerWidgetProvider" "$MANIFEST"
+
+echo "Ensuring INTERNET permission (the widgets fetch the rain forecast)..."
+python3 - "$MANIFEST" <<'PYEOF'
+import sys
+
+path = sys.argv[1]
+with open(path, encoding="utf-8") as f:
+    xml = f.read()
+
+if "android.permission.INTERNET" in xml:
+    print("INTERNET permission already present.")
+    sys.exit(0)
+
+anchor = "<application"
+if anchor not in xml:
+    sys.exit("ERROR: '<application' not found in " + path)
+
+xml = xml.replace(anchor,
+                  '<uses-permission android:name="android.permission.INTERNET" />\n\n    '
+                  + anchor, 1)
+with open(path, "w", encoding="utf-8") as f:
+    f.write(xml)
+print("INTERNET permission added.")
+PYEOF
+
+grep -q "android.permission.INTERNET" "$MANIFEST"
 echo "Widget installation complete."
 
 # --- App launcher icon ---------------------------------------------------
@@ -130,17 +171,17 @@ fi
 # The Capacitor template defaults to versionCode 1 / versionName "1.0", which
 # is what Settings > App info showed for every release so far. Set the real
 # release version here (this script runs after `cap sync`, before the build).
-echo "Setting app version (versionName 2.14, versionCode 34)..."
+echo "Setting app version (versionName 2.15, versionCode 35)..."
 python3 - "$ROOT/android/app/build.gradle" <<'PYEOF'
 import sys, re
 path = sys.argv[1]
 s = open(path).read()
-s, n1 = re.subn(r'versionCode\s+\d+', 'versionCode 34', s, count=1)
-s, n2 = re.subn(r'versionName\s+"[^"]*"', 'versionName "2.14"', s, count=1)
+s, n1 = re.subn(r'versionCode\s+\d+', 'versionCode 35', s, count=1)
+s, n2 = re.subn(r'versionName\s+"[^"]*"', 'versionName "2.15"', s, count=1)
 if n1 != 1 or n2 != 1:
     sys.exit('ERROR: versionCode/versionName not found in ' + path)
 open(path, 'w').write(s)
-print('app/build.gradle: versionCode 34, versionName "2.14"')
+print('app/build.gradle: versionCode 35, versionName "2.15"')
 PYEOF
 
 # --- Firebase / Google Sign-In -------------------------------------------
