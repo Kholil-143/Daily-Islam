@@ -481,14 +481,7 @@
   :root[data-theme="blue"] .tfs b{ color:var(--gold-2); }
 
 
-  /* ---------- Manual theme override ---------- */
-  :root[data-theme="blue"]{
-    color-scheme:dark;
-    --bg:#000000; --surface:#101010; --surface-2:#1b1b1b;
-    --ink:#eef3ec; --ink-2:#b7c8ba; --line:#2f2f2f; --linkc:#e3c878;
-    --card-shadow:0 2px 10px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.25);
-    --danger:#e08079; --ok:#5fc493;
-  }
+  /* ---------- রয়েল ব্লু gold accents ---------- */
 
   :root[data-theme="blue"] h2.sec,
   :root[data-theme="blue"] .daily .card h3,
@@ -952,4 +945,7 @@
     <input class="search" type="text" id="hadithSearch" placeholder="হাদিস খুঁজুন…" aria-label="হাদিস খুঁজুন" />
     <div id="hadithList"></div>
     <h3 class="sec" style="margin-top:28px">বড় হাদিসের কিতাবসমূহ — হাজার হাজার হাদিস</h3>
-    <p class="sub">ছয়টি প্রসিদ্ধ হাদিসের কিতাবের পূর্ণ বাংলা অনুবাদ — অধ্যায় অনুযায়ী পড়ুন বা খুঁজুন। প
+    <p class="sub">ছয়টি প্রসিদ্ধ হাদিসের কিতাবের পূর্ণ বাংলা অনুবাদ — অধ্যায় অনুযায়ী পড়ুন বা খুঁজুন। প্রথমবার খুললে কিতাবটি ডাউনলোড হয়ে সেভ হয়ে যায়, পরে অফলাইনেও পড়া যাবে।</p>
+    <div class="controls">
+      <label>কিতাব
+        <select id=
