@@ -179,14 +179,18 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
         return BengaliDate.bnNum(m) + " মিনিট";
     }
 
-    /** Hijri date via the platform Islamic calendar (API 24+), e.g. "৫ জমাদিউস সানি ১৪৪৭ হিজরি". */
+    /** Hijri date via the Umm al-Qura calendar (API 24+), minus one day for
+     *  Bangladesh local moon sighting — the same reckoning as the in-app date,
+     *  e.g. "১৬ জমাদিউস সানি ১৪৪৮ হিজরি". */
     private static String hijriDate(Calendar now) {
         if (Build.VERSION.SDK_INT < 24) {
             return "";
         }
         try {
-            android.icu.util.IslamicCalendar islamic = new android.icu.util.IslamicCalendar();
-            islamic.setTimeInMillis(now.getTimeInMillis() - 86400000L); // Bangladesh local moon sighting: one day behind Umm al-Qura
+            android.icu.util.Calendar islamic = android.icu.util.Calendar.getInstance(
+                    new android.icu.util.ULocale("en@calendar=islamic-umalqura"));
+            islamic.setTimeInMillis(now.getTimeInMillis());
+            islamic.add(android.icu.util.Calendar.DAY_OF_MONTH, -1); // Bangladesh: one day behind Umm al-Qura
             int day = islamic.get(android.icu.util.Calendar.DAY_OF_MONTH);
             int month = islamic.get(android.icu.util.Calendar.MONTH);
             int year = islamic.get(android.icu.util.Calendar.YEAR);
