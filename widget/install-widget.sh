@@ -94,8 +94,8 @@ echo "Widget installation complete."
 # The Capacitor template ships a default launcher icon. Replace it with the
 # Daily Islam icon stored (base64, split at 80,000 chars where needed) under
 # icon/res/ in this repo: legacy + round icons and the adaptive foreground
-# for every density, plus the adaptive background colour (#005143, the
-# icon's own deep green).
+# for every density, plus the adaptive background colour (#FFFFFF, the
+# icon's own white).
 echo "Installing Daily Islam launcher icon..."
 ICON_RES="$ROOT/icon/res"
 if [ -d "$ICON_RES" ]; then
@@ -130,18 +130,21 @@ fi
 # The Capacitor template defaults to versionCode 1 / versionName "1.0", which
 # is what Settings > App info showed for every release so far. Set the real
 # release version here (this script runs after `cap sync`, before the build).
-echo "Setting app version (versionName 2.8, versionCode 28)..."
+echo "Setting app version (versionName 2.9, versionCode 29)..."
 python3 - "$ROOT/android/app/build.gradle" <<'PYEOF'
 import sys, re
 path = sys.argv[1]
 s = open(path).read()
-s, n1 = re.subn(r'versionCode\s+\d+', 'versionCode 28', s, count=1)
-s, n2 = re.subn(r'versionName\s+"[^"]*"', 'versionName "2.8"', s, count=1)
+s, n1 = re.subn(r'versionCode\s+\d+', 'versionCode 29', s, count=1)
+s, n2 = re.subn(r'versionName\s+"[^"]*"', 'versionName "2.9"', s, count=1)
 if n1 != 1 or n2 != 1:
     sys.exit('ERROR: versionCode/versionName not found in ' + path)
 open(path, 'w').write(s)
-print('app/build.gradle: versionCode 28, versionName "2.8"')
+print('app/build.gradle: versionCode 29, versionName "2.9"')
 PYEOF
 
 # --- Firebase / Google Sign-In -------------------------------------------
 bash "$ROOT/firebase/install-firebase.sh"
+
+# --- Daily ayah & hadith notifications (v2.9) ------------------------------
+bash "$ROOT/notify/install-notify.sh"
