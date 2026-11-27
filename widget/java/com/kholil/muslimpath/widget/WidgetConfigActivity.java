@@ -49,13 +49,11 @@ public class WidgetConfigActivity extends Activity {
                 editor.putFloat(PrayerWidgetProvider.KEY_LONGITUDE, (float) district.longitude);
                 editor.apply();
 
-                if (appWidgetId != AppWidgetManager.INVALID_APPWIDGET_ID) {
-                    AppWidgetManager manager = AppWidgetManager.getInstance(WidgetConfigActivity.this);
-                    PrayerWidgetProvider.updateWidget(
-                            WidgetConfigActivity.this, manager, appWidgetId);
-                } else {
-                    PrayerWidgetProvider.refreshAll(WidgetConfigActivity.this);
-                }
+                // Refresh BOTH widget designs: the widget this picker was
+                // opened from may belong to either provider, and both
+                // share this one district choice.
+                PrayerWidgetProvider.refreshAll(WidgetConfigActivity.this);
+                CompactPrayerWidgetProvider.refreshAll(WidgetConfigActivity.this);
 
                 Intent result = new Intent();
                 result.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, appWidgetId);

@@ -47,20 +47,20 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
     private static final String ACTION_TICK = "com.kholil.muslimpath.widget.ACTION_MINUTE_TICK";
     private static final int TICK_REQUEST_CODE = 4242;
 
-    private static final double DEFAULT_LATITUDE = 23.3736; // Bhanga, Faridpur
-    private static final double DEFAULT_LONGITUDE = 90.0272;
-    private static final String DEFAULT_DISTRICT = "ভাঙ্গা, ফরিদপুর";
+    static final double DEFAULT_LATITUDE = 23.3736; // Bhanga, Faridpur
+    static final double DEFAULT_LONGITUDE = 90.0272;
+    static final String DEFAULT_DISTRICT = "ভাঙ্গা, ফরিদপুর";
 
     private static final String[] WEEKDAYS_BN = {
             "রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"
     };
 
-    private static final String[] HIJRI_MONTHS = {
+    static final String[] HIJRI_MONTHS = {
             "মুহাররম", "সফর", "রবিউল আউয়াল", "রবিউস সানি", "জমাদিউল আউয়াল", "জমাদিউস সানি",
             "রজব", "শাবান", "রমজান", "শাওয়াল", "জিলকদ", "জিলহজ"
     };
 
-    private static final String[] PRAYER_NAMES = {"ফজর", "সূর্যোদয়", "যোহর", "আসর", "মাগরিব", "এশা"};
+    static final String[] PRAYER_NAMES = {"ফজর", "সূর্যোদয়", "যোহর", "আসর", "মাগরিব", "এশা"};
 
     @Override
     public void onEnabled(Context context) {
@@ -90,6 +90,10 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
         super.onReceive(context, intent);
         if (intent != null && (ACTION_REFRESH.equals(intent.getAction())
                 || ACTION_TICK.equals(intent.getAction()))) {
+            if (ACTION_REFRESH.equals(intent.getAction())) {
+                // A manual refresh also asks for a fresh rain forecast.
+                WeatherInfo.forceFetch(context);
+            }
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             int[] ids = manager.getAppWidgetIds(new ComponentName(context, PrayerWidgetProvider.class));
             onUpdate(context, manager, ids);
@@ -191,6 +195,17 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
         // Next prayer + remaining time (at this update moment)
         views.setTextViewText(R.id.tv_next, nextPrayerText(now, times, latitude, longitude, timeZone));
 
+        // Tomorrow's rain line (cached; a background fetch runs at most
+        // every three hours, so the per-minute refresh stays offline).
+        String weather = WeatherInfo.cachedLine(context, latitude, longitude);
+        if (weather != null) {
+            views.setViewVisibility(R.id.tv_weather, View.VISIBLE);
+            views.setTextViewText(R.id.tv_weather, weather);
+        } else {
+            views.setViewVisibility(R.id.tv_weather, View.GONE);
+        }
+        WeatherInfo.maybeFetch(context, latitude, longitude);
+
         // Refresh button
         Intent refreshIntent = new Intent(context, PrayerWidgetProvider.class);
         refreshIntent.setAction(ACTION_REFRESH);
@@ -219,7 +234,7 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
         manager.updateAppWidget(appWidgetId, views);
     }
 
-    private static String nextPrayerText(Calendar now, PrayerTimes.Result times,
+    static String nextPrayerText(Calendar now, PrayerTimes.Result times,
                                          double latitude, double longitude, double timeZone) {
         double[] all = {times.fajr, times.sunrise, times.dhuhr, times.asr, times.maghrib, times.isha};
         double nowHours = now.get(Calendar.HOUR_OF_DAY)
@@ -242,7 +257,7 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
                 + " • বাকি " + remainingText((24.0 - nowHours) + t.fajr);
     }
 
-    private static String remainingText(double hours) {
+    static String remainingText(double hours) {
         int minutes = (int) Math.ceil(hours * 60.0);
         int h = minutes / 60;
         int m = minutes % 60;
@@ -255,7 +270,7 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
     /** BD Hijri {day, monthIndex, year} for a civil day, via the Umm al-Qura
      *  calendar (API 24+), minus one day for Bangladesh local moon sighting —
      *  the same reckoning as the in-app date. Null when unavailable. */
-    private static int[] hijriParts(Calendar day) {
+    static int[] hijriParts(Calendar day) {
         if (Build.VERSION.SDK_INT < 24) {
             return null;
         }
@@ -276,7 +291,7 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
         }
     }
 
-    private static String hijriPlain(int[] h) {
+    static String hijriPlain(int[] h) {
         return BengaliDate.bnNum(h[0]) + " " + HIJRI_MONTHS[h[1]] + " " + BengaliDate.bnNum(h[2]) + " হিজরি";
     }
 
@@ -285,7 +300,7 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
      *  struck through in red with the NEW day number beside it (month/year
      *  are the new date's), e.g. "১৬ ১৭ জমাদিউস সানি ১৪৪৮ হিজরি" with ১৬ in
      *  red struck through. From midnight to the next Maghrib, plain. */
-    private static CharSequence hijriDisplay(Calendar now, double maghribHours) {
+    static CharSequence hijriDisplay(Calendar now, double maghribHours) {
         int[] oldH = hijriParts(now);
         if (oldH == null) {
             return "";
