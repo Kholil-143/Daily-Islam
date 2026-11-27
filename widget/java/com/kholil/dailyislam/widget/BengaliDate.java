@@ -9,7 +9,7 @@ import java.util.TimeZone;
  * plus Bengali-digit number formatting for the widget.
  *
  * Rules used: Boishakh 1 = 14 April. Month lengths are fixed
- * (31,31,31,31,31,30,30,30,30,30,29,30); Falgun has 30 days when the
+ * (31,31,31,31,31,31,30,30,30,30,29,30) [Bangladesh revised calendar]; Falgun has 30 days when the
  * Gregorian February inside the same Bengali year is a leap February.
  */
 public final class BengaliDate {
@@ -19,7 +19,7 @@ public final class BengaliDate {
             "কার্তিক", "অগ্রহায়ণ", "পৌষ", "মাঘ", "ফাল্গুন", "চৈত্র"
     };
 
-    private static final int[] MONTH_LENGTHS = {31, 31, 31, 31, 31, 30, 30, 30, 30, 30, 29, 30};
+    private static final int[] MONTH_LENGTHS = {31, 31, 31, 31, 31, 31, 30, 30, 30, 30, 29, 30};
 
     private static final char[] BN_DIGITS = {'০', '১', '২', '৩', '৪', '৫', '৬', '৭', '৮', '৯'};
 

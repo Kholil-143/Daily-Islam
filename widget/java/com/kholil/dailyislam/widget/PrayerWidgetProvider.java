@@ -47,7 +47,7 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
 
     private static final String[] HIJRI_MONTHS = {
             "মুহাররম", "সফর", "রবিউল আউয়াল", "রবিউস সানি", "জমাদিউল আউয়াল", "জমাদিউস সানি",
-            "রজব", "শাবান", "রমজান", "শাওয়াল", "জিলকদ", "জিলহজ্জ"
+            "রজব", "শাবান", "রমজান", "শাওয়াল", "জিলকদ", "জিলহজ"
     };
 
     private static final String[] PRAYER_NAMES = {"ফজর", "সূর্যোদয়", "যোহর", "আসর", "মাগরিব", "এশা"};
@@ -111,6 +111,7 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
         views.setTextViewText(R.id.tv_sunrise, BengaliDate.formatTime(times.sunrise));
         views.setTextViewText(R.id.tv_dhuhr, BengaliDate.formatTime(times.dhuhr));
         views.setTextViewText(R.id.tv_asr, BengaliDate.formatTime(times.asr));
+        views.setTextViewText(R.id.tv_sunset, BengaliDate.formatTime(times.maghrib - 3.0 / 60.0));
         views.setTextViewText(R.id.tv_maghrib, BengaliDate.formatTime(times.maghrib));
         views.setTextViewText(R.id.tv_isha, BengaliDate.formatTime(times.isha));
 
@@ -184,8 +185,8 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
             return "";
         }
         try {
-            android.icu.util.IslamicCalendar islamic = new android.icu.util.IslamicCalendar();
-            islamic.setTimeInMillis(now.getTimeInMillis());
+            android.icu.util.UmmAlQuraCalendar islamic = new android.icu.util.UmmAlQuraCalendar();
+            islamic.setTimeInMillis(now.getTimeInMillis() - 86400000L); // Bangladesh local moon sighting: one day behind Umm al-Qura
             int day = islamic.get(android.icu.util.Calendar.DAY_OF_MONTH);
             int month = islamic.get(android.icu.util.Calendar.MONTH);
             int year = islamic.get(android.icu.util.Calendar.YEAR);
