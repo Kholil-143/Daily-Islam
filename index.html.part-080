@@ -1,4 +1,4 @@
-য়ে' : bn(m) + ' মিনিট আগে') + '</option>';
+(a.before === m ? ' selected' : '') + '>' + (m === 0 ? 'ঠিক সময়ে' : bn(m) + ' মিনিট আগে') + '</option>';
     }).join('');
     return '<div class="tk-row"><span class="nm">' + ALARM_NAMES[k] + '</span><span style="display:flex; gap:8px; align-items:center; flex-wrap:wrap"><select data-alarm-before="' + k + '" aria-label="' + ALARM_NAMES[k] + ' অ্যালার্ম কখন বাজবে">' + opts + '</select><button class="tk' + (a.on ? ' done' : '') + '" data-alarm="' + k + '">' + (a.on ? '✓ অ্যালার্ম অন' : 'অ্যালার্ম অফ') + '</button></span></div>';
   }).join('');

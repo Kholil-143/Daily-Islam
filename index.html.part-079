@@ -1,4 +1,5 @@
-শতি জেওর': { pdf: 'https://archive.org/download/BehestiZeware/Behesti%20Zeware.pdf' },
+ownloadFiqhUsSunnah/Download%20Fiqh%20us%20Sunnah.pdf' },
+ 'বেহেশতি জেওর': { pdf: 'https://archive.org/download/BehestiZeware/Behesti%20Zeware.pdf' },
  'ফাজায়েলে আমল': { pdfs: ['https://archive.org/download/offlinedeeniapp_202107/fazail%20Amal%201.pdf', 'https://archive.org/download/offlinedeeniapp_202107/Fazail%20Amal%202.pdf'] },
  'আর-রাহিকুল মাখতুম (সীরাতে নববি)': { pdf: 'https://archive.org/download/ArRahikulMakhtumBangla/Ar%20Rahikul%20Makhtum_Bangla.pdf' },
  'তাফসিরে মারফুল কুরআন': { pdfs: ['https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%201.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%202.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%203.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%204.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%205.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%206.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%207.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%208.pdf'] },
@@ -360,4 +361,4 @@ function renderAlarmRows(){
   $('alarmRows').innerHTML = order.map(function(k){
     var a = ALARMS[k];
     var opts = [0, 5, 10, 15].map(function(m){
-      return '<option value="' + m + '"' + (a.before === m ? ' selected' : '') + '>' + (m === 0 ? 'ঠিক সম
+      return '<option value="' + m + '"' + 
