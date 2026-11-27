@@ -206,34 +206,34 @@ G9A1dVtQYWMD+kwcspLFv6p6LbRdBkgGtdgL0JXaSVXE8Be4hNYu+340HRcIbjBABYgIZpWDw7Q8NoOe
     </div>
   </section>
 
-  <!-- ================= HIFZ QURAN (v4) ================= -->
-  <section class="view" id="view-hifz">
-    <h2 class="sec">হিফজ কোরআন</h2>
-    <p class="sub">হাফেজি কোরআন শরীফের ধাঁচে শুধু আরবি পাঠ — কোনো বাংলা অনুবাদ বা ব্যাখ্যা নেই। প্রতি পৃষ্ঠা ১৫ লাইনে সাজানো, হিফজ ও তিলাওয়াতের জন্য।</p>
-    <div class="hifz-tools">
-      <label>পারা: <select id="hifzJuzSel" aria-label="পারা বেছে নিন"></select></label>
-      <span class="hifz-fontctl"><button type="button" id="hifzFontMinus" class="btn ghost" aria-label="অক্ষর ছোট করুন">অ−</button><button type="button" id="hifzFontPlus" class="btn ghost" aria-label="অক্ষর বড় করুন">অ+</button></span>
-    </div>
-    <div class="hifz-nav">
-      <button class="btn ghost" id="hifzPrevTop">← আগের পৃষ্ঠা</button>
-      <span id="hifzPageInfo" class="hifz-info">…</span>
-      <button class="btn" id="hifzNextTop">পরের পৃষ্ঠা →</button>
-    </div>
-    <div id="hifzBody"><p class="loadmsg">কুরআনের পাঠ লোড হচ্ছে…</p></div>
-    <div class="hifz-nav">
-      <button class="btn ghost" id="hifzPrev">← আগের পৃষ্ঠা</button>
-      <span style="flex:1"></span>
-      <button class="btn" id="hifzNext">পরের পৃষ্ঠা →</button>
-    </div>
-    <p class="sub" style="margin-top:10px">দ্রষ্টব্য: এই অ্যাপের কুরআন ডেটায় ছাপা মুসহাফের পৃষ্ঠা-বিন্যাসের তথ্য নেই, তাই পৃষ্ঠাগুলো একই আরবি পাঠ দিয়ে ১৫ লাইনের হাফেজি ধাঁচে নিজস্বভাবে সাজানো — ছাপা মুসহাফের সঙ্গে পৃষ্ঠা নম্বর হুবহু মিলবে না।</p>
-  </section>
-
+  
   <!-- ================= HADITH ================= -->
   <section class="view" id="view-hadith">
     <h2 class="sec">হাদিস ভান্ডার</h2>
     <p class="sub">সহিহ হাদিস — আরবি পাঠ, বাংলা অর্থ ও পূর্ণ সূত্রসহ।</p>
     <input class="search" type="text" id="hadithSearch" placeholder="হাদিস খুঁজুন…" aria-label="হাদিস খুঁজুন" />
     <div id="hadithList"></div>
+    <h3 class="sec" style="margin-top:28px">বড় হাদিসের কিতাবসমূহ — হাজার হাজার হাদিস</h3>
+    <p class="sub">ছয়টি প্রসিদ্ধ হাদিসের কিতাবের পূর্ণ বাংলা অনুবাদ — অধ্যায় অনুযায়ী পড়ুন বা খুঁজুন। প্রথমবার খুললে কিতাবটি ডাউনলোড হয়ে সেভ হয়ে যায়, পরে অফলাইনেও পড়া যাবে।</p>
+    <div class="controls">
+      <label>কিতাব
+        <select id="hbBookSel">
+          <option value="ben-bukhari">সহিহ বুখারি</option>
+          <option value="ben-muslim">সহিহ মুসলিম</option>
+          <option value="ben-abudawud">সুনানে আবু দাউদ</option>
+          <option value="ben-tirmidhi">সুনানে তিরমিযি</option>
+          <option value="ben-nasai">সুনানে নাসায়ি</option>
+          <option value="ben-ibnmajah">সুনানে ইবনে মাজাহ</option>
+        </select>
+      </label>
+      <label>অধ্যায়
+        <select id="hbSecSel"><option value="">সব অধ্যায়</option></select>
+      </label>
+    </div>
+    <input class="search" type="text" id="hbSearch" placeholder="এই কিতাবে হাদিস খুঁজুন…" aria-label="কিতাবে হাদিস খুঁজুন" />
+    <p class="sub" id="hbStatus"></p>
+    <div id="hbList"></div>
+    <button class="btn ghost" id="hbMore" style="display:none; width:100%; margin-top:10px">আরও হাদিস দেখুন</button>
   </section>
 
   <!-- ================= DUA ================= -->
@@ -277,4 +277,10 @@ G9A1dVtQYWMD+kwcspLFv6p6LbRdBkgGtdgL0JXaSVXE8Be4hNYu+340HRcIbjBABYgIZpWDw7Q8NoOe
   <!-- ================= TASBIH ================= -->
   <section class="view" id="view-tasbih">
     <h2 class="sec">ডিজিটাল তাসবিহ</h2>
-    <p class="sub">বড় বোতামে চাপ দিয়ে যিকির গুনুন। লক্ষ্যে পৌঁ
+    <p class="sub">বড় বোতামে চাপ দিয়ে যিকির গুনুন। লক্ষ্যে পৌঁছালে পরের যিকিরে চলে যাওয়া যাবে।</p>
+    <div class="card tasbih">
+      <div class="chips" id="dhikrChips"></div>
+      <div class="dhikr-ar" id="dhikrAr"></div>
+      <div style="font-weight:600" id="dhikrBn"></div>
+      <div class="big" id="tasbihCount">০</div>
+      <p style="margin:0; color:var(--ink-2)">লক্ষ্য: <b id
