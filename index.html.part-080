@@ -1,66 +1,4 @@
-day:'short', day:'numeric', month:'short' }).format(d2) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + fmtTime(tt.fajr - 10/60) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + fmtTime(tt.maghrib) + '</td></tr>';
-  }
-  $('ramadanTable').innerHTML = '<h4 style="margin:4px 0 8px; text-align:center">রমজানের ৩০ দিনের সময়সূচি — ' + c.name + '</h4><div style="overflow-x:auto"><table style="width:100%; border-collapse:collapse; font-size:14.5px"><thead><tr><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">রোজা</th><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">তারিখ</th><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">সেহরি শেষ</th><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">ইফতার</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="sub" style="margin:8px 0 0">চাঁদ দেখার ওপর ভিত্তি করে রমজান এক দিন এদিক-সেদিক হতে পারে।</p>';
-});
-
-/* ---------- Dua bookmarks + profile open ---------- */
-document.addEventListener('click', function(e){
-  var db = e.target.closest('[data-bmd]');
-  if (db){
-    toggleBookmark({ key: 'dua:' + db.getAttribute('data-bmd'), type: 'dua', idx: 0, label: db.getAttribute('data-bmd'), sub: 'দোয়া' });
-    renderDuas($('duaSearch').value.trim());
-    return;
-  }
-  var ob = e.target.closest('[data-open-bmk]');
-  if (ob){
-    var b = BOOKMARKS[+ob.getAttribute('data-open-bmk')];
-    if (b && b.type === 'dua'){ showView('dua'); $('duaSearch').value = b.label; renderDuas(b.label); }
-  }
-});
-
-/* ---------- Last read ---------- */
-var LASTREAD = null;
-function setLastRead(mode, idx, si, ai){ LASTREAD = { mode: mode, idx: idx, si: si, ai: ai }; renderLastRead(); }
-function renderLastRead(){
-  var box = $('lastReadBox'); if (!box) return;
-  if (!LASTREAD){ box.innerHTML = ''; return; }
-  var label = LASTREAD.mode === 'surah' ? ('সূরা ' + SURA_BN[LASTREAD.idx]) : ('পারা ' + bn(LASTREAD.idx + 1) + ' — ' + JUZ_NAMES[LASTREAD.idx]);
-  box.innerHTML = '<div class="card" style="margin-bottom:12px; display:flex; align-items:center; gap:12px; flex-wrap:wrap"><div style="flex:1; min-width:210px"><b>শেষ পড়া</b><br><span style="color:var(--ink-2)">' + label + ' — আয়াত ' + bn(LASTREAD.ai + 1) + ' পর্যন্ত পড়েছেন (এই সেশনে)</span></div><button class="btn gold" id="resumeBtn">পড়া চালিয়ে যান</button></div>';
-  $('resumeBtn').addEventListener('click', function(){
-    var lr = LASTREAD; showView('quran'); openReader(lr.mode, lr.idx);
-    setTimeout(function(){
-      var el = $('ayah-' + globalAyah(lr.si, lr.ai));
-      if (el){ el.scrollIntoView({ block: 'center' }); el.style.outline = '2px solid var(--gold)'; setTimeout(function(){ el.style.outline = ''; }, 2600); }
-    }, 800);
-  });
-}
-$('readerBody').addEventListener('click', function(e){
-  var b = e.target.closest('[data-lr]'); if (!b) return;
-  var p = b.getAttribute('data-lr').split(':');
-  setLastRead(readerState.mode, readerState.idx, +p[0], +p[1]);
-  toast('থামার চিহ্ন রাখা হয়েছে — প্রোফাইলে পাবেন');
-});
-
-/* ---------- Hijri calendar ---------- */
-(function renderHijriCal(){
-  var box = $('hijriCal'); if (!box) return;
-  var now = dhakaNow(); var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-  var h0 = hijriOf(today); if (!h0) return;
-  var first = new Date(today.getFullYear(), today.getMonth(), today.getDate() - (h0.day - 1));
-  for (var adj = -2; adj <= 2; adj++){
-    var cand = new Date(first.getFullYear(), first.getMonth(), first.getDate() + adj);
-    var hc = hijriOf(cand);
-    if (hc && hc.day === 1 && hc.month === h0.month){ first = cand; break; }
-  }
-  $('hijriCalTitle').textContent = HIJRI_MONTHS_BD[h0.month - 1] + ' ' + bn(h0.year) + ' হিজরি';
-  var wd = ['রবি','সোম','মঙ্গল','বুধ','বৃহস্পতি','শুক্র','শনি'];
-  var cells = wd.map(function(w){ return '<div style="text-align:center; font-weight:700; font-size:12px; color:var(--gold); padding:4px 0">' + w + '</div>'; }).join('');
-  for (var e = 0; e < first.getDay(); e++) cells += '<div></div>';
-  for (var k = 0; k < 31; k++){
-    var d = new Date(first.getFullYear(), first.getMonth(), first.getDate() + k);
-    var hh = hijriOf(d); if (!hh || hh.month !== h0.month) break;
-    var isToday = d.getTime() === today.getTime();
-    var special = SPECIAL_DAYS.some(function(sd){ return sd.m === hh.month && sd.d === hh.day; });
+e(function(sd){ return sd.m === hh.month && sd.d === hh.day; });
     cells += '<div style="text-align:center; padding:6px 2px; border-radius:9px;' + (isToday ? 'background:var(--gold); color:#231a04; font-weight:700;' : '') + (special && !isToday ? 'border:1.5px solid var(--gold);' : '') + '"><div style="font-size:16px; line-height:1.15">' + bn(hh.day) + '</div><div style="font-size:10.5px; opacity:.75">' + bn(d.getDate()) + '</div></div>';
   }
   box.innerHTML = '<div style="display:grid; grid-template-columns:repeat(7,1fr); gap:4px">' + cells + '</div><p class="sub" style="margin:8px 0 0; text-align:center">সোনালি ঘের দেওয়া ঘর = বিশেষ দিবস • ছোট সংখ্যা = ইংরেজি তারিখ</p>';
@@ -125,16 +63,48 @@ var BAYAN = [
  { t:'যে মাহফিলে হুজুর নিজেই কান্নায় ভেঙে পড়লেন', sp:'মাওলানা মিজানুর রহমান আজহারী', topic:'আখিরাত', url:'https://www.youtube.com/watch?v=Vrv9rYS9LFQ' },
  { t:'যশোরের মাটিতে হৃদয়ছোঁয়া বয়ান', sp:'শায়খ আহমাদুল্লাহ', topic:'সাধারণ বয়ান', url:'https://www.youtube.com/watch?v=DmfRpzXWaa4' },
  { t:'দৈনন্দিন জীবনের দুটি বড় ভুল', sp:'শায়খ আহমাদুল্লাহ', topic:'দৈনন্দিন সুন্নাহ', url:'https://www.youtube.com/watch?v=fQ3iUhByQLM' },
- { t:'মহিলাদের মেহেদী দেওয়া প্রসঙ্গে প্রশ্নোত্তর', sp:'শায়খ আহমাদুল্লাহ', topic:'প্রশ্নোত্তর', url:'https://www.youtube.com/watch?v=IDNLo_jhzEw' }
+ { t:'মহিলাদের মেহেদী দেওয়া প্রসঙ্গে প্রশ্নোত্তর', sp:'শায়খ আহমাদুল্লাহ', topic:'প্রশ্নোত্তর', url:'https://www.youtube.com/watch?v=IDNLo_jhzEw' },
+ { t:'নবীজি ﷺ-এর জীবনী', sp:'ড. মিজানুর রহমান আজহারী', topic:'সীরাত', audio:'https://archive.org/download/mizanurrahmanazharimahfilaudiocollection1/Biography_of_Prophet_Muhammad_By_Mizanur_Rahman_Azhari.mp3' },
+ { t:'কিয়ামতের ময়দান', sp:'ড. মিজানুর রহমান আজহারী', topic:'আখিরাত', audio:'https://archive.org/download/mizanurrahmanazharimahfilaudiocollection1/Kiyamoter_Moydan_By_Mizanur_Rahman_Azhari.mp3' },
+ { t:'কুরআনের জন্য মরণ', sp:'ড. মিজানুর রহমান আজহারী', topic:'কুরআন', audio:'https://archive.org/download/mizanurrahmanazharimahfilaudiocollection1/Quraner_Jonno_Moron_By_Mizanur_Rahman_Azhari.mp3' },
+ { t:'স্বামী-স্ত্রীর সম্পর্ক', sp:'ড. মিজানুর রহমান আজহারী', topic:'পরিবার', audio:'https://archive.org/download/mizanurrahmanazharimahfilaudiocollection1/Shami_Strir_Shomporke_By_Mizanur_Rahman_Azhari.mp3' },
+ { t:'সূরা যিলযালের তাফসির', sp:'ড. মিজানুর রহমান আজহারী', topic:'তাফসির', audio:'https://archive.org/download/mizanurrahmanazharimahfilaudiocollection1/Tafsir_of_Surah_Zilzal_By_Mizanur_Rahman_Azhari.mp3' },
+ { t:'আপনার রোজা হচ্ছে না — শুনুন কেন', sp:'শায়খ আহমাদুল্লাহ', topic:'রোজা', audio:'https://archive.org/download/BYSheikAhmadullah/%E0%A6%86%E0%A6%AA%E0%A6%A8%E0%A6%BE%E0%A6%B0%20%E0%A6%B0%E0%A7%8B%E0%A6%9C%E0%A6%BE%20%E0%A6%B9%E0%A6%9A%E0%A7%8D%E0%A6%9B%E0%A7%87%E0%A6%A8%E0%A6%BE%20%21%20%E0%A6%B6%E0%A7%81%E0%A6%A8%E0%A7%81%E0%A6%A8%20%E0%A6%95%E0%A7%87%E0%A6%A8%20...%20BY%20Sheik%20Ahmadullah.mp3' },
+ { t:'মেঘদূত যুব সংঘ ওয়াজ মাহফিল ২০১৭', sp:'মুফতি কাজী মুহাম্মদ ইব্রাহিম', topic:'সাধারণ বয়ান', audio:'https://archive.org/download/429BanglaWazMeghdutJuboSonghoWajMahfil2017ByMuftiKaziMuhammadIbrahimwww.tawhidmedia.com/429%20Bangla%20Waz%20Meghdut%20Jubo%20Songho%20Waj%20Mahfil%202017%20by%20Mufti%20Kazi%20Muhammad%20Ibrahim%5Bwww.tawhidmedia.com%5D.mp3' },
+ { t:'নেশাদার দ্রব্য (পর্ব ১)', sp:'আব্দুর রাজ্জাক বিন ইউসুফ', topic:'সমাজ', audio:'https://archive.org/download/BanglaWazNeshadarDrobboPart1ByAbdurRazzaqueBinYousufwww.tawhidmedia.com/Bangla%20Waz%20Neshadar%20Drobbo%20Part%201%20by%20Abdur%20Razzaque%20bin%20Yousuf%5Bwww.tawhidmedia.com%5D.mp3' },
+ { t:'রমজানের গুরুত্ব ও তাৎপর্য', sp:'আব্দুর রাজ্জাক বিন ইউসুফ', topic:'রমজান', audio:'https://archive.org/download/464BanglaWazRamazanerGuruttoOTatporzowww.tawhidmedia.com/464%20Bangla%20Waz%20Ramazaner%20Gurutto%20O%20Tatporzo%5Bwww.tawhidmedia.com%5D.mp3' }
 ];
-$('bayanList').innerHTML = BAYAN.map(function(b){
-  return '<article class="hcard"><span class="cat">' + b.topic + '</span><h3>' + b.t + '</h3><p style="margin:0 0 10px; color:var(--ink-2)">বক্তা: ' + b.sp + '</p><a class="btn gold" target="_blank" rel="noopener" href="' + b.url + '" style="text-decoration:none">▶ YouTube-এ শুনুন</a></article>';
-}).join('');
+var boyanIdx = -1;
+function renderBayan(){
+  $('bayanList').innerHTML = BAYAN.map(function(b, i){
+    var playing = boyanIdx === i && !player.paused;
+    var audioBtn = b.audio ? '<button class="btn" data-bayan-play="' + i + '">' + (playing ? '⏸ চলছে…' : '▶ অডিও শুনুন') + '</button>' : '';
+    var ytBtn = b.url ? '<a class="btn gold" target="_blank" rel="noopener" href="' + b.url + '" style="text-decoration:none">▶ YouTube-এ শুনুন</a>' : '';
+    var btns = (audioBtn || ytBtn) ? '<p style="margin:0; display:flex; gap:8px; flex-wrap:wrap">' + audioBtn + ytBtn + '</p>' : '';
+    return '<article class="hcard"><span class="cat">' + b.topic + '</span><h3>' + b.t + '</h3><p style="margin:0 0 10px; color:var(--ink-2)">বক্তা: ' + b.sp + '</p>' + btns + '</article>';
+  }).join('');
+}
+renderBayan();
+$('bayanList').addEventListener('click', function(e){
+  var btn = e.target.closest('[data-bayan-play]'); if (!btn) return;
+  var i = +btn.getAttribute('data-bayan-play');
+  if (boyanIdx === i && !player.paused){ player.pause(); }
+  else {
+    stopAudio();
+    if (tilSurah){ tilSurah = null; buildTilawat(); }
+    boyanIdx = i;
+    playAudioSmart(BAYAN[i].audio);
+  }
+  setTimeout(renderBayan, 80);
+});
+player.addEventListener('ended', function(){ if (boyanIdx >= 0){ boyanIdx = -1; renderBayan(); } });
+player.addEventListener('pause', function(){ if (boyanIdx >= 0 && currentView === 'bayan') setTimeout(renderBayan, 80); });
 </script>
 <script>
 /* ================= Prayer alarms & reminders ================= */
 var ALARMS = { fajr:{on:false,before:0}, dhuhr:{on:false,before:0}, asr:{on:false,before:0}, maghrib:{on:false,before:0}, isha:{on:false,before:0}, sehri:{on:false,before:0}, iftar:{on:false,before:0} };
 var ALARM_NAMES = { fajr:'ফজর', dhuhr:'যোহর', asr:'আসর', maghrib:'মাগরিব', isha:'এশা', sehri:'সেহরি', iftar:'ইফতার' };
+function alarmName(k){ return (k === 'dhuhr' && nowFrame().getDay() === 5) ? 'জুমা' : ALARM_NAMES[k]; }
 var alarmFired = {};
 var actx = null, masterGain = null;
 function ensureAudio(){
@@ -153,10 +123,35 @@ function toneAt(freq, start, dur, peak){
   o.connect(g); g.connect(masterGain);
   o.start(start); o.stop(start + dur + 0.05);
 }
+/* ---- Azan recordings (verified direct mp3 streams; cached after first play) ---- */
+var AZAN_URLS = {
+  'azan:makkah': 'https://archive.org/download/full-madinah.mp3/full-makkah.mp3.mp3',
+  'azan:madinah': 'https://archive.org/download/full-madinah.mp3/full-madinah.mp3.mp3',
+  'azan:alafasy': 'https://archive.org/download/Athan-AlafasyByDarifton/Athan-Alafasy1431.mp3',
+  'azan:alafasyfajr': 'https://archive.org/download/adhan-call-to-prayer-mishary-rashid-alafasy-fajr-maqam-hijaz-hd-320-kbps-1/Adhan%20%28Call%20to%20prayer%29%20_%20Mishary%20Rashid%20Alafasy%20_%20Fajr%20_%20Maqam%20Hijaz%20%E1%B4%B4%E1%B4%B0%20%28320%20kbps%29%20%281%29.mp3',
+  'azan:fakhry': 'https://upload.wikimedia.org/wikipedia/commons/2/27/Call_to_prayer_by_Sabah_Fakhry.mp3',
+  'azan:aaqib': 'https://upload.wikimedia.org/wikipedia/commons/7/7d/The_Adhan_-_Muslim_Call_to_Prayer_-_Aaqib_Azeez.mp3'
+};
+var azanEl = null;
+function stopAzan(){ if (azanEl){ try { azanEl.pause(); } catch(e){} } }
+function playAzan(url){
+  if (!url){ toast('আজানের অডিও পাওয়া যায়নি'); return; }
+  stopAzan();
+  if (!azanEl) azanEl = new Audio();
+  azanEl.volume = ((+$('alarmVol').value) || 80) / 100;
+  var go = function(){ var p = azanEl.play(); if (p && p.catch) p.catch(function(){ toast('আজান চালানো যায়নি — ইন্টারনেট সংযোগ দেখুন'); }); };
+  if (!('caches' in window)){ azanEl.src = url; go(); return; }
+  caches.open(AUDIO_CACHE).then(function(c){ return c.match(url); }).then(function(res){
+    if (res){ res.blob().then(function(b){ azanEl.src = URL.createObjectURL(b); go(); }); }
+    else { azanEl.src = url; go(); cacheAudio(url); }
+  }).catch(function(){ azanEl.src = url; go(); });
+}
 function playAlarmSound(){
+  var kind = $('alarmSound').value;
+  if (kind.indexOf('azan:') === 0){ playAzan(AZAN_URLS[kind]); return; }
+  stopAzan();
   ensureAudio();
   if (!actx){ toast('এই ব্রাউজারে শব্দ চালানো যাচ্ছে না'); return; }
-  var kind = $('alarmSound').value;
   [0, 4.2].forEach(function(round){
     var t0 = actx.currentTime + 0.06 + round;
     if (kind === 'bell'){
@@ -175,7 +170,7 @@ function renderAlarmRows(){
     var opts = [0, 5, 10, 15].map(function(m){
       return '<option value="' + m + '"' + (a.before === m ? ' selected' : '') + '>' + (m === 0 ? 'ঠিক সময়ে' : bn(m) + ' মিনিট আগে') + '</option>';
     }).join('');
-    return '<div class="tk-row"><span class="nm">' + ALARM_NAMES[k] + '</span><span style="display:flex; gap:8px; align-items:center; flex-wrap:wrap"><select data-alarm-before="' + k + '" aria-label="' + ALARM_NAMES[k] + ' অ্যালার্ম কখন বাজবে">' + opts + '</select><button class="tk' + (a.on ? ' done' : '') + '" data-alarm="' + k + '">' + (a.on ? '✓ অ্যালার্ম অন' : 'অ্যালার্ম অফ') + '</button></span></div>';
+    return '<div class="tk-row"><span class="nm">' + alarmName(k) + '</span><span style="display:flex; gap:8px; align-items:center; flex-wrap:wrap"><select data-alarm-before="' + k + '" aria-label="' + alarmName(k) + ' অ্যালার্ম কখন বাজবে">' + opts + '</select><button class="tk' + (a.on ? ' done' : '') + '" data-alarm="' + k + '">' + (a.on ? '✓ অ্যালার্ম অন' : 'অ্যালার্ম অফ') + '</button></span></div>';
   }).join('');
 }
 renderAlarmRows();
@@ -186,21 +181,21 @@ document.addEventListener('click', function(e){
   ALARMS[k].on = !ALARMS[k].on;
   if (ALARMS[k].on) ensureAudio();
   renderAlarmRows(); renderPrayer();
-  toast(ALARM_NAMES[k] + 'র অ্যালার্ম ' + (ALARMS[k].on ? 'চালু' : 'বন্ধ') + ' করা হয়েছে');
+  toast(alarmName(k) + 'র অ্যালার্ম ' + (ALARMS[k].on ? 'চালু' : 'বন্ধ') + ' করা হয়েছে');
 });
 document.addEventListener('change', function(e){
   var s = e.target.closest('[data-alarm-before]');
   if (s) ALARMS[s.getAttribute('data-alarm-before')].before = +s.value;
 });
-$('alarmVol').addEventListener('input', function(){ if (masterGain) masterGain.gain.value = ((+this.value) || 0) / 100; });
+$('alarmVol').addEventListener('input', function(){ if (masterGain) masterGain.gain.value = ((+this.value) || 0) / 100; if (azanEl) azanEl.volume = ((+this.value) || 0) / 100; });
 $('alarmTest').addEventListener('click', function(){ playAlarmSound(); $('alarmStop').disabled = false; toast('টেস্ট শব্দ বাজছে'); });
-function hideAlarmBanner(){ $('alarmBanner').classList.add('hidden'); $('alarmStop').disabled = true; }
+function hideAlarmBanner(){ stopAzan(); $('alarmBanner').classList.add('hidden'); $('alarmStop').disabled = true; }
 $('alarmStop').addEventListener('click', hideAlarmBanner);
 $('alarmBannerStop').addEventListener('click', hideAlarmBanner);
 function fireAlarm(key, before){
   var msg;
-  if (before > 0) msg = bn(before) + ' মিনিট পর ' + ALARM_NAMES[key] + (key === 'sehri' ? 'র সময় শেষ হবে' : (key === 'iftar' ? 'র সময় হবে' : 'র ওয়াক্ত শুরু হবে'));
-  else msg = key === 'sehri' ? 'সেহরির সময় শেষ হয়েছে' : (key === 'iftar' ? 'ইফতারের সময় হয়েছে' : ALARM_NAMES[key] + 'র ওয়াক্ত শুরু হয়েছে');
+  if (before > 0) msg = bn(before) + ' মিনিট পর ' + alarmName(key) + (key === 'sehri' ? 'র সময় শেষ হবে' : (key === 'iftar' ? 'র সময় হবে' : 'র ওয়াক্ত শুরু হবে'));
+  else msg = key === 'sehri' ? 'সেহরির সময় শেষ হয়েছে' : (key === 'iftar' ? 'ইফতারের সময় হয়েছে' : alarmName(key) + 'র ওয়াক্ত শুরু হয়েছে');
   $('alarmBannerTxt').textContent = 'রিমাইন্ডার: ' + msg;
   $('alarmBanner').classList.remove('hidden');
   $('alarmStop').disabled = false;
