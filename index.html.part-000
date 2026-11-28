@@ -6,9 +6,7 @@
 <meta name="color-scheme" content="light dark" />
 <link rel="icon" href="data:," />
 <title>Muslim Path — কুরআন, হাদিস, নামাজের সময়, কিবলা ও তাসবিহ</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@700&family=Hind+Siliguri:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+<link href="assets/fonts/fonts.css" rel="stylesheet" />
 <script>try{var _th=localStorage.getItem('di_theme');if(_th==='light'||_th==='dark'||_th==='blue'){document.documentElement.setAttribute('data-theme',_th);}}catch(e){}</script>
 <style>
   :root{
@@ -302,7 +300,7 @@
   }
   .tapbtn:active{ transform:scale(.975); }
   .chips{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
-  .chips button{ border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:999px; padding:7px 15px; font-weight:600; font-size:14.5px; }
+  .chips button{ border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:999px; padding:6px 12px; font-weight:600; font-size:13.5px; }
   .chips button[aria-pressed="true"]{ background:var(--green-800); color:#fdf6da; border-color:var(--green-800); }
 
   /* ---------- Quiz ---------- */
@@ -921,6 +919,11 @@
         <button type="button" data-qchip="kursi">আয়াতুল কুরসী</button>
         <button type="button" data-qchip="yasin">সূরা ইয়াসীন</button>
         <button type="button" data-qchip="kahf">সূরা আল-কাহফ</button>
+        <button type="button" data-qchip="rahman">সূরা আর-রাহমান</button>
+        <button type="button" data-qchip="waqiah">সূরা আল-ওয়াকিয়া</button>
+        <button type="button" data-qchip="mulk">সূরা আল-মুলক</button>
+        <button type="button" data-qchip="dukhan">সূরা আদ-দুখান</button>
+        <button type="button" data-qchip="sajdah">সূরা আস-সাজদাহ</button>
       </div>
       <div class="seg" role="group" aria-label="তালিকার ধরন">
         <button id="segSurah" aria-pressed="true">সূরা অনুযায়ী</button>
@@ -940,27 +943,4 @@
           <select id="reciterSel" aria-label="ক্বারী বাছাই করুন">
             <option value="ar.alafasy">মিশারি রাশিদ আল-আফাসি</option>
             <option value="ar.husary">মাহমুদ খলিল আল-হুসারি</option>
-            <option value="ar.minshawi">মুহাম্মদ সিদ্দিক আল-মিনশাওয়ি</option>
-            <option value="ar.abdulbasitmurattal">আব্দুল বাসিত আব্দুস সামাদ</option>
-            <option value="ar.mahermuaiqly">মাহের আল-মুয়াইকলি</option>
-            <option value="ar.hanirifai">হানি আর-রিফায়ি</option>
-          </select>
-        </label>
-      </div>
-      <p class="sub" id="readerMeta" style="margin-bottom:0"></p>
-      <div class="card" style="margin-top:10px">
-        <div id="readerBody"></div>
-      </div>
-      <div class="reader-head" style="margin-top:14px">
-        <button class="btn ghost" id="prevPartBtn">← আগেরটি</button>
-        <span style="flex:1"></span>
-        <button class="btn" id="nextPartBtn">পরেরটি →</button>
-      </div>
-    </div>
-  </section>
-
-  
-  <!-- ================= HADITH ================= -->
-  <section class="view" id="view-hadith">
-    <h2 class="sec">হাদিস ভান্ডার</h2>
-    <p class="sub">সহিহ হাদিস — আরবি পাঠ, বাংলা অর্থ ও পূ
+            <option value="ar.minshawi">মুহাম্
