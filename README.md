@@ -2,7 +2,7 @@
 
 কুরআন, হাদিস, নামাজের সময়, কিবলা ও দৈনন্দিন দোয়া — একজন মুসলিমের প্রতিদিনের প্রয়োজনীয় সবকিছু এক অ্যাপে।
 
-**[⬇ সর্বশেষ ভার্সন ডাউনলোড করুন](https://github.com/Kholil-143/Daily-Islam/releases/latest/download/Daily-Islam.apk)**
+**[⬇ সর্বশেষ ভার্সন ডাউনলোড করুন](https://github.com/Kholil-143/Muslim-Path/releases/latest/download/Muslim-Path.apk)**
 
 ## অ্যাপে যা আছে
 
