@@ -1,4 +1,32 @@
-asterGain.connect(actx.destination); } catch(e){ actx = null; }
+(b){ (byMonth[b.m] = byMonth[b.m] || []).push(b); });
+  $('bayanWritten').innerHTML = HIJRI_MONTHS_B.map(function(mn, mi){
+    var items = (byMonth[mi] || []).map(function(b){
+      var paras = b.b.split('\n').map(function(p){ return '<p>' + p + '</p>'; }).join('');
+      return '<details class="acc"><summary>সপ্তাহ ' + bnD(b.w) + ': ' + b.t + '</summary><div class="body">' + paras + '</div></details>';
+    }).join('');
+    return '<details class="acc"><summary>' + mn + ' — ' + bnD((byMonth[mi] || []).length) + 'টি বয়ান</summary><div class="body">' + items + '</div></details>';
+  }).join('');
+  function showWritten(w){
+    $('bayanWritten').classList.toggle('hidden', !w);
+    $('bayanMedia').classList.toggle('hidden', w);
+    $('btabWritten').setAttribute('aria-pressed', w ? 'true' : 'false');
+    $('btabMedia').setAttribute('aria-pressed', w ? 'false' : 'true');
+  }
+  $('btabWritten').addEventListener('click', function(){ showWritten(true); });
+  $('btabMedia').addEventListener('click', function(){ showWritten(false); });
+})();
+
+</script>
+<script>
+/* ================= Prayer alarms & reminders ================= */
+var ALARMS = { fajr:{on:false,before:0}, dhuhr:{on:false,before:0}, asr:{on:false,before:0}, maghrib:{on:false,before:0}, isha:{on:false,before:0}, sehri:{on:false,before:0}, iftar:{on:false,before:0} };
+var ALARM_NAMES = { fajr:'ফজর', dhuhr:'যোহর', asr:'আসর', maghrib:'মাগরিব', isha:'এশা', sehri:'সেহরি', iftar:'ইফতার' };
+function alarmName(k){ return (k === 'dhuhr' && nowFrame().getDay() === 5) ? 'জুমা' : ALARM_NAMES[k]; }
+var alarmFired = {};
+var actx = null, masterGain = null;
+function ensureAudio(){
+  if (!actx){
+    try { actx = new (window.AudioContext || window.webkitAudioContext)(); masterGain = actx.createGain(); masterGain.connect(actx.destination); } catch(e){ actx = null; }
   }
   if (actx && actx.state === 'suspended') actx.resume();
   if (masterGain) masterGain.gain.value = ((+$('alarmVol').value) || 80) / 100;
@@ -357,5 +385,225 @@ $('refreshBtn').addEventListener('click', function(){
   }, 1500);
 })();
 </script>
-</body>
-</html>
+
+<script>
+/* ============ Jamaat auto-silent (v2.21) ============ */
+(function(){
+  var KEY = 'di_jamaat_silent';
+  var WAQTS = ['fajr', 'dhuhr', 'asr', 'maghrib', 'isha'];
+  var NAMES = { fajr: 'ফজর', dhuhr: 'যোহর', asr: 'আসর', maghrib: 'মাগরিব', isha: 'এশা' };
+  var S = {
+    master: true, mode: 'silent',
+    waqts: {
+      fajr:    { on: true, time: '05:45', dur: 25 },
+      dhuhr:   { on: true, time: '13:30', dur: 20 },
+      asr:     { on: true, time: '16:15', dur: 15 },
+      maghrib: { on: true, time: '17:25', dur: 15 },
+      isha:    { on: true, time: '19:30', dur: 20 }
+    },
+    /* Madrasa class window: silent from start to end on class days.
+       days[] is indexed by Date.getDay() (0 = Sunday); Friday off. */
+    cls: { on: true, start: '08:00', end: '13:00', days: [true, true, true, true, true, false, true] }
+  };
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY) || 'null');
+    if (saved){
+      if (typeof saved.master === 'boolean') S.master = saved.master;
+      if (saved.mode === 'vibrate' || saved.mode === 'silent') S.mode = saved.mode;
+      WAQTS.forEach(function(w){
+        var s = saved.waqts && saved.waqts[w];
+        if (s){
+          if (typeof s.on === 'boolean') S.waqts[w].on = s.on;
+          if (/^\d{1,2}:\d{2}$/.test(s.time || '')) S.waqts[w].time = s.time;
+          var d = parseInt(s.dur, 10);
+          if (d >= 5 && d <= 180) S.waqts[w].dur = d;
+        }
+      });
+      var sc = saved.cls;
+      if (sc){
+        if (typeof sc.on === 'boolean') S.cls.on = sc.on;
+        if (/^\d{1,2}:\d{2}$/.test(sc.start || '')) S.cls.start = sc.start;
+        if (/^\d{1,2}:\d{2}$/.test(sc.end || '')) S.cls.end = sc.end;
+        if (Array.isArray(sc.days) && sc.days.length === 7)
+          S.cls.days = sc.days.map(function(x){ return !!x; });
+      }
+    }
+  } catch (e) {}
+  function save(){ try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function native(method, opts){
+    var C = window.Capacitor;
+    if (!C || !C.nativePromise) return Promise.reject(new Error('no bridge'));
+    return C.nativePromise('JamaatSilent', method, opts || {});
+  }
+  function wname(w){
+    if (w === 'dhuhr' && nowFrame().getDay() === 5) return 'জুমা';
+    return NAMES[w];
+  }
+  /* A Date built in the app's location-time frame -> real epoch ms. */
+  function frameEpoch(fr){
+    var tz = curLoc().tz;
+    return fr.getTime() - fr.getTimezoneOffset() * 60000 - tz * 3600000;
+  }
+  function buildItems(){
+    var items = [], now = Date.now(), base = nowFrame();
+    for (var k = 0; k < 8; k++){
+      var day = new Date(base.getFullYear(), base.getMonth(), base.getDate() + k);
+      var dayNum = Math.floor(Date.UTC(day.getFullYear(), day.getMonth(), day.getDate()) / 86400000);
+      WAQTS.forEach(function(w, wi){
+        var s = S.waqts[w];
+        if (!s.on) return;
+        var p = String(s.time).split(':');
+        if (p.length < 2) return;
+        var fr = new Date(day.getFullYear(), day.getMonth(), day.getDate(), +p[0], +p[1], 0, 0);
+        var start = frameEpoch(fr) - 5 * 60000;
+        var end = start + s.dur * 60000;
+        if (end <= now) return;
+        items.push({ id: (dayNum % 100000) * 10 + wi, startMs: start, endMs: end, mode: S.mode === 'vibrate' ? 1 : 0 });
+      });
+      /* Madrasa class window (slot 5): silent for the whole class. */
+      var c = S.cls;
+      if (c.on && c.days[day.getDay()]
+          && /^\d{1,2}:\d{2}$/.test(c.start) && /^\d{1,2}:\d{2}$/.test(c.end)){
+        var sp = c.start.split(':'), ep = c.end.split(':');
+        var cs = frameEpoch(new Date(day.getFullYear(), day.getMonth(), day.getDate(), +sp[0], +sp[1], 0, 0));
+        var ce = frameEpoch(new Date(day.getFullYear(), day.getMonth(), day.getDate(), +ep[0], +ep[1], 0, 0));
+        if (ce <= cs) ce += 86400000;
+        if (ce > now) items.push({ id: (dayNum % 100000) * 10 + 5, startMs: cs, endMs: ce, mode: S.mode === 'vibrate' ? 1 : 0 });
+      }
+    }
+    return items;
+  }
+  var lastSig = null;
+  function syncSilent(force){
+    if (!window.Capacitor || !Capacitor.nativePromise) return;
+    if (!S.master){
+      if (lastSig !== 'off'){ lastSig = 'off'; native('cancelAll', {}).catch(function(){}); }
+      return;
+    }
+    var items = buildItems();
+    var sig = JSON.stringify(items);
+    if (!force && sig === lastSig) return;
+    lastSig = sig;
+    native('schedule', { items: items }).catch(function(){ lastSig = null; });
+  }
+  function renderRows(){
+    var box = $('jsRows');
+    if (!box) return;
+    box.innerHTML = WAQTS.map(function(w){
+      var s = S.waqts[w];
+      return '<div class="tk-row"><span class="nm">' + wname(w) + '</span>' +
+        '<button class="tk' + (s.on ? ' done' : '') + '" data-js-tog="' + w + '">' + (s.on ? '✓ চালু' : 'বন্ধ') + '</button></div>' +
+        '<div style="display:flex; gap:10px; padding:2px 0 10px">' +
+        '<label style="flex:1; font-size:14px">জামাতের সময়<input type="time" data-js-time="' + w + '" value="' + s.time + '" style="width:100%; margin-top:4px" /></label>' +
+        '<label style="flex:1; font-size:14px">সাইলেন্ট থাকবে (মিনিট)<input type="number" min="5" max="180" step="5" data-js-dur="' + w + '" value="' + s.dur + '" style="width:100%; margin-top:4px" /></label></div>';
+    }).join('');
+  }
+  function renderClass(){
+    var box = $('jsClassBox');
+    if (!box) return;
+    var c = S.cls;
+    var dayNames = ['রবিবার', 'সোমবার', 'মঙ্গলবার', 'বুধবার', 'বৃহস্পতিবার', 'শুক্রবার', 'শনিবার'];
+    var order = [6, 0, 1, 2, 3, 4, 5];
+    var chips = order.map(function(d){
+      return '<button class="tk' + (c.days[d] ? ' done' : '') + '" data-js-cday="' + d + '">' + dayNames[d] + '</button>';
+    }).join('');
+    box.innerHTML =
+      '<div class="tk-row" style="margin-top:6px"><span class="nm">মাদ্রাসার ক্লাসের সময়</span>' +
+      '<button class="tk' + (c.on ? ' done' : '') + '" data-js-ctog="1">' + (c.on ? '✓ চালু' : 'বন্ধ') + '</button></div>' +
+      '<div style="display:flex; gap:10px; padding:2px 0 8px">' +
+      '<label style="flex:1; font-size:14px">ক্লাস শুরু<input type="time" data-js-cstart="1" value="' + c.start + '" style="width:100%; margin-top:4px" /></label>' +
+      '<label style="flex:1; font-size:14px">ক্লাস শেষ<input type="time" data-js-cend="1" value="' + c.end + '" style="width:100%; margin-top:4px" /></label></div>' +
+      '<p class="sub" style="margin:0 0 6px">কোন কোন দিন ক্লাস হয়:</p>' +
+      '<div style="display:flex; gap:6px; flex-wrap:wrap; padding-bottom:8px">' + chips + '</div>' +
+      '<p class="sub" style="margin:0">ক্লাস চলাকালীন পুরো সময় ফোন সাইলেন্ট থাকবে, শেষ হলে আগের মোডে ফিরে আসবে।</p>';
+  }
+  function syncUi(){
+    var b = $('jsMasterBtn');
+    if (b){
+      b.textContent = 'অটো সাইলেন্ট: ' + (S.master ? 'অন' : 'অফ');
+      b.className = S.master ? 'btn gold' : 'btn ghost';
+    }
+    var m = $('jsMode');
+    if (m) m.value = S.mode;
+    renderRows();
+    renderClass();
+  }
+  function refreshDnd(){
+    var box = $('jsDndBox');
+    if (!box) return;
+    native('checkDndAccess', {}).then(function(r){
+      var g = !!(r && r.granted);
+      var t = $('jsDndText');
+      if (t) t.textContent = g
+        ? '✅ Do Not Disturb অনুমতি দেওয়া আছে — অটো সাইলেন্ট ঠিকমতো কাজ করবে।'
+        : '⚠️ ফোন সাইলেন্ট করতে একবার Do Not Disturb অনুমতি দিতে হবে। অনুমতি না দিলে এই ফিচার কাজ করবে না।';
+      var btn = $('jsDndBtn');
+      if (btn) btn.style.display = g ? 'none' : '';
+    }).catch(function(){ box.style.display = 'none'; });
+  }
+  var mb = $('jsMasterBtn');
+  if (mb) mb.addEventListener('click', function(){
+    S.master = !S.master;
+    save(); syncUi(); syncSilent(true);
+    toast('জামাতের অটো সাইলেন্ট ' + (S.master ? 'চালু' : 'বন্ধ') + ' করা হয়েছে');
+    if (S.master) refreshDnd();
+  });
+  var dndBtn = $('jsDndBtn');
+  if (dndBtn) dndBtn.addEventListener('click', function(){
+    native('openDndSettings', {}).catch(function(){});
+    setTimeout(refreshDnd, 1500);
+  });
+  var modeSel = $('jsMode');
+  if (modeSel) modeSel.addEventListener('change', function(){
+    S.mode = modeSel.value === 'vibrate' ? 'vibrate' : 'silent';
+    save(); syncSilent(true);
+  });
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('[data-js-tog]');
+    if (b){
+      var w = b.getAttribute('data-js-tog');
+      S.waqts[w].on = !S.waqts[w].on;
+      save(); renderRows(); syncSilent(true);
+      toast(wname(w) + 'র অটো সাইলেন্ট ' + (S.waqts[w].on ? 'চালু' : 'বন্ধ') + ' করা হয়েছে');
+      return;
+    }
+    if (e.target.closest('[data-js-ctog]')){
+      S.cls.on = !S.cls.on;
+      save(); renderClass(); syncSilent(true);
+      toast('মাদ্রাসার ক্লাসের অটো সাইলেন্ট ' + (S.cls.on ? 'চালু' : 'বন্ধ') + ' করা হয়েছে');
+      return;
+    }
+    var cd = e.target.closest('[data-js-cday]');
+    if (cd){
+      var d = +cd.getAttribute('data-js-cday');
+      S.cls.days[d] = !S.cls.days[d];
+      save(); renderClass(); syncSilent(true);
+      return;
+    }
+    if (e.target.closest('[data-sub="settings"]')) setTimeout(refreshDnd, 400);
+  });
+  document.addEventListener('change', function(e){
+    var t = e.target;
+    if (!t || !t.getAttribute) return;
+    var w = t.getAttribute('data-js-time');
+    if (w){
+      if (/^\d{1,2}:\d{2}$/.test(t.value)){ S.waqts[w].time = t.value; save(); syncSilent(true); }
+      return;
+    }
+    w = t.getAttribute('data-js-dur');
+    if (w){
+      var d = parseInt(t.value, 10);
+      if (d >= 5 && d <= 180){ S.waqts[w].dur = d; save(); syncSilent(true); }
+      else t.value = S.waqts[w].dur;
+      return;
+    }
+    if (t.getAttribute('data-js-cstart')){
+      if (/^\d{1,2}:\d{2}$/.test(t.value)){ S.cls.start = t.value; save(); syncSilent(true); }
+      return;
+    }
+    if (t.getAttribute('data-js-cend')){
+      if (/^\d{1,2}:\d{2}$/.test(t.value)){ S.cls.end = t.value; save(); syncSilent(true); }
+    }
+  });
+  document.addEventListener('visibilitychange', function(){
+    if (!document.hidden){ syncSilen
