@@ -62,6 +62,14 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
 
     static final String[] PRAYER_NAMES = {"ফজর", "সূর্যোদয়", "যোহর", "আসর", "মাগরিব", "এশা"};
 
+    /** Display name for a waqt: on Fridays the Dhuhr slot (index 2) reads জুমা. */
+    static String prayerName(int i, Calendar now) {
+        if (i == 2 && now != null && now.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY) {
+            return "জুমা";
+        }
+        return PRAYER_NAMES[i];
+    }
+
     @Override
     public void onEnabled(Context context) {
         super.onEnabled(context);
@@ -175,6 +183,7 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
         views.setTextViewText(R.id.tv_fajr, BengaliDate.formatTime(times.fajr));
         views.setTextViewText(R.id.tv_sunrise, BengaliDate.formatTime(times.sunrise));
         views.setTextViewText(R.id.tv_dhuhr, BengaliDate.formatTime(times.dhuhr));
+        views.setTextViewText(R.id.tv_dhuhr_lbl, prayerName(2, now));
         views.setTextViewText(R.id.tv_asr, BengaliDate.formatTime(times.asr));
         views.setTextViewText(R.id.tv_sunset, BengaliDate.formatTime(times.maghrib - 3.0 / 60.0));
         views.setTextViewText(R.id.tv_maghrib, BengaliDate.formatTime(times.maghrib));
@@ -243,7 +252,7 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
 
         for (int i = 0; i < all.length; i++) {
             if (all[i] > nowHours) {
-                return "পরের ওয়াক্ত: " + PRAYER_NAMES[i] + " " + BengaliDate.formatTime(all[i])
+                return "পরের ওয়াক্ত: " + prayerName(i, now) + " " + BengaliDate.formatTime(all[i])
                         + " • বাকি " + remainingText(all[i] - nowHours);
             }
         }

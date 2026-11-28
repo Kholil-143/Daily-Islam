@@ -163,6 +163,7 @@ public class CompactPrayerWidgetProvider extends AppWidgetProvider {
         // The five waqt times in a single line at the very bottom.
         views.setTextViewText(R.id.tv_fajr_c, BengaliDate.formatTime(times.fajr));
         views.setTextViewText(R.id.tv_dhuhr_c, BengaliDate.formatTime(times.dhuhr));
+        views.setTextViewText(R.id.tv_dhuhr_lbl_c, PrayerWidgetProvider.prayerName(2, now));
         views.setTextViewText(R.id.tv_asr_c, BengaliDate.formatTime(times.asr));
         views.setTextViewText(R.id.tv_maghrib_c, BengaliDate.formatTime(times.maghrib));
         views.setTextViewText(R.id.tv_isha_c, BengaliDate.formatTime(times.isha));
