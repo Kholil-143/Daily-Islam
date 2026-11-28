@@ -1,311 +1,405 @@
-><p class="ar">' + k.ar + '</p><p>' + k.bn + '</p></article>';
-}).join('');
-
-/* ================= Namaz Shikkha ================= */
-var SHIKKHA = '' +
- '<details class="acc" open><summary>ওযু করার নিয়ম (ধারাবাহিক ধাপ)</summary><div class="body">' +
- '<p>নিয়ত করে "বিসমিল্লাহ" বলে শুরু করুন। ওযুর ফরজ চারটি: পুরো মুখ ধোয়া, কনুইসহ দুই হাত ধোয়া, মাথার চারভাগের একভাগ মাসেহ করা এবং টাখনুসহ দুই পা ধোয়া। সুন্নাত তরিকা অনুযায়ী ধাপগুলো:</p>' +
- '<ol class="steps">' +
- '<li>দুই হাত কব্জি পর্যন্ত তিনবার ধুয়ে নিন।</li>' +
- '<li>তিনবার কুলি করুন ও নাকে পানি দিয়ে তিনবার ঝাড়ুন।</li>' +
- '<li>পুরো মুখ (কপালের চুলের গোড়া থেকে থুতনি, এক কান থেকে অপর কান) তিনবার ধুয়ে নিন।</li>' +
- '<li>প্রথমে ডান হাত, পরে বাম হাত কনুইসহ তিনবার ধুয়ে নিন।</li>' +
- '<li>ভেজা হাতে পুরো মাথা একবার মাসেহ করুন; কান ও ঘাড়ও মাসেহ করুন।</li>' +
- '<li>প্রথমে ডান পা, পরে বাম পা টাখনুসহ তিনবার ধুয়ে নিন।</li>' +
- '</ol>' +
- '<p class="ar">أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ، اللَّهُمَّ اجْعَلْنِي مِنَ التَّوَّابِينَ وَاجْعَلْنِي مِنَ الْمُتَطَهِّرِينَ</p>' +
- '<p>ওযুর পরের এই দোয়া পড়া সুন্নাত (সহিহ মুসলিম: ২৩৪; সুনানে তিরমিযি: ৫৫)।</p></div></details>' +
-
- '<details class="acc"><summary>পাঁচ ওয়াক্ত নামাজের রাকাত সংখ্যা</summary><div class="body">' +
- '<table class="rakat"><thead><tr><th>ওয়াক্ত</th><th>সুন্নাত (আগে)</th><th>ফরজ</th><th>সুন্নাত (পরে)</th><th>নফল/বিতর</th></tr></thead><tbody>' +
- '<tr><th>ফজর</th><td>২</td><td>২</td><td>—</td><td>—</td></tr>' +
- '<tr><th>যোহর</th><td>৪</td><td>৪</td><td>২</td><td>২ নফল</td></tr>' +
- '<tr><th>আসর</th><td>৪ (গায়রে মুয়াক্কাদা)</td><td>৪</td><td>—</td><td>—</td></tr>' +
- '<tr><th>মাগরিব</th><td>—</td><td>৩</td><td>২</td><td>২ নফল</td></tr>' +
- '<tr><th>এশা</th><td>৪ (গায়রে মুয়াক্কাদা)</td><td>৪</td><td>২</td><td>২ নফল + ৩ বিতর (ওয়াজিব)</td></tr>' +
- '<tr><th>জুমা (শুক্রবার)</th><td>৪</td><td>২</td><td>৪ + ২</td><td>—</td></tr>' +
- '</tbody></table>' +
- '<p>দৈনিক ফরজ মোট ১৭ রাকাত। বিতর নামাজ হানাফি মাযহাবে ওয়াজিব।</p></div></details>' +
-
- '<details class="acc"><summary>নামাজ পড়ার ধারাবাহিক ধাপ (এক রাকাতের বিবরণ)</summary><div class="body">' +
- '<ol class="steps">' +
- '<li><b>নিয়ত ও তাকবিরে তাহরিমা:</b> কিবলামুখী হয়ে দাঁড়িয়ে নিয়ত করুন; দুই হাত কান/কাঁধ পর্যন্ত উঠিয়ে "আল্লাহু আকবার" বলে নামাজ শুরু করুন।</li>' +
- '<li><b>কিয়াম:</b> হাত বেঁধে সানা পড়ুন — <span class="ar" style="display:block">سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، وَتَبَارَكَ اسْمُكَ، وَتَعَالَىٰ جَدُّكَ، وَلَا إِلَٰهَ غَيْرُكَ</span>এরপর আউযুবিল্লাহ ও বিসমিল্লাহ পড়ে সূরা আল-ফাতিহা এবং অন্য একটি সূরা/আয়াত পড়ুন।</li>' +
- '<li><b>রুকু:</b> "আল্লাহু আকবার" বলে রুকুতে যান; কমপক্ষে তিনবার বলুন — <span class="ar" style="display:block">سُبْحَانَ رَبِّيَ الْعَظِيمِ</span></li>' +
- '<li><b>কওমা:</b> "সামিআল্লাহু লিমান হামিদাহ" বলে সোজা হয়ে দাঁড়ান এবং বলুন — <span class="ar" style="display:block">رَبَّنَا لَكَ الْحَمْدُ</span></li>' +
- '<li><b>সিজদা:</b> "আল্লাহু আকবার" বলে দুটি সিজদা করুন; প্রতিটিতে কমপক্ষে তিনবার বলুন — <span class="ar" style="display:block">سُبْحَانَ رَبِّيَ الْأَعْلَىٰ</span>দুই সিজদার মাঝে কিছুক্ষণ বসুন।</li>' +
- '<li><b>দ্বিতীয় রাকাত:</b> একইভাবে দ্বিতীয় রাকাত আদায় করুন।</li>' +
- '<li><b>তাশাহহুদ:</b> দ্বিতীয় রাকাতে বসে আত্তাহিয়্যাতু পড়ুন — <span class="ar" style="display:block">التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَىٰ عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَٰهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ</span></li>' +
- '<li><b>দরুদ ও দোয়া মাসুরা (শেষ বৈঠকে):</b> দরুদে ইবরাহিম পড়ুন — <span class="ar" style="display:block">اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ وَعَلَىٰ آلِ مُحَمَّدٍ، كَمَا صَلَّيْتَ عَلَىٰ إِبْرَاهِيمَ وَعَلَىٰ آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ، اللَّهُمَّ بَارِكْ عَلَىٰ مُحَمَّدٍ وَعَلَىٰ آلِ مُحَمَّدٍ، كَمَا بَارَكْتَ عَلَىٰ إِبْرَاهِيمَ وَعَلَىٰ آلِ إِبْرَاهِيمَ، إِنَّكَ حَمِيدٌ مَجِيدٌ</span>এরপর দোয়া মাসুরা: <span class="ar" style="display:block">اللَّهُمَّ إِنِّي ظَلَمْتُ نَفْسِي ظُلْمًا كَثِيرًا، وَلَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ، فَاغْفِرْ لِي مَغْفِرَةً مِنْ عِنْدِكَ وَارْحَمْنِي، إِنَّكَ أَنْتَ الْغَفُورُ الرَّحِيمُ</span></li>' +
- '<li><b>সালাম:</b> ডানে ও বামে "আসসালামু আলাইকুম ওয়া রাহমাতুল্লাহ" বলে নামাজ শেষ করুন।</li>' +
- '</ol>' +
- '<p>তিন ও চার রাকাতবিশিষ্ট নামাজে মাঝের বৈঠকে শুধু তাশাহহুদ পড়ে উঠে যান এবং শেষ বৈঠকে তাশাহহুদ, দরুদ ও দোয়া মাসুরা পড়ে সালাম ফেরান। বিস্তারিত শেখার জন্য নির্ভরযোগ্য আলেম বা সহিহ নামাজ শিক্ষার বই অনুসরণ করুন।</p></div></details>' +
-
- '<details class="acc"><summary>নামাজের ফরজ, ওয়াজিব ও কিছু জরুরি মাসআলা</summary><div class="body">' +
- '<p><b>নামাজের বাইরে ফরজ (শর্ত) ৭টি:</b> শরীর পবিত্র হওয়া, পোশাক পবিত্র হওয়া, নামাজের জায়গা পবিত্র হওয়া, সতর ঢাকা, কিবলামুখী হওয়া, ওয়াক্ত হওয়া ও নিয়ত করা।</p>' +
- '<p><b>নামাজের ভেতরে ফরজ (রুকন) ৬টি:</b> তাকবিরে তাহরিমা, কিয়াম (দাঁড়ানো), কিরাত (কুরআন পড়া), রুকু, দুই সিজদা ও শেষ বৈঠকে তাশাহহুদ পরিমাণ বসা।</p>' +
- '<p>ফরজ ছুটে গেলে নামাজ হবে না; ওয়াজিব ছুটে গেলে সাহু সিজদা দিতে হয়। মহিলাদের সতর: মুখ, হাত ও পা ছাড়া পুরো শরীর; পুরুষদের সতর: নাভি থেকে হাঁটু পর্যন্ত।</p></div></details>';
-$('shikkhaBody').innerHTML = SHIKKHA;
-
-/* ================= Zakat ================= */
-function money(n){ return '৳ ' + bn(Math.round(n).toLocaleString('en-IN')); }
-$('zCalc').addEventListener('click', function(){
-  function v(id){ return Math.max(0, parseFloat($(id).value) || 0); }
-  var total = v('zCash') + v('zGold') + v('zSilver') + v('zBiz');
-  var debt = v('zDebt');
-  var nisab = v('zNisab');
-  var net = total - debt;
-  var box = $('zResult');
-  box.classList.remove('hidden');
-  if (nisab <= 0){
-    box.innerHTML = 'নিসাবের পরিমাণ লিখুন (আজকের বাজারদরে প্রায় ৬১২ গ্রাম রূপার দাম) — তাহলেই সঠিক হিসাব করা যাবে।<br />আপনার মোট সম্পদ: <b>' + money(total) + '</b>, ঋণ বাদে: <b>' + money(net) + '</b>';
-    return;
-  }
-  if (net < nisab){
-    box.innerHTML = 'আপনার যাকাতযোগ্য সম্পদ <b>' + money(net) + '</b> — যা নিসাব (' + money(nisab) + ') এর কম। তাই আপনার ওপর যাকাত ফরজ নয়। তবে ইচ্ছা করলে নফল সদকা করতে পারেন — সদকায় সম্পদ কমে না (সহিহ মুসলিম: ২৫৮৮)।';
-  } else {
-    var z = net * 0.025;
-    box.innerHTML = 'মোট সম্পদ: <b>' + money(total) + '</b> • ঋণ: <b>' + money(debt) + '</b> • যাকাতযোগ্য: <b>' + money(net) + '</b><br />আপনার যাকাতের পরিমাণ:<div class="amt">' + money(z) + '</div>এই অর্থ যাকাতের হকদারদের (গরিব, মিসকিন প্রমুখ — সূরা আত-তাওবা: ৬০) কাছে পৌঁছে দিন।';
-  }
+udioUrl(g){ return 'https://cdn.islamic.network/quran/audio/128/' + RECITER + '/' + g + '.mp3'; }
+$('reciterSel').addEventListener('change', function(){
+  RECITER = this.value;
+  if (playingG !== null){ var g = playingG, all = playAllOn; playAyah(g, all); }
+  toast('ক্বারী পরিবর্তন করা হয়েছে');
 });
-</script>
-<script>
-/* ================= Tafsir (নির্বাচিত সূরা) ================= */
-var TAFSIR = {
-  0: 'সূরা আল-ফাতিহা কুরআনের প্রথম সূরা ও সব নামাজের অপরিহার্য অংশ; একে "উম্মুল কুরআন" (কুরআনের মা) ও "আস-সাবউল মাসানি" বলা হয়। এতে আল্লাহর প্রশংসা, তাঁর দয়া ও মালিকানার ঘোষণা, ইবাদত ও সাহায্য শুধু তাঁর কাছেই চাওয়া এবং সরল পথের হেদায়েতের দোয়া — পুরো কুরআনের মূল বার্তার সারসংক্ষেপ রয়েছে। (তাফসিরে ইবনে কাসির)',
-  1: 'সূরা আল-বাকারা কুরআনের দীর্ঘতম সূরা (২৮৬ আয়াত, মাদানী)। এতে ঈমান, নামাজ, রোজা, হজ, যাকাত, বিবাহ-তালাক, ব্যবসা-বাণিজ্য, সুদ নিষিদ্ধকরণসহ জীবনের প্রায় সব ক্ষেত্রের বিধান এসেছে। এর মধ্যে আয়াতুল কুরসি (২৫৫) কুরআনের শ্রেষ্ঠ আয়াতগুলোর একটি, আর শেষ দুই আয়াত (২৮৫–২৮৬) রাতে পড়লে যথেষ্ট হওয়ার সুসংবাদ হাদিসে এসেছে। (সহিহ বুখারি: ৫০০৯)',
-  17: 'সূরা আল-কাহফ (মাক্কী, ১১০ আয়াত) — এতে আসহাবে কাহফ, হযরত মুসা ও খিজির (আ.), যুলকারনাইন এবং দুই বাগানের মালিকের ঘটনা বর্ণিত হয়েছে, যা ফিতনা থেকে বাঁচার শিক্ষা দেয়। জুমার দিন এই সূরা পড়লে দুই জুমার মাঝে নূর (আলো) লাভের কথা হাদিসে এসেছে। (সুনানে বায়হাকি; মুসনাদে হাকিম: ২/৩৬৮)',
-  35: 'সূরা ইয়াসিনকে (মাক্কী, ৮৩ আয়াত) রাসূলুল্লাহ ﷺ "কুরআনের হৃদয়" বলেছেন। এতে তাওহিদ, রিসালাত ও আখিরাতের প্রমাণ, একটি জনপদের ঘটনা এবং মৃত্যুর পরের জীবনের চিত্র ফুটে উঠেছে। (সুনানে তিরমিযি: ২৮৮৭)',
-  54: 'সূরা আর-রাহমান (৭৮ আয়াত) — "কুরআনের অলংকার" নামে পরিচিত। এতে আল্লাহর অসংখ্য নেয়ামতের বর্ণনার পাশাপাশি "তোমরা তোমাদের রবের কোন কোন নেয়ামতকে অস্বীকার করবে?" — এই আয়াতটি ৩১ বার পুনরাবৃত্ত হয়েছে, যা মানুষ ও জিনকে কৃতজ্ঞতার দিকে আহ্বান করে।',
-  66: 'সূরা আল-মুলক (মাক্কী, ৬৭ আয়াত) — আল্লাহর সার্বভৌম ক্ষমতা ও সৃষ্টির নিখুঁত ব্যবস্থাপনা বর্ণিত হয়েছে। রাতে ঘুমানোর আগে এই সূরা পড়ার অভ্যাস করা সুন্নাত; হাদিসে একে কবরের আজাব থেকে রক্ষাকারী ও সুপারিশকারী বলা হয়েছে। (সুনানে তিরমিযি: ২৮৯১)',
-  96: 'সূরা আল-কদর (মাক্কী, ৫ আয়াত) — লাইলাতুল কদরের মর্যাদা বর্ণিত: এই এক রাত হাজার মাসের (৮৩ বছরের বেশি) ইবাদতের চেয়ে উত্তম। এই রাতে ফেরেশতারা ও জিবরাইল (আ.) পৃথিবীতে অবতরণ করেন এবং ফজর পর্যন্ত শান্তি বিরাজ করে। (সূরা আল-কদর: ১–৫)',
-  102: 'সূরা আল-আসর (মাক্কী, ৩ আয়াত) — সময়ের শপথ করে বলা হয়েছে: সব মানুষ ক্ষতির মধ্যে, তারা ছাড়া যারা ঈমান আনে, সৎকাজ করে, পরস্পরকে সত্যের ও ধৈর্যের উপদেশ দেয়। ইমাম শাফেয়ি (রহ.) বলেছেন, মানুষ চিন্তা করলে শুধু এই সূরাই তাদের জন্য যথেষ্ট হতো।',
-  107: 'সূরা আল-কাউসার (মাক্কী, ৩ আয়াত) — কুরআনের সবচেয়ে ছোট সূরা। "কাউসার" হলো জান্নাতে রাসূলুল্লাহ ﷺ-কে দেওয়া বিশেষ নহর/হাউজ ও প্রচুর কল্যাণ। এতে নামাজ ও কুরবানির নির্দেশ এবং শত্রুদেরই নির্বংশ হওয়ার ঘোষণা এসেছে।',
-  108: 'সূরা আল-কাফিরুন (মাক্কী, ৬ আয়াত) — তাওহিদের স্পষ্ট ঘোষণা: ইবাদতে কোনো আপস নেই — "তোমাদের ধর্ম তোমাদের জন্য, আমার ধর্ম আমার জন্য।" একে কুরআনের এক-চতুর্থাংশের সমতুল্য বলা হয়েছে হাদিসে। (সুনানে তিরমিযি: ৩৪০৫)',
-  111: 'সূরা আল-ইখলাস (মাক্কী, ৪ আয়াত) — আল্লাহর একত্বের বিশুদ্ধ বর্ণনা: তিনি এক, অমুখাপেক্ষী; তিনি কাউকে জন্ম দেননি, তাঁকেও জন্ম দেওয়া হয়নি; তাঁর সমতুল্য কেউ নেই। এই সূরা কুরআনের এক-তৃতীয়াংশের সমান মর্যাদা রাখে। (সহিহ বুখারি: ৫০১৩)'.replace('ih','হি'),
-  112: 'সূরা আল-ফালাক (মাক্কী, ৫ আয়াত) — ভোরের রবের কাছে সব সৃষ্টির অনিষ্ট, অন্ধকারের অনিষ্ট, জাদুকরদের অনিষ্ট ও হিংসুকের হিংসা থেকে আশ্রয় চাওয়ার দোয়া। সূরা আন-নাসের সঙ্গে মিলিয়ে এ দুটিকে "মুআওয়িযাতাইন" বলা হয়; সকাল-সন্ধ্যায় তিনবার করে পড়া সুন্নাত।',
-  113: 'সূরা আন-নাস (মাক্কী, ৬ আয়াত) — কুরআনের শেষ সূরা। মানুষের রব, বাদশাহ ও ইলাহের কাছে শয়তানের কুমন্ত্রণা থেকে আশ্রয় চাওয়া হয়েছে — যে শয়তান মানুষের অন্তরে কুমন্ত্রণা দিয়ে সরে পড়ে, জিন হোক বা মানুষ।'
-};
-
-/* ================= Theme toggle ================= */
-var THEME_ORDER = ['light', 'dark', 'blue'];
-var THEME_NAMES = { light: 'সাদা', dark: 'কালো', blue: 'রয়েল ব্লু' };
-function currentTheme(){
-  var t = document.documentElement.getAttribute('data-theme');
-  if (t === 'light' || t === 'dark' || t === 'blue') return t;
-  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-}
-function syncThemeBtns(){
-  var t = currentTheme();
-  document.querySelectorAll('[data-settheme]').forEach(function(b){
-    b.setAttribute('aria-pressed', b.getAttribute('data-settheme') === t ? 'true' : 'false');
+function markPlaying(){
+  document.querySelectorAll('.ayah .play').forEach(function(b){
+    var on = +b.getAttribute('data-play') === playingG;
+    b.classList.toggle('playing', on);
+    b.innerHTML = on ? '⏸ চলছে…' : '▶ শুনুন';
   });
+  $('playAllBtn').textContent = playAllOn ? '⏸ থামান' : '▶ পুরো অংশ শুনুন';
 }
-function applyTheme(t, silent){
-  document.documentElement.setAttribute('data-theme', t);
-  try { localStorage.setItem('di_theme', t); } catch(e){}
-  syncThemeBtns();
-  if (!silent) toast(THEME_NAMES[t] + ' থিম চালু হয়েছে');
+function playAyah(g, autoNext){
+  playingG = g; playAllOn = !!autoNext;
+  playAudioSmart(audioUrl(g));
+  if (playCtx && playCtx.list){ var ci = playCtx.list.indexOf(g); if (ci > -1){ for (var cj = ci + 1; cj < Math.min(ci + 4, playCtx.list.length); cj++) cacheAudio(audioUrl(playCtx.list[cj])); } }
+  markPlaying();
+  var el = $('ayah-' + g);
+  if (el) el.scrollIntoView({ block: 'center', behavior: 'smooth' });
 }
-$('themeBtn').addEventListener('click', function(){
-  var i = THEME_ORDER.indexOf(currentTheme());
-  applyTheme(THEME_ORDER[(i + 1) % THEME_ORDER.length]);
+function stopAudio(){
+  player.pause(); playingG = null; playAllOn = false; markPlaying();
+}
+player.addEventListener('ended', function(){
+  if (playAllOn && playCtx && playingG){
+    var i = playCtx.list.indexOf(playingG);
+    if (i > -1 && i < playCtx.list.length - 1){ playAyah(playCtx.list[i + 1], true); return; }
+  }
+  playingG = null; playAllOn = false; markPlaying();
 });
-document.querySelectorAll('[data-settheme]').forEach(function(b){
-  b.addEventListener('click', function(){ applyTheme(b.getAttribute('data-settheme')); });
+$('readerBody').addEventListener('click', function(e){
+  var b = e.target.closest('[data-play]'); if (!b) return;
+  var g = +b.getAttribute('data-play');
+  if (playingG === g && !player.paused){ stopAudio(); } else { playAyah(g, false); }
 });
-syncThemeBtns();
-$('setAlarmBtn').addEventListener('click', function(){ showView('prayer'); });
-$('setAccountBtn').addEventListener('click', function(){ showView('profile'); });
-
-/* ================= Ramadan ================= */
-(function ramadanTile(){
-  var grid = $('featureGridSeba');
-  var b = document.createElement('button');
-  b.className = 'htile'; b.setAttribute('data-goto', 'ramadan');
-  b.innerHTML = '<span class="hic c7"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13.2A8.2 8.2 0 1 1 10.8 4a6.6 6.6 0 0 0 9.2 9.2z"/><path d="M17.5 4.5l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z" fill="currentColor" stroke="none"/></svg></span><span>রমজান</span>';
-  grid.insertBefore(b, grid.children[8] || null);
-})();
-function hijriParts(d){
-  var h = hijriBD(d); if (!h) return null;
-  return { day: bn(h.day), month: h.month, year: bn(h.year) };
-}
-function tickRamadan(){
-  if (currentView !== 'ramadan' && !$('ramadanCd')) return;
-  var now = nowFrame();
-  var c = curLoc();
-  var t = prayerTimes(now, c.lat, c.lng, c.tz);
-  var sehri = timeToDate(now, t.fajr - 10/60);
-  var iftar = timeToDate(now, t.maghrib);
-  $('sehriTime').textContent = fmtTime(t.fajr - 10/60);
-  $('iftarTime').textContent = fmtTime(t.maghrib);
-  var target, lbl;
-  if (now < sehri){ target = sehri; lbl = 'সেহরি শেষ হতে বাকি'; }
-  else if (now < iftar){ target = iftar; lbl = 'ইফতার হতে বাকি'; }
-  else {
-    var tom = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-    var tt = prayerTimes(tom, c.lat, c.lng, c.tz);
-    target = timeToDate(tom, tt.fajr - 10/60); lbl = 'আগামীকালের সেহরি শেষ হতে বাকি';
-  }
-  var diff = Math.max(0, Math.floor((target - now) / 1000));
-  $('ramadanCd').textContent = bn(pad2(Math.floor(diff/3600))) + ':' + bn(pad2(Math.floor((diff%3600)/60))) + ':' + bn(pad2(diff%60));
-  $('ramadanNextLbl').textContent = lbl + ' —';
-  var hp = hijriParts(now);
-  if (hp){
-    $('ramadanHijri').innerHTML = 'আজ হিজরি: ' + hijriDateHTML(now) + ' • জেলা: ' + c.name;
-    $('ramadanNote').textContent = hp.month === 'রমজান'
-      ? 'মাহে রমজান মোবারক! আজ রমজানের ' + hp.day + ' তারিখ। আল্লাহ আমাদের রোজা, তারাবি ও ইবাদত কবুল করুন।'
-      : 'এখন রমজান মাস নয় — তবে এই সময়গুলো দিয়েই সারা বছরের নফল রোজার (সোমবার, বৃহস্পতিবার, আইয়ামে বীজ) সেহরি-ইফতারের হিসাব করা যায়।';
-  }
-}
-
-/* ================= Ramadan dashboard (v2.16) =================
-   Full-month calendar from the app's own prayer engine and BD Hijri
-   reckoning (hijriOf): sehri = Fajr - 10 min, iftar = Maghrib — the
-   same rule as the widget. Trackers persist in localStorage. */
-var ramTrack = { y: 0, roza: {}, tarabih: {} };
-try { var _rt = JSON.parse(localStorage.getItem('di_ramadan_track') || 'null'); if (_rt && _rt.roza && _rt.tarabih) ramTrack = _rt; } catch (e) {}
-function ramSaveTrack(){ try { localStorage.setItem('di_ramadan_track', JSON.stringify(ramTrack)); } catch (e) {} }
-function renderRamadanDashboard(){
-  var wrap = $('ramadanCalWrap'); if (!wrap) return;
-  var c = curLoc();
-  var td = dhakaNow();
-  var today = new Date(td.getFullYear(), td.getMonth(), td.getDate());
-  var hToday = hijriOf(today); if (!hToday) return;
-  var targetY = hToday.year + (hToday.month > 9 ? 1 : 0);
-  if (ramTrack.y !== targetY){ ramTrack = { y: targetY, roza: {}, tarabih: {} }; ramSaveTrack(); }
-  var start = null;
-  for (var i = -40; i < 420 && !start; i++){
-    var dt = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
-    var h = hijriOf(dt);
-    if (h && h.year === targetY && h.month === 9 && h.day === 1) start = dt;
-  }
-  if (!start){ wrap.innerHTML = '<p class="loadmsg">ক্যালেন্ডার তৈরি করা যায়নি।</p>'; return; }
-  var todayDay = (hToday.year === targetY && hToday.month === 9) ? hToday.day : 0;
-  var rows = '', days = 0;
-  for (var d = 0; d < 30; d++){
-    var g = new Date(start.getFullYear(), start.getMonth(), start.getDate() + d);
-    var hh = hijriOf(g);
-    if (!hh || hh.month !== 9 || hh.year !== targetY) break;
-    days++;
-    var t = prayerTimes(g, c.lat, c.lng, c.tz);
-    var gStr = new Intl.DateTimeFormat('bn-BD', { day: 'numeric', month: 'short' }).format(g);
-    var isToday = todayDay > 0 && hh.day === todayDay;
-    rows += '<tr' + (isToday ? ' class="ramtoday"' : '') + '><td><b>রমজান ' + bn(hh.day) + '</b></td><td>' + gStr + '</td><td>' + fmtTime(t.fajr - 10/60) + '</td><td>' + fmtTime(t.maghrib) + '</td>' +
-      '<td><button type="button" class="rtog' + (ramTrack.roza[hh.day] ? ' on' : '') + '" data-ram="roza:' + hh.day + '">রোজা' + (ramTrack.roza[hh.day] ? ' ✓' : '') + '</button></td>' +
-      '<td><button type="button" class="rtog' + (ramTrack.tarabih[hh.day] ? ' on' : '') + '" data-ram="tarabih:' + hh.day + '">তারাবি' + (ramTrack.tarabih[hh.day] ? ' ✓' : '') + '</button></td></tr>';
-  }
-  wrap.innerHTML = '<table class="ptable ramtable"><thead><tr><th>দিন</th><th>তারিখ</th><th>সেহরি</th><th>ইফতার</th><th>রোজা</th><th>তারাবি</th></tr></thead><tbody>' + rows + '</tbody></table>';
-  var note = $('ramadanCalNote');
-  if (note) note.textContent = 'রমজান ' + bn(targetY) + ' হিজরি • জেলা: ' + c.name + ' • সেহরি = ফজর − ১০ মিনিট, ইফতার = মাগরিব (বাংলাদেশের চাঁদ-দেখা হিসাব অনুযায়ী; চাঁদ দেখার ওপর ভিত্তি করে তারিখ এক দিন এদিক-সেদিক হতে পারে)';
-  var rc = Object.keys(ramTrack.roza).length, tc = Object.keys(ramTrack.tarabih).length;
-  var sum = $('ramTrackSummary');
-  if (sum) sum.innerHTML = 'রোজা রেখেছেন: <b>' + bn(rc) + ' / ' + bn(days || 30) + '</b> • তারাবি পড়েছেন: <b>' + bn(tc) + ' / ' + bn(days || 30) + '</b>';
-}
-var _rcw = $('ramadanCalWrap');
-if (_rcw) _rcw.addEventListener('click', function(e){
-  var b = e.target.closest('[data-ram]'); if (!b) return;
-  var parts = b.getAttribute('data-ram').split(':');
-  var kind = parts[0], day = parts[1];
-  if (ramTrack[kind][day]) delete ramTrack[kind][day]; else ramTrack[kind][day] = true;
-  ramSaveTrack();
-  renderRamadanDashboard();
+$('playAllBtn').addEventListener('click', function(){
+  if (playAllOn){ stopAudio(); return; }
+  if (playCtx && playCtx.list.length) playAyah(playCtx.list[0], true);
 });
-
-setInterval(tickRamadan, 1000);
-tickRamadan();
+/* ---- daily ayah ---- */
+function dayIndex(){ var n = dhakaNow(); return Math.floor(Date.UTC(n.getFullYear(), n.getMonth(), n.getDate()) / 86400000); }
+function renderDailyAyah(){
+  if (!QURAN) return;
+  var flat = [];
+  QURAN.surahs.forEach(function(s, si){ s.a.forEach(function(a, ai){ flat.push([si, ai]); }); });
+  var pick = flat[dayIndex() % flat.length];
+  var s = QURAN.surahs[pick[0]], a = s.a[pick[1]];
+  $('dailyAyahAr').textContent = a[0];
+  $('dailyAyahBn').textContent = a[1];
+  $('dailyAyahSrc').textContent = '— সূরা ' + SURA_BN[pick[0]] + ', আয়াত ' + bn(pick[1] + 1);
+}
+loadQuran();
 </script>
 <script>
-/* ================= Adhkar (সকাল-সন্ধ্যা ও নামাজের পর) ================= */
-var ADHKAR = [
- { g:'সকাল ও সন্ধ্যার যিকির', t:'আয়াতুল কুরসি', ar:'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ', bn:'সকালে পড়লে সন্ধ্যা পর্যন্ত এবং সন্ধ্যায় পড়লে সকাল পর্যন্ত আল্লাহর হিফাজতে থাকা যায়। (পূর্ণ আয়াত দোয়া অংশে আছে)', s:'সূরা আল-বাকারা: ২৫৫; মুসনাদে হাকিম: ১/৫৬২', n:'১ বার' },
- { g:'সকাল ও সন্ধ্যার যিকির', t:'সাইয়্যিদুল ইস্তিগফার', ar:'اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ', bn:'ক্ষমা প্রার্থনার শ্রেষ্ঠ দোয়া — পূর্ণ পাঠ দোয়া অংশে রয়েছে। সকালে পড়ে সেদিন মারা গেলে জান্নাতি, সন্ধ্যায় পড়ে রাতে মারা গেলেও জান্নাতি — ইনশাআল্লাহ।', s:'সহিহ বুখারি: ৬৩০৬', n:'১ বার' },
- { g:'সকাল ও সন্ধ্যার যিকির', t:'তিন কুল (ইখলাস, ফালাক, নাস)', ar:'قُلْ هُوَ اللَّهُ أَحَدٌ • قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ • قُلْ أَعُوذُ بِرَبِّ النَّاسِ', bn:'তিনটি সূরা তিনবার করে পড়লে সব অনিষ্ট থেকে সুরক্ষার জন্য যথেষ্ট হয়।', s:'সুনানে আবু দাউদ: ৫০৮২; সুনানে তিরমিযি: ৩৫৭৫', n:'৩ বার করে' },
- { g:'সকাল ও সন্ধ্যার যিকির', t:'বিসমিল্লাহিল্লাযি লা ইয়াদুররু', ar:'بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ', bn:'সকালে পড়লে সন্ধ্যা পর্যন্ত, সন্ধ্যায় পড়লে সকাল পর্যন্ত কোনো কিছু ক্ষতি করতে পারে না।', s:'সুনানে আবু দাউদ: ৫০৮৮', n:'৩ বার' },
- { g:'সকাল ও সন্ধ্যার যিকির', t:'রাদিতু বিল্লাহি রাব্বা', ar:'رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا', bn:'আমি আল্লাহকে রব, ইসলামকে ধর্ম এবং মুহাম্মদ ﷺ-কে নবী হিসেবে পেয়ে সন্তুষ্ট। যে সকাল-সন্ধ্যায় পড়বে, কিয়ামতের দিন আল্লাহ তাকে সন্তুষ্ট করবেন।', s:'সুনানে আবু দাউদ: ৫০৭২; মুসনাদে আহমাদ: ১৮৯৬৭', n:'৩ বার' },
- { g:'সকাল ও সন্ধ্যার যিকির', t:'সুবহানাল্লাহি ওয়া বিহামদিহি', ar:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ', bn:'যে সকালে একশ বার পড়বে, তার গুনাহ সমুদ্রের ফেনার পরিমাণ হলেও মাফ হয়ে যাবে।', s:'সহিহ বুখারি: ৬৪০৫; সহিহ মুসলিম: ২৬৯১', n:'১০০ বার' },
- { g:'সকাল ও সন্ধ্যার যিকির', t:'সন্ধ্যার বিশেষ দোয়া', ar:'أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ', bn:'আমরা সন্ধ্যায় উপনীত হলাম, রাজত্ব আল্লাহরই; সব প্রশংসা আল্লাহর; আল্লাহ ছাড়া কোনো ইলাহ নেই, তিনি এক, তাঁর শরিক নেই। সকালে "আসবাহনা ওয়া আসবাহাল মুলকু লিল্লাহ" বলে একই দোয়া পড়তে হয়।', s:'সহিহ মুসলিম: ২৭২৩', n:'১ বার' },
- { g:'নামাজের পরের যিকির', t:'ইস্তিগফার ও সালামের দোয়া', ar:'أَسْتَغْفِرُ اللَّهَ (٣ مرات) اللَّهُمَّ أَنْتَ السَّلَامُ وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ', bn:'ফরজ নামাজের সালামের পর তিনবার আস্তাগফিরুল্লাহ, তারপর এই দোয়া পড়া সুন্নাত।', s:'সহিহ মুসলিম: ৫৯১', n:'৩ বার + ১ বার' },
- { g:'নামাজের পরের যিকির', t:'তাসবিহে ফাতেমি', ar:'سُبْحَانَ اللَّهِ (٣٣) الْحَمْدُ لِلَّهِ (٣٣) اللَّهُ أَكْبَرُ (٣٤)', bn:'প্রতিটি ফরজ নামাজের পর সুবহানাল্লাহ ৩৩, আলহামদুলিল্লাহ ৩৩ ও আল্লাহু আকবার ৩৪ বার — গুনাহ মাফের সুসংবাদ হাদিসে এসেছে।', s:'সহিহ মুসলিম: ৫৯৭'.replace('ih','হি'), n:'৩৩+৩৩+৩৪' },
- { g:'নামাজের পরের যিকির', t:'লা ইলাহা ইল্লাল্লাহু ওয়াহদাহু', ar:'لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ', bn:'প্রতি ফরজ নামাজের পর একবার পড়লে গুনাহ মাফ হয়, যদিও তা সমুদ্রের ফেনার মতো হয়।', s:'সহিহ মুসলিম: ৫৯৭'.replace('ih','হি'), n:'১ বার' },
- { g:'নামাজের পরের যিকির', t:'মুআওয়িযাত (ফালাক ও নাস)', ar:'قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ • قُلْ أَعُوذُ بِرَبِّ النَّاسِ', bn:'প্রতিটি নামাজের পর সূরা আল-ফালাক ও সূরা আন-নাস পড়ার নির্দেশ রাসূলুল্লাহ ﷺ দিয়েছেন।', s:'সুনানে আবু দাউদ: ১৫২৩', n:'১ বার করে' }
+/* ================= Hadith ================= */
+
+/* ---------- Big hadith collections (v2.7): thousands of hadith in Bengali ---------- */
+var hbCache = {}, hbCur = 'ben-bukhari', hbShown = 0, hbFiltered = [], hbStarted = false;
+function hbFetch(id){
+  if (hbCache[id]) return Promise.resolve(hbCache[id]);
+  var url = 'https://cdn.jsdelivr.net/gh/fawazahmed0/hadith-api@1/editions/' + id + '.json';
+  /* v2.18: every collection is bundled inside the app (assets/hadith/),
+     so the books work fully offline from first install. The CDN + cache
+     path below remains only as a fallback. */
+  var p = fetch('assets/hadith/' + id + '.json').then(function(r){
+    if (!r.ok) throw new Error('bundled copy missing');
+    return r.json();
+  }).catch(function(){
+    /* The four largest collections are bundled as .json.part-NNN chunks
+       (joined here in order) because of snapshot push size limits. */
+    var parts = [], idx = 0;
+    function next(){
+      return fetch('assets/hadith/' + id + '.json.part-' + ('00' + idx).slice(-3)).then(function(r){
+        if (!r.ok){
+          if (!parts.length) throw new Error('bundled copy missing');
+          return JSON.parse(parts.join(''));
+        }
+        return r.text().then(function(t){ parts.push(t); idx++; return next(); });
+      });
+    }
+    return next();
+  }).catch(function(){
+    if ('caches' in window){
+      return caches.open('di-hadith-v1').then(function(c){
+        return c.match(url).then(function(m){
+          if (m) return m.json();
+          return fetch(url).then(function(r){ try { c.put(url, r.clone()); } catch(e){} return r.json(); });
+        });
+      });
+    }
+    return fetch(url).then(function(r){ return r.json(); });
+  });
+  return p.then(function(d){ hbCache[id] = d; return d; });
+}
+function hbSections(d){
+  var secs = (d.metadata && d.metadata.sections) || {};
+  var html = '<option value="">সব অধ্যায়</option>';
+  Object.keys(secs).forEach(function(k){ if (secs[k]) html += '<option value="' + k + '">' + esc(secs[k]) + '</option>'; });
+  $('hbSecSel').innerHTML = html;
+}
+function hbApply(){
+  var d = hbCache[hbCur]; if (!d) return;
+  var sec = $('hbSecSel').value, q = ($('hbSearch').value || '').trim();
+  hbFiltered = (d.hadiths || []).filter(function(h){
+    if (sec && String((h.reference || {}).book) !== sec) return false;
+    if (q && (h.text || '').indexOf(q) === -1) return false;
+    return true;
+  });
+  hbShown = 0; $('hbList').innerHTML = ''; hbRenderMore();
+  $('hbStatus').textContent = 'মোট ' + bn(hbFiltered.length) + 'টি হাদিস পাওয়া গেছে';
+}
+function hbRenderMore(){
+  var d = hbCache[hbCur]; if (!d) return;
+  var secs = (d.metadata && d.metadata.sections) || {};
+  var chunk = hbFiltered.slice(hbShown, hbShown + 30); hbShown += chunk.length;
+  var html = chunk.map(function(h){
+    var ref = h.reference || {};
+    var secName = secs[ref.book] || '';
+    return '<article class="hcard"><p style="margin:0 0 6px"><b>হাদিস নং ' + bn(h.hadithnumber) + '</b>' + (secName ? ' <span class="src">' + esc(secName) + '</span>' : '') + '</p><p style="margin:0">' + esc(h.text || '') + '</p></article>';
+  }).join('');
+  $('hbList').insertAdjacentHTML('beforeend', html);
+  $('hbMore').style.display = hbShown < hbFiltered.length ? 'block' : 'none';
+}
+function hbLoadBook(id){
+  hbCur = id;
+  $('hbStatus').textContent = 'কিতাব লোড হচ্ছে… (প্রথমবার একটু সময় লাগতে পারে)';
+  $('hbList').innerHTML = ''; $('hbMore').style.display = 'none';
+  hbFetch(id).then(function(d){ hbSections(d); hbApply(); })
+    .catch(function(){ $('hbStatus').textContent = 'লোড করা যায়নি — ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন।'; });
+}
+$('hbBookSel').addEventListener('change', function(){ hbLoadBook(this.value); });
+$('hbSecSel').addEventListener('change', hbApply);
+$('hbSearch').addEventListener('input', hbApply);
+$('hbMore').addEventListener('click', hbRenderMore);
+setInterval(function(){ if (!hbStarted && currentView === 'hadith'){ hbStarted = true; hbLoadBook('ben-bukhari'); } }, 800);
+
+var HADITHS = [
+ { c:'ঈমান ও নিয়ত', t:'নিয়তের ওপর আমলের ভিত্তি', ar:'إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَىٰ', bn:'সব আমলের ফলাফল নিয়তের ওপর নির্ভরশীল, আর প্রত্যেক মানুষ তাই পাবে যার সে নিয়ত করেছে।', s:'সহিহ বুখারি: ১; সহিহ মুসলিম: ১৯০৭' },
+ { c:'ঈমান ও নিয়ত', t:'দ্বীনের ভিত্তি কল্যাণকামিতা', ar:'الدِّينُ النَّصِيحَةُ', bn:'দ্বীন হলো কল্যাণকামিতা — আল্লাহর জন্য, তাঁর কিতাবের জন্য, তাঁর রাসূলের জন্য, মুসলিম শাসকদের জন্য এবং সর্বসাধারণ মুসলিমের জন্য।', s:'সহিহ মুসলিম: ৫৫' },
+ { c:'চরিত্র ও আচরণ', t:'সেরা মুসলিম কে', ar:'الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ', bn:'প্রকৃত মুসলিম সেই ব্যক্তি, যার জিহ্বা ও হাত থেকে অন্য মুসলিমরা নিরাপদ থাকে।', s:'সহিহ বুখারি: ১০; সহিহ মুসলিম: ৪০' },
+ { c:'চরিত্র ও আচরণ', t:'নিজের জন্য যা পছন্দ, ভাইয়ের জন্যও তাই', ar:'لَا يُؤْمِنُ أَحَدُكُمْ حَتَّىٰ يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ', bn:'তোমাদের কেউ পূর্ণ মুমিন হতে পারবে না, যতক্ষণ না সে নিজের জন্য যা পছন্দ করে, তার ভাইয়ের জন্যও তা-ই পছন্দ করে।', s:'সহিহ বুখারি: ১৩; সহিহ মুসলিম: ৪৫' },
+ { c:'চরিত্র ও আচরণ', t:'রাগ নিয়ন্ত্রণই প্রকৃত শক্তি', ar:'لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ', bn:'কুস্তিতে জয়ী ব্যক্তি শক্তিশালী নয়; প্রকৃত শক্তিশালী সেই ব্যক্তি, যে রাগের সময় নিজেকে নিয়ন্ত্রণ করতে পারে।', s:'সহিহ বুখারি: ৬১১৪; সহিহ মুসলিম: ২৬০৯' },
+ { c:'চরিত্র ও আচরণ', t:'সত্য ও মিথ্যা', ar:'إِنَّ الصِّدْقَ يَهْدِي إِلَى الْبِرِّ، وَإِنَّ الْبِرَّ يَهْدِي إِلَى الْجَنَّةِ، وَإِنَّ الْكَذِبَ يَهْدِي إِلَى الْفُجُورِ، وَإِنَّ الْفُجُورَ يَهْدِي إِلَى النَّارِ', bn:'সত্য সৎকর্মের দিকে পথ দেখায়, আর সৎকর্ম জান্নাতের দিকে নিয়ে যায়। আর মিথ্যা পাপের দিকে পথ দেখায়, আর পাপ জাহান্নামের দিকে নিয়ে যায়।', s:'সহিহ বুখারি: ৬০৯৪; সহিহ মুসলিম: ২৬০৭' },
+ { c:'নামাজ', t:'নামাজ দ্বীনের স্তম্ভ', ar:'رَأْسُ الْأَمْرِ الْإِسْلَامُ، وَعَمُودُهُ الصَّلَاةُ، وَذِرْوَةُ سَنَامِهِ الْجِهَادُ', bn:'সবকিছুর মূল হলো ইসলাম, তার স্তম্ভ হলো নামাজ, আর তার সর্বোচ্চ শিখর হলো জিহাদ (আল্লাহর পথে সংগ্রাম)।', s:'সুনানে তিরমিযি: ২৬১৬ (সহিহ)' },
+ { c:'নামাজ', t:'প্রথম হিসাব হবে নামাজের', ar:'إِنَّ أَوَّلَ مَا يُحَاسَبُ بِهِ الْعَبْدُ يَوْمَ الْقِيَامَةِ مِنْ عَمَلِهِ صَلَاتُهُ', bn:'কিয়ামতের দিন বান্দার আমলের মধ্যে সর্বপ্রথম নামাজের হিসাব নেওয়া হবে।', s:'সুনানে তিরমিযি: ৪১৩; সুনানে আবু দাউদ: ৮৬৪' },
+ { c:'নামাজ', t:'জামাতে নামাজের ফজিলত', ar:'صَلَاةُ الْجَمَاعَةِ تَفْضُلُ صَلَاةَ الْفَذِّ بِسَبْعٍ وَعِشْرِينَ دَرَجَةً', bn:'জামাতে নামাজ পড়া একাকী নামাজ পড়ার চেয়ে সাতাশ গুণ বেশি মর্যাদাপূর্ণ।', s:'সহিহ বুখারি: ৬৪৫; সহিহ মুসলিম: ৬৫০' },
+ { c:'কুরআন', t:'কুরআন শেখা ও শেখানো', ar:'خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ', bn:'তোমাদের মধ্যে সর্বোত্তম সেই ব্যক্তি, যে কুরআন শেখে এবং শেখায়।', s:'সহিহ বুখারি: ৫০২৭' },
+ { c:'কুরআন', t:'কুরআন পাঠের প্রতিদান', ar:'مَنْ قَرَأَ حَرْفًا مِنْ كِتَابِ اللَّهِ فَلَهُ بِهِ حَسَنَةٌ، وَالْحَسَنَةُ بِعَشْرِ أَمْثَالِهَا', bn:'যে ব্যক্তি আল্লাহর কিতাব থেকে একটি হরফ পড়বে, তার জন্য একটি নেকি রয়েছে; আর প্রতিটি নেকি দশ গুণ বাড়িয়ে দেওয়া হয়।', s:'সুনানে তিরমিযি: ২৯১০ (সহিহ)' },
+ { c:'কুরআন', t:'দুই আয়াতের আমল', ar:'الآيَتَانِ مِنْ آخِرِ سُورَةِ الْبَقَرَةِ، مَنْ قَرَأَهُمَا فِي لَيْلَةٍ كَفَتَاهُ', bn:'সূরা আল-বাকারার শেষ দুই আয়াত — যে ব্যক্তি রাতে তা পড়বে, তা তার জন্য যথেষ্ট হবে।', s:'সহিহ বুখারি: ৫০০৯; সহিহ মুসলিম: ৮০৭' },
+ { c:'যিকির ও দোয়া', t:'সেরা যিকির', ar:'أَفْضَلُ الذِّكْرِ لَا إِلَٰهَ إِلَّا اللَّهُ، وَأَفْضَلُ الدُّعَاءِ الْحَمْدُ لِلَّهِ', bn:'সর্বোত্তম যিকির হলো "লা ইলাহা ইল্লাল্লাহ", আর সর্বোত্তম দোয়া হলো "আলহামদুলিল্লাহ"।', s:'সুনানে তিরমিযি: ৩৩৮৩' },
+ { c:'যিকির ও দোয়া', t:'হালকা অথচ ভারী দুটি বাক্য', ar:'كَلِمَتَانِ خَفِيفَتَانِ عَلَى اللِّسَانِ، ثَقِيلَتَانِ فِي الْمِيزَانِ، حَبِيبَتَانِ إِلَى الرَّحْمَٰنِ: سُبْحَانَ اللَّهِ وَبِحَمْدِهِ، سُبْحَانَ اللَّهِ الْعَظِيمِ', bn:'দুটি বাক্য জিহ্বায় হালকা, মিজানে (পাল্লায়) ভারী এবং দয়াময়ের কাছে প্রিয়: "সুবহানাল্লাহি ওয়া বিহামদিহি" ও "সুবহানাল্লাহিল আজিম"।', s:'সহিহ বুখারি: ৬৬৮২; সহিহ মুসলিম: ২৬৯৪' },
+ { c:'যিকির ও দোয়া', t:'দোয়া কবুলের সময়', ar:'إِنَّ فِي اللَّيْلِ لَسَاعَةً لَا يُوَافِقُهَا رَجُلٌ مُسْلِمٌ يَسْأَلُ اللَّهَ خَيْرًا مِنْ أَمْرِ الدُّنْيَا وَالْآخِرَةِ إِلَّا أَعْطَاهُ إِيَّاهُ', bn:'রাতের মধ্যে এমন একটি মুহূর্ত আছে, কোনো মুসলিম দুনিয়া-আখিরাতের কল্যাণ চেয়ে দোয়া করলে আল্লাহ তাকে তা দান করেন।', s:'সহিহ মুসলিম: ৭৫৭' },
+ { c:'সদকা ও দান', t:'হাসিমুখও সদকা', ar:'كُلُّ مَعْرُوفٍ صَدَقَةٌ', bn:'প্রতিটি ভালো কাজই সদকা। (অন্য বর্ণনায়: ভাইয়ের সামনে হাসিমুখে থাকাও সদকা।)', s:'সহিহ বুখারি: ৬০২১; সহিহ মুসলিম: ১০০৫' },
+ { c:'সদকা ও দান', t:'সদকায় সম্পদ কমে না', ar:'مَا نَقَصَتْ صَدَقَةٌ مِنْ مَالٍ', bn:'সদকা করলে সম্পদ কমে না।', s:'সহিহ মুসলিম: ২৫৮৮' },
+ { c:'পরিবার ও সমাজ', t:'মায়ের পায়ের নিচে জান্নাত', ar:'الْجَنَّةُ تَحْتَ أَقْدَامِ الْأُمَّهَاتِ', bn:'জান্নাত মায়েদের পায়ের নিচে। (অর্থাৎ মায়ের সেবা ও সন্তুষ্টির মাধ্যমে জান্নাত লাভ হয়।)', s:'সুনানে নাসায়ি: ৩১০৪; মুসনাদে আহমাদ: ১৫৫৭৭' },
+ { c:'পরিবার ও সমাজ', t:'প্রতিবেশীর হক', ar:'مَا زَالَ جِبْرِيلُ يُوصِينِي بِالْجَارِ حَتَّىٰ ظَنَنْتُ أَنَّهُ سَيُوَرِّثُهُ', bn:'জিবরাইল (আ.) আমাকে প্রতিবেশী সম্পর্কে এত বেশি উপদেশ দিতে থাকলেন যে, আমি মনে করলাম তিনি প্রতিবেশীকে উত্তরাধিকারী বানিয়ে দেবেন।', s:'সহিহ বুখারি: ৬০১৪; সহিহ মুসলিম: ২৬২৪'.replace(/ih/g,'হি') },
+ { c:'জ্ঞান', t:'জ্ঞান অন্বেষণ ফরজ', ar:'طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَىٰ كُلِّ مُسْلِمٍ', bn:'জ্ঞান অন্বেষণ করা প্রতিটি মুসলিমের ওপর ফরজ।', s:'সুনানে ইবনে মাজাহ: ২২৪ (সহিহ)' },
+ { c:'জ্ঞান', t:'জ্ঞানীর মর্যাদা', ar:'مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ بِهِ طَرِيقًا إِلَى الْجَنَّةِ', bn:'যে ব্যক্তি জ্ঞান অন্বেষণের পথে চলে, আল্লাহ তার জন্য জান্নাতের পথ সহজ করে দেন।', s:'সহিহ মুসলিম: ২৬৯৯' },
+ { c:'তাওবা ও ক্ষমা', t:'আল্লাহর ক্ষমার হাত', ar:'إِنَّ اللَّهَ يَبْسُطُ يَدَهُ بِاللَّيْلِ لِيَتُوبَ مُسِيءُ النَّهَارِ، وَيَبْسُطُ يَدَهُ بِالنَّهَارِ لِيَتُوبَ مُسِيءُ اللَّيْلِ', bn:'আল্লাহ রাতে তাঁর হাত প্রসারিত করেন, যাতে দিনের পাপী তাওবা করে; আর দিনে হাত প্রসারিত করেন, যাতে রাতের পাপী তাওবা করে।', s:'সহিহ মুসলিম: ২৭৫৯'.replace(/ih/g,'হি') },
+ { c:'ধৈর্য ও কৃতজ্ঞতা', t:'মুমিনের অবস্থা বিস্ময়কর', ar:'عَجَبًا لِأَمْرِ الْمُؤْمِنِ، إِنَّ أَمْرَهُ كُلَّهُ خَيْرٌ، إِنْ أَصَابَتْهُ سَرَّاءُ شَكَرَ فَكَانَ خَيْرًا لَهُ، وَإِنْ أَصَابَتْهُ ضَرَّاءُ صَبَرَ فَكَانَ خَيْرًا لَهُ', bn:'মুমিনের অবস্থা বিস্ময়কর! তার সব অবস্থাই কল্যাণকর: সুখ এলে সে কৃতজ্ঞতা প্রকাশ করে — তা তার জন্য কল্যাণ; আর দুঃখ এলে সে ধৈর্য ধারণ করে — তাও তার জন্য কল্যাণ।', s:'সহিহ মুসলিম: ২৯৯৯'.replace(/ih/g,'হি') },
+ { c:'রোজা', t:'রোজাদারের জন্য বিশেষ দরজা', ar:'إِنَّ فِي الْجَنَّةِ بَابًا يُقَالُ لَهُ الرَّيَّانُ، يَدْخُلُ مِنْهُ الصَّائِمُونَ يَوْمَ الْقِيَامَةِ', bn:'জান্নাতে "রাইয়ান" নামে একটি দরজা আছে; কিয়ামতের দিন সেই দরজা দিয়ে রোজাদাররা প্রবেশ করবে।', s:'সহিহ বুখারি: ১৮৯৬; সহিহ মুসলিম: ১১৫২' }
 ];
-$('adhkarList').innerHTML = (function(){
-  var groups = {};
-  ADHKAR.forEach(function(a){ (groups[a.g] = groups[a.g] || []).push(a); });
-  var html = '';
-  Object.keys(groups).forEach(function(g){
-    html += '<h3 style="font-family:\'Noto Sans Bengali\',\'Hind Siliguri\',sans-serif; margin:18px 0 10px">' + g + '</h3>';
-    groups[g].forEach(function(a){
-      html += '<article class="hcard"><h3>' + a.t + ' <span class="cnt">' + a.n + '</span></h3><p class="ar">' + a.ar + '</p><p>' + a.bn + '</p><p class="src">সূত্র: ' + a.s + '</p></article>';
-    });
+function hadithCard(h){
+  var marked = (typeof isBookmarked === 'function') && isBookmarked('hadith:' + h.t);
+  return '<article class="hcard"><button class="bmkbtn" data-bmh="' + esc(h.t) + '">' + (marked ? '✓ বুকমার্ক করা' : 'বুকমার্ক') + '</button><span class="cat">' + h.c + '</span><h3>' + h.t + '</h3>' +
+    '<p class="ar">' + h.ar + '</p><p>' + h.bn + '</p><p class="src">সূত্র: ' + h.s + '</p><p style="margin:8px 0 0"><button class="play" data-card-hadith="' + esc(h.t) + '">ছবি কার্ড বানান</button></p></article>';
+}
+function renderHadiths(filter){
+  var list = HADITHS.filter(function(h){
+    return !filter || (h.t + h.bn + h.c).indexOf(filter) > -1;
   });
-  return html;
+  $('hadithList').innerHTML = list.length ? list.map(hadithCard).join('') : '<p class="loadmsg">কিছু পাওয়া যায়নি।</p>';
+}
+$('hadithSearch').addEventListener('input', function(){ renderHadiths(this.value.trim()); });
+renderHadiths('');
+(function dailyHadith(){
+  var h = HADITHS[dayIndex() % HADITHS.length];
+  $('dailyHadithAr').textContent = h.ar;
+  $('dailyHadithBn').textContent = h.bn;
+  $('dailyHadithSrc').textContent = '— ' + h.s;
 })();
 
-/* ================= Hajj & Umrah ================= */
-var HAJJ = '' +
- '<details class="acc" open><summary>উমরাহর ধাপসমূহ (৪টি কাজ)</summary><div class="body"><ol class="steps">' +
- '<li><b>ইহরাম:</b> মিকাত থেকে বা তার আগে গোসল করে ইহরামের কাপড় পরে উমরাহর নিয়ত করুন এবং তালবিয়া পড়ুন: <span class="ar" style="display:block">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ</span></li>' +
- '<li><b>তাওয়াফ:</b> কাবা শরিফের চারদিকে হাজরে আসওয়াদ থেকে শুরু করে ৭ বার প্রদক্ষিণ করুন; প্রথম ৩ চক্করে পুরুষরা রমল (দ্রুত হাঁটা) করবেন। তাওয়াফের নির্দিষ্ট দোয়া নেই — যেকোনো দোয়া ও যিকির করা যায়; রুকনে ইয়ামানি থেকে হাজরে আসওয়াদ পর্যন্ত পড়ুন: <span class="ar" style="display:block">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</span></li>' +
- '<li><b>মাকামে ইবরাহিমে নামাজ ও জমজম:</b> তাওয়াফের পর সম্ভব হলে মাকামে ইবরাহিমের পেছনে ২ রাকাত নামাজ পড়ুন এবং জমজমের পানি পান করুন।</li>' +
- '<li><b>সায়ি:</b> সাফা থেকে শুরু করে মারওয়ায় শেষ — মোট ৭ বার যাতায়াত করুন। সাফা-মারওয়ায় উঠে কিবলামুখী হয়ে দোয়া করুন।</li>' +
- '<li><b>হলক/কসর:</b> মাথা মুণ্ডন (হলক) বা চুল ছোট (কসর) করলেই উমরাহ সম্পন্ন; মহিলারা আঙুলের এক গাঁট পরিমাণ চুল কাটবেন।</li>' +
- '</ol></div></details>' +
- '<details class="acc"><summary>হজের ধাপসমূহ (৮–১৩ জিলহজ)</summary><div class="body"><ol class="steps">' +
- '<li><b>৮ জিলহজ (ইয়াওমুত তারউইয়া):</b> ইহরাম বেঁধে মিনায় যান; সেখানে যোহর থেকে ফজর পর্যন্ত পাঁচ ওয়াক্ত নামাজ কসর করে পড়ুন।</li>' +
- '<li><b>৯ জিলহজ — আরাফা:</b> সূর্যোদয়ের পর আরাফাতের ময়দানে যান। যোহর-আসর একত্রে (জমা তাকদিম) পড়ে সূর্যাস্ত পর্যন্ত দোয়া, যিকির ও ইস্তিগফারে মগ্ন থাকুন — এটাই হজের সবচেয়ে বড় রুকন: "হজ হলো আরাফা" (তিরমিযি: ৮৮৯)। সেরা দোয়া: <span class="ar" style="display:block">لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ</span></li>' +
- '<li><b>মুজদালিফা:</b> সূর্যাস্তের পর মুজদালিফায় এসে মাগরিব-এশা একত্রে পড়ুন, রাত যাপন করুন এবং জমরায় মারার জন্য কঙ্কর সংগ্রহ করুন।</li>' +
- '<li><b>১০ জিলহজ (ঈদুল আজহা):</b> ফজরের পর মিনায় ফিরে জমরাতুল আকাবায় ৭টি কঙ্কর মারুন, কুরবানি করুন, হলক/কসর করে ইহরাম খুলুন (প্রথম তাহাল্লুল)। এরপর মক্কায় গিয়ে তাওয়াফে জিয়ারত (ফরজ তাওয়াফ) ও সায়ি করুন।</li>' +
- '<li><b>১১–১৩ জিলহজ (আইয়ামে তাশরিক):</b> প্রতিদিন যোহরের পর তিনটি জমরায় (ছোট, মাঝারি, বড়) ৭টি করে মোট ২১টি কঙ্কর মারুন। মিনায় রাত যাপন করুন।</li>' +
- '<li><b>বিদায়ী তাওয়াফ:</b> মক্কা ছাড়ার আগে তাওয়াফে ওয়াদা (বিদায়ী তাওয়াফ) করুন — এটি ওয়াজিব।</li>' +
- '</ol><p>হজ তিন প্রকার: তামাত্তু, কিরান ও ইফরাদ। বাংলাদেশ থেকে সাধারণত তামাত্তু হজ করা হয় — প্রথমে উমরাহ করে ইহরাম খুলে ফেলা হয়, তারপর ৮ জিলহজ নতুন ইহরামে হজ করা হয়।</p></div></details>' +
- '<details class="acc"><summary>মদিনা জিয়ারত (পূর্ণাঙ্গ)</summary><div class="body">' +
- '<p><b>মসজিদে নববি:</b> এখানে এক রাকাত নামাজ অন্য মসজিদের হাজার রাকাতের সমান সওয়াব (মসজিদে হারাম ও মসজিদে আকসা ছাড়া) — সহিহ বুখারি: ১১৯০। সম্ভব হলে পাঁচ ওয়াক্তই জামাতে পড়ুন।</p>' +
- '<p><b>রওজা শরীফ ও রিয়াজুল জান্নাহ:</b> রাসূলুল্লাহ ﷺ বলেছেন, "আমার ঘর ও আমার মিম্বরের মাঝখানের জায়গাটি জান্নাতের বাগানসমূহের একটি বাগান" (সহিহ বুখারি: ১১৯৬; সহিহ মুসলিম: ১৩৯১)। ধাক্কাধাক্কি না করে সুযোগ পেলে সেখানে ২ রাকাত নামাজ পড়ুন। রওজা মোবারকের সামনে দাঁড়িয়ে আস্তে ও আদবের সঙ্গে সালাম পেশ করুন — আওয়াজ উঁচু করা যাবে না (সূরা আল-হুজুরাত: ২):</p>' +
- '<p class="ar">السَّلَامُ عَلَيْكَ يَا رَسُولَ اللَّهِ، السَّلَامُ عَلَيْكَ يَا أَبَا بَكْرٍ، السَّلَامُ عَلَيْكَ يَا عُمَرَ</p>' +
- '<p><b>জান্নাতুল বাকি:</b> বহু সাহাবি ও আহলে বাইতের কবরস্থান। কবর জিয়ারতের সালাম: <span class="ar" style="display:block">السَّلَامُ عَلَيْكُمْ دَارَ قَوْمٍ مُؤْمِنِينَ، وَإِنَّا إِنْ شَاءَ اللَّهُ بِكُمْ لَاحِقُونَ</span> (সহিহ মুসলিম: ৯৭৪)।</p>' +
- '<p><b>উহুদ:</b> উহুদের শহীদদের (হযরত হামজা রা. সহ) কবর জিয়ারত করে সালাম দিন। রাসূলুল্লাহ ﷺ বলেছেন, "উহুদ এমন এক পাহাড়, যে আমাদের ভালোবাসে এবং আমরাও তাকে ভালোবাসি" (সহিহ মুসলিম: ১৩৯৩)।</p>' +
- '<p><b>মসজিদে কুবা:</b> ইসলামের প্রথম মসজিদ। ঘর থেকে ওযু করে এসে এখানে ২ রাকাত নামাজ পড়লে একটি পূর্ণ উমরাহর সওয়াব পাওয়া যায় (সুনানে তিরমিযি: ৩২৪)। রাসূলুল্লাহ ﷺ প্রতি শনিবার মসজিদে কুবায় যেতেন (সহিহ বুখারি: ১১৯৩)।</p>' +
- '<p><b>খন্দক:</b> খন্দকের যুদ্ধের (৫ হিজরি) স্মৃতিবিজড়িত এলাকা — এখানে কয়েকটি ছোট মসজিদ (সাবআ মাসাজিদ) রয়েছে।</p>' +
- '<p><b>মসজিদে কিবলাতাইন:</b> যে মসজিদে নামাজের মধ্যেই কিবলা বাইতুল মুকাদ্দাস থেকে কাবা শরিফের দিকে পরিবর্তনের নির্দেশ আসে (সূরা আল-বাকারা: ১৪৪) — তাই এর নাম "দুই কিবলার মসজিদ"।</p></div></details>' +
- '<details class="acc"><summary>হজের ফরজ, ওয়াজিব ও সুন্নাত</summary><div class="body">' +
- '<p><b>ফরজ (৩টি) — যেকোনো একটি ছুটলে হজ হবে না:</b></p><ol class="steps">' +
- '<li><b>ইহরাম:</b> মিকাত থেকে নিয়তসহ ইহরাম বাঁধা।</li>' +
- '<li><b>উকুফে আরাফা:</b> ৯ জিলহজ দুপুরের পর থেকে ১০ জিলহজ সুবহে সাদিকের আগ পর্যন্ত আরাফাতের সীমানার ভেতরে যেকোনো মুহূর্ত অবস্থান করা।</li>' +
- '<li><b>তাওয়াফে জিয়ারত:</b> ১০ জিলহজের পর তাওয়াফ করা (হানাফি মতে ১২ জিলহজ সূর্যাস্তের মধ্যে করা ওয়াজিব — এরপর দেরি হলে দম দিতে হয়)।</li></ol>' +
- '<p><b>ওয়াজিবসমূহ (হানাফি মাযহাব) — ছুটলে দম (কুরবানি) দিতে হয়, তবে হজ হয়ে যায়:</b> মুজদালিফায় উকুফ (ফজরের পর কিছুক্ষণ অবস্থান), সায়ি করা, নির্ধারিত দিনে ও ক্রম অনুযায়ী জমরায় রমি, হলক/কসর, তামাত্তু ও কিরান হজে কুরবানি (হাদি), তাওয়াফে ওয়াদা (বিদায়ী তাওয়াফ — মক্কার বাইরে থেকে আসা হাজির জন্য), তাকবিরে তাশরিক (৯ জিলহজ ফজর থেকে ১৩ জিলহজ আসর পর্যন্ত প্রত্যেক ফরজ নামাজের পর একবার)।</p>' +
- '<p><b>সুন্নাতসমূহ:</b> ইহরামের আগে গোসল করা, বেশি বেশি তালবিয়া পড়া, তাওয়াফের প্রথম ৩ চক্করে রমল ও ইজতিবা (পুরুষদের জন্য), ৮ জিলহজ মিনায় রাত যাপন, আরাফার দিন গোসল ও খুতবা শোনা, মুজদালিফা থেকে কঙ্কর সংগ্রহ করা, তাশরিকের রাতগুলো মিনায় যাপন করা।</p></div></details>' +
- '<details class="acc"><summary>ইহরাম পূর্ণাঙ্গ: মিকাত, নিয়ম ও নিষিদ্ধ কাজ</summary><div class="body">' +
- '<p><b>পাঁচটি মিকাত</b> (সহিহ বুখারি: ১৫২৪; সহিহ মুসলিম: ১১৮১):</p><ol class="steps">' +
- '<li><b>যুল-হুলাইফা</b> — মদিনা ও সে দিক থেকে আসা হাজিদের জন্য।</li>' +
- '<li><b>জুহফা</b> — শাম ও মিসরের দিক থেকে আসা হাজিদের জন্য।</li>' +
- '<li><b>কারনুল মানাজিল</b> — নজদের দিক থেকে আসা হাজিদের জন্য।</li>' +
- '<li><b>ইয়ালামলাম</b> — ইয়েমেনের দিক থেকে আসা হাজিদের জন্য। বাংলাদেশ ও ভারত উপমহাদেশের হাজিরা আকাশ বা সমুদ্রপথে সাধারণত এই মিকাত অতিক্রম করেন — তাই জেদ্দা পৌঁছার আগেই বিমানে ইহরাম বাঁধতে হয়।</li>' +
- '<li><b>যাতে ইরক</b> — ইরাকের দিক থেকে আসা হাজিদের জন্য।</li></ol>' +
- '<p>মিকাতের ভেতরে বসবাসকারীদের মিকাত নিজের বাসস্থান; মক্কাবাসীর হজের মিকাত মক্কা নিজেই।</p>' +
- '<p><b>ইহরাম বাঁধার নিয়ম:</b> (১) আগে নখ ও অতিরিক্ত লোম পরিষ্কার করে গোসল বা ওযু করুন; (২) পুরুষরা সেলাইবিহীন দুটি সাদা কাপড় (ইজার ও রিদা) পরুন, মাথা খোলা রাখুন ও সেলাইবিহীন স্যান্ডেল পরুন; মহিলারা স্বাভাবিক পোশাকই পরবেন, তবে মুখ খোলা রাখবেন; (৩) পুরুষরা শরীরে সুগন্ধি লাগাতে পারেন (কাপড়ে নয়); (৪) ২ রাকাত নামাজ পড়ুন; (৫) নিয়ত করুন: <span class="ar" style="display:block">اللَّهُمَّ إِنِّي أُرِيدُ الْحَجَّ فَيَسِّرْهُ لِي وَتَقَبَّلْهُ مِنِّي</span> অসুস্থতা বা বাধার আশঙ্কা থাকলে শর্ত জুড়ে দেওয়া যায়: <span class="ar" style="display:block">إِنْ حَبَسَنِي حَابِسٌ فَمَحِلِّي حَيْثُ حَبَسْتَنِي</span> (সহিহ বুখারি: ৫০৮৯; সহিহ মুসলিম: ১২০৭); (৬) তালবিয়া পড়ুন — নিয়তের সঙ্গে তালবিয়া পড়লেই ইহরাম কার্যকর হয়ে যায়।</p>' +
- '<p><b>তালবিয়া:</b> <span class="ar" style="display:block">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ</span> অর্থ: "আমি হাজির, হে আল্লাহ, আমি হাজির; আমি হাজির, আপনার কোনো শরিক নেই, আমি হাজির। নিশ্চয় সব প্রশংসা ও নিয়ামত আপনারই এবং রাজত্বও আপনার; আপনার কোনো শরিক নেই।" (সহিহ বুখারি: ১৫৪৯) পুরুষরা উচ্চস্বরে, মহিলারা নিচু স্বরে পড়বেন।</p>' +
- '<p><b>ইহরাম অবস্থায় নিষিদ্ধ কাজ:</b> পুরুষদের সেলাই করা পোশাক পরা ও মাথা ঢাকা; মহিলাদের মুখ ঢাকা (নিকাব) ও গ্লাভস পরা; সুগন্ধি ব্যবহার করা; চুল বা নখ কাটা/উপড়ানো; স্থলের প্রাণী শিকার করা; বিবাহ করা, করানো বা প্রস্তাব দেওয়া; স্ত্রী-সহবাস ও কামোদ্দীপক কথা-কাজ; ঝগড়া-বিবাদ, গালি ও পাপাচার (সূরা আল-বাকারা: ১৯৭)। অনিচ্ছায় বা ভুলে কিছু হয়ে গেলে তার বিধান আলেমের কাছে জেনে নিন।</p></div></details>' +
- '<details class="acc"><summary>ধাপভিত্তিক দোয়া সংকলন</summary><div class="body">' +
- '<p><b>মসজিদে হারামে প্রবেশের দোয়া:</b> <span class="ar" style="display:block">اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ</span> (সহিহ মুসলিম: ৭১৩)। কাবা শরিফ প্রথম দেখে হাত উঠিয়ে মন থেকে দোয়া করুন — এই সময়ের দোয়া কবুল হয় বলে বর্ণিত আছে; নির্দিষ্ট কোনো পাঠ নেই।</p>' +
- '<p><b>হাজরে আসওয়াদ:</b> ভিড় কম থাকলে চুমু দিন; না হলে হাত দিয়ে ছুঁয়ে হাতে চুমু দিন; তাও সম্ভব না হলে দূর থেকে ইশারা করে বলুন: <span class="ar" style="display:block">بِسْمِ اللَّهِ وَاللَّهُ أَكْبَرُ</span> (সুনানে তিরমিযি: ৮৫৬)। ভিড়ে ধাক্কাধাক্কি করে অন্যকে কষ্ট দেওয়া যাবে না — ইশারাই যথেষ্ট।</p>' +
- '<p><b>রুকনে ইয়ামানি:</b> সম্ভব হলে ডান হাত দিয়ে স্পর্শ করুন (এতে চুমু নেই)। রুকনে ইয়ামানি থেকে হাজরে আসওয়াদ পর্যন্ত পড়ুন: <span class="ar" style="display:block">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</span> (সূরা আল-বাকারা: ২০১)।</p>' +
- '<p><b>মাকামে ইবরাহিম:</b> "তোমরা মাকামে ইবরাহিমকে নামাজের জায়গা হিসেবে গ্রহণ করো" (সূরা আল-বাকারা: ১২৫)। তাওয়াফের পর এখানে ২ রাকাত নামাজ পড়ুন — প্রথম রাকাতে সূরা আল-কাফিরুন ও দ্বিতীয় রাকাতে সূরা আল-ইখলাস (সহিহ মুসলিম: ১২১৮)। জায়গা না পেলে মসজিদের যেকোনো জায়গায় পড়লেই চলবে।</p>' +
- '<p><b>জমজম পানের দোয়া:</b> কিবলামুখী হয়ে বিসমিল্লাহ বলে তৃপ্তি নিয়ে পান করুন এবং পড়ুন: <span class="ar" style="display:block">اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا وَاسِعًا، وَشِفَاءً مِنْ كُلِّ دَاءٍ</span> অর্থ: "হে আল্লাহ, আমি আপনার কাছে উপকারী জ্ঞান, প্রশস্ত রিজিক এবং সব রোগ থেকে আরোগ্য চাই।" (সুনানে ইবনে মাজাহ: ৩০৬২)</p>' +
- '<p><b>সায়ির দোয়া:</b> সাফা পাহাড়ে উঠে প্রথমে পড়ুন: <span class="ar" style="display:block">إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ</span> (সূরা আল-বাকারা: ১৫৮)। এরপর কিবলামুখী হয়ে তিনবার পড়ুন: <span class="ar" style="display:block">لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ، لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ، أَنْجَزَ وَعْدَهُ، وَنَصَرَ عَبْدَهُ، وَهَزَمَ الْأَحْزَابَ وَحْدَهُ</span> এবং মাঝে মাঝে নিজের ভাষায় দোয়া করুন (সহিহ মুসলিম: ১২১৮)। সবুজ চিহ্নিত অংশে পুরুষরা দ্রুত হাঁটবেন; মহিলারা স্বাভাবিক গতিতে হাঁটবেন।</p>' +
- '<p><b>আরাফার দোয়া:</b> হজের ধাপে দেওয়া শ্রেষ্ঠ দোয়াটি (লা ইলাহা ইল্লাল্লাহু ওয়াহদাহু…) বেশি বেশি পড়ুন; সঙ্গে "রব্বানা আতিনা", ইস্তিগফার ও নিজের ভাষায় প্রাণ খুলে দোয়া করুন — আরাফার দিনের দোয়াই সর্বশ্রেষ্ঠ দোয়া (সুনানে তিরমিযি: ৩৫৮৫)।</p>' +
- '<p><b>মুলতাজাম:</b> হাজরে আসওয়াদ ও কাবার দরজার মাঝের অংশ। সুযোগ পেলে সেখানে দাঁড়িয়ে মন থেকে দোয়া করুন — নির্দিষ্ট কোনো দোয়া নেই।</p>' +
- '<p><b>রমির দোয়া:</b> প্রতিটি কঙ্কর মারার সময় বলুন: <span class="ar" style="display:block">بِسْمِ اللَّهِ وَاللَّهُ أَكْبَرُ</span> রাসূলুল্লাহ ﷺ প্রতিটি কঙ্করের সঙ্গে তাকবির বলতেন (সহিহ বুখারি: ১৭৫০)।</p>' +
- '<p><b>কুরবানির দোয়া:</b> পশু কিবলামুখী করে শুইয়ে পড়ুন: <span class="ar" style="display:block">إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ، إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ</span> (সুনানে আবু দাউদ: ২৭৯৫) এবং জবাইয়ের সময় বলুন: <span class="ar" style="display:block">بِسْمِ اللَّهِ وَاللَّهُ أَكْبَرُ</span> (সহিহ বুখারি: ৫৫৬৫; সহিহ মুসলিম: ১৯৬৬)।</p></div></details>' +
- '<details class="acc"><summary>মহিলাদের হজের বিশেষ নিয়ম</summary><div class="body"><ol class="steps">' +
- '<li><b>মাহরাম:</b> হানাফি মতে মহিলা মাহরাম (স্বামী বা যার সঙ্গে বিবাহ চিরদিন হারাম এমন আত্মীয়) ছাড়া হজের সফরে যাবেন না — "কোনো নারী মাহরাম ছাড়া সফর করবে না" (সহিহ বুখারি: ১৮৬২; সহিহ মুসলিম: ১৩৪১)।</li>' +
- '<li><b>পোশাক:</b> ইহরামে স্বাভাবিক সেলাই করা পোশাকই পরা যাবে; তবে মুখ ঢাকা (নিকাব) ও গ্লাভস পরা যাবে না। পর্দার প্রয়োজনে মুখের সামনে এমনভাবে কাপড় ঝুলিয়ে রাখা যায় যেন তা মুখে না লাগে।</li>' +
- '<li><b>তালবিয়া ও রমল:</b> তালবিয়া নিচু স্বরে পড়বেন। তাওয়াফে রমল (দ্রুত হাঁটা) ও সায়িতে দ্রুত হাঁটা মহিলাদের জন্য নয়।</li>' +
- '<li><b>হাজরে আসওয়াদ:</b> ভিড়ের মধ্যে না গিয়ে দূর থেকে ইশারা করাই উত্তম।</li>' +
- '<li><b>চুল কাটা:</b> মহিলাদের হলক নেই — আঙুলের এক গাঁট (আনমুলা) পরিমাণ চুল কাটলেই কসর হবে (সুনানে আবু দাউদ: ১৯৮৫)।</li>' +
- '<li><b>ঋতুস্রাব/নিফাস:</b> এ অবস্থায় তাওয়াফ ছাড়া হজের সব কাজ করা যাবে; পবিত্র হওয়ার পর তাওয়াফে জিয়ারত করবেন (হযরত আয়েশা রা.-এর ঘটনা — সহিহ বুখারি: ৩০৫)। তাওয়াফে ওয়াদা (বিদায়ী তাওয়াফ) ঋতুবতী মহিলার জন্য মাফ (সহিহ বুখারি: ১৭৫৫; সহিহ মুসলিম: ১৩২৮)।</li>' +
- '</ol></div></details>' +
- '<details class="acc"><summary>হজের প্রস্তুতি: ব্যাগে যা যা নেবেন</summary><div class="body"><ol class="steps">' +
- '<li>পাসপোর্ট, ভিসা, টিকিট ও হোটেলের কাগজপত্র — মূল কপি, ফটোকপি ও মোবাইলে ছবি।</li>' +
- '<li>ইহরামের কাপড় ২ সেট ও ইহরামের বেল্ট; সেলাইবিহীন স্যান্ড
+/* ================= Duas ================= */
+var DUAS = [
+ { t:'ঘুমানোর দোয়া', ar:'بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا', bn:'হে আল্লাহ! আপনার নামেই আমি মৃত্যুবরণ করি (ঘুমাই) এবং জীবিত হই (জাগি)।', s:'সহিহ বুখারি: ৬৩২৪', n:'' },
+ { t:'ঘুম থেকে জাগার দোয়া', ar:'الْحَمْدُ لِلَّهِ الَّذِي أَحْيَانَا بَعْدَ مَا أَمَاتَنَا وَإِلَيْهِ النُّشُورُ', bn:'সব প্রশংসা আল্লাহর, যিনি আমাদের মৃত্যুর (ঘুমের) পর জীবন দান করেছেন; আর তাঁর দিকেই পুনরুত্থান।', s:'সহিহ বুখারি: ৬৩২৫', n:'' },
+ { t:'খাবার শুরুর দোয়া', ar:'بِسْمِ اللَّهِ وَعَلَىٰ بَرَكَةِ اللَّهِ', bn:'আল্লাহর নামে এবং আল্লাহর বরকতের ওপর (শুরু করছি)। শুরুতে ভুলে গেলে মাঝে বলুন: "বিসমিল্লাহি আওয়ালাহু ওয়া আখিরাহু"।', s:'সুনানে আবু দাউদ: ৩৭৬৭; সুনানে তিরমিযি: ১৮৫৮', n:'' },
+ { t:'খাবার শেষের দোয়া', ar:'الْحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِينَ', bn:'সব প্রশংসা আল্লাহর, যিনি আমাদের খাইয়েছেন, পান করিয়েছেন এবং মুসলিম বানিয়েছেন।', s:'সুনানে আবু দাউদ: ৩৮৫০; সুনানে তিরমিযি: ৩৪৫৭', n:'' },
+ { t:'ঘর থেকে বের হওয়ার দোয়া', ar:'بِسْمِ اللَّهِ، تَوَكَّلْتُ عَلَى اللَّهِ، وَلَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ', bn:'আল্লাহর নামে (বের হচ্ছি), আল্লাহর ওপর ভরসা করলাম; আল্লাহর সাহায্য ছাড়া কোনো শক্তি ও সামর্থ্য নেই।', s:'সুনানে আবু দাউদ: ৫০৯৫; সুনানে তিরমিযি: ৩৪২৬', n:'' },
+ { t:'ঘরে প্রবেশের দোয়া', ar:'بِسْمِ اللَّهِ وَلَجْنَا، وَبِسْمِ اللَّهِ خَرَجْنَا، وَعَلَىٰ رَبِّنَا تَوَكَّلْنَا', bn:'আল্লাহর নামে আমরা প্রবেশ করলাম, আল্লাহর নামে আমরা বের হয়েছিলাম এবং আমাদের রবের ওপরই আমরা ভরসা করি। এরপর পরিবারের লোকদের সালাম দেবে।', s:'সুনানে আবু দাউদ: ৫০৯৬', n:'' },
+ { t:'মসজিদে প্রবেশের দোয়া', ar:'اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ', bn:'হে আল্লাহ! আমার জন্য আপনার রহমতের দরজাগুলো খুলে দিন।', s:'সহিহ মুসলিম: ৭১৩', n:'' },
+ { t:'মসজিদ থেকে বের হওয়ার দোয়া', ar:'اللَّهُمَّ إِنِّي أَسْأَلُكَ مِنْ فَضْلِكَ', bn:'হে আল্লাহ! আমি আপনার অনুগ্রহ প্রার্থনা করছি।', s:'সহিহ মুসলিম: ৭১৩', n:'' },
+ { t:'বাথরুমে প্রবেশের দোয়া', ar:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ', bn:'হে আল্লাহ! আমি আপনার কাছে আশ্রয় চাই দুষ্ট জিন ও জিন্নী থেকে।', s:'সহিহ বুখারি: ১৪২; সহিহ মুসলিম: ৩৭৫', n:'' },
+ { t:'বাথরুম থেকে বের হওয়ার দোয়া', ar:'غُفْرَانَكَ', bn:'(হে আল্লাহ!) আপনার ক্ষমা প্রার্থনা করছি।', s:'সুনানে আবু দাউদ: ৩০; সুনানে তিরমিযি: ৭', n:'' },
+ { t:'পোশাক পরার দোয়া', ar:'الْحَمْدُ لِلَّهِ الَّذِي كَسَانِي هَٰذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلَا قُوَّةٍ', bn:'সব প্রশংসা আল্লাহর, যিনি আমাকে এই পোশাক পরিয়েছেন এবং আমার কোনো শক্তি-সামর্থ্য ছাড়াই তা রিজিক হিসেবে দিয়েছেন।', s:'সুনানে আবু দাউদ: ৪০২৩ (হাসান)', n:'' },
+ { t:'আয়নায় দেখার দোয়া', ar:'اللَّهُمَّ كَمَا حَسَّنْتَ خَلْقِي فَحَسِّنْ خُلُقِي', bn:'হে আল্লাহ! আপনি যেমন আমার গঠন সুন্দর করেছেন, তেমনি আমার চরিত্রও সুন্দর করুন।', s:'মুসনাদে আহমাদ: ২৪৩৯২ (সহিহ)', n:'' },
+ { t:'সফরের দোয়া', ar:'سُبْحَانَ الَّذِي سَخَّرَ لَنَا هَٰذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ، وَإِنَّا إِلَىٰ رَبِّنَا لَمُنْقَلِبُونَ', bn:'পবিত্র তিনি, যিনি এটিকে আমাদের অধীন করে দিয়েছেন, অথচ আমরা তা করতে সক্ষম ছিলাম না; আর নিশ্চয় আমরা আমাদের রবের দিকে ফিরে যাব।', s:'সূরা আয-যুখরুফ: ১৩–১৪; সহিহ মুসলিম: ১৩৪২', n:'' },
+ { t:'বিপদ ও দুশ্চিন্তার দোয়া', ar:'لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ', bn:'আপনি ছাড়া কোনো ইলাহ নেই; আপনি পবিত্র; নিশ্চয় আমি জালিমদের অন্তর্ভুক্ত হয়েছি। (হযরত ইউনুস আ.-এর দোয়া)', s:'সূরা আল-আম্বিয়া: ৮৭; সুনানে তিরমিযি: ৩৫০৫', n:'' },
+ { t:'দুঃখ ও ঋণ থেকে মুক্তির দোয়া', ar:'اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْهَمِّ وَالْحَزَنِ، وَالْعَجْزِ وَالْكَسَلِ، وَالْبُخْلِ وَالْجُبْنِ، وَضَلَعِ الدَّيْنِ وَغَلَبَةِ الرِّجَالِ', bn:'হে আল্লাহ! আমি আপনার কাছে আশ্রয় চাই দুশ্চিন্তা ও দুঃখ থেকে, অক্ষমতা ও অলসতা থেকে, কৃপণতা ও ভীরুতা থেকে, ঋণের বোঝা ও মানুষের জুলুম থেকে।', s:'সহিহ বুখারি: ৬৩৬৯', n:'' },
+ { t:'পিতা-মাতার জন্য দোয়া', ar:'رَّبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا', bn:'হে আমার রব! তাঁদের (পিতা-মাতা) প্রতি দয়া করুন, যেমন তাঁরা শৈশবে আমাকে লালন-পালন করেছেন।', s:'সূরা আল-ইসরা: ২৪', n:'' },
+ { t:'দুনিয়া ও আখিরাতের কল্যাণের দোয়া', ar:'رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ', bn:'হে আমাদের রব! আমাদের দুনিয়াতে কল্যাণ দিন, আখিরাতেও কল্যাণ দিন এবং জাহান্নামের আগুন থেকে রক্ষা করুন।', s:'সূরা আল-বাকারা: ২০১', n:'' },
+ { t:'রোগমুক্তির দোয়া', ar:'اللَّهُمَّ رَبَّ النَّاسِ، أَذْهِبِ الْبَاسَ، اشْفِ أَنْتَ الشَّافِي، لَا شِفَاءَ إِلَّا شِفَاؤُكَ، شِفَاءً لَا يُغَادِرُ سَقَمًا', bn:'হে আল্লাহ, মানুষের রব! কষ্ট দূর করুন, আরোগ্য দিন — আপনিই আরোগ্যদাতা; আপনার আরোগ্য ছাড়া কোনো আরোগ্য নেই; এমন আরোগ্য দিন যাতে কোনো রোগ বাকি না থাকে। (রোগীর গায়ে হাত রেখে পড়ুন)', s:'সহিহ বুখারি: ৫৬৭৫; সহিহ মুসলিম: ২১৯১', n:'৭ বার' },
+ { t:'বৃষ্টির দোয়া', ar:'اللَّهُمَّ صَيِّبًا نَافِعًا', bn:'হে আল্লাহ! (এই বৃষ্টিকে) উপকারী বৃষ্টি করুন।', s:'সহিহ বুখারি: ১০৩২', n:'' },
+ { t:'ইফতারের দোয়া', ar:'اللَّهُمَّ إِنِّي لَكَ صُمْتُ وَعَلَىٰ رِزْقِكَ أَفْطَرْتُ', bn:'হে আল্লাহ! আমি আপনার জন্যই রোজা রেখেছি এবং আপনার দেওয়া রিজিক দিয়েই ইফতার করছি।', s:'সুনানে আবু দাউদ: ২৩৫৮', n:'' },
+ { t:'সেহরির দোয়া (নিয়ত)', ar:'نَوَيْتُ أَنْ أَصُومَ غَدًا لِلَّهِ تَعَالَىٰ مِنْ فَرْضِ رَمَضَانَ', bn:'আমি আল্লাহ তাআলার জন্য আগামীকাল রমজানের ফরজ রোজা রাখার নিয়ত করলাম। (নিয়ত মূলত অন্তরের সংকল্প; মুখে বলা জরুরি নয়।)', s:'রোজার নিয়ত অন্তরে করাই যথেষ্ট — ফিকহের কিতাবসমূহ', n:'' },
+ { t:'সাইয়্যিদুল ইস্তিগফার', ar:'اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَىٰ عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي، فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ', bn:'হে আল্লাহ! আপনিই আমার রব, আপনি ছাড়া কোনো ইলাহ নেই। আপনি আমাকে সৃষ্টি করেছেন, আমি আপনার বান্দা; আমি সাধ্যমতো আপনার অঙ্গীকার ও প্রতিশ্রুতির ওপর আছি। আমার কৃতকর্মের অনিষ্ট থেকে আপনার আশ্রয় চাই। আমার প্রতি আপনার নেয়ামত স্বীকার করছি এবং আমার গুনাহও স্বীকার করছি — আমাকে ক্ষমা করুন; কারণ আপনি ছাড়া কেউ গুনাহ ক্ষমা করতে পারে না। সকালে বা সন্ধ্যায় পড়লে বিশেষ ফজিলত রয়েছে।', s:'সহিহ বুখারি: ৬৩০৬', n:'সকাল-সন্ধ্যা ১ বার' },
+ { t:'আয়াতুল কুরসি', ar:'اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ، لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ، لَهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ، مَنْ ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلَّا بِإِذْنِهِ، يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ، وَلَا يُحِيطُونَ بِشَيْءٍ مِنْ عِلْمِهِ إِلَّا بِمَا شَاءَ، وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ، وَلَا يَئُودُهُ حِفْظُهُمَا، وَهُوَ الْعَلِيُّ الْعَظِيمُ', bn:'আল্লাহ — তিনি ছাড়া কোনো ইলাহ নেই; তিনি চিরঞ্জীব, সবকিছুর ধারক। তাঁকে তন্দ্রা বা ঘুম স্পর্শ করে না। আসমান-জমিনে যা কিছু আছে সব তাঁরই। তাঁর অনুমতি ছাড়া তাঁর কাছে সুপারিশ করবে কে? তিনি জানেন তাদের সামনে ও পেছনে যা আছে; তাঁর জ্ঞান থেকে তারা কিছুই আয়ত্ত করতে পারে না, তিনি যা চান তা ছাড়া। তাঁর কুরসি আসমান-জমিন ব্যাপী; এ দুটির রক্ষণাবেক্ষণ তাঁকে ক্লান্ত করে না। তিনি সুউচ্চ, মহান। প্রতি ফরজ নামাজের পর পড়ার ফজিলত হাদিসে এসেছে।', s:'সূরা আল-বাকারা: ২৫৫; সুনানে নাসায়ি, আমালুল ইয়াওম: ১০০', n:'প্রতি নামাজের পর ১ বার' },
+ { t:'ঘুমানোর আগে সুরক্ষার দোয়া', ar:'بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ', bn:'আল্লাহর নামে (শুরু করছি), যাঁর নামের বরকতে আসমান-জমিনের কোনো কিছুই ক্ষতি করতে পারে না; তিনি সর্বশ্রোতা, সর্বজ্ঞ।', s:'সুনানে আবু দাউদ: ৫০৮৮; সুনানে তিরমিযি: ৩৩৮৮', n:'সকাল-সন্ধ্যা ৩ বার' },
+ { t:'হাসবুনাল্লাহ', ar:'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ', bn:'আল্লাহই আমাদের জন্য যথেষ্ট, এবং তিনি কতই না উত্তম কর্মবিধায়ক!', s:'সূরা আলে-ইমরান: ১৭৩; সহিহ বুখারি: ৪৫৬৩', n:'' }
+];
+function duaCard(d){
+  var cnt = d.n ? ' <span class="cnt">' + d.n + '</span>' : '';
+  var marked = (typeof isBookmarked === 'function') && isBookmarked('dua:' + d.t);
+  return '<article class="hcard"><button class="bmkbtn" data-bmd="' + esc(d.t) + '">' + (marked ? '✓ বুকমার্ক করা' : 'বুকমার্ক') + '</button><h3>' + d.t + cnt + '</h3><p class="ar">' + d.ar + '</p><p>' + d.bn + '</p><p class="src">সূত্র: ' + d.s + '</p></article>';
+}
+function renderDuas(filter){
+  var list = DUAS.filter(function(d){ return !filter || (d.t + d.bn).indexOf(filter) > -1; });
+  $('duaList').innerHTML = list.length ? list.map(duaCard).join('') : '<p class="loadmsg">কিছু পাওয়া যায়নি।</p>';
+}
+$('duaSearch').addEventListener('input', function(){ renderDuas(this.value.trim()); });
+renderDuas('');
+</script>
+<script>
+/* ================= Qibla ================= */
+var KAABA = { lat: 21.4225, lng: 39.8262 };
+function qiblaBearing(lat, lng){
+  var dLng = dtr(KAABA.lng - lng);
+  var y = Math.sin(dLng);
+  var x = Math.cos(dtr(lat)) * Math.tan(dtr(KAABA.lat)) - Math.sin(dtr(lat)) * Math.cos(dLng);
+  return fixA(rtd(Math.atan2(y, x)));
+}
+function haversineKm(lat1, lng1, lat2, lng2){
+  var R = 6371, dLat = dtr(lat2 - lat1), dLng = dtr(lng2 - lng1);
+  var a = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.cos(dtr(lat1)) * Math.cos(dtr(lat2)) * Math.sin(dLng/2) * Math.sin(dLng/2);
+  return Math.round(R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+}
+var deviceHeading = null, compassOn = false;
+function renderQibla(){
+  var c = curLoc();
+  var b = qiblaBearing(c.lat, c.lng);
+  var rot = (deviceHeading === null) ? b : b - deviceHeading;
+  $('qiblaNeedle').style.transform = 'translate(-50%,-100%) rotate(' + rot + 'deg)';
+  $('compassDial').style.transform = 'rotate(' + (deviceHeading === null ? 0 : -deviceHeading) + 'deg)';
+  $('qiblaAngle').textContent = bn(Math.round(b)) + '°';
+}
+function updateQiblaInfo(){
+  var c = curLoc();
+  $('qiblaCity').textContent = c.name;
+  $('qiblaDist').textContent = bn(haversineKm(c.lat, c.lng, KAABA.lat, KAABA.lng).toLocaleString('en-IN')) + ' কিমি (প্রায়)';
+  renderQibla();
+}
+function onOrient(e){
+  var h = null;
+  if (typeof e.webkitCompassHeading === 'number') h = e.webkitCompassHeading;
+  else if (e.alpha !== null) h = 360 - e.alpha;
+  if (h !== null){ deviceHeading = h; renderQibla(); }
+}
+$('compassBtn').addEventListener('click', function(){
+  if (compassOn){
+    window.removeEventListener('deviceorientationabsolute', onOrient);
+    window.removeEventListener('deviceorientation', onOrient);
+    compassOn = false; deviceHeading = null;
+    $('compassBtn').textContent = 'কম্পাস চালু করুন';
+    $('compassMsg').textContent = 'কম্পাস বন্ধ আছে — নিচের কোণ দেখে দিক মিলিয়ে নিন।';
+    renderQibla(); return;
+  }
+  function start(){
+    window.addEventListener('deviceorientationabsolute', onOrient);
+    window.addEventListener('deviceorientation', onOrient);
+    compassOn = true;
+    $('compassBtn').textContent = 'কম্পাস বন্ধ করুন';
+    $('compassMsg').textContent = 'কম্পাস চালু হয়েছে — ফোন ঘোরালে তীর কিবলার দিকেই থাকবে। সোনালি তীর যেদিকে, সেদিকেই কিবলা।';
+  }
+  if (typeof DeviceOrientationEvent !== 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'function'){
+    DeviceOrientationEvent.requestPermission().then(function(res){
+      if (res === 'granted') start(); else toast('কম্পাসের অনুমতি দেওয়া হয়নি');
+    }).catch(function(){ toast('এই ডিভাইসে কম্পাস পাওয়া যায়নি'); });
+  } else if (typeof DeviceOrientationEvent !== 'undefined'){ start(); }
+  else { toast('এই ডিভাইসে কম্পাস সেন্সর নেই'); }
+});
+updateQiblaInfo();
+
+/* ================= Tasbih ================= */
+var DHIKRS = [
+  { ar:'سُبْحَانَ اللَّهِ', bn:'সুবহানাল্লাহ — আল্লাহ পবিত্র', mean:'আল্লাহ পবিত্র ও সকল দোষ-ত্রুটি থেকে মুক্ত', target:33 },
+  { ar:'الْحَمْدُ لِلَّهِ', bn:'আলহামদুলিল্লাহ — সব প্রশংসা আল্লাহর', mean:'সকল প্রশংসা ও কৃতজ্ঞতা একমাত্র আল্লাহরই জন্য', target:33 },
+  { ar:'اللَّهُ أَكْبَرُ', bn:'আল্লাহু আকবার — আল্লাহ সবচেয়ে বড়', mean:'আল্লাহ সবচেয়ে বড় ও সবার ঊর্ধ্বে মহান', target:34 },
+  { ar:'لَا إِلَٰهَ إِلَّا اللَّهُ', bn:'লা ইলাহা ইল্লাল্লাহ — আল্লাহ ছাড়া কোনো ইলাহ নেই', mean:'আল্লাহ ছাড়া সত্য কোনো উপাস্য নেই', target:100 },
+  { ar:'أَسْتَغْفِرُ اللَّهَ', bn:'আস্তাগফিরুল্লাহ — আমি আল্লাহর কাছে ক্ষমা চাই', mean:'আমি আল্লাহর কাছে ক্ষমা প্রার্থনা করি', target:100 },
+  { ar:'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ', bn:'সুবহানাল্লাহি ওয়া বিহামদিহি', mean:'আল্লাহর প্রশংসাসহ তাঁর পবিত্রতা ঘোষণা করছি', target:100 },
+  { ar:'لَا حَوْلَ وَلَا قُوَّةَ إِلَّا بِاللَّهِ', bn:'লা হাওলা ওয়ালা কুওয়াতা ইল্লা বিল্লাহ', mean:'আল্লাহর সাহায্য ছাড়া মন্দ থেকে বাঁচার ও ভালো কাজ করার কোনো শক্তি কারো নেই', target:100 },
+  { ar:'اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ', bn:'দরুদ শরিফ — আল্লাহুম্মা সাল্লি আলা মুহাম্মদ', mean:'হে আল্লাহ, মুহাম্মাদ (সা.)-এর ওপর রহমত ও শান্তি বর্ষণ করুন', target:100 },
+  { ar:'حَسْبُنَا اللَّهُ وَنِعْمَ الْوَكِيلُ', bn:'হাসবুনাল্লাহু ওয়া নি’মাল ওয়াকিল', mean:'আল্লাহই আমাদের জন্য যথেষ্ট, আর তিনি কতই না উত্তম কর্মবিধায়ক', target:100 },
+  { ar:'سُبْحَانَ اللَّهِ الْعَظِيمِ', bn:'সুবহানাল্লাহিল আজিম', mean:'মহান আল্লাহর পবিত্রতা ঘোষণা করছি', target:100 },
+  { ar:'صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ', bn:'সাল্লাল্লাহু আলাইহি ওয়া সাল্লাম', mean:'তাঁর (মুহাম্মাদ সা.) ওপর আল্লাহর রহমত ও শান্তি বর্ষিত হোক', target:100 },
+  { ar:'لَا إِلَٰهَ إِلَّا أَنْتَ سُبْحَانَكَ إِنِّي كُنْتُ مِنَ الظَّالِمِينَ', bn:'লা ইলাহা ইল্লা আনতা সুবহানাকা ইন্নি কুনতু মিনাজ জালিমিন', mean:'আপনি ছাড়া কোনো ইলাহ নেই; আপনি পবিত্র, নিশ্চয়ই আমি জালিমদের অন্তর্ভুক্ত হয়েছি', target:100 },
+  { ar:'أَسْتَغْفِرُ اللَّهَ الَّذِي لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ', bn:'আস্তাগফিরুল্লাহাল্লাজি লা ইলাহা ইল্লা হুয়াল হাইয়্যুল কাইয়্যুমু ওয়া আতুবু ইলাইহি', mean:'আমি সেই আল্লাহর কাছে ক্ষমা চাই, যিনি ছাড়া কোনো ইলাহ নেই — চিরঞ্জীব ও চিরস্থায়ী — এবং তাঁরই কাছে তাওবা করি', target:100 },
+  { ar:'رَضِيتُ بِاللَّهِ رَبًّا وَبِالْإِسْلَامِ دِينًا وَبِمُحَمَّدٍ نَبِيًّا', bn:'রাদিতু বিল্লাহি রাব্বা ওয়া বিল ইসলামি দীনা ওয়া বি মুহাম্মাদিন নাবিয়্যা', mean:'আমি আল্লাহকে রব হিসেবে, ইসলামকে দীন হিসেবে এবং মুহাম্মাদ (সা.)-কে নবী হিসেবে পেয়ে সন্তুষ্ট', target:100 }
+];
+/* Custom dhikrs (v2.18): the user's own entries, kept in localStorage
+   alongside the app's other settings. Shape: { ar, bn, mean, target }. */
+var CUSTOM_DHIKRS = [];
+try {
+  var _cd = JSON.parse(localStorage.getItem('di_custom_dhikrs') || '[]');
+  if (Array.isArray(_cd)) CUSTOM_DHIKRS = _cd.filter(function(d){ return d && d.bn; });
+} catch (e) { CUSTOM_DHIKRS = []; }
+function allDhikrs(){ return DHIKRS.concat(CUSTOM_DHIKRS); }
+function saveCustomDhikrs(){ try { localStorage.setItem('di_custom_dhikrs', JSON.stringify(CUSTOM_DHIKRS)); } catch (e) {} }
+var tasbih = { di: 0, count: 0, total: 0, cycle: 0 };
+function renderDhikrChips(){
+  var html = '';
+  DHIKRS.forEach(function(d, i){ html += '<button data-dhikr="' + i + '">' + esc(d.bn.split(' — ')[0]) + '</button>'; });
+  CUSTOM_DHIKRS.forEach(function(d, j){
+    html += '<button data-dhikr="' + (DHIKRS.length + j) + '">' + esc(d.bn.split(' — ')[0]) + ' <span data-del-dhikr="' + j + '" title="মুছুন" style="color:#d9534f; font-weight:700">✕</span></button>';
+  });
+  $('dhikrChips').innerHTML = html;
+}
+function renderTasbih(){
+  var list = allDhikrs();
+  if (tasbih.di >= list.length) tasbih.di = 0;
+  var d = list[tasbih.di];
+  $('dhikrAr').textContent = d.ar || '';
+  $('dhikrAr').style.display = d.ar ? '' : 'none';
+  $('dhikrBn').textContent = d.bn;
+  var mel = $('dhikrMeaning');
+  if (d.mean){ mel.textContent = 'অর্থ: ' + d.mean; mel.style.display = ''; }
+  else { mel.textContent = ''; mel.style.display = 'none'; }
+  $('tasbihCount').textContent = bn(tasbih.count);
+  $('tasbihTarget').textContent = bn(d.target) + ' বার';
+  $('tasbihTotal').textContent = bn(tasbih.total);
+  $('tasbihCycle').textContent = bn(tasbih.cycle);
+  document.querySelectorAll('#dhikrChips button').forEach(function(b, i){
+    b.setAttribute('aria-pressed', i === tasbih.di ? 'true' : 'false');
+  });
+}
+(function initTasbih(){
+  renderDhikrChips();
+  $('dhikrChips').addEventListener('click', function(e){
+    var del = e.target.closest('[data-del-dhikr]');
+    if (del){
+      var j = +del.getAttribute('data-del-dhikr');
+      CUSTOM_DHIKRS.splice(j, 1);
+      saveCustomDhikrs();
+      if (tasbih.di === DHIKRS.length + j){ tasbih.di = 0; tasbih.count = 0; }
+      else if (tasbih.di > DHIKRS.length + j){ tasbih.di--; }
+      renderDhikrChips(); renderTasbih();
+      toast('যিকিরটি মোছা হয়েছে');
+      return;
+    }
+    var b = e.target.closest('[data-dhikr]'); if (!b) return;
+    tasbih.di = +b.getAttribute('data-dhikr'); tasbih.count = 0; renderTasbih();
+  });
+  $('tapBtn').addEventListener('click', function(){
+    tasbih.count++; tasbih.total++;
+    if (navigator.vibrate) navigator.vibrate(12);
+    if (tasbih.count >= allDhikrs()[tasbih.di].target){
+      tasbih.cycle++;
+      if (navigator.vibrate) navigator.vibrate([60, 40, 60]);
+      toast('আলহামদুলিল্লাহ! ' + bn(allDhikrs()[tasbih.di].target) + ' বার পূর্ণ হয়েছে');
+      tasbih.count = 0;
+    }
+    renderTasbih();
+  });
+  $('tasbihUndo').addEventListener('click', function(){ if (tasbih.count > 0){ tasbih.count--; tasbih.total--; } renderTasbih(); });
+  $('tasbihReset').addEventListener('click', function(){ tasbih.count = 0; tasbih.total = 0; tasbih.cycle = 0; renderTasbih(); toast('তাসবিহ শূন্য করা হয়েছে'); });
+  $('cdAdd').addEventListener('click', function(){
+    var name = ($('cdBn').value || '').trim();
+    if (!name){ toast('আগে যিকিরটি লিখুন'); return; }
+    var target = parseInt($('cdTarget').value, 10);
+    if (!(target > 0)) target = 100;
+    CUSTOM_DHIKRS.push({ ar: ($('cdAr').value || '').trim(), bn: name, mean: ($('cdMean').value || '').trim(), target: target });
+    saveCustomDhikrs();
+    $('cdBn').value = ''; $('cdAr').value = ''; $('cdMean').value = ''; $('cdTarget').value = '';
+    renderDhikrChips();
+    tasbih.di = DHIKRS.length + CUSTOM_DHIKRS.length - 1; tasbih.count = 0;
+    renderTasbih();
+    toast('নতুন যিকির যোগ হয়েছে');
+  });
+  renderTasbih();
+})();
+
+/* ================= Quiz ================= */
+var QUIZ = [
+ { q:'পবিত্র কুরআনের সর্বপ্রথম অবতীর্ণ সূরা কোনটি?', o:['সূরা আল-ফাতিহা','সূরা আল-আলাক','সূরা আল-মুদ্দাসসির','সূরা আল-বাকারা'], a:1, e:'হেরা গুহায় সর্বপ্রথম সূরা আল-আলাকের প্রথম পাঁচটি আয়াত ("ইকরা বিসমি রাব্বিক...") অবতীর্ণ হয়।', s:'সহিহ বুখারি: ৩; সূরা আল-আলাক: ১–৫' },
+ { q:'কুরআনের সবচেয়ে বড় (দীর্ঘতম) সূরা কোনটি?', o:['সূরা আলে-ইমরান','সূরা আন-নিসা','সূরা আল-বাকারা','সূরা আল-মায়িদা'], a:2, e:'সূরা আল-বাকারা কুরআনের দীর্ঘতম সূরা — এতে ২৮৬টি আয়াত রয়েছে এবং এটি মাদানী সূরা।', s:'সূরা আল-বাকারা (২৮৬ আয়াত)' },
+ { q:'কুরআনে মোট কয়টি সূরা আছে?', o:['১১০টি','১১৪টি','১১৬টি','১২০টি'], a:1, e:'পবিত্র কুরআনে মোট ১১৪টি সূরা ও ৬২৩৬টি আয়াত রয়েছে (আয়াত গণনায় সামান্য মতভেদ আছে)।', s:'মুসহাফে উসমানি অনুযায়ী' },
+ { q:'কোন সূরাকে "কুরআনের হৃদয়" বলা হয়?', o:['সূরা আর-রাহমান','সূরা আল-মুলক','সূরা ইয়াসিন','সূরা আল-কাহফ'], a:2, e:'রাসূলুল্লাহ ﷺ বলেছেন: "প্রতিটি জিনিসের একটি হৃদয় আছে, আর কুরআনের হৃদয় হলো সূরা ইয়াসিন।"', s:'সুনানে তিরমিযি: ২৮৮৭' },
+ { q:'সর্বপ্রথম ওহি অবতীর্ণ হয় কোন গুহায়?', o:['সাওর গুহা','হেরা গুহা','কাহফ গুহা','উহুদ গুহা'], a:1, e:'মক্কার জাবালে নূর পাহাড়ের হেরা গুহায় রমজান মাসে প্রথম ওহি অবতীর্ণ হয়।', s:'সহিহ বুখারি: ৩' },
+ { q:'ইসলামের স্তম্ভ মোট কয়টি?', o:['৪টি','৫টি','৬টি','৭টি'], a:1, e:'ইসলামের স্তম্ভ পাঁচটি: কালিমা শাহাদাত, নামাজ, যাকাত, রোজা ও হজ।', s:'সহিহ বুখারি: ৮; সহিহ মুসলিম: ১৬' },
+ { q:'ফেরেশতাদের মধ্যে ওহি বহনকারী প্রধান ফেরেশতা কে?', o:['মিকাইল (আ.)','ইসরাফিল (আ.)','জিবরাইল (আ.)','আজরাইল (আ.)'], a:2, e:'জিবরাইল (আ.) আল্লাহর ওহি নবী-রাসূলদের কাছে পৌঁছে দিতেন।', s:'সূরা আল-বাকারা: ৯৭' },
+ { q:'হযরত মুহাম্মদ ﷺ-এর জন্মস্থান কোথায়?', o:['মদিনা','তায়েফ','মক্কা','জেরুজালেম'], a:2, e:'রাসূলুল্লাহ ﷺ ৫৭০ খ্রিস্টাব্দে (হাতির বছর) মক্কা নগরীতে জন্মগ্রহণ করেন।', s:'সীরাতে ইবনে হিশাম' },
+ { q:'হিজরতের সময় রাসূলুল্লাহ ﷺ-এর সঙ্গী কে ছিলেন?', o:['হযরত উমর (রা.)','হযরত আলী (রা.)','হযরত আবু বকর (রা.)','হযরত উসমান (রা.)'], a:2, e:'মক্কা থেকে মদিনায় হিজরতের সময় হযরত আবু বকর সিদ্দিক (রা.) রাসূলুল্লাহ ﷺ-এর সঙ্গী ছিলেন; সাওর গুহায় তাঁরা তিন দিন অবস্থান করেন।', s:'সূরা আত-তাওবা: ৪০; সহিহ বুখারি: ৩৬৫৩' },
+ { q:'সর্বপ্রথম ইসলাম গ্রহণকারী নারী কে?', o:['হযরত আয়েশা (রা.)','হযরত খাদিজা (রা.)','হযরত ফাতিমা (রা.)','হযরত হাফসা (রা.)'], a:1, e:'রাসূলুল্লাহ ﷺ-এর স্ত্রী হযরত খাদিজা (রা.) সর্বপ্রথম ইসলাম গ্রহণ করেন এবং ওহির খবর শুনে তিনিই প্রথম সান্ত্বনা দেন।', s:'সহিহ বুখারি: ৩' },
+ { q:'বদরের যুদ্ধে মুসলিম সৈন্য সংখ্যা কত ছিল?', o:['৩১৩ জন','৫০০ জন','১০০০ জন','৩০০০ জন'], a:0, e:'২ হিজরির ১৭ রমজান বদরের যুদ্ধে মুসলিম বাহিনীতে ৩১৩ জন সাহাবি ছিলেন, বিপরীতে কুরাইশরা ছিল প্রায় ১০০০।', s:'সহিহ মুসলিম: ১৭৬৩; সীরাত' },
+ { q:'কুরআনে নাম উল্লেখ আছে এমন একমাত্র নারী কে?', o:['আসিয়া (আ.)','মারইয়াম (আ.)','হাওয়া (আ.)','সারা (আ.)'], a:1, e:'কুরআনে সরাসরি নাম উল্লেখ আছে একমাত্র হযরত মারইয়াম (আ.)-এর; তাঁর নামে একটি সূরাও (সূরা মারইয়াম) রয়েছে।', s:'সূরা মারইয়াম; সূরা আলে-ইমরান: ৪২' },
+ { q:'কোন নবীকে "খলিলুল্লাহ" (আল্লাহর বন্ধু) বলা হয়?', o:['হযরত মুসা (আ.)','হযরত ইবরাহিম (আ.)','হযরত ঈসা (আ.)','হযরত নূহ (আ.)'], a:1, e:'আল্লাহ হযরত ইবরাহিম (আ.)-কে খলিল (অন্তরঙ্গ বন্ধু) হিসেবে গ্রহণ করেছেন।', s:'সূরা আন-নিসা: ১২৫' },
+ { q:'কাবা শরিফ প্রথম কে নির্মাণ করেন (প্রচলিত বর্ণনা অনুযায়ী)?', o:['হযরত ইসমাইল (আ.) একা','হযরত ইবরাহিম ও ইসমাইল (আ.)','হযরত আদম (আ.)','কুরাইশ গোত্র'], a:1, e:'হযরত ইবরাহিম (আ.) ও তাঁর পুত্র হযরত ইসমাইল (আ.) কাবা শরিফের ভিত্তি উত্তোলন ও নির্মাণ করেন।', s:'সূরা আল-বাকারা: ১২৭' },
+ { q:'রমজানের কোন রাত হাজার মাসের চেয়ে উত্তম?', o:['শবে বরাত','শবে মিরাজ','লাইলাতুল কদর','শবে আশুরা'], a:2, e:'লাইলাতুল কদর হাজার মাসের চেয়েও উত্তম; রমজানের শেষ দশকের বেজোড় রাতগুলোতে এটি অন্বেষণ করতে বলা হয়েছে।', s:'সূরা আল-কদর: ৩; সহিহ বুখারি: ২০১৭' },
+ { q:'মিরাজের রাতে কয় ওয়াক্ত নামাজ ফরজ হয়?', o:['৩ ওয়াক্ত','৪ ওয়াক্ত','৫ ওয়াক্ত','৭ ওয়াক্ত'], a:2, e:'মিরাজের রাতে প্রথমে ৫০ ওয়াক্ত থেকে কমিয়ে দৈনিক পাঁচ ওয়াক্ত নামাজ ফরজ করা হয়।', s:'সহিহ বুখারি: ৩৪৯; সহিহ মুসলিম: ১৬২' },
+ { q:'কুরআনে কোন সূরায় বিসমিল্লাহ নেই?', o:['সূরা আল-আনফাল','সূরা আত-তাওবা','সূরা ইউনুস','সূরা হুদ'], a:1, e:'সূরা আত-তাওবার শুরুতে বিসমিল্লাহ লেখা ও পড়া হয় না। অন্যদিকে সূরা আন-নামলের ৩০ নম্বর আয়াতের ভেতরে বিসমিল্লাহ রয়েছে।', s:'তাফসিরে ইবনে কাসির; সহিহ বুখারি: ৪৩৬৪ (প্রসঙ্গ)' },
+ { q:'আয়াতুল কুরসি কোন সূরার আয়াত?', o:['সূরা আল-বাকারা: ২৫৫','সূরা আলে-ইমরান: ১৮','সূরা আল-ইখলাস: ১','সূরা ইয়াসিন: ৫৮'], a:0, e:'আয়াতুল কুরসি সূরা আল-বাকারার ২৫৫ নম্বর আয়াত; এটি কুরআনের অন্যতম শ্রেষ্ঠ আয়াত।', s:'সূরা আল-বাকারা: ২৫৫; সহিহ মুসলিম: ৮১০' },
+ { q:'সর্বশেষ অবতীর্ণ পূর্ণ সূরা কোনটি বলে প্রসিদ্ধ?', o:['সূরা আন-নাসর','সূরা আল-মায়িদা','সূরা আত-তাওবা','সূরা আল-ফাতহ'], a:0, e:'সূরা আন-নাসরকে সর্বশেষ অবতীর্ণ পূর্ণ সূরা বলা হয়; এটি রাসূলুল্লাহ ﷺ-এর ইন্তিকালের অল্পকাল আগে অবতীর্ণ হয়।', s:'সহিহ বুখারি: ৪২৯৪' },
+ { q:'হযরত আদম (আ.)-এর পর দ্বিতীয় নবী কে?', o:['হযরত ইদরিস (আ.)','হযরত নূহ (আ.)','হযরত শীষ (আ.)','হযরত হুদ (আ.)'], a:2, e:'প্রসিদ্ধ বর্ণনা অনুযায়ী হযরত আদম (আ.)-এর পুত্

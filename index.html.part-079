@@ -1,259 +1,234 @@
-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iigBMe5paKKACkxS0UAJgUtFFABSYpaKAExS0UUAFFFFABRRRQAmKMUtFACYApaKKAExRjilooAMCiiigAoxRRQAmKXFFFABSEZpaKAExS0UUAJgUYpaKACjFFFABRRRQAmKWiigAooooAKKKKAAjNJj3paKADFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQB/9k=" alt="Muslim Path লোগো" style="width:76px; height:76px; border-radius:18px; border:2px solid var(--gold)" />' +
-      '<h3 style="margin:10px 0 4px; font-size:21px">Muslim Path-এ স্বাগতম</h3>' +
-      '<p class="sub" style="margin:0 auto 16px; max-width:430px">সাইন ইন করলে আপনার তাসবিহের হিসাব, নামাজ ট্র্যাকার ও বুকমার্ক আপনার প্রোফাইলের সঙ্গে যুক্ত থাকবে। সাইন ইন ছাড়াও গেস্ট হিসেবে অ্যাপের সব ফিচার ব্যবহার করা যাবে।</p>' +
-      '<div style="max-width:400px; margin:0 auto">' +
-      '<button class="gbtn" id="googleBtn">' + GOOGLE_G + 'Google দিয়ে সাইন ইন</button>' +
-      '<p id="googleNote" class="sub" style="margin:10px 0 0; display:none"></p>' +
-      '<p class="sub" style="margin:8px 0 0">অ্যাপ সংস্করণ: v2.17</p>' +
-      '<p style="margin:10px 0 0"><a class="btn" href="https://github.com/Kholil-143/Muslim-Path/releases/latest/download/Muslim-Path.apk">⬇ সর্বশেষ আপডেট ডাউনলোড / ইনস্টল করুন</a></p>' +
-      '<div style="display:flex; align-items:center; gap:10px; margin:18px 0"><span style="flex:1; height:1px; background:var(--line)"></span><span style="color:var(--ink-2); font-size:13.5px">অথবা নাম দিয়ে প্রোফাইল</span><span style="flex:1; height:1px; background:var(--line)"></span></div>' +
-      '<input type="text" id="pfName" placeholder="আপনার নাম লিখুন" style="width:100%; margin-bottom:10px" maxlength="40" />' +
-      '<button class="btn gold" id="pfCreate" style="width:100%">প্রোফাইল তৈরি করুন</button>' +
-      '<p class="sub" style="margin:10px 0 0">প্রোফাইল ও হিসাব শুধু এই সেশনে থাকে — পেজ বন্ধ করলে মুছে যাবে।</p>' +
-      '</div></div>';
-    $('googleBtn').addEventListener('click', googleSignInFn);
-    if (BOOKMARKS.length){
-      box.innerHTML += '<div class="card"><h3 style="margin:0 0 4px">আমার বুকমার্ক</h3>' +
-        '<p class="sub" style="margin:0 0 10px">গেস্ট হিসেবে এই সেশনে সংরক্ষিত — প্রোফাইল তৈরি করলেও এগুলো থাকবে।</p>' +
-        BOOKMARKS.map(function(b, i){
-          return '<button class="bmk" data-open-bmk="' + i + '"><span>🔖</span><span>' + esc(b.label) + '<small>' + esc(b.sub) + '</small></span><span class="del" data-del-bmk="' + i + '" role="button" aria-label="বুকমার্ক সরান">✕</span></button>';
-        }).join('') + '</div>';
-    }
-    $('pfCreate').addEventListener('click', function(){
-      var name = $('pfName').value.trim();
-      if (!name){ toast('আগে আপনার নাম লিখুন'); $('pfName').focus(); return; }
-      PROFILE = { name: name };
-      try { localStorage.setItem('di_profile', JSON.stringify(PROFILE)); } catch(e){}
-      renderProfileChip(); renderProfile();
-      toast('স্বাগতম, ' + name + '! আপনার প্রোফাইল তৈরি হয়েছে');
-    });
-    return;
-  }
-  var initial = PROFILE.name.trim().charAt(0) || 'ম';
-  var bmkHtml = BOOKMARKS.length ? BOOKMARKS.map(function(b, i){
-    return '<button class="bmk" data-open-bmk="' + i + '"><span>🔖</span><span>' + esc(b.label) + '<small>' + esc(b.sub) + '</small></span><span class="del" data-del-bmk="' + i + '" role="button" aria-label="বুকমার্ক সরান">✕</span></button>';
-  }).join('') : '<p class="sub" style="margin:0">এখনো কোনো বুকমার্ক নেই। কুরআন পড়ার সময় "বুকমার্ক করুন" বা হাদিস কার্ডের "বুকমার্ক" বোতামে চাপ দিলে এখানে জমা হবে।</p>';
-  box.innerHTML = '<div class="card" style="text-align:center; padding:24px 20px">' +
-    '<div class="avatar">' + esc(initial) + '</div>' +
-    '<h3 style="margin:10px 0 2px; font-size:22px">' + esc(PROFILE.name) + '</h3>' +
-    '<p class="sub" style="margin:0">' + (PROFILE.google ? ('Google অ্যাকাউন্ট' + (PROFILE.email ? ' • ' + esc(PROFILE.email) : '')) : 'সেশন প্রোফাইল • গেস্ট অ্যাকাউন্ট') + '</p>' +
-    (PROFILE.google ? '' : '<div style="max-width:400px; margin:14px auto 0"><button class="gbtn" id="googleBtn2">' + GOOGLE_G + 'Google দিয়ে সাইন ইন</button><p id="googleNote2" class="sub" style="margin:10px 0 0; display:none"></p></div>') +
-    '<div class="pstats">' +
-    '<div class="st"><b>' + bn(trackerDoneCount()) + '/৫</b><span>আজকের নামাজ</span></div>' +
-    '<div class="st"><b>' + bn(tasbih.total) + '</b><span>মোট যিকির</span></div>' +
-    '<div class="st"><b>' + bn(BOOKMARKS.length) + '</b><span>বুকমার্ক</span></div>' +
-    '</div>' +
-    '<p class="sub" style="margin:12px 0 0">অ্যাপ সংস্করণ: v2.17</p>' +
-      '<p style="margin:10px 0 0"><a class="btn" href="https://github.com/Kholil-143/Muslim-Path/releases/latest/download/Muslim-Path.apk">⬇ সর্বশেষ আপডেট ডাউনলোড / ইনস্টল করুন</a></p>' +
-    '<p style="margin:16px 0 0"><button class="btn ghost" id="pfOut">প্রোফাইল থেকে বের হয়ে যান</button></p>' +
-    '</div>' +
-    '<div class="card" style="margin-top:12px"><h3 style="margin-top:0">আমার বুকমার্ক</h3>' + bmkHtml + '</div>';
-  var gb2 = $('googleBtn2'); if (gb2) gb2.addEventListener('click', googleSignInFn);
-  $('pfOut').addEventListener('click', function(){
-      if (PROFILE && PROFILE.google && window.Capacitor){
-        faCall('signOut').catch(function(){});
-      }
-      try { localStorage.removeItem('di_profile'); } catch(e){}
-    PROFILE = null;
-    renderProfileChip(); renderProfile();
-    toast('আপনি গেস্ট হিসেবে আছেন');
-  });
-}
-$('profileChip').addEventListener('click', function(){ showView('profile'); renderProfile(); });
-(function profileTile(){
-  var grid = $('featureGridSeba');
-  var b = document.createElement('button');
-  b.className = 'htile';
-  b.innerHTML = '<span class="hic c8"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5c1.4-3.4 4.2-5 7.5-5s6.1 1.6 7.5 5"/></svg></span><span>আমার প্রোফাইল</span>';
-  b.addEventListener('click', function(){ showView('profile'); renderProfile(); });
-  grid.appendChild(b);
-})();
-renderProfileChip();
-renderProfile();
-if (window.Capacitor){
-  faCall('getCurrentUser').then(function(r){
-    var u = r && r.user;
-    if (u){
-      PROFILE = { name: u.displayName || (u.email ? u.email.split('@')[0] : 'ব্যবহারকারী'), email: u.email || '', photo: u.photoUrl || '', google: true };
-      try { localStorage.setItem('di_profile', JSON.stringify(PROFILE)); } catch(e){}
-      renderProfileChip(); renderProfile();
-    }
-  }).catch(function(){});
-}
-</script>
-<script>
-/* ================= Per-ayah tafsir ================= */
-var TAFSIR_AYAH = {
- '1:1': 'প্রতিটি ভালো কাজ আল্লাহর নামে শুরু করাই সুন্নাত। "রহমান" অর্থ যাঁর দয়া দুনিয়ায় সব সৃষ্টিকে বেষ্টন করে আছে; "রহিম" অর্থ যিনি আখিরাতে বিশেষভাবে মুমিনদের প্রতি দয়ালু। (তাফসিরে ইবনে কাসির)',
- '1:2': 'সব ধরনের প্রশংসা ও কৃতজ্ঞতা একমাত্র আল্লাহরই প্রাপ্য, কারণ তিনি সমগ্র বিশ্বজগতের সৃষ্টিকর্তা, মালিক ও প্রতিপালক — ধীরে ধীরে সবকিছুকে পূর্ণতার দিকে নিয়ে যান।',
- '1:3': 'আল্লাহর রহমতের বিশালতা আবার স্মরণ করানো হয়েছে, যাতে বান্দা ভয়ের পাশাপাশি আশা নিয়েও তাঁর দিকে এগিয়ে যায়।',
- '1:4': 'প্রতিদান দিবস (কিয়ামত) এর একচ্ছত্র মালিক আল্লাহ; সেদিন কারো কোনো কর্তৃত্ব থাকবে না। এই আয়াত মানুষকে জবাবদিহিতার ভয়ে সৎকর্মে উদ্বুদ্ধ করে।',
- '1:5': 'তাওহিদের সারকথা: ইবাদত (নামাজ, রোজা, দোয়া, মানত ইত্যাদি) শুধু আল্লাহর জন্যই এবং সাহায্যও চাইতে হবে শুধু তাঁর কাছেই। প্রথমে ইবাদতের কথা, পরে সাহায্য চাওয়ার কথা — কারণ ইবাদতই উদ্দেশ্য, সাহায্য তার উপায়।',
- '1:6': 'সিরাতুল মুস্তাকিম অর্থাৎ সরল পথ — যা আল্লাহর সন্তুষ্টি ও জান্নাত পর্যন্ত পৌঁছে দেয়। এটাই সূরা ফাতিহার প্রধান দোয়া; তাই এই সূরা ছাড়া নামাজ হয় না।',
- '1:7': 'নেয়ামতপ্রাপ্তরা হলেন নবী, সিদ্দিক, শহীদ ও সালেহিন (সূরা আন-নিসা: ৬৯)। "মাগদুব" অর্থ যারা জেনে-বুঝে সত্য প্রত্যাখ্যান করে আল্লাহর গজবের পাত্র হয়েছে; "দাল্লিন" অর্থ যারা অজ্ঞতায় পথভ্রষ্ট হয়েছে। মুসলিম প্রতিদিন নামাজে এই দুই পথ থেকে বাঁচার দোয়া করে।',
- '2:45': 'সবর (ধৈর্য) ও নামাজ — এই দুটিকে আল্লাহ সাহায্য লাভের মাধ্যম বানিয়েছেন। নামাজে মনোযোগী (খাশিয়িন) ছাড়া অন্যদের কাছে এটি ভারী মনে হয়।',
- '2:152': 'আল্লাহকে স্মরণ (যিকির, নামাজ, কুরআন তিলাওয়াত) করলে আল্লাহও বান্দাকে স্মরণ করেন — অর্থাৎ রহমত ও মাগফিরাত দান করেন। নেয়ামতের কৃতজ্ঞতা করা ওয়াজিব; অকৃতজ্ঞতা গুনাহ।',
- '2:153': 'বিপদে ধৈর্য ও নামাজের মাধ্যমে সাহায্য চাওয়ার নির্দেশ। "আল্লাহ ধৈর্যশীলদের সঙ্গে আছেন" — অর্থাৎ তাঁর সাহায্য, তাওফিক ও রহমত তাদের সঙ্গে থাকে।',
- '2:155': 'ভয়, ক্ষুধা, জান-মাল ও ফল-ফসলের ক্ষতি দিয়ে পরীক্ষা অবশ্যম্ভাবী — এটি মুমিনের জীবনের নিয়ম। সুসংবাদ কেবল ধৈর্যশীলদের জন্য।',
- '2:156': 'ধৈর্যশীলদের পরিচয়: বিপদে তারা বলে "ইন্না লিল্লাহি ওয়া ইন্না ইলাইহি রাজিউন" — আমরা আল্লাহরই এবং তাঁর দিকেই ফিরে যাব। এই বাক্যে তাওহিদ, আত্মসমর্পণ ও আখিরাতের বিশ্বাস নিহিত।',
- '2:185': 'রমজান মাসেই কুরআন নাজিল শুরু হয়; এই মাসে রোজা ফরজ। অসুস্থ ও মুসাফিরের জন্য ছাড় রয়েছে — পরে কাজা করতে হবে। "আল্লাহ তোমাদের জন্য সহজতা চান, কঠিনতা চান না" — শরিয়তের একটি মৌলিক নীতি।',
- '2:186': 'আল্লাহ বান্দার অতি নিকটে; দোয়াকারীর দোয়া তিনি কবুল করেন। শর্ত হলো তাঁর ডাকে সাড়া দেওয়া ও ঈমান রাখা — তাহলেই সঠিক পথ পাওয়া যায়।',
- '2:201': 'এটি সবচেয়ে সর্বাঙ্গীণ দোয়া: দুনিয়ার কল্যাণ (সুস্থতা, হালাল রিজিক, নেক আমল), আখিরাতের কল্যাণ (জান্নাত) এবং জাহান্নাম থেকে মুক্তি — তিনটিই একসঙ্গে চাওয়া হয়েছে। রাসূলুল্লাহ ﷺ এই দোয়া বেশি পড়তেন।',
- '2:255': 'আয়াতুল কুরসি — কুরআনের শ্রেষ্ঠ আয়াতগুলোর একটি। এতে আল্লাহর একত্ব, চিরঞ্জীবতা, সবকিছুর ধারণ-ক্ষমতা, ঘুম-তন্দ্রা থেকে পবিত্রতা, আসমান-জমিনের মালিকানা, তাঁর অনুমতি ছাড়া সুপারিশের অসম্ভবতা, সর্বব্যাপী জ্ঞান এবং কুরসির (তাঁর জ্ঞান ও কর্তৃত্বের) বিশালতা বর্ণিত হয়েছে। (তাফসিরে ইবনে কাসির)',
- '2:256': 'ধর্মে কোনো জবরদস্তি নেই — হেদায়েত ও গোমরাহি স্পষ্ট হয়ে যাওয়ার পর ঈমান স্বেচ্ছায় গ্রহণের বিষয়। তাগুত (আল্লাহ ছাড়া যার ইবাদত করা হয়) কে অস্বীকার করে আল্লাহর প্রতি ঈমান আনলেই মজবুত হাতল ধরা হয়।',
- '2:257': 'আল্লাহ মুমিনদের অভিভাবক (ওলি); তিনি তাদের কুফর ও অজ্ঞতার অন্ধকার থেকে ঈমানের আলোতে বের করে আনেন। বিপরীতে কাফেরদের অভিভাবক তাগুত, যারা তাদের আলো থেকে অন্ধকারে নিয়ে যায়।',
- '2:285': 'রাসূল ﷺ ও মুমিনগণ আল্লাহ, ফেরেশতা, কিতাবসমূহ ও রাসূলগণের প্রতি ঈমান এনেছেন — রাসূলদের মধ্যে কোনো পার্থক্য (কাউকে মানা, কাউকে অস্বীকার) করেন না। "শুনলাম ও আনুগত্য করলাম" — এটাই মুমিনের জবাব।',
- '2:286': 'আল্লাহ কাউকে তার সাধ্যের বাইরে দায়িত্ব দেন না। প্রত্যেকে নিজের অর্জিত পুণ্য ও পাপের ফল পাবে। আয়াতের শেষাংশের দোয়াগুলো আল্লাহ নিজে শিখিয়ে দিয়েছেন; হাদিসে এসেছে, রাতে এই দুই আয়াত (২৮৫–২৮৬) পড়লে তা যথেষ্ট হয়। (সহিহ বুখারি: ৫০০৯)',
- '3:26': 'সব রাজত্ব ও ক্ষমতার প্রকৃত মালিক আল্লাহ; তিনি যাকে চান ক্ষমতা ও সম্মান দেন, যার থেকে চান ছিনিয়ে নেন। দুনিয়ার উত্থান-পতন তাঁর ইচ্ছার অধীন — তাই ক্ষমতাবানদের ভয়ে নয়, আল্লাহর ভয়েই চলতে হয়।',
- '3:139': 'উহুদের পরাজয়ের পর মুসলিমদের সান্ত্বনা: দুর্বল হয়ো না, দুঃখ করো না — সত্যিকারের মুমিন হলে চূড়ান্ত বিজয় তোমাদেরই। পরাজয় সাময়িক পরীক্ষা মাত্র।',
- '13:28': 'অন্তরের প্রকৃত প্রশান্তি (তুমানিনা) পাওয়া যায় আল্লাহর যিকিরে — দুনিয়ার সম্পদ ও ভোগে নয়। যিকির অর্থ নামাজ, কুরআন তিলাওয়াত ও আল্লাহর স্মরণের সব রূপ।',
- '14:7': 'আল্লাহর ঘোষণা: নেয়ামতের কৃতজ্ঞতা (শুকর) করলে তিনি নেয়ামত আরও বাড়িয়ে দেন; আর অকৃতজ্ঞতা করলে তাঁর শাস্তি কঠিন। শুকর হয় অন্তরের স্বীকৃতি, মুখের প্রশংসা ও নেয়ামতকে সৎকাজে ব্যবহারের মাধ্যমে।',
- '36:58': 'জান্নাতবাসীদের জন্য সবচেয়ে বড় সম্মান: পরম দয়ালু রবের পক্ষ থেকে সরাসরি "সালাম" — শান্তির অভিবাদন। সব নেয়ামতের ঊর্ধ্বে এই মর্যাদা।',
- '40:60': 'আল্লাহ নিজে দোয়ার আহ্বান করে কবুলের প্রতিশ্রুতি দিয়েছেন। হাদিসে এসেছে, "দোয়াই ইবাদত" (তিরমিযি: ২৯৬৯)। যারা অহংকারে ইবাদত থেকে মুখ ফিরিয়ে নেয়, তাদের জন্য অপমানজনক জাহান্নামের হুশিয়ারি রয়েছে।',
- '55:13': 'সূরা আর-রাহমানে এই আয়াতটি ৩১ বার এসেছে। প্রতিটি নেয়ামত বর্ণনার পর মানুষ ও জিন — উভয় সম্প্রদায়কে প্রশ্ন করা হচ্ছে: এত নেয়ামতের পরও কোনটি অস্বীকার করবে? এটি কৃতজ্ঞতার দিকে বারবার আহ্বান।',
- '65:3': 'যে আল্লাহর ওপর তাওয়াক্কুল (ভরসা) করে, আল্লাহ তার জন্য যথেষ্ট হন এবং এমন উৎস থেকে রিজিক দেন যা সে কল্পনাও করেনি। তাওয়াক্কুল অর্থ চেষ্টা করে ফলাফল আল্লাহর হাতে ছেড়ে দেওয়া।',
- '67:1': 'সার্বভৌম কর্তৃত্ব একমাত্র আল্লাহর হাতে; তিনি সবকিছুর ওপর ক্ষমতাবান। "তাবারাকা" অর্থ তাঁর কল্যাণ ও মাহাত্ম্য অপরিসীম।',
- '67:2': 'মৃত্যু ও জীবন সৃষ্টির উদ্দেশ্য পরীক্ষা: কে সবচেয়ে উত্তম আমল করে — আমলের পরিমাণ নয়, মান (ইখলাস ও সুন্নাহ অনুযায়ী হওয়া) ই এখানে বিবেচ্য।',
- '94:5': 'নিশ্চয় কষ্টের সঙ্গেই স্বস্তি রয়েছে — কষ্টের পরে নয়, সঙ্গে। অর্থাৎ প্রতিটি সংকটের ভেতরেই মুক্তির বীজ থাকে; একটি কষ্ট দুটি স্বস্তিকে হারাতে পারে না।',
- '94:6': 'আগের আয়াতের বক্তব্য জোর দিয়ে পুনরাবৃত্তি করা হয়েছে, যাতে রাসূল ﷺ ও প্রতিটি মুমিন নিশ্চিত থাকে: কষ্ট স্থায়ী নয়, স্বস্তি অবশ্যম্ভাবী।',
- '97:1': 'লাইলাতুল কদরে পুরো কুরআন লাওহে মাহফুজ থেকে প্রথম আসমানে নাজিল হয়; এরপর ২৩ বছরে ধাপে ধাপে রাসূল ﷺ-এর ওপর অবতীর্ণ হয়। (তাফসিরে ইবনে কাসির)',
- '97:3': 'এই এক রাতের ইবাদত হাজার মাস (৮৩ বছর ৪ মাস) এর ইবাদতের চেয়ে উত্তম — এমন ব্যক্তির জন্যও সম্ভব যার পুরো জীবনই ৮৩ বছর নয়। এটি উম্মতে মুহাম্মদির জন্য বিশেষ অনুগ্রহ।',
- '97:4': 'এই রাতে ফেরেশতাগণ ও "রূহ" (জিবরাইল আ.) আল্লাহর হুকুমে প্রতিটি নির্ধারিত বিষয় নিয়ে পৃথিবীতে অবতরণ করেন — তাই রাতটি বরকতময়।',
- '97:5': 'ফজর উদয় পর্যন্ত পুরো রাতটাই শান্তি ও কল্যাণে ভরা; শয়তানের অনিষ্ট থেকে এটি সুরক্ষিত রাত।',
- '103:1': 'আল্লাহ সময়ের শপথ করেছেন — সময় মানুষের জীবনের মূলধন; তা কাজে লাগানো বা নষ্ট করার ওপরই সাফল্য-ব্যর্থতা নির্ভর করে।',
- '103:2': 'সমগ্র মানবজাতি ক্ষতির মধ্যে রয়েছে — কারণ জীবন নামের পুঁজি প্রতিদিন কমছে, অথচ অধিকাংশ মানুষ তা আখিরাতের কাজে লাগায় না।',
- '103:3': 'ক্ষতি থেকে বাঁচার চার শর্ত: (১) ঈমান, (২) নেক আমল, (৩) পরস্পরকে সত্যের উপদেশ (দাওয়াত ও সৎকাজের আদেশ), (৪) পরস্পরকে ধৈর্যের উপদেশ। শুধু নিজে ভালো হওয়া যথেষ্ট নয় — অন্যকে ভালোর দিকে ডাকাও শর্ত।',
- '108:1': 'কাউসার অর্থ প্রচুর কল্যাণ; বিশেষভাবে জান্নাতে রাসূলুল্লাহ ﷺ-কে দেওয়া হাউজ/নহরের নাম কাউসার। মক্কার কাফেররা তাঁকে "আবতার" (নির্বংশ) বলায় সান্ত্বনা হিসেবে এই সূরা নাজিল হয়।',
- '108:2': 'নেয়ামতের শুকরিয়া: নামাজ শুধু আল্লাহর জন্য এবং কুরবানিও শুধু তাঁর নামে — ইবাদতে কাউকে শরিক করা যাবে না।',
- '108:3': 'প্রকৃত নির্বংশ তারাই যারা রাসূল ﷺ-এর শত্রু; আর তাঁর নাম ও বাণী যুগে যুগে জীবিত থাকবে — ইতিহাসই এর প্রমাণ।',
- '109:6': 'তাওহিদে কোনো আপস নেই: কাফেররা প্রস্তাব দিয়েছিল এক বছর একে অপরের উপাস্যের ইবাদত করার — তার জবাবে এই স্পষ্ট ঘোষণা। নিজের ধর্মে অবিচল থাকা ও অন্যের ধর্মে হস্তক্ষেপ না করা — দুটোই এখানে শিক্ষা।',
- '112:1': 'আল্লাহ এক ও অদ্বিতীয় — তাঁর সত্তা, গুণাবলি ও ইবাদতে কোনো শরিক নেই। এই সূরা তাওহিদের বিশুদ্ধ ঘোষণা।',
- '112:2': '"সামাদ" অর্থ: তিনি সবার প্রয়োজন পূরণকারী, সবাই তাঁর মুখাপেক্ষী; অথচ তিনি কারো মুখাপেক্ষী নন, তাঁর কোনো অভাব নেই।',
- '112:3': 'আল্লাহ কাউকে জন্ম দেননি এবং তাঁকেও জন্ম দেওয়া হয়নি — সন্তান ও পিতা-মাতার সম্পর্ক থেকে তিনি পবিত্র। এটি খ্রিস্টান ও মুশরিকদের ভ্রান্ত ধারণার জবাব।',
- '112:4': 'তাঁর সমতুল্য, সমকক্ষ বা সদৃশ কেউ নেই — কোনো দিক থেকেই সৃষ্টির সঙ্গে তাঁর তুলনা চলে না।',
- '113:1': 'ভোরের রবের কাছে আশ্রয় — যিনি অন্ধকার বিদীর্ণ করে আলো আনেন, তিনিই সব অনিষ্ট দূর করতে সক্ষম। এই সূরা ও সূরা আন-নাস মিলে "মুআওয়িযাতাইন"; সকাল-সন্ধ্যায় পড়া সুন্নাত।',
- '114:1': 'মানুষের রব, বাদশাহ ও ইলাহ — এই তিনটি গুণ উল্লেখ করে আশ্রয় চাওয়া হয়েছে গোপনে কুমন্ত্রণাদাতা শয়তানের থেকে, যে মানুষের বুকে ওয়াসওয়াসা দিয়ে পিছিয়ে যায়। কুরআনের শেষ সূরাটি সুরক্ষার দোয়া দিয়ে শেষ হয়েছে।'
-};
-$('readerBody').addEventListener('click', function(e){
-  var b = e.target.closest('[data-tafsir]'); if (!b) return;
-  var box = $('tfs-' + b.getAttribute('data-tafsir'));
-  if (!box) return;
-  box.classList.toggle('hidden');
-  b.textContent = box.classList.contains('hidden') ? 'তাফসির দেখুন' : 'তাফসির লুকান';
-});
-</script>
-<script>
-/* ================= New sections: tilawat, kitab, articles, quran shikkha, taleem, amal, roza, sunnah, mosque, bayan, fitra, hijri calendar, dua bookmarks, last read ================= */
+) ও সায়ি করুন।</li>' +
+ '<li><b>১১–১৩ জিলহজ (আইয়ামে তাশরিক):</b> প্রতিদিন যোহরের পর তিনটি জমরায় (ছোট, মাঝারি, বড়) ৭টি করে মোট ২১টি কঙ্কর মারুন। মিনায় রাত যাপন করুন।</li>' +
+ '<li><b>বিদায়ী তাওয়াফ:</b> মক্কা ছাড়ার আগে তাওয়াফে ওয়াদা (বিদায়ী তাওয়াফ) করুন — এটি ওয়াজিব।</li>' +
+ '</ol><p>হজ তিন প্রকার: তামাত্তু, কিরান ও ইফরাদ। বাংলাদেশ থেকে সাধারণত তামাত্তু হজ করা হয় — প্রথমে উমরাহ করে ইহরাম খুলে ফেলা হয়, তারপর ৮ জিলহজ নতুন ইহরামে হজ করা হয়।</p></div></details>' +
+ '<details class="acc"><summary>মদিনা জিয়ারত (পূর্ণাঙ্গ)</summary><div class="body">' +
+ '<p><b>মসজিদে নববি:</b> এখানে এক রাকাত নামাজ অন্য মসজিদের হাজার রাকাতের সমান সওয়াব (মসজিদে হারাম ও মসজিদে আকসা ছাড়া) — সহিহ বুখারি: ১১৯০। সম্ভব হলে পাঁচ ওয়াক্তই জামাতে পড়ুন।</p>' +
+ '<p><b>রওজা শরীফ ও রিয়াজুল জান্নাহ:</b> রাসূলুল্লাহ ﷺ বলেছেন, "আমার ঘর ও আমার মিম্বরের মাঝখানের জায়গাটি জান্নাতের বাগানসমূহের একটি বাগান" (সহিহ বুখারি: ১১৯৬; সহিহ মুসলিম: ১৩৯১)। ধাক্কাধাক্কি না করে সুযোগ পেলে সেখানে ২ রাকাত নামাজ পড়ুন। রওজা মোবারকের সামনে দাঁড়িয়ে আস্তে ও আদবের সঙ্গে সালাম পেশ করুন — আওয়াজ উঁচু করা যাবে না (সূরা আল-হুজুরাত: ২):</p>' +
+ '<p class="ar">السَّلَامُ عَلَيْكَ يَا رَسُولَ اللَّهِ، السَّلَامُ عَلَيْكَ يَا أَبَا بَكْرٍ، السَّلَامُ عَلَيْكَ يَا عُمَرَ</p>' +
+ '<p><b>জান্নাতুল বাকি:</b> বহু সাহাবি ও আহলে বাইতের কবরস্থান। কবর জিয়ারতের সালাম: <span class="ar" style="display:block">السَّلَامُ عَلَيْكُمْ دَارَ قَوْمٍ مُؤْمِنِينَ، وَإِنَّا إِنْ شَاءَ اللَّهُ بِكُمْ لَاحِقُونَ</span> (সহিহ মুসলিম: ৯৭৪)।</p>' +
+ '<p><b>উহুদ:</b> উহুদের শহীদদের (হযরত হামজা রা. সহ) কবর জিয়ারত করে সালাম দিন। রাসূলুল্লাহ ﷺ বলেছেন, "উহুদ এমন এক পাহাড়, যে আমাদের ভালোবাসে এবং আমরাও তাকে ভালোবাসি" (সহিহ মুসলিম: ১৩৯৩)।</p>' +
+ '<p><b>মসজিদে কুবা:</b> ইসলামের প্রথম মসজিদ। ঘর থেকে ওযু করে এসে এখানে ২ রাকাত নামাজ পড়লে একটি পূর্ণ উমরাহর সওয়াব পাওয়া যায় (সুনানে তিরমিযি: ৩২৪)। রাসূলুল্লাহ ﷺ প্রতি শনিবার মসজিদে কুবায় যেতেন (সহিহ বুখারি: ১১৯৩)।</p>' +
+ '<p><b>খন্দক:</b> খন্দকের যুদ্ধের (৫ হিজরি) স্মৃতিবিজড়িত এলাকা — এখানে কয়েকটি ছোট মসজিদ (সাবআ মাসাজিদ) রয়েছে।</p>' +
+ '<p><b>মসজিদে কিবলাতাইন:</b> যে মসজিদে নামাজের মধ্যেই কিবলা বাইতুল মুকাদ্দাস থেকে কাবা শরিফের দিকে পরিবর্তনের নির্দেশ আসে (সূরা আল-বাকারা: ১৪৪) — তাই এর নাম "দুই কিবলার মসজিদ"।</p></div></details>' +
+ '<details class="acc"><summary>হজের ফরজ, ওয়াজিব ও সুন্নাত</summary><div class="body">' +
+ '<p><b>ফরজ (৩টি) — যেকোনো একটি ছুটলে হজ হবে না:</b></p><ol class="steps">' +
+ '<li><b>ইহরাম:</b> মিকাত থেকে নিয়তসহ ইহরাম বাঁধা।</li>' +
+ '<li><b>উকুফে আরাফা:</b> ৯ জিলহজ দুপুরের পর থেকে ১০ জিলহজ সুবহে সাদিকের আগ পর্যন্ত আরাফাতের সীমানার ভেতরে যেকোনো মুহূর্ত অবস্থান করা।</li>' +
+ '<li><b>তাওয়াফে জিয়ারত:</b> ১০ জিলহজের পর তাওয়াফ করা (হানাফি মতে ১২ জিলহজ সূর্যাস্তের মধ্যে করা ওয়াজিব — এরপর দেরি হলে দম দিতে হয়)।</li></ol>' +
+ '<p><b>ওয়াজিবসমূহ (হানাফি মাযহাব) — ছুটলে দম (কুরবানি) দিতে হয়, তবে হজ হয়ে যায়:</b> মুজদালিফায় উকুফ (ফজরের পর কিছুক্ষণ অবস্থান), সায়ি করা, নির্ধারিত দিনে ও ক্রম অনুযায়ী জমরায় রমি, হলক/কসর, তামাত্তু ও কিরান হজে কুরবানি (হাদি), তাওয়াফে ওয়াদা (বিদায়ী তাওয়াফ — মক্কার বাইরে থেকে আসা হাজির জন্য), তাকবিরে তাশরিক (৯ জিলহজ ফজর থেকে ১৩ জিলহজ আসর পর্যন্ত প্রত্যেক ফরজ নামাজের পর একবার)।</p>' +
+ '<p><b>সুন্নাতসমূহ:</b> ইহরামের আগে গোসল করা, বেশি বেশি তালবিয়া পড়া, তাওয়াফের প্রথম ৩ চক্করে রমল ও ইজতিবা (পুরুষদের জন্য), ৮ জিলহজ মিনায় রাত যাপন, আরাফার দিন গোসল ও খুতবা শোনা, মুজদালিফা থেকে কঙ্কর সংগ্রহ করা, তাশরিকের রাতগুলো মিনায় যাপন করা।</p></div></details>' +
+ '<details class="acc"><summary>ইহরাম পূর্ণাঙ্গ: মিকাত, নিয়ম ও নিষিদ্ধ কাজ</summary><div class="body">' +
+ '<p><b>পাঁচটি মিকাত</b> (সহিহ বুখারি: ১৫২৪; সহিহ মুসলিম: ১১৮১):</p><ol class="steps">' +
+ '<li><b>যুল-হুলাইফা</b> — মদিনা ও সে দিক থেকে আসা হাজিদের জন্য।</li>' +
+ '<li><b>জুহফা</b> — শাম ও মিসরের দিক থেকে আসা হাজিদের জন্য।</li>' +
+ '<li><b>কারনুল মানাজিল</b> — নজদের দিক থেকে আসা হাজিদের জন্য।</li>' +
+ '<li><b>ইয়ালামলাম</b> — ইয়েমেনের দিক থেকে আসা হাজিদের জন্য। বাংলাদেশ ও ভারত উপমহাদেশের হাজিরা আকাশ বা সমুদ্রপথে সাধারণত এই মিকাত অতিক্রম করেন — তাই জেদ্দা পৌঁছার আগেই বিমানে ইহরাম বাঁধতে হয়।</li>' +
+ '<li><b>যাতে ইরক</b> — ইরাকের দিক থেকে আসা হাজিদের জন্য।</li></ol>' +
+ '<p>মিকাতের ভেতরে বসবাসকারীদের মিকাত নিজের বাসস্থান; মক্কাবাসীর হজের মিকাত মক্কা নিজেই।</p>' +
+ '<p><b>ইহরাম বাঁধার নিয়ম:</b> (১) আগে নখ ও অতিরিক্ত লোম পরিষ্কার করে গোসল বা ওযু করুন; (২) পুরুষরা সেলাইবিহীন দুটি সাদা কাপড় (ইজার ও রিদা) পরুন, মাথা খোলা রাখুন ও সেলাইবিহীন স্যান্ডেল পরুন; মহিলারা স্বাভাবিক পোশাকই পরবেন, তবে মুখ খোলা রাখবেন; (৩) পুরুষরা শরীরে সুগন্ধি লাগাতে পারেন (কাপড়ে নয়); (৪) ২ রাকাত নামাজ পড়ুন; (৫) নিয়ত করুন: <span class="ar" style="display:block">اللَّهُمَّ إِنِّي أُرِيدُ الْحَجَّ فَيَسِّرْهُ لِي وَتَقَبَّلْهُ مِنِّي</span> অসুস্থতা বা বাধার আশঙ্কা থাকলে শর্ত জুড়ে দেওয়া যায়: <span class="ar" style="display:block">إِنْ حَبَسَنِي حَابِسٌ فَمَحِلِّي حَيْثُ حَبَسْتَنِي</span> (সহিহ বুখারি: ৫০৮৯; সহিহ মুসলিম: ১২০৭); (৬) তালবিয়া পড়ুন — নিয়তের সঙ্গে তালবিয়া পড়লেই ইহরাম কার্যকর হয়ে যায়।</p>' +
+ '<p><b>তালবিয়া:</b> <span class="ar" style="display:block">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ، لَا شَرِيكَ لَكَ</span> অর্থ: "আমি হাজির, হে আল্লাহ, আমি হাজির; আমি হাজির, আপনার কোনো শরিক নেই, আমি হাজির। নিশ্চয় সব প্রশংসা ও নিয়ামত আপনারই এবং রাজত্বও আপনার; আপনার কোনো শরিক নেই।" (সহিহ বুখারি: ১৫৪৯) পুরুষরা উচ্চস্বরে, মহিলারা নিচু স্বরে পড়বেন।</p>' +
+ '<p><b>ইহরাম অবস্থায় নিষিদ্ধ কাজ:</b> পুরুষদের সেলাই করা পোশাক পরা ও মাথা ঢাকা; মহিলাদের মুখ ঢাকা (নিকাব) ও গ্লাভস পরা; সুগন্ধি ব্যবহার করা; চুল বা নখ কাটা/উপড়ানো; স্থলের প্রাণী শিকার করা; বিবাহ করা, করানো বা প্রস্তাব দেওয়া; স্ত্রী-সহবাস ও কামোদ্দীপক কথা-কাজ; ঝগড়া-বিবাদ, গালি ও পাপাচার (সূরা আল-বাকারা: ১৯৭)। অনিচ্ছায় বা ভুলে কিছু হয়ে গেলে তার বিধান আলেমের কাছে জেনে নিন।</p></div></details>' +
+ '<details class="acc"><summary>ধাপভিত্তিক দোয়া সংকলন</summary><div class="body">' +
+ '<p><b>মসজিদে হারামে প্রবেশের দোয়া:</b> <span class="ar" style="display:block">اللَّهُمَّ افْتَحْ لِي أَبْوَابَ رَحْمَتِكَ</span> (সহিহ মুসলিম: ৭১৩)। কাবা শরিফ প্রথম দেখে হাত উঠিয়ে মন থেকে দোয়া করুন — এই সময়ের দোয়া কবুল হয় বলে বর্ণিত আছে; নির্দিষ্ট কোনো পাঠ নেই।</p>' +
+ '<p><b>হাজরে আসওয়াদ:</b> ভিড় কম থাকলে চুমু দিন; না হলে হাত দিয়ে ছুঁয়ে হাতে চুমু দিন; তাও সম্ভব না হলে দূর থেকে ইশারা করে বলুন: <span class="ar" style="display:block">بِسْمِ اللَّهِ وَاللَّهُ أَكْبَرُ</span> (সুনানে তিরমিযি: ৮৫৬)। ভিড়ে ধাক্কাধাক্কি করে অন্যকে কষ্ট দেওয়া যাবে না — ইশারাই যথেষ্ট।</p>' +
+ '<p><b>রুকনে ইয়ামানি:</b> সম্ভব হলে ডান হাত দিয়ে স্পর্শ করুন (এতে চুমু নেই)। রুকনে ইয়ামানি থেকে হাজরে আসওয়াদ পর্যন্ত পড়ুন: <span class="ar" style="display:block">رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ</span> (সূরা আল-বাকারা: ২০১)।</p>' +
+ '<p><b>মাকামে ইবরাহিম:</b> "তোমরা মাকামে ইবরাহিমকে নামাজের জায়গা হিসেবে গ্রহণ করো" (সূরা আল-বাকারা: ১২৫)। তাওয়াফের পর এখানে ২ রাকাত নামাজ পড়ুন — প্রথম রাকাতে সূরা আল-কাফিরুন ও দ্বিতীয় রাকাতে সূরা আল-ইখলাস (সহিহ মুসলিম: ১২১৮)। জায়গা না পেলে মসজিদের যেকোনো জায়গায় পড়লেই চলবে।</p>' +
+ '<p><b>জমজম পানের দোয়া:</b> কিবলামুখী হয়ে বিসমিল্লাহ বলে তৃপ্তি নিয়ে পান করুন এবং পড়ুন: <span class="ar" style="display:block">اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا وَاسِعًا، وَشِفَاءً مِنْ كُلِّ دَاءٍ</span> অর্থ: "হে আল্লাহ, আমি আপনার কাছে উপকারী জ্ঞান, প্রশস্ত রিজিক এবং সব রোগ থেকে আরোগ্য চাই।" (সুনানে ইবনে মাজাহ: ৩০৬২)</p>' +
+ '<p><b>সায়ির দোয়া:</b> সাফা পাহাড়ে উঠে প্রথমে পড়ুন: <span class="ar" style="display:block">إِنَّ الصَّفَا وَالْمَرْوَةَ مِنْ شَعَائِرِ اللَّهِ</span> (সূরা আল-বাকারা: ১৫৮)। এরপর কিবলামুখী হয়ে তিনবার পড়ুন: <span class="ar" style="display:block">لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ، لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ، أَنْجَزَ وَعْدَهُ، وَنَصَرَ عَبْدَهُ، وَهَزَمَ الْأَحْزَابَ وَحْدَهُ</span> এবং মাঝে মাঝে নিজের ভাষায় দোয়া করুন (সহিহ মুসলিম: ১২১৮)। সবুজ চিহ্নিত অংশে পুরুষরা দ্রুত হাঁটবেন; মহিলারা স্বাভাবিক গতিতে হাঁটবেন।</p>' +
+ '<p><b>আরাফার দোয়া:</b> হজের ধাপে দেওয়া শ্রেষ্ঠ দোয়াটি (লা ইলাহা ইল্লাল্লাহু ওয়াহদাহু…) বেশি বেশি পড়ুন; সঙ্গে "রব্বানা আতিনা", ইস্তিগফার ও নিজের ভাষায় প্রাণ খুলে দোয়া করুন — আরাফার দিনের দোয়াই সর্বশ্রেষ্ঠ দোয়া (সুনানে তিরমিযি: ৩৫৮৫)।</p>' +
+ '<p><b>মুলতাজাম:</b> হাজরে আসওয়াদ ও কাবার দরজার মাঝের অংশ। সুযোগ পেলে সেখানে দাঁড়িয়ে মন থেকে দোয়া করুন — নির্দিষ্ট কোনো দোয়া নেই।</p>' +
+ '<p><b>রমির দোয়া:</b> প্রতিটি কঙ্কর মারার সময় বলুন: <span class="ar" style="display:block">بِسْمِ اللَّهِ وَاللَّهُ أَكْبَرُ</span> রাসূলুল্লাহ ﷺ প্রতিটি কঙ্করের সঙ্গে তাকবির বলতেন (সহিহ বুখারি: ১৭৫০)।</p>' +
+ '<p><b>কুরবানির দোয়া:</b> পশু কিবলামুখী করে শুইয়ে পড়ুন: <span class="ar" style="display:block">إِنِّي وَجَّهْتُ وَجْهِيَ لِلَّذِي فَطَرَ السَّمَاوَاتِ وَالْأَرْضَ حَنِيفًا وَمَا أَنَا مِنَ الْمُشْرِكِينَ، إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ</span> (সুনানে আবু দাউদ: ২৭৯৫) এবং জবাইয়ের সময় বলুন: <span class="ar" style="display:block">بِسْمِ اللَّهِ وَاللَّهُ أَكْبَرُ</span> (সহিহ বুখারি: ৫৫৬৫; সহিহ মুসলিম: ১৯৬৬)।</p></div></details>' +
+ '<details class="acc"><summary>মহিলাদের হজের বিশেষ নিয়ম</summary><div class="body"><ol class="steps">' +
+ '<li><b>মাহরাম:</b> হানাফি মতে মহিলা মাহরাম (স্বামী বা যার সঙ্গে বিবাহ চিরদিন হারাম এমন আত্মীয়) ছাড়া হজের সফরে যাবেন না — "কোনো নারী মাহরাম ছাড়া সফর করবে না" (সহিহ বুখারি: ১৮৬২; সহিহ মুসলিম: ১৩৪১)।</li>' +
+ '<li><b>পোশাক:</b> ইহরামে স্বাভাবিক সেলাই করা পোশাকই পরা যাবে; তবে মুখ ঢাকা (নিকাব) ও গ্লাভস পরা যাবে না। পর্দার প্রয়োজনে মুখের সামনে এমনভাবে কাপড় ঝুলিয়ে রাখা যায় যেন তা মুখে না লাগে।</li>' +
+ '<li><b>তালবিয়া ও রমল:</b> তালবিয়া নিচু স্বরে পড়বেন। তাওয়াফে রমল (দ্রুত হাঁটা) ও সায়িতে দ্রুত হাঁটা মহিলাদের জন্য নয়।</li>' +
+ '<li><b>হাজরে আসওয়াদ:</b> ভিড়ের মধ্যে না গিয়ে দূর থেকে ইশারা করাই উত্তম।</li>' +
+ '<li><b>চুল কাটা:</b> মহিলাদের হলক নেই — আঙুলের এক গাঁট (আনমুলা) পরিমাণ চুল কাটলেই কসর হবে (সুনানে আবু দাউদ: ১৯৮৫)।</li>' +
+ '<li><b>ঋতুস্রাব/নিফাস:</b> এ অবস্থায় তাওয়াফ ছাড়া হজের সব কাজ করা যাবে; পবিত্র হওয়ার পর তাওয়াফে জিয়ারত করবেন (হযরত আয়েশা রা.-এর ঘটনা — সহিহ বুখারি: ৩০৫)। তাওয়াফে ওয়াদা (বিদায়ী তাওয়াফ) ঋতুবতী মহিলার জন্য মাফ (সহিহ বুখারি: ১৭৫৫; সহিহ মুসলিম: ১৩২৮)।</li>' +
+ '</ol></div></details>' +
+ '<details class="acc"><summary>হজের প্রস্তুতি: ব্যাগে যা যা নেবেন</summary><div class="body"><ol class="steps">' +
+ '<li>পাসপোর্ট, ভিসা, টিকিট ও হোটেলের কাগজপত্র — মূল কপি, ফটোকপি ও মোবাইলে ছবি।</li>' +
+ '<li>ইহরামের কাপড় ২ সেট ও ইহরামের বেল্ট; সেলাইবিহীন স্যান্ডেল এক জোড়া ও সাধারণ জুতা এক জোড়া।</li>' +
+ '<li>টাকা ও কাগজপত্র রাখার ছোট কোমরব্যাগ বা গলার ব্যাগ।</li>' +
+ '<li>নিয়মিত খাওয়া ওষুধ (পুরো সফরের পরিমাণ) ও প্রাথমিক ওষুধ — জ্বর, ব্যথা, পেটের সমস্যা, স্যালাইন (ORS) ইত্যাদি।</li>' +
+ '<li>ছাতা, টুপি (ইহরামের বাইরে ব্যবহারের জন্য) ও সানগ্লাস — মক্কা-মদিনার গরম প্রচণ্ড।</li>' +
+ '<li>পানির বোতল ও কঙ্কর রাখার ছোট থলি।</li>' +
+ '<li>মোবাইল চার্জার ও পাওয়ার ব্যাংক; সৌদি প্লাগের অ্যাডাপ্টার।</li>' +
+ '<li>তাসবিহ, ছোট দোয়ার বই ও এই গাইডের প্রিন্ট/স্ক্রিনশট।</li>' +
+ '<li>হালকা শুকনো খাবার (খেজুর, বাদাম, বিস্কুট) ও প্রয়োজনীয় প্রসাধনী (সুগন্ধিহীন — ইহরামের জন্য)।</li>' +
+ '<li>প্রয়োজনীয় টাকা সৌদি রিয়ালে ভাঙিয়ে নেওয়া এবং গাইড/দলের জরুরি নম্বর মোবাইলে সেভ করা।</li>' +
+ '</ol></div></details>' +
+ '<details class="acc"><summary>সাধারণ ভুল ও সতর্কতা</summary><div class="body"><ol class="steps">' +
+ '<li><b>ইহরাম ছাড়া মিকাত পার হওয়া:</b> ফিরে গিয়ে ইহরাম বাঁধা উত্তম; না হলে দম ওয়াজিব হয়।</li>' +
+ '<li><b>আরাফা থেকে সূর্যাস্তের আগে বের হয়ে যাওয়া:</b> সূর্যাস্তের আগে আরাফাতের সীমানা ছাড়লে দম আসতে পারে — সূর্যাস্ত পর্যন্ত অপেক্ষা করুন।</li>' +
+ '<li><b>রমির দিন ও ক্রমে ভুল:</b> নির্ধারিত দিনে ও সঠিক ক্রমে কঙ্কর মারুন; দিন গড়িয়ে গেলে বা ক্রম উল্টালে বিধান আলেমের কাছে জেনে নিন।</li>' +
+ '<li><b>ওয়াজিব ছুটে যাওয়া:</b> ওয়াজিব ছুটলে দম (কুরবানি) দিলে হজ শুদ্ধ হয়; কিন্তু ফরজ ছুটলে হজ হয় না — তাই ফরজগুলোতে সর্বোচ্চ সতর্কতা।</li>' +
+ '<li><b>বিদায়ী তাওয়াফ না করে মক্কা ছাড়া:</b> (ঋতুবতী মহিলা ছাড়া) দম ওয়াজিব হয়।</li>' +
+ '<li><b>ভিড়ে ধাক্কাধাক্কি:</b> হাজরে আসওয়াদে চুমু খেতে গিয়ে অন্যকে কষ্ট দেওয়া গুনাহ — ইশারাই যথেষ্ট।</li>' +
+ '<li><b>গরম ও পানিশূন্যতা:</b> প্রচুর পানি পান করুন, ছাতা ব্যবহার করুন, প্রয়োজনে ছায়ায় বিশ্রাম নিন — হিটস্ট্রোকের ঝুঁকি থাকে।</li>' +
+ '<li><b>সময় নষ্ট:</b> কেনাকাটা ও ছবি তোলায় মূল্যবান সময় নষ্ট না করে ইবাদতে মন দিন।</li>' +
+ '<li><b>হারিয়ে যাওয়া এড়াতে:</b> হোটেলের কার্ড ও গাইডের নম্বর সবসময় সঙ্গে রাখুন; দলের সঙ্গে থাকুন।</li>' +
+ '</ol><p>এখানে শুধু মূল ধারণা দেওয়া হলো — এটি ফতোয়ার বিকল্প নয়। আপনার ব্যক্তিগত অবস্থা অনুযায়ী নির্ভরযোগ্য আলেম বা মুফতির পরামর্শ নিন।</p></div></details>';
+$('hajjBody').innerHTML = HAJJ;
 
-/* ---------- Tilawat (full-surah audio) ---------- */
-var tilSurah = null;
-var TIL_RECITER = 'ar.mahermuaiqly';
-/* Full-surah audio per reciter — every source HTTP-verified on 2026-11-28 (range checks, 206 audio/mpeg for surahs 1, 2, 36, 114).
-   Maher / Husary / Minshawi / Hani Ar-Rifai: mp3quran CDN Hafs-Murattal sets (114 surahs each).
-   Alafasy / Abdul Basit: Islamic Network full-surah endpoint. That endpoint returns 403 for
-   husary / minshawi / hanirifai, so those three use their verified mp3quran sets instead. */
-var TIL_MP3QURAN = { 'ar.mahermuaiqly': 'maher-muaiqly/r1', 'ar.husary': 'mahmoud-husary/r1', 'ar.minshawi': 'muhammad-minshawi/r1', 'ar.hanirifai': 'hani-rifai/r1' };
-function tilUrl(n){
-  var mq = TIL_MP3QURAN[TIL_RECITER];
-  if (mq) return 'https://cdn.mp3quran.net/audio/' + mq + '/' + ('00' + n).slice(-3) + '.mp3';
-  return 'https://cdn.islamic.network/quran/audio-surah/128/' + TIL_RECITER + '/' + n + '.mp3';
-}
-var tilCached = {}, tilDownloading = {};
-function tilRefreshCache(done){
-  if (!('caches' in window)){ if (done) done(); return; }
-  caches.open(AUDIO_CACHE).then(function(c){ return c.keys(); }).then(function(reqs){
-    var map = {};
-    reqs.forEach(function(r){ map[r.url] = true; });
-    tilCached = map;
-    if (done) done();
-  }).catch(function(){ if (done) done(); });
-}
-function buildTilawat(){
-  if (typeof QURAN === 'undefined' || !QURAN) return;
-  var q = ($('tilSearch').value || '').trim();
-  var html = '';
-  QURAN.surahs.forEach(function(s, i){
-    if (q && (SURA_BN[i] + ' ' + s.n).indexOf(q) === -1) return;
-    var playing = tilSurah === s.n && !player.paused;
-    var url = tilUrl(s.n);
-    var dl = tilDownloading[url]
-      ? '<button class="btn" data-til-dl="' + s.n + '" disabled style="padding:7px 11px; font-size:13.5px">ডাউনলোড হচ্ছে…</button>'
-      : tilCached[url]
-        ? '<button class="btn" data-til-dl="' + s.n + '" disabled style="padding:7px 11px; font-size:13.5px">✓ ডাউনলোড হয়েছে</button>'
-        : '<button class="btn" data-til-dl="' + s.n + '" style="padding:7px 11px; font-size:13.5px">⬇ ডাউনলোড</button>';
-    html += '<div class="sitem"><span class="no"><i>' + bn(s.n) + '</i></span><span class="tt"><b>সূরা ' + SURA_BN[i] + ' (' + s.ar + ')</b><span>' + bn(s.cnt) + ' আয়াত • ' + (s.rev === 'Makki' ? 'মাক্কী' : 'মাদানী') + '</span></span>' +
-      '<button class="btn gold" data-til-play="' + s.n + '" style="padding:7px 11px; font-size:13.5px">' + (playing ? '❚❚ চলছে' : '▶ শুনুন') + '</button>' + dl + '</div>';
-  });
-  $('tilList').innerHTML = html || '<p class="loadmsg">কিছু পাওয়া যায়নি।</p>';
-}
-function tilDownload(n){
-  var url = tilUrl(n);
-  if (tilCached[url] || tilDownloading[url]) return;
-  if (!('caches' in window)){ toast('এই ডিভাইসে ডাউনলোড সুবিধা নেই'); return; }
-  tilDownloading[url] = true; buildTilawat();
-  function done(ok){
-    delete tilDownloading[url];
-    if (ok){ tilCached[url] = true; toast('✓ ডাউনলোড হয়েছে — এখন নেট ছাড়াই শোনা যাবে'); }
-    else toast('ডাউনলোড হয়নি — ইন্টারনেট সংযোগ দেখে আবার চেষ্টা করুন');
-    buildTilawat();
-  }
-  caches.open(AUDIO_CACHE).then(function(c){
-    c.match(url).then(function(m){
-      if (m){ done(true); return; }
-      c.add(url).then(function(){ done(true); }).catch(function(){ done(false); });
-    }).catch(function(){ done(false); });
-  }).catch(function(){ done(false); });
-}
-loadQuran(function(){ tilRefreshCache(function(){ buildTilawat(); }); });
-$('tilSearch').addEventListener('input', buildTilawat);
-$('tilReciter').addEventListener('change', function(){
-  TIL_RECITER = this.value;
-  if (tilSurah){ stopAudio(); tilSurah = null; }
-  tilRefreshCache(function(){ buildTilawat(); });
-  toast('ক্বারী পরিবর্তন করা হয়েছে');
-});
-$('tilList').addEventListener('click', function(e){
-  var dlb = e.target.closest('[data-til-dl]');
-  if (dlb){ tilDownload(+dlb.getAttribute('data-til-dl')); return; }
-  var b = e.target.closest('[data-til-play]'); if (!b) return;
-  var n = +b.getAttribute('data-til-play');
-  if (tilSurah === n && !player.paused){ player.pause(); }
-  else { stopAudio(); tilSurah = n; playAudioSmart(tilUrl(n)); }
-  setTimeout(buildTilawat, 80);
-});
-player.addEventListener('ended', function(){ if (tilSurah){ tilSurah = null; buildTilawat(); } });
-player.addEventListener('pause', function(){ if (tilSurah && currentView === 'tilawat') setTimeout(buildTilawat, 80); });
-
-
-/* ---------- Kitab ---------- */
-var KITAB = [
- { t:'রিয়াদুস সালেহিন', a:'ইমাম আবু যাকারিয়া আন-নববি (রহ.) (মৃ. ৬৭৬ হি.)', d:'কুরআনের আয়াত ও প্রায় ১,৯০০ হাদিসের অনন্য সংকলন — তাকওয়া, সবর, সত্যবাদিতা, পিতামাতার হক, প্রতিবেশীর হকসহ দৈনন্দিন জীবনের প্রায় সব বিষয়ে অধ্যায় সাজানো। ঘরের তালিম ও ব্যক্তিগত পাঠের জন্য সবচেয়ে উপযোগী বইগুলোর একটি।' },
- { t:'ফিকহুস সুন্নাহ', a:'সাইয়েদ সাবেক (রহ.)', d:'ইবাদতের ফিকহ — পবিত্রতা, নামাজ, রোজা, যাকাত ও হজের মাসআলা কুরআন-হাদিসের দলিলসহ সহজ ভাষায়। চার মাযহাবের মতামতের তুলনামূলক আলোচনাও রয়েছে।' },
- { t:'বেহেশতি জেওর', a:'মাওলানা আশরাফ আলী থানভি (রহ.)', d:'মহিলাদের জন্য রচিত বিখ্যাত ফিকহের বই — ঈমান, ইবাদত, বিবাহ, পর্দা ও দৈনন্দিন জীবনের মাসআলা। উপমহাদেশের ঘরে ঘরে পঠিত।' },
- { t:'ফাজায়েলে আমল', a:'শায়খুল হাদিস মাওলানা মুহাম্মদ জাকারিয়া কান্ধলভি (রহ.)', d:'নামাজ, কুরআন তিলাওয়াত, যিকির, রমজান, হজ ও দাওয়াতের ফজিলত-বিষয়ক হাদিসের সংকলন — ফাজায়েলে কুরআন, ফাজায়েলে নামাজ, ফাজায়েলে রমজান ইত্যাদি খণ্ডে বিভক্ত; তালিমের মজলিসে বহুল পঠিত।' },
- { t:'আর-রাহিকুল মাখতুম (সীরাতে নববি)', a:'আল্লামা সফিউর রহমান মোবারকপুরি (রহ.)', d:'রাসূলুল্লাহ ﷺ-এর পূর্ণাঙ্গ জীবনী — জন্ম থেকে ওফাত পর্যন্ত ধারাবাহিক ও প্রামাণ্য বর্ণনা। মক্কা শরিফে অনুষ্ঠিত বিশ্ব সীরাত প্রতিযোগিতায় প্রথম পুরস্কারপ্রাপ্ত গ্রন্থ।' },
- { t:'তাফসিরে মারফুল কুরআন', a:'মুফতি মুহাম্মদ শাফি (রহ.)', d:'উর্দু ভাষায় রচিত সহজ ও নির্ভরযোগ্য তাফসির; বাংলা অনুবাদও বহুল প্রচলিত। প্রতি সূরার সারসংক্ষেপ ও আয়াতের ব্যাখ্যা সাধারণ পাঠকের উপযোগী করে লেখা।' },
- { t:'তাফসিরে ইবনে কাসির', a:'হাফিজ ইমাদুদ্দিন ইবনে কাসির (রহ.) (মৃ. ৭৭৪ হি.)', d:'সবচেয়ে প্রসিদ্ধ আছারভিত্তিক তাফসির — কুরআনের আয়াত দিয়ে আয়াতের ব্যাখ্যা, হাদিস ও সাহাবিদের বর্ণনার ভিত্তিতে তাফসির। গভীর অধ্যয়নের জন্য অপরিহার্য।' },
- { t:'হিসনুল মুসলিম', a:'ড. সাইদ ইবন আলি আল-কাহতানি', d:'কুরআন ও সহিহ হাদিস থেকে সংকলিত দৈনন্দিন দোয়া ও যিকিরের ছোট্ট কিন্তু অমূল্য বই — সকাল-সন্ধ্যার আমল, ঘুম, খাবার, সফরসহ জীবনের প্রতিটি মুহূর্তের দোয়া।' }
+/* ----- Hajj day-by-day checklist (v2.16), persisted ----- */
+var HAJJ_CHECK = [
+ ['৮ জিলহজ (ইয়াওমুত তারউইয়া)', ['ইহরাম বেঁধে হজের নিয়ত ও তালবিয়া', 'মিনায় পৌঁছানো', 'মিনায় যোহর, আসর, মাগরিব, এশা ও ফজর কসর করে পড়া', 'মিনায় রাত যাপন']],
+ ['৯ জিলহজ (আরাফা)', ['ফজরের পর আরাফার দিকে রওনা', 'যোহর ও আসর একত্রে (জমা তাকদিম) পড়া', 'সূর্যাস্ত পর্যন্ত উকুফ, দোয়া ও ইস্তিগফার', 'সূর্যাস্তের পর মুজদালিফায় যাওয়া', 'মুজদালিফায় মাগরিব ও এশা একত্রে পড়া', 'কঙ্কর সংগ্রহ ও মুজদালিফায় রাত যাপন']],
+ ['১০ জিলহজ (ঈদুল আজহা)', ['জমরাতুল আকাবায় ৭টি কঙ্কর মারা', 'কুরবানি করা (তামাত্তু/কিরান হজে)', 'হলক/কসর করে ইহরাম খোলা', 'তাওয়াফে জিয়ারত করা', 'সায়ি করা (তামাত্তু হজে)']],
+ ['১১ জিলহজ', ['মিনায় রাত যাপন', 'যোহরের পর তিন জমরায় ৭টি করে মোট ২১টি কঙ্কর মারা']],
+ ['১২ জিলহজ', ['তিন জমরায় ২১টি কঙ্কর মারা', 'চাইলে সূর্যাস্তের আগে মিনা ত্যাগ (না হলে আরও এক রাত মিনায়)']],
+ ['১৩ জিলহজ ও বিদায়', ['মিনায় থাকলে তিন জমরায় ২১টি কঙ্কর মারা', 'মক্কা ছাড়ার আগে বিদায়ী তাওয়াফ (তাওয়াফে ওয়াদা)']]
 ];
-var KITAB_PDF = {
- 'রিয়াদুস সালেহিন': { pdf: 'https://archive.org/download/riyad-us-saliheen-in-bangla/riyad-us-saliheen-in-bangla.pdf' },
- 'ফিকহুস সুন্নাহ': { pdf: 'https://archive.org/download/DownloadFiqhUsSunnah/Download%20Fiqh%20us%20Sunnah.pdf' },
- 'বেহেশতি জেওর': { pdf: 'https://archive.org/download/BehestiZeware/Behesti%20Zeware.pdf' },
- 'ফাজায়েলে আমল': { pdfs: ['https://archive.org/download/offlinedeeniapp_202107/fazail%20Amal%201.pdf', 'https://archive.org/download/offlinedeeniapp_202107/Fazail%20Amal%202.pdf'] },
- 'আর-রাহিকুল মাখতুম (সীরাতে নববি)': { pdf: 'https://archive.org/download/ArRahikulMakhtumBangla/Ar%20Rahikul%20Makhtum_Bangla.pdf' },
- 'তাফসিরে মারফুল কুরআন': { pdfs: ['https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%201.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%202.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%203.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%204.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%205.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%206.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%207.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/MaarifulQuran%20Bangla%20By%20Mufti%20Shafi%20Usmani-%208.pdf'] },
- 'তাফসিরে ইবনে কাসির': { pdfs: ['https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-01.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-02.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-03.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-04.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-05.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-06.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-07.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-08.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-09.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-10.pdf', 'https://archive.org/download/maariful-quran-bangla-by-mufti-shafi-usmani/Tafsir-Ibn-Kathir-11.pdf'] },
- 'হিসনুল মুসলিম': { pdf: 'https://archive.org/download/ShobdeShobdeHisnulMuslim/Shobde%20Shobde%20Hisnul%20Muslim.pdf' },
-};
-var KITAB_EXTRA = [
- { t:'সহিহ বুখারি', a:'ইমাম মুহাম্মদ ইবনে ইসমাইল আল-বুখারি (রহ.)', d:'সবচেয়ে নির্ভরযোগ্য হাদিসের কিতাব — ইমাম বুখারি (রহ.) ষোলো বছরে প্রায় ছয় লাখ হাদিস থেকে বাছাই করে সংকলন করেন।', pdf:'https://archive.org/download/MankindAtLoss_gmail/%E0%A6%B8%E0%A6%B9%E0%A7%80%E0%A6%B9%E0%A7%81%E0%A6%B2%20%E0%A6%AC%E0%A7%81%E0%A6%96%E0%A6%BE%E0%A6%B0%E0%A7%80-%E0%A6%B8%E0%A6%AC%20%E0%A6%96%E0%A6%A3%E0%A7%8D%E0%A6%A1%20%E0%A6%8F%E0%A6%95%E0%A6%A4%E0%A7%8D%E0%A6%B0%E0%A7%87%20%28%E0%A6%A4%E0%A6%93%E0%A6%B9%E0%A7%80%E0%A6%A6%20%E0%A6%AA%E0%A7%8D%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B6%E0%A6%A8%E0%A7%80%29.pdf' },
- { t:'সহিহ মুসলিম', a:'ইমাম মুসলিম ইবনে হাজ্জাজ (রহ.)', d:'দ্বিতীয় সর্বাধিক নির্ভরযোগ্য হাদিস-সংকলন; বিষয়ভিত্তিক সুন্দর বিন্যাসের জন্য প্রসিদ্ধ।', pdfs:['https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-1.pdf', 'https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-2.pdf', 'https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-3.pdf', 'https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-4.pdf', 'https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-5.pdf', 'https://archive.org/download/hadith-books-bangla/sahih-muslim-bangla-vol-6.pdf'] },
- { t:'সুনানে আবু দাউদ', a:'ইমাম আবু দাউদ (রহ.)', d:'ফিকহি মাসআলার হাদিসের প্রধান সংকলন — সিহাহ সিত্তার অন্যতম।', pdfs:['https://archive.org/download/hadith-books-bangla/sunan-abu-dawood-bangla-vol-1.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-abu-dawood-bangla-vol-2.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-abu-dawood-bangla-vol-3.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-abu-dawood-bangla-vol-4.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-abu-dawood-bangla-vol-5.pdf'] },
- { t:'সুনানে তিরমিযি', a:'ইমাম আবু ঈসা আত-তিরমিযি (রহ.)', d:'হাদিসের মান (সহিহ, হাসান, জয়িফ) উল্লেখসহ অনন্য সংকলন; শামায়েল অংশে রাসূলুল্লাহ ﷺ-এর আকৃতি ও স্বভাবের বর্ণনা।', pdfs:['https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-1.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-2.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-3.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-4.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-5.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-tirmizi-bangla-vol-6.pdf'] },
- { t:'সুনানে নাসায়ি', a:'ইমাম আহমদ ইবনে শুআইব আন-নাসায়ি (রহ.)', d:'সনদের কঠোর যাচাইয়ের জন্য প্রসিদ্ধ হাদিস-সংকলন।', pdfs:['https://archive.org/download/hadith-books-bangla/sunan-nasai-bangla-vol-1.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-nasai-bangla-vol-2.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-nasai-bangla-vol-3.pdf', 'https://archive.org/download/hadith-books-bangla/sunan-nasai-bangla-vol-4.pdf'] },
- { t:'সুনানে ইবনে মাজাহ', a:'ইমাম ইবনে মাজাহ (রহ.)', d:'সিহাহ সিত্তার ষষ্ঠ কিতাব — ফিতনা, যুহদ ও ব্যবসা-বাণিজ্যের অধ্যায়ে সমৃদ্ধ।', pdf:'https://archive.org/download/SunanIbnMajah-1/SunanIbnMajah-1.pdf' },
- { t:'মুয়াত্তা ইমাম মালিক', a:'ইমাম মালিক ইবনে আনাস (রহ.)', d:'সবচেয়ে প্রাচীন হাদিস ও ফিকহের কিতাবগুলোর একটি — মদিনার আমল ও ফতোয়ার দলিল।', pdfs:['https://archive.org/download/MuwattaImamMalikBanglaDownloadPart01/Muwatta%20Imam%20Malik%20Bangla%20Download%20%20%28Part%2001%29.pdf', 'https://archive.org/download/MuwattaImamMalikBanglaDownloadPart01/MuwattaImamMalikBanglaDownloadpart02.pdf'] },
- { t:'মিশকাতুল মাসাবিহ', a:'খতিব তিবরিযি (রহ.)', d:'বিষয়ভিত্তিক হাদিসের বিখ্যাত সংকলন — মাদরাসার পাঠ্যক্রমের অন্যতম প্রধান কিতাব।', pdfs:['https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-1%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-2%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-3%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-4%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-5%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-6%29.pdf', 'https://archive.org/download/MishkatulMasabihBangla/Mishkatul%20Masabih%20Bangla%20%28Part-7%29.pdf'] },
- { t:'বুলুগুল মারাম', a:'হাফিজ ইবনে হাজার আসকালানি (রহ.)', d:'আহকামের হাদিসের সংক্ষিপ্ত ও প্রসিদ্ধ সংকলন।' },
- { t:'শামায়েলে তিরমিযি', a:'ইমাম তিরমিযি (রহ.)', d:'রাসূলুল্লাহ ﷺ-এর আকৃতি, পোশাক, খাদ্
+var hajjCheck = {};
+try { hajjCheck = JSON.parse(localStorage.getItem('di_hajj_check') || '{}'); } catch (e) { hajjCheck = {}; }
+function hajjCheckSave(){ try { localStorage.setItem('di_hajj_check', JSON.stringify(hajjCheck)); } catch (e) {} }
+function renderHajjCheck(){
+  var wrap = $('hajjCheckWrap'); if (!wrap) return;
+  var total = 0, done = 0;
+  wrap.innerHTML = HAJJ_CHECK.map(function(g, gi){
+    var h = '<p style="margin:12px 0 6px; font-weight:700; color:var(--gold)">' + g[0] + '</p><p style="margin:0; display:flex; flex-wrap:wrap; gap:8px">';
+    g[1].forEach(function(it, ii){
+      total++;
+      var key = gi + ':' + ii, on = !!hajjCheck[key];
+      if (on) done++;
+      h += '<button type="button" class="rtog' + (on ? ' on' : '') + '" data-hcheck="' + key + '">' + (on ? '✓ ' : '') + it + '</button>';
+    });
+    return h + '</p>';
+  }).join('');
+  var sum = $('hajjCheckSummary');
+  if (sum) sum.innerHTML = 'সম্পন্ন: <b>' + bn(done) + ' / ' + bn(total) + '</b> — যে কাজটি হয়ে গেছে, তাতে চাপ দিয়ে টিক দিন। হিসাব আপনার ফোনেই সংরক্ষিত থাকে।';
+}
+var _hcw = $('hajjCheckWrap');
+if (_hcw) _hcw.addEventListener('click', function(e){
+  var b = e.target.closest('[data-hcheck]'); if (!b) return;
+  var key = b.getAttribute('data-hcheck');
+  if (hajjCheck[key]) delete hajjCheck[key]; else hajjCheck[key] = true;
+  hajjCheckSave(); renderHajjCheck();
+});
+var _hcr = $('hajjCheckReset');
+if (_hcr) _hcr.addEventListener('click', function(){
+  if (!confirm('চেকলিস্টের সব টিক মুছে আবার শুরু করবেন?')) return;
+  hajjCheck = {}; hajjCheckSave(); renderHajjCheck();
+});
+renderHajjCheck();
+
+/* ================= Baby names ================= */
+var BOY_NAMES = [['মুহাম্মদ','আল্লাহর রাসূল ﷺ-এর নাম; অর্থ: প্রশংসিত'],['আহমাদ','অধিক প্রশংসাকারী (রাসূল ﷺ-এর নাম)'],['আব্দুল্লাহ','আল্লাহর বান্দা'],['আব্দুর রাহমান','দয়াময়ের বান্দা'],['ইবরাহিম','নবী হযরত ইবরাহিম (আ.)-এর নাম'],['ইসমাইল','নবী হযরত ইসমাইল (আ.)-এর নাম'],['ইউসুফ','নবী হযরত ইউসুফ (আ.); অর্থ: আল্লাহ বৃদ্ধি করেন'],['মুসা','নবী হযরত মুসা (আ.)-এর নাম'],['ঈসা','নবী হযরত ঈসা (আ.)-এর নাম'],['নূহ','নবী হযরত নূহ (আ.)-এর নাম'],['দাউদ','নবী হযরত দাউদ (আ.); অর্থ: প্রিয়'],['সুলাইমান','নবী হযরত সুলাইমান (আ.); অর্থ: শান্তিময়'],['জাকারিয়া','নবী হযরত জাকারিয়া (আ.)-এর নাম'],['ইয়াহইয়া','নবী হযরত ইয়াহইয়া (আ.); অর্থ: জীবিত থাকেন'],['উমর','খলিফা হযরত উমর (রা.); অর্থ: দীর্ঘজীবী'],['আলী','খলিফা হযরত আলী (রা.); অর্থ: উচ্চ, মহান'],['উসমান','খলিফা হযরত উসমান (রা.)-এর নাম'],['হামজা','রাসূল ﷺ-এর চাচা; অর্থ: সিংহ'],['বিলাল','প্রথম মুয়াজ্জিন হযরত বিলাল (রা.); অর্থ: আর্দ্রতা'],['খালিদ','অর্থ: চিরস্থায়ী (খালিদ ইবনে ওয়ালিদ রা.)'],['হাসান','অর্থ: সুন্দর, উত্তম'],['হুসাইন','অর্থ: ছোট্ট সুন্দর'],['আব্বাস','অর্থ: সিংহ (রাসূল ﷺ-এর চাচা)'],['জাফর','অর্থ: ছোট নদী/ঝরনা'],['তালহা','সাহাবি হযরত তালহা (রা.); অর্থ: বাবলা গাছ'],['যুবায়ের','সাহাবি হযরত যুবায়ের (রা.)-এর নাম'],['সালমান','সাহাবি সালমান ফারসি (রা.); অর্থ: নিরাপদ'],['আনাস','সাহাবি আনাস ইবনে মালিক (রা.); অর্থ: ভালোবাসা, ঘনিষ্ঠতা'],['আরিফ','অর্থ: জ্ঞানী'],['ফারহান','অর্থ: আনন্দিত'],['রায়হান','অর্থ: সুগন্ধি ফুল/তুলসী জাতীয় উদ্ভিদ'],['ইমরান','মারইয়াম (আ.)-এর পিতা; অর্থ: সমৃদ্ধি'],['লুকমান','জ্ঞানী লুকমান হাকিম; কুরআনে উল্লিখিত'],['ইদরিস','নবী হযরত ইদরিস (আ.)-এর নাম'],['শোয়াইব','নবী হযরত শোয়াইব (আ.)-এর নাম'],['হারুন','নবী হযরত হারুন (আ.); অর্থ: পাহাড়ের মতো শক্তিশালী'],['আইয়ুব','নবী হযরত আইয়ুব (আ.); ধৈর্যের প্রতীক'],['ইলিয়াস','নবী হযরত ইলিয়াস (আ.)-এর নাম'],['তাহা','সূরা ত্ব-হার নাম; রাসূল ﷺ-এর উপাধি বলে প্রসিদ্ধ'],['ইয়াসিন','সূরা ইয়াসিনের নাম; রাসূল ﷺ-এর উপাধি বলে প্রসিদ্ধ']];
+var GIRL_NAMES = [['ফাতিমা','রাসূল ﷺ-এর কন্যা; অর্থ: দুধ ছাড়ানো শিশুর মা'],['খাদিজা','রাসূল ﷺ-এর প্রথম স্ত্রী (রা.); অর্থ: অকালে জন্ম নেওয়া'],['আয়েশা','রাসূল ﷺ-এর স্ত্রী (রা.); অর্থ: জীবন্ত, সমৃদ্ধ'],['মারইয়াম','হযরত ঈসা (আ.)-এর মা; কুরআনে নাম উল্লিখিত একমাত্র নারী'],['হাফসা','রাসূল ﷺ-এর স্ত্রী (রা.); অর্থ: ছোট সিংহী/সংগ্রহকারিণী'],['জয়নাব','রাসূল ﷺ-এর কন্যা ও স্ত্রীর নাম; অর্থ: সুগন্ধি ফুলের গাছ'],['রুকাইয়া','রাসূল ﷺ-এর কন্যা; অর্থ: উন্নতি, উচ্চতা'],['উম্মে কুলসুম','রাসূল ﷺ-এর কন্যার নাম'],['সুমাইয়া','প্রথম শহীদ নারী সাহাবিয়া; অর্থ: উচ্চ মর্যাদাসম্পন্ন'],['আসমা','আবু বকর (রা.)-এর কন্যা; অর্থ: নামসমূহ/উচ্চ'],['নুসাইবা','উহুদের যুদ্ধের বীরাঙ্গনা সাহাবিয়া'],['হালিমা','রাসূল ﷺ-এর দুধমা; অর্থ: ধৈর্যশীলা, নম্র'],['আমিনা','রাসূল ﷺ-এর মা; অর্থ: বিশ্বস্ত, নিরাপদ'],['সাকিনা','অর্থ: প্রশান্তি'],['রাহমা','অর্থ: দয়া, করুণা'],['নূর','অর্থ: আলো'],['ইমান','অর্থ: বিশ্বাস, ঈমান'],['তাসনিম','অর্থ: জান্নাতের ঝরনার নাম'],['জান্নাত','অর্থ: বেহেশত, বাগান'],['ফারিয়া','অর্থ: লম্বা ও সুন্দরী'],['সাবিহা','অর্থ: সুন্দর, উজ্জ্বল'],['নাবিলা','অর্থ: মহৎ, অভিজাত'],['শারমিন','অর্থ: লাজুক, নম্র'],['তানিয়া','অর্থ: রাজকন্যা (প্রচলিত)'],['আরিফা','অর্থ: জ্ঞানবতী'],['হাবিবা','অর্থ: প্রিয়া'],['কারিমা','অর্থ: দয়ালু, মহানুভবা'],['লায়লা','অর্থ: রাত'],['সালমা','অর্থ: নিরাপদ, শান্ত'],['রুমাইসা','সাহাবিয়া উম্মে সুলাইম (রা.)-এর নাম বলে প্রসিদ্ধ'],['খাওলা','বীরাঙ্গনা সাহাবিয়া; অর্থ: হরিণী'],['বারিরা','সাহাবিয়া; অর্থ: নেককার, বিশ্বস্ত'],['মাইমুনা','রাসূল ﷺ-এর স্ত্রী (রা.); অর্থ: সৌভাগ্যবতী'],['সাফিয়া','রাসূল ﷺ-এর স্ত্রী (রা.); অর্থ: খাঁটি, নির্মল'],['জুওয়াইরিয়া','রাসূল ﷺ-এর স্ত্রী (রা.)-এর নাম'],['আতিকা','সাহাবিয়া; অর্থ: সুগন্ধিময়, মহৎ'],['ফারহানা','অর্থ: আনন্দিতা'],['ইফফাত','অর্থ: পবিত্রতা, সতীত্ব'],['তাইয়্যিবা','অর্থ: পবিত্র, ভালো'],['শিফা','অর্থ: আরোগ্য']];
+var babyGender = 'boy';
+function renderBaby(){
+  var q = $('babySearch').value.trim();
+  var list = babyGender === 'boy' ? BOY_NAMES : GIRL_NAMES;
+  var filtered = list.filter(function(n){ return !q || n[0].indexOf(q) > -1 || n[1].indexOf(q) > -1; });
+  $('babyList').innerHTML = filtered.length ? filtered.map(function(n){
+    return '<div class="name-card"><div class="t" style="font-size:18px">' + n[0] + '</div><div class="m">' + n[1] + '</div></div>';
+  }).join('') : '<p class="loadmsg">কিছু পাওয়া যায়নি।</p>';
+  $('segBoy').setAttribute('aria-pressed', babyGender === 'boy' ? 'true' : 'false');
+  $('segGirl').setAttribute('aria-pressed', babyGender === 'girl' ? 'true' : 'false');
+}
+$('segBoy').addEventListener('click', function(){ babyGender = 'boy'; renderBaby(); });
+$('segGirl').addEventListener('click', function(){ babyGender = 'girl'; renderBaby(); });
+$('babySearch').addEventListener('input', renderBaby);
+renderBaby();
+
+/* ================= Masala Q&A ================= */
+var MASALA = [
+ { q:'কাজা নামাজ কিভাবে পড়ব?', a:'ছুটে যাওয়া ফরজ নামাজ যত দ্রুত সম্ভব কাজা পড়তে হবে। কাজা নামাজে শুধু ফরজ রাকাতগুলো পড়তে হয় (বিতর ওয়াজিব হওয়ায় তারও কাজা আছে)। নিয়তে "কাজা" উল্লেখ করবেন, যেমন: "আজকের ফজরের কাজা দুই রাকাত ফরজ নামাজ পড়ছি।" অনেক নামাজ জমে থাকলে হিসাব করে ধারাবাহিকভাবে আদায় করুন — প্রতিদিন ওয়াক্তিয়া নামাজের সঙ্গে কিছু কাজা পড়ার অভ্যাস করা ভালো।', s:'সহিহ মুসলিম: ৬৮৪; ফতোয়ায়ে আলমগিরি' },
+ { q:'নামাজে সন্দেহ হলে (কত রাকাত পড়লাম মনে না থাকলে) কী করব?', a:'নামাজের মধ্যে রাকাত সংখ্যায় সন্দেহ হলে কম সংখ্যাটি ধরে নিয়ে নামাজ পূর্ণ করুন এবং শেষে সাহু সিজদা দিন। তবে কারো এমন সন্দেহ বারবার হলে সে প্রবল ধারণা অনুযায়ী আমল করবে।', s:'সহিহ বুখারি: ৪০১; ফিকহুস সুন্নাহ'.replace('ih','হি') },
+ { q:'সাহু সিজদা কিভাবে দিতে হয়?', a:'হানাফি মাযহাব অনুযায়ী: শেষ বৈঠকে তাশাহহুদ পড়ার পর ডান দিকে একবার সালাম ফিরিয়ে দুটি সিজদা করুন; এরপর আবার তাশাহহুদ, দরুদ ও দোয়া মাসুরা পড়ে দুই দিকে সালাম ফিরিয়ে নামাজ শেষ করুন। নামাজের কোনো ওয়াজিব ভুলে ছুটে গেলে সাহু সিজদা ওয়াজিব হয়।', s:'সুনানে আবু দাউদ: ১০৩৯; ফতোয়ায়ে আলমগিরি' },
+ { q:'জামাত ছুটে গেলে বা দেরি হলে কী করব?', a:'জামাত শুরু হয়ে গেলে যত রাকাত পাওয়া যায় ইমামের সঙ্গে পড়ুন; বাকিটা ইমামের সালামের পর দাঁড়িয়ে পূর্ণ করুন (মাসবুকের নিয়ম)। পুরো জামাত ছুটে গেলে একাকী হলেও নামাজ সময়ের মধ্যে পড়ে নিন — নামাজ কাজা করা বড় গুনাহ।', s:'সহিহ বুখারি: ৬৩৬'.replace('ih','হি') },
+ { q:'সফরে নামাজ কিভাবে পড়ব (কসর)?', a:'শরিয়তের সফর (প্রায় ৭৭ কিমি বা তার বেশি দূরত্ব) হলে চার রাকাত ফরজ (যোহর, আসর, এশা) দুই রাকাত করে পড়া ওয়াজিব (কসর)। ফজর, মাগরিব ও বিতর যথারীতি। গন্তব্যে ১৫ দিন বা তার বেশি থাকার নিয়ত থাকলে মুকিম হিসেবে পূর্ণ নামাজ পড়তে হবে।', s:'সূরা আন-নিসা: ১০১; সহিহ বুখারি: ১০৮০' },
+ { q:'ঋতুস্রাব (হায়েজ) অবস্থায় নামাজ-রোজার বিধান কী?', a:'ঋতুকালীন অবস্থায় নামাজ ও রোজা দুটোই মাফ; নামাজের কাজা করতে হয় না, তবে রমজানের রোজার কাজা পরে রাখতে হয়। এ অবস্থায় কুরআন তিলাওয়াত ও মসজিদে প্রবেশ থেকে বিরত থাকতে হয়; তবে দোয়া, যিকির ও দরুদ পড়া যায়।', s:'সহিহ বুখারি: ৩০৪; সহিহ মুসলিম: ৩৩৫' },
+ { q:'কোন কোন অবস্থায় ওযু ভেঙে যায়?', a:'পেশাব-পায়খানার রাস্তা দিয়ে কিছু বের হলে, বায়ু নির্গত হলে, ঘুমালে (শুয়ে বা হেলান দিয়ে), বেহুশ হলে, রক্ত/পুঁজ বের হয়ে গড়িয়ে গেলে, মুখ ভরে বমি হলে এবং নামাজে শব্দ করে হাসলে ওযু ভেঙে যায়। শুধু হাসি (শব্দ ছাড়া) বা সন্দেহে ওযু ভাঙে না।', s:'ফতোয়ায়ে আলমগিরি; বেহেশতি জেওর' },
+ { q:'তায়াম্মুম কখন ও কিভাবে করব?', a:'পানি না পেলে বা পানি ব্যবহারে অসুস্থতা বাড়ার আশঙ্কা থাকলে তায়াম্মুম করা যায়। নিয়ত করে পবিত্র মাটিতে/মাটির জিনিসে দুই হাত মেরে মুখ মাসেহ করুন, আবার হাত মেরে কনুইসহ দুই হাত মাসেহ করুন। পানি পাওয়া গেলে তায়াম্মুম ভেঙে যাবে।', s:'সূরা আল-মায়িদা: ৬; সুনানে আবু দাউদ: ৩১৭' },
+ { q:'মৃত ব্যক্তির জন্য কী কী করা যায়?', a:'মৃতের জন্য দোয়া, ইস্তিগফার, তার পক্ষ থেকে সদকা (সদকায়ে জারিয়া) ও হজ করা যায় — এগুলোর সওয়াব মৃতের কাছে পৌঁছায়। কুরআন খতম করে সওয়াব বখশিশ করা অনেক আলেমের মতে জায়েজ। জানাজা ও দাফনে অংশ নেওয়া ফরজে কিফায়া।', s:'সহিহ মুসলিম: ১৬৩১, ২৬৮৩'.replace('ih','হি') },
+ { q:'যাকাত কাকে দেওয়া যায়?', a:'যাকাতের হকদার আট শ্রেণি: ফকির, মিসকিন, যাকাত আদায়কারী, নওমুসলিমদের মন জয় করা, দাস মুক্তি, ঋণগ্রস্ত, আল্লাহর পথে ও মুসাফির। নিজের পিতা-মাতা, দাদা-দাদি, সন্তান-নাতি ও স্বামী-স্ত্রীকে যাকাত দেওয়া যায় না। ধনী ও নিসাবের মালিককে যাকাত দেওয়া যাবে না।', s:'সূরা আত-তাওবা: ৬০' },
+ { q:'কুরবানি কার ওপর ওয়াজিব?', a:'প্রাপ্তবয়স্ক, মুকিম (মুসাফির নয়), সুস্থ মস্তিষ্ক ও নিসাব পরিমাণ সম্পদের মালিক মুসলিমের ওপর কুরবানি ওয়াজিব (হানাফি মাযহাব)। কুরবানির পশু: ছাগল/ভেড়া ১ বছর, গরু/মহিষ ২ বছর, উট ৫ বছর বয়সী হতে হবে। গরু-উটে সর্বোচ্চ ৭ জন শরিক হওয়া যায়।', s:'সুনানে আবু দাউদ: ২৭৮৮; ফতোয়ায়ে আলমগিরি' },
+ { q:'রোজা অবস্থায় ইনজেকশন/ইনহেলার নিলে রোজা ভাঙবে?', a:'সাধারণ ইনজেকশনে (শিরা বা পেশিতে) রোজা ভাঙে না, কারণ তা খাদ্য নয় ও খাদ্যনালীতে পৌঁছায় না। তবে খাদ্যগুণসম্পন্ন স্যালাইন/গ্লুকোজ নিলে অনেক আলেমের মতে রোজা ভেঙে যাবে। অ্যাজমার ইনহেলার ব্যবহারে অধিকাংশ সমকালীন আলেম রোজা ভেঙে যাওয়ার পক্ষে — সম্ভব হলে সেহরি-ইফতারের সময় ব্যবহার করুন; জটিল হলে আলেমের ফতোয়া নিন।', s:'সমকালীন ফতোয়া বোর্ডসমূহের সিদ্ধান্ত' },
+ { q:'ভুলে খেয়ে ফেললে রোজা কি ভেঙে যাবে?', a:'না। রোজার কথা ভুলে গিয়ে খেয়ে বা পান করলে রোজা ভাঙে না — এটি আল্লাহর পক্ষ থেকে খাওয়ানো। তবে মনে পড়ার সঙ্গে সঙ্গে বন্ধ করতে হবে এবং মুখে থাকা খাবার ফেলে দিতে হবে।', s:'সহিহ বুখারি: ১৯৩৩; সহিহ মুসলিম: ১১৫৫' },
+ { q:'মোবাইল/টিভিতে খারাপ জিনিস দেখলে কি ওযু বা রোজা ভাঙে?', a:'ওযু ভাঙে না, তবে চোখের গুনাহ হয় এবং রোজার সওয়াব নষ্ট হয় — রাসূলুল্লাহ ﷺ বলেছেন, যে মিথ্যা কথা ও খারাপ কাজ ছাড়ে না, তার খাওয়া-পান ছাড়ার আল্লাহর কোনো প্রয়োজন নেই। ইচ্ছাকৃত বীর্যপাত হলে রোজা ভেঙে যাবে, স্বপ্নদোষে ভাঙবে না।', s:'সহিহ বুখারি: ১৯০৩' },
+ { q:'জুমার নামাজ কত রাকাত ও কার ওপর ফরজ?', a:'জুমা ফরজে আইন — প্রাপ্তবয়স্ক, মুকিম, সুস্থ পুরুষের ওপর। জুমার নামাজ ২ রাকাত ফরজ (খুতবাসহ); এর আগে ৪ রাকাত ও পরে ৪+২ রাকাত সুন্নাত পড়া হয়। মহিলা, মুসাফির, অসুস্থ ও বালকের ওপর জুমা ফরজ নয়; তারা যোহর পড়বে।', s:'সূরা আল-জুমুআ: ৯; সহিহ মুসলিম: ৮৫৭' }
+];
+function renderMasala(q){
+  var list = MASALA.filter(function(m){ return !q || (m.q + m.a).indexOf(q) > -1; });
+  $('masalaList').innerHTML = list.length ? list.map(function(m){
+    return '<details class="acc"><summary>' + m.q + '</summary><div class="body"><p>' + m.a + '</p><p class="src" style="color:var(--ink-2); font-size:13.5px">সূত্র: ' + m.s + '</p></div></details>';
+  }).join('') : '<p class="loadmsg">কিছু পাওয়া যায়নি।</p>';
+}
+$('masalaSearch').addEventListener('input', function(){ renderMasala(this.value.trim()); });
+renderMasala('');
+
+/* ================= Roza (নফল রোজা) ================= */
+var ROZA = [
+ { t:'সোমবার ও বৃহস্পতিবারের রোজা', d:'প্রতি সপ্তাহে সোমবার ও বৃহস্পতিবার রোজা রাখা সুন্নাত। এই দুই দিনে আমলসমূহ আল্লাহর কাছে পেশ করা হয়; রাসূলুল্লাহ ﷺ বলেছেন, "আমি চাই আমার আমল এমন অবস্থায় পেশ হোক যখন আমি রোজাদার।" সোমবার তাঁর জন্মদিন ও ওহি অবতরণের দিন।', s:'সহিহ মুসলিম: ১১৬২; সুনানে তিরমিযি: ৭৪৭'.replace('ih','হি') },
+ { t:'আইয়ামে বীজ (চন্দ্র মাসের ১৩, ১৪, ১৫ তারিখ)', d:'প্রতি হিজরি মাসের ১৩, ১৪ ও ১৫ তারিখের রোজাকে আইয়ামে বীজ (আলোকিত দিনসমূহ) বলা হয়। প্রতি মাসে তিন দিন রোজা রাখলে সারা বছর রোজা রাখার সওয়াব পাওয়া যায়।', s:'সহিহ বুখারি: ১৯৭৯; সুনানে নাসায়ি: ২৪২০'.replace('ih','হি') },
+ { t:'আরাফার রোজা (৯ জিলহজ)', d:'হজে না থাকা মুসলিমদের জন্য আরাফার দিনের রোজা অত্যন্ত ফজিলতপূর্ণ — এতে আগের এক বছর ও পরের এক বছরের গুনাহ মাফের আশা করা হয়।', s:'সহিহ মুসলিম: ১১৬২'.replace('ih','হি') },
+ { t:'আশুরার রোজা (১০ মুহাররম)', d:'মুহাররমের ১০ তারিখ আশুরার রোজায় আগের এক বছরের গুনাহ মাফ হয়। ইহুদিদের সঙ্গে পার্থক্যের জন্য ৯ তারিখ বা ১১ তারিখ মিলিয়ে দুই দিন রাখা উত্তম। এই দিনে হযরত মুসা (আ.) ফেরাউনের কবল থেকে মুক্তি পেয়েছিলেন।', s:'সহিহ মুসলিম: ১১৬৩, ১১৩৪' },
+ { t:'শাওয়ালের ছয় রোজা', d:'রমজানের পর শাওয়াল মাসে ছয়টি রোজা রাখলে সারা বছর রোজা রাখার সওয়াব পাওয়া যায় (রমজান ১০ গুণ হিসাবে ৩০০ দিন + ৬ রোজা ৬০ দিন = পূর্ণ বছর)। ধারাবাহিক বা ভেঙে ভেঙে — দুভাবেই রাখা যায়।', s:'সহিহ মুসলিম: ১১৬৪' },
+ { t:'দাউদ (আ.)-এর রোজা', d:'একদিন রোজা, একদিন ছাড়া — এটি আল্লাহর কাছে সবচেয়ে প্রিয় রোজার পদ্ধতি, যা হযরত দাউদ (আ.) রাখতেন। তবে দুর্বল বা ব্যস্ত মানুষের জন্য এটি কঠিন হতে পারে।', s:'সহিহ বুখারি: ১১৩১; সহিহ মুসলিম: ১১৫৯' },
+ { t:'শাবান মাসের রোজা', d:'রাসূলুল্লাহ ﷺ রমজানের পর শাবান মাসেই সবচেয়ে বেশি নফল রোজা রাখতেন; এ মাসে বছরব্যাপী আমল আল্লাহর কাছে পেশ করা হয়। ১৫ শাবান (শবে বরাত) রাতে ইবাদত ও দিনে রোজা রাখা অনেকের আমল, যদিও এর বিশেষ ফজিলতের হাদিস নিয়ে আলেমদের মতভেদ আছে।', s:'সহিহ বুখারি: ১৯৬৯; সুনানে নাসায়ি: ২৩৫৭' }
+];
+$('rozaList').innerHTML = ROZA.map(function(r){
+  return '<article class="hcard"><h3>' + r.t + '</h3><p>' + r.d + '</p><p class="src">সূত্র: ' + r.s + '</p></article>';
+}).join('');
+
+/* ================= Important days ================= */
+var SPECIAL_DAYS = [
+ { m:1, d:1, t:'হিজরি নববর্ষ', d:'নতুন হিজরি বছরের প্রথম দিন' },
+ { m:1, d:10, t:'পবিত্র আশুরা', d:'হযরত মুসা (আ.)-এর মুক্তির দিন; কারবালায় ইমাম হুসাইন (রা.)-এর শাহাদাতের দিন। রোজা রাখা সুন্নাত।' },
+ { m:3, d:12, t:'ঈদে মিলাদুন্নবী ﷺ', d:'রাসূলুল্লাহ ﷺ-এর জন্ম ও ওফাতের দিন (প্রসিদ্ধ মত অনুযায়ী)' },
+ { m:7, d:27, t:'শবে মিরাজ', d:'রাসূলুল্লাহ ﷺ-এর ইসরা ও মিরাজের রাত; পাঁচ ওয়াক্ত নামাজ ফরজ হয় এই রাতে' },
+ { m:8, d:15, t:'শবে বরাত', d:'শাবানের মধ্যরাত; মুক্তি ও রিজিকের রাত হিসেবে প্রসিদ্ধ' },
+ { m:9, d:1, t:'মাহে রমজান শুরু', d:'রোজার মাসের প্রথম দিন' },
+ { m:9, d:27, t:'শবে কদর (সম্ভাব্য)', d:'লাইলাতুল কদর — হাজার মাসের চেয়ে উত্তম রাত; শেষ দশকের বেজোড় রাতগুলোতে অন্বেষণ করুন' },
+ { m:10, d:1, t:'ঈদুল ফিতর', d:'রমজানের রোজা শেষে আনন্দের ঈদ; ঈদের আগে ফিতরা দেওয়া ওয়াজিব' },
+ { m:12, d:9, t:'আরাফার দিন', d:'হজের প্রধান দিন; হাজিদের বাইরে অন্যদের জন্য রোজা রাখা উত্তম' },
+ { m:12, d:10, t:'ঈদুল আজহা', d:'কুরবানির ঈদ; হযরত ইবরাহিম (আ.)-এর ত্যাগের স্মরণ' }
+];
+function hijriOf(d){
+  var h = hijriBD(d); if (!h) return null;
+  return { day: h.day, month: h.monthNum, year: h.year };
+}
+function renderDays(){
+  var now = dhakaNow();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var rows = SPECIAL_DAYS.map(function(sd){
+    var found = null;
+    for (var i = 0; i < 380; i++){
+      var dt = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
+      var h = hijriOf(dt);
+      if (h && h.month === sd.m && h.day === sd.d){ found = { date: dt, away: i }; break; }
+    }
+    return { sd: sd, found: found };
+  }).filter(function(r){ return r.found; }).sort(function(a, b){ return a.found.away - b.found.away; });
+  $('daysList').innerHTML = rows.map(function(r){
+    var dt = r.found.date;
+    var dateStr = new Intl.DateTimeFormat('bn-BD', { weekday:'long', day:'numeric', month:'long', year:'numeric' }).format(dt);
+    var away = r.found.away === 0 ? 'আজ' : (r.found.away === 1 ? 'আগামীকাল' : bn(r.found.away) + ' দিন পর');
+    return '<div class="dayrow"><div class="dt"><b>' + bn(r.sd.d) + '</b><span>' + ['','মুহাররম','সফর','রবিউল আউয়াল','রবিউস সানি','জমাদিউল আউয়াল','জমাদিউস সানি','রজব','শাবান','রমজান','শাওয়াল','জিলকদ','জিলহজ'][r.sd.m] + '</span></div>' +
+      '<div class="inf"><b>' + r.sd.t + '</b><span>' + r.sd.d + '</span><span>' + dateStr + '</span></div>' +
+      '<div class="away">' + away + '</div></div>';
+  }).join('');
+}
+renderDays();
+
+/* ================= Namaz tracker ================= */
+var tracker = { fajr:false, dhuhr:false, asr:false, maghrib:false, isha:false };
+function renderTracker(){
+  var now = nowFrame();
+  var c = curLoc();
+  var t = prayerTimes(now, c.lat, c.lng, c.tz);
+  var list = [['fajr','ফজর'],['dhuhr','যোহর'],['asr','আসর'],['maghrib','মাগরিব'],['isha','এশা']];
+  var done = 0;
+  var html = '<p style="margin-top:0"><b>' + new Intl.DateTimeFormat('bn-BD', { weekday:'long', day:'numeric', month:'long' }).format(now) + '</b> — ' + c.name + '</p>';
+  list.forEach(function(p){
+    if (tracker[p[0]]) done++;
+    html += '<div class="tk-row"><span class="nm">' + waqtLbl(p[0], p[1], now) + '</span><span class="tm">' + fmtTime(t[p[0]]) + '</span>' +
+      '<button class="tk' + (tracker[p[0]] ? ' done' : '') + '" data-tk="' + p[0] + '">' + (tracker[p[0]] ? '✓ পড়েছি' : 'পড়া হয়নি') + '</button></div>';
+  });
+  html += '<div style="margin-top:14px"><div class="tk-bar"><i style="width:' + (done * 20) + '%"></i></div>' +
+    '<p style="margin:8px 0 0; text-align:center; font-weight:600">আজ ' + bn(done) + '/৫ ওয়াক্ত সম্পন্ন' +
+    (done === 5 ? ' — আলহামদু
