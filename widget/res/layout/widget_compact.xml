@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:gravity="start"
         android:textColor="@color/widget_text_dates"
-        android:textSize="14sp" />
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/tv_next_c"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="3dp"
         android:textColor="@color/widget_accent"
-        android:textSize="15sp"
+        android:textSize="13sp"
         android:textStyle="bold" />
 
     <TextView
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:textColor="@color/widget_text_dates"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:visibility="gone" />
 
     <LinearLayout
@@ -50,7 +50,7 @@
             android:layout_weight="1"
             android:gravity="start"
             android:textColor="@color/widget_text_secondary"
-            android:textSize="13sp" />
+            android:textSize="11sp" />
 
         <TextView
             android:id="@+id/tv_sunset_c"
@@ -59,7 +59,7 @@
             android:layout_weight="1"
             android:gravity="end"
             android:textColor="@color/widget_text_secondary"
-            android:textSize="13sp" />
+            android:textSize="11sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -71,32 +71,46 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
+            android:background="@drawable/widget_cell_border"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingTop="4dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="4dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ফজর"
                 android:textColor="@color/widget_text_secondary"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_fajr_c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/widget_text_primary"
-                android:textSize="17sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
+            android:background="@drawable/widget_cell_border"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingTop="4dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="4dp">
 
             <TextView
                 android:id="@+id/tv_dhuhr_lbl_c"
@@ -104,83 +118,104 @@
                 android:layout_height="wrap_content"
                 android:text="যোহর"
                 android:textColor="@color/widget_text_secondary"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_dhuhr_c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/widget_text_primary"
-                android:textSize="17sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
+            android:background="@drawable/widget_cell_border"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingTop="4dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="4dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="আসর"
                 android:textColor="@color/widget_text_secondary"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_asr_c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/widget_text_primary"
-                android:textSize="17sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
+            android:background="@drawable/widget_cell_border"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingTop="4dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="4dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="মাগরিব"
                 android:textColor="@color/widget_text_secondary"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_maghrib_c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/widget_text_primary"
-                android:textSize="17sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
             android:layout_weight="1"
+            android:background="@drawable/widget_cell_border"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingTop="4dp"
+            android:paddingRight="2dp"
+            android:paddingBottom="4dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="এশা"
                 android:textColor="@color/widget_text_secondary"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <TextView
                 android:id="@+id/tv_isha_c"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/widget_text_primary"
-                android:textSize="17sp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
