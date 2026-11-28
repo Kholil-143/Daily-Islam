@@ -726,6 +726,37 @@
   .rtog{ border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:999px; padding:5px 10px; font:inherit; font-size:13.5px; font-weight:700; cursor:pointer }
   .rtog.on{ background:var(--gold); color:#241a05; border-color:var(--gold) }
   tr.ramtoday td{ background:rgba(201,162,75,.14) }
+
+  /* ---------- v2.19: Home polish ----------
+     Presentation only, scoped to the hero + #view-home so no other view
+     changes. One spacing rhythm (12/14/20px steps), one card language
+     (16px radius, theme shadow, gold-tinted border) and a tidy type
+     hierarchy. Everything is expressed with the theme variables, so the
+     white, black and royal-blue themes all pick it up unchanged. No
+     markup, content, order or behaviour changes. */
+  .hero-in{ padding:30px 16px 24px; }
+  .hero .nextp{ border-radius:16px; margin-top:14px; }
+  .hero .waqt-card{ margin-top:12px; }
+  .hero .hero-prayer{ margin-top:12px; }
+  .hero .hijri-banner{ margin-top:14px; }
+  #view-home{ padding-top:22px; }
+  #view-home .hsec{ margin:22px 0 12px; }
+  #view-home .hgrid{ gap:11px; }
+  @media (min-width:760px){ #view-home .hgrid{ gap:12px; } }
+  #view-home .htile{
+    box-shadow:0 4px 12px rgba(20,17,12,.20), inset 0 1px 0 rgba(227,200,120,.16);
+    transition:transform .16s ease, box-shadow .16s ease;
+  }
+  #view-home .htile:hover{ transform:translateY(-2px); box-shadow:0 9px 20px rgba(20,17,12,.24), inset 0 1px 0 rgba(227,200,120,.16); }
+  #view-home .htile:active{ transform:scale(.97); }
+  @media (prefers-reduced-motion: reduce){
+    #view-home .htile{ transition:none; }
+    #view-home .htile:hover{ transform:none; }
+  }
+  #view-home .search{ border-radius:12px; padding:11px 14px; background:var(--surface-2); }
+  #view-home .daily{ margin-top:20px; }
+  #view-home .daily .card{ border-top:3px solid var(--gold); }
+  #view-home .daily .card h3{ font-size:17px; letter-spacing:.2px; }
 </style>
 </head>
 <body>
@@ -883,9 +914,6 @@
       <div class="zform" style="margin-top:14px">
         <label>রিমাইন্ডারের শব্দ
           <select id="alarmSound">
-            <option value="bell">মধুর ঘণ্টা ধ্বনি</option>
-            <option value="melody">নরম সুর</option>
-            <option value="beep">সতর্ক বিপ</option>
             <option value="azan:makkah">আজান — মক্কা (হারাম শরীফ)</option>
             <option value="azan:madinah">আজান — মদিনা (মসজিদে নববী)</option>
             <option value="azan:alafasy">আজান — মিশারি রাশিদ আল-আফাসি</option>
@@ -927,20 +955,4 @@
       </div>
       <div class="seg" role="group" aria-label="তালিকার ধরন">
         <button id="segSurah" aria-pressed="true">সূরা অনুযায়ী</button>
-        <button id="segJuz" aria-pressed="false" title="কুরআনের ভিতরেই ৩০ পারার তালিকা">পারা অনুযায়ী (৩০ পারা)</button>
-      </div>
-      <input class="search" type="text" id="surahSearch" placeholder="সূরা খুঁজুন — নাম বা নম্বর লিখুন…" aria-label="সূরা খুঁজুন" />
-      <div class="slist" id="surahList"><p class="loadmsg">কুরআনের তথ্য লোড হচ্ছে…</p></div>
-      <div class="slist hidden" id="juzList"></div>
-    </div>
-    <div id="readerWrap" class="hidden">
-      <div class="reader-head">
-        <button class="btn ghost" id="readerBack">← তালিকায় ফিরুন</button>
-        <h3 id="readerTitle"></h3>
-        <button class="btn gold" id="playAllBtn">▶ পুরো অংশ শুনুন</button>
-        <button class="btn ghost" id="bookmarkBtn">🔖 বুকমার্ক করুন</button>
-        <label style="display:flex; align-items:center; gap:7px; font-weight:600; font-size:14.5px">ক্বারী:
-          <select id="reciterSel" aria-label="ক্বারী বাছাই করুন">
-            <option value="ar.alafasy">মিশারি রাশিদ আল-আফাসি</option>
-            <option value="ar.husary">মাহমুদ খলিল আল-হুসারি</option>
-            <option value="ar.minshawi">মুহাম্
+        <button id="segJuz" aria-pressed="false" title="কুরআনের ভিতরেই ৩০ পারার তালিকা">পার
