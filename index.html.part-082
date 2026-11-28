@@ -1,0 +1,61 @@
+(function(a, ai){ flat.push([si, ai, a]); }); });
+    var base = dayIndex(), now = Date.now(), items = [];
+    for (var k = 0; k < 7; k++){
+      var N = base + k, t = N * 86400000; /* 06:00 Asia/Dhaka == 00:00 UTC */
+      if (t <= now + 60000) continue;
+      var p = flat[N % flat.length];
+      var src = 'সূরা ' + SURA_BN[p[0]] + ', আয়াত ' + bn(p[1] + 1);
+      items.push({ id: (N % 100000) * 2, epochMs: t, title: 'আজকের আয়াত',
+        body: src + ' \u2014 ' + snippet(p[2][1], 80),
+        bigText: p[2][1] + '\n\u2014 ' + src });
+      var h = HADITHS[N % HADITHS.length];
+      items.push({ id: (N % 100000) * 2 + 1, epochMs: t, title: 'আজকের হাদিস',
+        body: h.s + ' \u2014 ' + snippet(h.bn, 80),
+        bigText: h.bn + '\n\u2014 ' + h.s });
+    }
+    return items;
+  }
+  var done = false, permAsked = false;
+  function schedule(){
+    if (done || !enabled()) return;
+    var items = buildItems();
+    if (!items) return;
+    done = true;
+    if (!permAsked){
+      permAsked = true;
+      try { if (!localStorage.getItem('di_notif_perm_asked')){ localStorage.setItem('di_notif_perm_asked', '1'); native('requestPermission', {}).catch(function(){}); } } catch(e){}
+    }
+    native('schedule', { items: items }).catch(function(){ done = false; });
+  }
+  function syncBtn(){
+    var b = document.getElementById('dailyNotifBtn');
+    if (!b) return;
+    var on = enabled();
+    b.textContent = 'নোটিফিকেশন: ' + (on ? 'অন' : 'অফ');
+    b.className = on ? 'btn gold' : 'btn ghost';
+  }
+  var btn = document.getElementById('dailyNotifBtn');
+  if (btn) btn.addEventListener('click', function(){
+    var on = !enabled();
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch(e){}
+    syncBtn();
+    if (on){
+      native('requestPermission', {}).catch(function(){}).then(function(){ done = false; schedule(); });
+      toast('প্রতিদিনের আয়াত ও হাদিসের নোটিফিকেশন অন');
+    } else {
+      native('cancelAll', {}).catch(function(){});
+      toast('নোটিফিকেশন অফ করা হয়েছে');
+    }
+  });
+  syncBtn();
+  schedule();
+  var tries = 0;
+  var iv = setInterval(function(){
+    tries++;
+    if (done || tries > 40){ clearInterval(iv); return; }
+    schedule();
+  }, 1500);
+})();
+</script>
+</body>
+</html>

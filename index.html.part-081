@@ -1,0 +1,440 @@
+ শেষ</th><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">ইফতার</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="sub" style="margin:8px 0 0">চাঁদ দেখার ওপর ভিত্তি করে রমজান এক দিন এদিক-সেদিক হতে পারে।</p>';
+});
+
+/* ---------- Dua bookmarks + profile open ---------- */
+document.addEventListener('click', function(e){
+  var db = e.target.closest('[data-bmd]');
+  if (db){
+    toggleBookmark({ key: 'dua:' + db.getAttribute('data-bmd'), type: 'dua', idx: 0, label: db.getAttribute('data-bmd'), sub: 'দোয়া' });
+    renderDuas($('duaSearch').value.trim());
+    return;
+  }
+  var ob = e.target.closest('[data-open-bmk]');
+  if (ob){
+    var b = BOOKMARKS[+ob.getAttribute('data-open-bmk')];
+    if (b && b.type === 'dua'){ showView('dua'); $('duaSearch').value = b.label; renderDuas(b.label); }
+  }
+});
+
+/* ---------- Last read ---------- */
+var LASTREAD = null;
+function setLastRead(mode, idx, si, ai){ LASTREAD = { mode: mode, idx: idx, si: si, ai: ai }; renderLastRead(); }
+function renderLastRead(){
+  var box = $('lastReadBox'); if (!box) return;
+  if (!LASTREAD){ box.innerHTML = ''; return; }
+  var label = LASTREAD.mode === 'surah' ? ('সূরা ' + SURA_BN[LASTREAD.idx]) : ('পারা ' + bn(LASTREAD.idx + 1) + ' — ' + JUZ_NAMES[LASTREAD.idx]);
+  box.innerHTML = '<div class="card" style="margin-bottom:12px; display:flex; align-items:center; gap:12px; flex-wrap:wrap"><div style="flex:1; min-width:210px"><b>শেষ পড়া</b><br><span style="color:var(--ink-2)">' + label + ' — আয়াত ' + bn(LASTREAD.ai + 1) + ' পর্যন্ত পড়েছেন (এই সেশনে)</span></div><button class="btn gold" id="resumeBtn">পড়া চালিয়ে যান</button></div>';
+  $('resumeBtn').addEventListener('click', function(){
+    var lr = LASTREAD; showView('quran'); openReader(lr.mode, lr.idx);
+    setTimeout(function(){
+      var el = $('ayah-' + globalAyah(lr.si, lr.ai));
+      if (el){ el.scrollIntoView({ block: 'center' }); el.style.outline = '2px solid var(--gold)'; setTimeout(function(){ el.style.outline = ''; }, 2600); }
+    }, 800);
+  });
+}
+$('readerBody').addEventListener('click', function(e){
+  var b = e.target.closest('[data-lr]'); if (!b) return;
+  var p = b.getAttribute('data-lr').split(':');
+  setLastRead(readerState.mode, readerState.idx, +p[0], +p[1]);
+  toast('থামার চিহ্ন রাখা হয়েছে — প্রোফাইলে পাবেন');
+});
+
+/* ---------- Hijri calendar ---------- */
+(function renderHijriCal(){
+  var box = $('hijriCal'); if (!box) return;
+  var now = dhakaNow(); var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var h0 = hijriOf(today); if (!h0) return;
+  var first = new Date(today.getFullYear(), today.getMonth(), today.getDate() - (h0.day - 1));
+  for (var adj = -2; adj <= 2; adj++){
+    var cand = new Date(first.getFullYear(), first.getMonth(), first.getDate() + adj);
+    var hc = hijriOf(cand);
+    if (hc && hc.day === 1 && hc.month === h0.month){ first = cand; break; }
+  }
+  $('hijriCalTitle').textContent = HIJRI_MONTHS_BD[h0.month - 1] + ' ' + bn(h0.year) + ' হিজরি';
+  var wd = ['রবি','সোম','মঙ্গল','বুধ','বৃহস্পতি','শুক্র','শনি'];
+  var cells = wd.map(function(w){ return '<div style="text-align:center; font-weight:700; font-size:12px; color:var(--gold); padding:4px 0">' + w + '</div>'; }).join('');
+  for (var e = 0; e < first.getDay(); e++) cells += '<div></div>';
+  for (var k = 0; k < 31; k++){
+    var d = new Date(first.getFullYear(), first.getMonth(), first.getDate() + k);
+    var hh = hijriOf(d); if (!hh || hh.month !== h0.month) break;
+    var isToday = d.getTime() === today.getTime();
+    var special = SPECIAL_DAYS.some(function(sd){ return sd.m === hh.month && sd.d === hh.day; });
+    cells += '<div style="text-align:center; padding:6px 2px; border-radius:9px;' + (isToday ? 'background:var(--gold); color:#231a04; font-weight:700;' : '') + (special && !isToday ? 'border:1.5px solid var(--gold);' : '') + '"><div style="font-size:16px; line-height:1.15">' + bn(hh.day) + '</div><div style="font-size:10.5px; opacity:.75">' + bn(d.getDate()) + '</div></div>';
+  }
+  box.innerHTML = '<div style="display:grid; grid-template-columns:repeat(7,1fr); gap:4px">' + cells + '</div><p class="sub" style="margin:8px 0 0; text-align:center">সোনালি ঘের দেওয়া ঘর = বিশেষ দিবস • ছোট সংখ্যা = ইংরেজি তারিখ</p>';
+})();
+
+/* ---------- Fitra ---------- */
+$('fCalc').addEventListener('click', function(){
+  var per = parseFloat($('fPer').value) || 0, cnt = parseInt($('fCount').value, 10) || 0;
+  var box = $('fResult'); box.classList.remove('hidden');
+  if (per <= 0 || cnt <= 0){ box.innerHTML = 'সঠিক পরিমাণ ও সদস্য সংখ্যা লিখুন।'; return; }
+  box.innerHTML = 'মোট ফিতরা: <b>৳ ' + bn(String(per * cnt)) + '</b> — ' + bn(cnt) + ' জন সদস্যের জন্য (জনপ্রতি ৳ ' + bn(String(per)) + ' করে)। ঈদের নামাজের আগেই গরিব-মিসকিনের কাছে পৌঁছে দিন।';
+});
+
+/* ---------- My mosque ---------- */
+var MYMOSQUE = null;
+function fmtClockVal(v){
+  if (!v) return '—';
+  var p = v.split(':'); var h = +p[0]; var h12 = h % 12; if (h12 === 0) h12 = 12;
+  return periodWord(h) + ' ' + bn(h12) + ':' + bn(p[1]);
+}
+function renderMyMosque(){
+  var box = $('mmDisplay'); if (!box) return;
+  if (!MYMOSQUE){ box.innerHTML = ''; return; }
+  var rows = '';
+  for (var k in MYMOSQUE.times) rows += '<div class="tk-row"><span class="nm">' + k + ' জামাত</span><span class="tm">' + fmtClockVal(MYMOSQUE.times[k]) + '</span></div>';
+  box.innerHTML = '<div class="card"><h3 style="margin-top:0">' + esc(MYMOSQUE.name) + '</h3>' + (MYMOSQUE.area ? '<p class="sub" style="margin-top:0">' + esc(MYMOSQUE.area) + '</p>' : '') + rows + '</div>';
+}
+$('mmSave').addEventListener('click', function(){
+  var name = $('mmName').value.trim();
+  if (!name){ toast('আগে মসজিদের নাম লিখুন'); $('mmName').focus(); return; }
+  MYMOSQUE = { name: name, area: $('mmArea').value.trim(), times: { 'ফজর': $('mmFajr').value, 'যোহর': $('mmDhuhr').value, 'আসর': $('mmAsr').value, 'মাগরিব': $('mmMaghrib').value, 'এশা': $('mmIsha').value, 'জুমা': $('mmJumuah').value } };
+  renderMyMosque();
+  toast('মসজিদের তথ্য সংরক্ষণ করা হয়েছে');
+});
+
+/* ---------- Find mosque ---------- */
+var FAMOUS = [
+ { n:'বায়তুল মোকাররম জাতীয় মসজিদ', a:'পল্টন, ঢাকা', d:'বাংলাদেশের জাতীয় মসজিদ — কাবা শরিফের আকৃতির অনুকরণে নির্মিত বিশাল মসজিদ কমপ্লেক্স।' },
+ { n:'তারা মসজিদ', a:'আরমানিটোলা, ঢাকা', d:'মোগল আমলের মসজিদ; দেয়ালে চিনি-টিকরি ও নীল তারার অলংকরণের জন্য বিখ্যাত।' },
+ { n:'ষাট গম্বুজ মসজিদ', a:'বাগেরহাট', d:'খান জাহান আলী (রহ.) নির্মিত পঞ্চদশ শতকের মসজিদ; ইউনেস্কো বিশ্ব ঐতিহ্যের অংশ।' },
+ { n:'ছোট সোনা মসজিদ', a:'শিবগঞ্জ, চাঁপাইনবাবগঞ্জ', d:'সুলতানি আমলের (আনুমানিক ১৪৯৩–১৫১৯ খ্রি.) মসজিদ; গম্বুজে একসময় সোনালি গিল্টি ছিল।' },
+ { n:'কুসুম্বা মসজিদ', a:'মান্দা, নওগাঁ', d:'১৫৫৮–৫৯ খ্রিস্টাব্দে নির্মিত কালো পাথরের প্রাচীন মসজিদ, মান্দা দিঘির পাড়ে অবস্থিত।' },
+ { n:'আতিয়া জামে মসজিদ', a:'দেলদুয়ার, টাঙ্গাইল', d:'১৬০৯ খ্রিস্টাব্দে নির্মিত মোগল স্থাপত্যের সুন্দর নিদর্শন।' }
+];
+$('famousMosques').innerHTML = FAMOUS.map(function(f){
+  var link = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(f.n + ' ' + f.a);
+  return '<article class="hcard"><h3>' + f.n + '</h3><p style="margin:0 0 4px; color:var(--gold); font-weight:600">' + f.a + '</p><p style="margin:0 0 10px">' + f.d + '</p><a class="btn" target="_blank" rel="noopener" href="' + link + '" style="text-decoration:none">মানচিত্রে দেখুন</a></article>';
+}).join('');
+function openMosqueMap(lat, lng){ window.open('https://www.google.com/maps/search/?api=1&query=mosque+near+' + lat + ',' + lng, '_blank', 'noopener'); }
+$('fmCityBtn').addEventListener('click', function(){ var c = curLoc(); openMosqueMap(c.lat, c.lng); });
+$('fmGpsBtn').addEventListener('click', function(){
+  if (!navigator.geolocation){ toast('এই ডিভাইসে GPS সুবিধা নেই — জেলাভিত্তিক খোঁজ ব্যবহার করুন'); return; }
+  toast('লোকেশন নেওয়া হচ্ছে…');
+  navigator.geolocation.getCurrentPosition(function(pos){ openMosqueMap(pos.coords.latitude.toFixed(5), pos.coords.longitude.toFixed(5)); }, function(){ toast('লোকেশন পাওয়া যায়নি — জেলাভিত্তিক খোঁজ ব্যবহার করুন'); }, { timeout: 10000 });
+});
+
+/* ---------- Bayan (verified YouTube links) ---------- */
+var BAYAN = [
+ { t:'মৃত্যুর পরের ভয়াবহ দৃশ্য — জান্নাত ও জাহান্নাম', sp:'ড. মিজানুর রহমান আজহারী', topic:'আখিরাত', url:'https://www.youtube.com/watch?v=C-2Pk4B2OCQ' },
+ { t:'তওবা ও ক্ষমা — নবীজি ﷺ-এর শেষ উপদেশ', sp:'ড. মিজানুর রহমান আজহারী', topic:'তওবা', url:'https://www.youtube.com/watch?v=0olVRge0Cpk' },
+ { t:'মা-বাবার মর্যাদা ও জুরাইজের ঘটনা', sp:'ড. মিজানুর রহমান আজহারী', topic:'পিতামাতা', url:'https://www.youtube.com/watch?v=T2Y2aK2bPrA' },
+ { t:'যে মাহফিলে হুজুর নিজেই কান্নায় ভেঙে পড়লেন', sp:'মাওলানা মিজানুর রহমান আজহারী', topic:'আখিরাত', url:'https://www.youtube.com/watch?v=Vrv9rYS9LFQ' },
+ { t:'যশোরের মাটিতে হৃদয়ছোঁয়া বয়ান', sp:'শায়খ আহমাদুল্লাহ', topic:'সাধারণ বয়ান', url:'https://www.youtube.com/watch?v=DmfRpzXWaa4' },
+ { t:'দৈনন্দিন জীবনের দুটি বড় ভুল', sp:'শায়খ আহমাদুল্লাহ', topic:'দৈনন্দিন সুন্নাহ', url:'https://www.youtube.com/watch?v=fQ3iUhByQLM' },
+ { t:'মহিলাদের মেহেদী দেওয়া প্রসঙ্গে প্রশ্নোত্তর', sp:'শায়খ আহমাদুল্লাহ', topic:'প্রশ্নোত্তর', url:'https://www.youtube.com/watch?v=IDNLo_jhzEw' },
+ { t:'নবীজি ﷺ-এর জীবনী', sp:'ড. মিজানুর রহমান আজহারী', topic:'সীরাত', audio:'https://archive.org/download/mizanurrahmanazharimahfilaudiocollection1/Biography_of_Prophet_Muhammad_By_Mizanur_Rahman_Azhari.mp3' },
+ { t:'কিয়ামতের ময়দান', sp:'ড. মিজানুর রহমান আজহারী', topic:'আখিরাত', audio:'https://archive.org/download/mizanurrahmanazharimahfilaudiocollection1/Kiyamoter_Moydan_By_Mizanur_Rahman_Azhari.mp3' },
+ { t:'কুরআনের জন্য মরণ', sp:'ড. মিজানুর রহমান আজহারী', topic:'কুরআন', audio:'https://archive.org/download/mizanurrahmanazharimahfilaudiocollection1/Quraner_Jonno_Moron_By_Mizanur_Rahman_Azhari.mp3' },
+ { t:'স্বামী-স্ত্রীর সম্পর্ক', sp:'ড. মিজানুর রহমান আজহারী', topic:'পরিবার', audio:'https://archive.org/download/mizanurrahmanazharimahfilaudiocollection1/Shami_Strir_Shomporke_By_Mizanur_Rahman_Azhari.mp3' },
+ { t:'সূরা যিলযালের তাফসির', sp:'ড. মিজানুর রহমান আজহারী', topic:'তাফসির', audio:'https://archive.org/download/mizanurrahmanazharimahfilaudiocollection1/Tafsir_of_Surah_Zilzal_By_Mizanur_Rahman_Azhari.mp3' },
+ { t:'আপনার রোজা হচ্ছে না — শুনুন কেন', sp:'শায়খ আহমাদুল্লাহ', topic:'রোজা', audio:'https://archive.org/download/BYSheikAhmadullah/%E0%A6%86%E0%A6%AA%E0%A6%A8%E0%A6%BE%E0%A6%B0%20%E0%A6%B0%E0%A7%8B%E0%A6%9C%E0%A6%BE%20%E0%A6%B9%E0%A6%9A%E0%A7%8D%E0%A6%9B%E0%A7%87%E0%A6%A8%E0%A6%BE%20%21%20%E0%A6%B6%E0%A7%81%E0%A6%A8%E0%A7%81%E0%A6%A8%20%E0%A6%95%E0%A7%87%E0%A6%A8%20...%20BY%20Sheik%20Ahmadullah.mp3' },
+ { t:'মেঘদূত যুব সংঘ ওয়াজ মাহফিল ২০১৭', sp:'মুফতি কাজী মুহাম্মদ ইব্রাহিম', topic:'সাধারণ বয়ান', audio:'https://archive.org/download/429BanglaWazMeghdutJuboSonghoWajMahfil2017ByMuftiKaziMuhammadIbrahimwww.tawhidmedia.com/429%20Bangla%20Waz%20Meghdut%20Jubo%20Songho%20Waj%20Mahfil%202017%20by%20Mufti%20Kazi%20Muhammad%20Ibrahim%5Bwww.tawhidmedia.com%5D.mp3' },
+ { t:'নেশাদার দ্রব্য (পর্ব ১)', sp:'আব্দুর রাজ্জাক বিন ইউসুফ', topic:'সমাজ', audio:'https://archive.org/download/BanglaWazNeshadarDrobboPart1ByAbdurRazzaqueBinYousufwww.tawhidmedia.com/Bangla%20Waz%20Neshadar%20Drobbo%20Part%201%20by%20Abdur%20Razzaque%20bin%20Yousuf%5Bwww.tawhidmedia.com%5D.mp3' },
+ { t:'রমজানের গুরুত্ব ও তাৎপর্য', sp:'আব্দুর রাজ্জাক বিন ইউসুফ', topic:'রমজান', audio:'https://archive.org/download/464BanglaWazRamazanerGuruttoOTatporzowww.tawhidmedia.com/464%20Bangla%20Waz%20Ramazaner%20Gurutto%20O%20Tatporzo%5Bwww.tawhidmedia.com%5D.mp3' }
+];
+var boyanIdx = -1;
+function renderBayan(){
+  $('bayanList').innerHTML = BAYAN.map(function(b, i){
+    var playing = boyanIdx === i && !player.paused;
+    var audioBtn = b.audio ? '<button class="btn" data-bayan-play="' + i + '">' + (playing ? '⏸ চলছে…' : '▶ অডিও শুনুন') + '</button>' : '';
+    var ytBtn = b.url ? '<a class="btn gold" target="_blank" rel="noopener" href="' + b.url + '" style="text-decoration:none">▶ YouTube-এ শুনুন</a>' : '';
+    var btns = (audioBtn || ytBtn) ? '<p style="margin:0; display:flex; gap:8px; flex-wrap:wrap">' + audioBtn + ytBtn + '</p>' : '';
+    return '<article class="hcard"><span class="cat">' + b.topic + '</span><h3>' + b.t + '</h3><p style="margin:0 0 10px; color:var(--ink-2)">বক্তা: ' + b.sp + '</p>' + btns + '</article>';
+  }).join('');
+}
+renderBayan();
+$('bayanList').addEventListener('click', function(e){
+  var btn = e.target.closest('[data-bayan-play]'); if (!btn) return;
+  var i = +btn.getAttribute('data-bayan-play');
+  if (boyanIdx === i && !player.paused){ player.pause(); }
+  else {
+    stopAudio();
+    if (tilSurah){ tilSurah = null; buildTilawat(); }
+    boyanIdx = i;
+    playAudioSmart(BAYAN[i].audio);
+  }
+  setTimeout(renderBayan, 80);
+});
+player.addEventListener('ended', function(){ if (boyanIdx >= 0){ boyanIdx = -1; renderBayan(); } });
+player.addEventListener('pause', function(){ if (boyanIdx >= 0 && currentView === 'bayan') setTimeout(renderBayan, 80); });
+</script>
+<script>
+/* ================= Prayer alarms & reminders ================= */
+var ALARMS = { fajr:{on:false,before:0}, dhuhr:{on:false,before:0}, asr:{on:false,before:0}, maghrib:{on:false,before:0}, isha:{on:false,before:0}, sehri:{on:false,before:0}, iftar:{on:false,before:0} };
+var ALARM_NAMES = { fajr:'ফজর', dhuhr:'যোহর', asr:'আসর', maghrib:'মাগরিব', isha:'এশা', sehri:'সেহরি', iftar:'ইফতার' };
+function alarmName(k){ return (k === 'dhuhr' && nowFrame().getDay() === 5) ? 'জুমা' : ALARM_NAMES[k]; }
+var alarmFired = {};
+var actx = null, masterGain = null;
+function ensureAudio(){
+  if (!actx){
+    try { actx = new (window.AudioContext || window.webkitAudioContext)(); masterGain = actx.createGain(); masterGain.connect(actx.destination); } catch(e){ actx = null; }
+  }
+  if (actx && actx.state === 'suspended') actx.resume();
+  if (masterGain) masterGain.gain.value = ((+$('alarmVol').value) || 80) / 100;
+}
+function toneAt(freq, start, dur, peak){
+  var o = actx.createOscillator(), g = actx.createGain();
+  o.type = 'sine'; o.frequency.value = freq;
+  g.gain.setValueAtTime(0.0001, start);
+  g.gain.exponentialRampToValueAtTime(peak, start + 0.03);
+  g.gain.exponentialRampToValueAtTime(0.0001, start + dur);
+  o.connect(g); g.connect(masterGain);
+  o.start(start); o.stop(start + dur + 0.05);
+}
+/* ---- Azan recordings (verified direct mp3 streams; cached after first play) ---- */
+var AZAN_URLS = {
+  'azan:makkah': 'https://archive.org/download/full-madinah.mp3/full-makkah.mp3.mp3',
+  'azan:madinah': 'https://archive.org/download/full-madinah.mp3/full-madinah.mp3.mp3',
+  'azan:alafasy': 'https://archive.org/download/Athan-AlafasyByDarifton/Athan-Alafasy1431.mp3',
+  'azan:alafasyfajr': 'https://archive.org/download/adhan-call-to-prayer-mishary-rashid-alafasy-fajr-maqam-hijaz-hd-320-kbps-1/Adhan%20%28Call%20to%20prayer%29%20_%20Mishary%20Rashid%20Alafasy%20_%20Fajr%20_%20Maqam%20Hijaz%20%E1%B4%B4%E1%B4%B0%20%28320%20kbps%29%20%281%29.mp3',
+  'azan:fakhry': 'https://upload.wikimedia.org/wikipedia/commons/2/27/Call_to_prayer_by_Sabah_Fakhry.mp3',
+  'azan:aaqib': 'https://upload.wikimedia.org/wikipedia/commons/7/7d/The_Adhan_-_Muslim_Call_to_Prayer_-_Aaqib_Azeez.mp3'
+};
+var azanEl = null;
+function stopAzan(){ if (azanEl){ try { azanEl.pause(); } catch(e){} } }
+function playAzan(url){
+  if (!url){ toast('আজানের অডিও পাওয়া যায়নি'); return; }
+  stopAzan();
+  if (!azanEl) azanEl = new Audio();
+  azanEl.volume = ((+$('alarmVol').value) || 80) / 100;
+  var go = function(){ var p = azanEl.play(); if (p && p.catch) p.catch(function(){ toast('আজান চালানো যায়নি — ইন্টারনেট সংযোগ দেখুন'); }); };
+  if (!('caches' in window)){ azanEl.src = url; go(); return; }
+  caches.open(AUDIO_CACHE).then(function(c){ return c.match(url); }).then(function(res){
+    if (res){ res.blob().then(function(b){ azanEl.src = URL.createObjectURL(b); go(); }); }
+    else { azanEl.src = url; go(); cacheAudio(url); }
+  }).catch(function(){ azanEl.src = url; go(); });
+}
+function playAlarmSound(){
+  var kind = $('alarmSound').value;
+  if (kind.indexOf('azan:') === 0){ playAzan(AZAN_URLS[kind]); return; }
+  stopAzan();
+  ensureAudio();
+  if (!actx){ toast('এই ব্রাউজারে শব্দ চালানো যাচ্ছে না'); return; }
+  [0, 4.2].forEach(function(round){
+    var t0 = actx.currentTime + 0.06 + round;
+    if (kind === 'bell'){
+      [0, 1.15].forEach(function(off){ toneAt(1318, t0 + off, 1.5, 0.5); toneAt(1975, t0 + off, 0.9, 0.16); toneAt(2637, t0 + off, 0.5, 0.07); });
+    } else if (kind === 'melody'){
+      [659, 784, 880, 988, 880, 784].forEach(function(f, i){ toneAt(f, t0 + i * 0.42, 0.55, 0.38); });
+    } else {
+      [0, 0.35, 0.7].forEach(function(off){ toneAt(880, t0 + off, 0.22, 0.42); });
+    }
+  });
+}
+function renderAlarmRows(){
+  var order = ['fajr','dhuhr','asr','maghrib','isha','sehri','iftar'];
+  $('alarmRows').innerHTML = order.map(function(k){
+    var a = ALARMS[k];
+    var opts = [0, 5, 10, 15].map(function(m){
+      return '<option value="' + m + '"' + (a.before === m ? ' selected' : '') + '>' + (m === 0 ? 'ঠিক সময়ে' : bn(m) + ' মিনিট আগে') + '</option>';
+    }).join('');
+    return '<div class="tk-row"><span class="nm">' + alarmName(k) + '</span><span style="display:flex; gap:8px; align-items:center; flex-wrap:wrap"><select data-alarm-before="' + k + '" aria-label="' + alarmName(k) + ' অ্যালার্ম কখন বাজবে">' + opts + '</select><button class="tk' + (a.on ? ' done' : '') + '" data-alarm="' + k + '">' + (a.on ? '✓ অ্যালার্ম অন' : 'অ্যালার্ম অফ') + '</button></span></div>';
+  }).join('');
+}
+/* v2.16: restore saved alarm settings so they survive restarts. */
+try {
+  var _sa = JSON.parse(localStorage.getItem('di_alarms') || 'null');
+  if (_sa){
+    if (_sa.alarms) Object.keys(ALARMS).forEach(function(k){ if (_sa.alarms[k]){ ALARMS[k].on = !!_sa.alarms[k].on; ALARMS[k].before = +_sa.alarms[k].before || 0; } });
+    if (_sa.sound && $('alarmSound')) $('alarmSound').value = _sa.sound;
+    if (_sa.vol != null && $('alarmVol')) $('alarmVol').value = _sa.vol;
+  }
+} catch (e) {}
+function saveAlarms(){
+  try {
+    var o = { alarms: {}, sound: $('alarmSound') ? $('alarmSound').value : 'bell', vol: $('alarmVol') ? $('alarmVol').value : 80 };
+    Object.keys(ALARMS).forEach(function(k){ o.alarms[k] = { on: ALARMS[k].on, before: ALARMS[k].before }; });
+    localStorage.setItem('di_alarms', JSON.stringify(o));
+  } catch (e) {}
+}
+var _asl = $('alarmSound'); if (_asl) _asl.addEventListener('change', saveAlarms);
+renderAlarmRows();
+document.addEventListener('click', function(e){
+  var b = e.target.closest('[data-alarm]');
+  if (!b) return;
+  var k = b.getAttribute('data-alarm');
+  ALARMS[k].on = !ALARMS[k].on;
+  if (ALARMS[k].on) ensureAudio();
+  renderAlarmRows(); renderPrayer(); saveAlarms();
+  toast(alarmName(k) + 'র অ্যালার্ম ' + (ALARMS[k].on ? 'চালু' : 'বন্ধ') + ' করা হয়েছে');
+});
+document.addEventListener('change', function(e){
+  var s = e.target.closest('[data-alarm-before]');
+  if (s){ ALARMS[s.getAttribute('data-alarm-before')].before = +s.value; saveAlarms(); }
+});
+$('alarmVol').addEventListener('input', function(){ if (masterGain) masterGain.gain.value = ((+this.value) || 0) / 100; if (azanEl) azanEl.volume = ((+this.value) || 0) / 100; saveAlarms(); });
+$('alarmTest').addEventListener('click', function(){ playAlarmSound(); $('alarmStop').disabled = false; toast('টেস্ট শব্দ বাজছে'); });
+function hideAlarmBanner(){ stopAzan(); $('alarmBanner').classList.add('hidden'); $('alarmStop').disabled = true; }
+$('alarmStop').addEventListener('click', hideAlarmBanner);
+$('alarmBannerStop').addEventListener('click', hideAlarmBanner);
+function fireAlarm(key, before){
+  var msg;
+  if (before > 0) msg = bn(before) + ' মিনিট পর ' + alarmName(key) + (key === 'sehri' ? 'র সময় শেষ হবে' : (key === 'iftar' ? 'র সময় হবে' : 'র ওয়াক্ত শুরু হবে'));
+  else msg = key === 'sehri' ? 'সেহরির সময় শেষ হয়েছে' : (key === 'iftar' ? 'ইফতারের সময় হয়েছে' : alarmName(key) + 'র ওয়াক্ত শুরু হয়েছে');
+  $('alarmBannerTxt').textContent = 'রিমাইন্ডার: ' + msg;
+  $('alarmBanner').classList.remove('hidden');
+  $('alarmStop').disabled = false;
+  playAlarmSound();
+  if (navigator.vibrate) navigator.vibrate([220, 110, 220]);
+}
+setInterval(function(){
+  var now = nowFrame();
+  var c = curLoc();
+  var t = prayerTimes(now, c.lat, c.lng, c.tz);
+  var targets = { fajr: t.fajr, dhuhr: t.dhuhr, asr: t.asr, maghrib: t.maghrib, isha: t.isha, sehri: t.fajr - 10/60, iftar: t.maghrib };
+  for (var k in targets){
+    var a = ALARMS[k]; if (!a || !a.on) continue;
+    var target = new Date(timeToDate(now, targets[k]).getTime() - (a.before || 0) * 60000);
+    var id = target.getFullYear() + '-' + target.getMonth() + '-' + target.getDate() + ':' + k + ':' + (a.before || 0);
+    if (alarmFired[id]) continue;
+    var diff = target - now;
+    if (diff <= 0 && diff > -90000){ alarmFired[id] = true; fireAlarm(k, a.before || 0); }
+  }
+}, 1000);
+
+/* ================= Global search ================= */
+function gsNorm(s){ return String(s).replace(/রাহ/g, 'রহ').replace(/ী/g, 'ি').replace(/ূ/g, 'ু').replace(/[‌‍]/g, ''); }
+function gsResults(q){
+  q = gsNorm((q || '').trim());
+  var box = $('globalResults');
+  if (q.length < 2){ box.innerHTML = ''; return; }
+  var out = [];
+  SURA_BN.forEach(function(n, i){ if (gsNorm(n).indexOf(q) > -1 || String(i + 1) === q || bn(i + 1) === q) out.push({ t:'সূরা', l:'সূরা ' + n + ' (নম্বর ' + bn(i + 1) + ')', a:'surah', i:i }); });
+  HADITHS.forEach(function(h, i){ if (gsNorm(h.t + h.bn + h.c).indexOf(q) > -1) out.push({ t:'হাদিস', l:h.t, a:'hadith', i:i }); });
+  DUAS.forEach(function(d, i){ if (gsNorm(d.t + d.bn).indexOf(q) > -1) out.push({ t:'দোয়া', l:d.t, a:'dua', i:i }); });
+  NAMES99.forEach(function(n, i){ if (gsNorm(n[1] + n[2] + n[0]).indexOf(q) > -1) out.push({ t:'আসমাউল হুসনা', l:n[1] + ' — ' + n[2], a:'names', i:i }); });
+  BOY_NAMES.forEach(function(n, i){ if (gsNorm(n[0] + n[1]).indexOf(q) > -1) out.push({ t:'ছেলেদের নাম', l:n[0] + ' — ' + n[1], a:'boy', i:i }); });
+  GIRL_NAMES.forEach(function(n, i){ if (gsNorm(n[0] + n[1]).indexOf(q) > -1) out.push({ t:'মেয়েদের নাম', l:n[0] + ' — ' + n[1], a:'girl', i:i }); });
+  if (!out.length){ box.innerHTML = '<p class="sub" style="margin:10px 0 0">কিছু পাওয়া যায়নি — অন্য শব্দে খুঁজুন।</p>'; return; }
+  box.innerHTML = '<div style="display:flex; flex-direction:column; gap:6px; margin-top:10px">' + out.slice(0, 16).map(function(r){
+    return '<button class="bmk" data-gs="' + r.a + ':' + r.i + '"><span class="cat" style="margin:0">' + r.t + '</span><span>' + esc(r.l) + '</span></button>';
+  }).join('') + (out.length > 16 ? '<p class="sub" style="margin:2px 0 0">আরও ' + bn(out.length - 16) + 'টি ফলাফল আছে — খোঁজ আরও নির্দিষ্ট করুন।</p>' : '') + '</div>';
+}
+$('globalSearch').addEventListener('input', function(){ gsResults(this.value); });
+document.addEventListener('click', function(e){
+  var g = e.target.closest('[data-gs]'); if (!g) return;
+  var p = g.getAttribute('data-gs').split(':'); var act = p[0], idx = +p[1];
+  if (act === 'surah'){ showView('quran'); openReader('surah', idx); }
+  else if (act === 'hadith'){ showView('hadith'); $('hadithSearch').value = HADITHS[idx].t; renderHadiths(HADITHS[idx].t); }
+  else if (act === 'dua'){ showView('dua'); $('duaSearch').value = DUAS[idx].t; renderDuas(DUAS[idx].t); }
+  else if (act === 'names'){ openSub('names'); }
+  else if (act === 'boy' || act === 'girl'){
+    openSub('baby');
+    babyGender = act;
+    $('segBoy').setAttribute('aria-pressed', act === 'boy' ? 'true' : 'false');
+    $('segGirl').setAttribute('aria-pressed', act === 'girl' ? 'true' : 'false');
+    var nm = act === 'boy' ? BOY_NAMES[idx][0] : GIRL_NAMES[idx][0];
+    $('babySearch').value = nm; renderBaby();
+  }
+});
+
+/* ================= Shareable image cards ================= */
+var cardLogoImg = new Image(); cardLogoImg.src = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAQDAwMDAgQDAwMEBAQFBgoGBgUFBgwICQcKDgwPDg4MDQ0PERYTDxAVEQ0NExoTFRcYGRkZDxIbHRsYHRYYGRj/2wBDAQQEBAYFBgsGBgsYEA0QGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBgYGBj/wAARCAIAAgADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD7+ooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKTNLQAUUZpM0ALRRmjNABRRRmgAoopMigBaKbu56GnZoAKKTIozQAtFN3f7JpQc9qAFoopMigBaKMikyKAFooooAKKTIpc0AFFJkUuRQAUUZooAKKKMigAooyKMigAopCcdjRu9jQAtFJn2NLmgAopMijd7GgBaKTNLQAUUZozQAUUUZFABRSZozQAtFGRRkUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRSHpQAtFJmloAKKKKACiikzQAtFJml4oATFAxR2oFAC4FFFFABRRRQAUUUhoAWjikzxSUALxRxQKSgB1FIKWgAooooAKKM0h6UAGaOKTFFAC5o4NJSigA70cUGgUALRSGkHWgB1FFFACY5pcUd6KACiiigAooooAKKKKACiiigAowKKaetADqKQdKWgAooooAKKKKACiiigAooooAKKKKACiiigApD0paDQA2nDpSGjOKADvQaM0lAC9qSlzSUAFFFFABRRRQAueKSlBpD1oAM0oNJS4oAM0lFFABRRRQAUUUUAFLmkxWZrXiDSvD9skuo3BDytshgjUvLM391EHLH6VFSpClFzm7JdWVGLk7RV2atFeVeIfH/iYQxvZWC6VbTEKjuouJ3z90AD5Qx6BRuOQemDV/Q/BGsaldR6v4u1nVZAGEkWnG7OEwcgyFMDP+yowPU148c59vW9jhabk1u37qX36/hr0Ox4Lkhz1ZJfi/wCvmeiUopKK9s4Rc0lFFABRRRQAvNHSkpetABkUUYo6UAGaAaDSUALQelGeKM0AJRS44pKAFBpabTh0oAKQmlpD1oADQKSigBx6U2lJpKAFFLSDpS0AFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFB6UUh6UAJmjrRRQAuKSlzSUAFFFFABRRRQAUUUUAFBoooAKXNJRQAUUUUAFFFFABSikqrqOoWuk6Rc6leyeXb28Zkkb2A7e9TOahFyk7JDSbdkZfifxKmhW0dvaxpc6ncBjBA77UVVGWlkb+GNRyT+A5NeD6prV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';
+function wrapLines(ctx, text, maxW){
+  var words = String(text).split(/\s+/), lines = [], cur = '';
+  words.forEach(function(w){
+    var test = cur ? cur + ' ' + w : w;
+    if (ctx.measureText(test).width > maxW && cur){ lines.push(cur); cur = w; }
+    else cur = test;
+  });
+  if (cur) lines.push(cur);
+  return lines;
+}
+function makeCard(opts){
+  var W = 1080, H = 1080;
+  var cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+  var ctx = cv.getContext('2d');
+  var grad = ctx.createLinearGradient(0, 0, W, H);
+  grad.addColorStop(0, '#07301f'); grad.addColorStop(0.55, '#0b4a30'); grad.addColorStop(1, '#06231a');
+  ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
+  ctx.strokeStyle = '#c9a24b'; ctx.lineWidth = 5; ctx.strokeRect(34, 34, W - 68, H - 68);
+  ctx.lineWidth = 1.6; ctx.strokeRect(52, 52, W - 104, H - 104);
+  ctx.textAlign = 'center';
+  if (cardLogoImg.complete && cardLogoImg.naturalWidth){
+    ctx.save();
+    ctx.beginPath(); ctx.arc(W/2, 148, 62, 0, Math.PI * 2); ctx.clip();
+    ctx.drawImage(cardLogoImg, W/2 - 62, 86, 124, 124);
+    ctx.restore();
+    ctx.strokeStyle = '#c9a24b'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.arc(W/2, 148, 62, 0, Math.PI * 2); ctx.stroke();
+  }
+  ctx.fillStyle = '#e3c878'; ctx.font = '700 36px "Hind Siliguri", sans-serif';
+  ctx.fillText('Muslim Path', W/2, 268);
+  var maxW = 880, arSize = 62, bnSize = 43, arLines = [], bnLines = [], total = 0;
+  function measure(){
+    ctx.font = arSize + 'px Amiri, serif'; arLines = wrapLines(ctx, opts.ar, maxW);
+    ctx.font = bnSize + 'px "Hind Siliguri", sans-serif'; bnLines = wrapLines(ctx, opts.bnText, maxW);
+    total = arLines.length * arSize * 1.95 + 34 + bnLines.length * bnSize * 1.62 + 30 + 40;
+    return total;
+  }
+  measure();
+  while (total > 560 && arSize > 28){ arSize -= 4; bnSize = Math.max(25, bnSize - 2); measure(); }
+  var y = 330 + Math.max(0, (580 - total) / 2) + arSize;
+  ctx.fillStyle = '#f7ead0'; ctx.font = arSize + 'px Amiri, serif';
+  arLines.forEach(function(ln){ ctx.fillText(ln, W/2, y); y += arSize * 1.95; });
+  y += 34 - arSize * 0.4;
+  ctx.fillStyle = '#ffffff'; ctx.font = bnSize + 'px "Hind Siliguri", sans-serif';
+  bnLines.forEach(function(ln){ ctx.fillText(ln, W/2, y); y += bnSize * 1.62; });
+  y += 30;
+  ctx.fillStyle = '#e3c878'; ctx.font = '600 33px "Hind Siliguri", sans-serif';
+  ctx.fillText(opts.src, W/2, y);
+  ctx.fillStyle = '#c9a24b'; ctx.font = '28px "Hind Siliguri", sans-serif';
+  ctx.fillText('কুরআন ও সুন্নাহর আলোকে জীবন গড়ুন', W/2, 992);
+  var url = cv.toDataURL('image/png');
+  $('cardImg').src = url;
+  $('cardDownload').href = url;
+  $('cardModal').style.display = 'flex';
+}
+function openCard(opts){
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ makeCard(opts); });
+  else makeCard(opts);
+}
+$('cardClose').addEventListener('click', function(){ $('cardModal').style.display = 'none'; });
+$('cardModal').addEventListener('click', function(e){ if (e.target === this) this.style.display = 'none'; });
+document.addEventListener('click', function(e){
+  var ca = e.target.closest('[data-card-ayah]');
+  if (ca){
+    var p = ca.getAttribute('data-card-ayah').split(':'); var si = +p[0], ai = +p[1];
+    if (typeof QURAN === 'undefined' || !QURAN){ toast('কুরআন লোড হয়নি — আবার চেষ্টা করুন'); return; }
+    var a = QURAN.surahs[si].a[ai];
+    openCard({ ar: a[0], bnText: a[1], src: 'সূরা ' + SURA_BN[si] + ' — আয়াত ' + bn(ai + 1) });
+    return;
+  }
+  var ch = e.target.closest('[data-card-hadith]');
+  if (ch){
+    var title = ch.getAttribute('data-card-hadith'), h = null;
+    HADITHS.forEach(function(x){ if (x.t === title) h = x; });
+    if (h) openCard({ ar: h.ar, bnText: h.bn, src: 'সূত্র: ' + h.s });
+  }
+});
+</script>
+<script>
+/* ================= Widget refresh button ================= */
+$('refreshBtn').addEventListener('click', function(){
+  var btn = this;
+  btn.classList.remove('spin'); void btn.offsetWidth; btn.classList.add('spin');
+  updateClock();
+  renderPrayer();
+  if (typeof tickRoza === 'function') tickRoza();
+  if (typeof tickRamadan === 'function') tickRamadan();
+  toast('ঘড়ি, তারিখ ও নামাজের সময় আপডেট হয়েছে');
+});
+</script>
+
+<script>
+/* ============ Daily ayah & hadith notifications (v2.9) ============ */
+(function(){
+  var KEY = 'di_daily_notif';
+  function enabled(){ try { return localStorage.getItem(KEY) !== '0'; } catch(e){ return true; } }
+  function native(method, opts){
+    var C = window.Capacitor;
+    if (!C || !C.nativePromise) return Promise.reject(new Error('no bridge'));
+    return C.nativePromise('DailyNotify', method, opts || {});
+  }
+  function snippet(t, n){ t = String(t || ''); return t.length > n ? t.slice(0, n - 1) + '\u2026' : t; }
+  function buildItems(){
+    if (typeof QURAN === 'undefined' || !QURAN || typeof HADITHS === 'undefined' || typeof SURA_BN === 'undefined') return null;
+    var flat = [];
+    QURAN.surahs.forEach(function(su, si){ su.a.forEach
