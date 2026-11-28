@@ -1,0 +1,10 @@
+t(false); refreshDnd(); }
+  });
+  syncUi();
+  refreshDnd();
+  syncSilent(true);
+  setInterval(function(){ syncSilent(false); }, 15 * 60000);
+})();
+</script>
+</body>
+</html>
