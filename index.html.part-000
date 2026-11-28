@@ -17,7 +17,7 @@
     --green-600:#3d372c; --green-500:#554d3d;
     --gold:#c9a24b; --gold-2:#e3c878; --gold-soft:#f3e7c3;
     --bg:#ffffff; --surface:#ffffff; --surface-2:#ffffff;
-    --ink:#1c2a22; --ink-2:#4a5a50; --line:#ddd3b8; --linkc:#8a6d1f;
+    --ink:#1c2a22; --ink-2:#33463a; --line:#ddd3b8; --linkc:#8a6d1f;
     --card-shadow:0 2px 10px rgba(20,17,12,.08), 0 10px 30px rgba(20,17,12,.06);
     --danger:#b3372f; --ok:#12714e;
   }
@@ -434,10 +434,25 @@
   :root[data-theme="light"]{
     color-scheme:light;
     --bg:#ffffff; --surface:#ffffff; --surface-2:#ffffff;
-    --ink:#1c2a22; --ink-2:#4a5a50; --line:#ddd3b8; --linkc:#8a6d1f;
+    --ink:#1c2a22; --ink-2:#33463a; --line:#ddd3b8; --linkc:#8a6d1f;
     --card-shadow:0 2px 10px rgba(20,17,12,.08), 0 10px 30px rgba(20,17,12,.06);
     --danger:#b3372f; --ok:#12714e;
   }
+  /* Light theme clarity: the hero countdown card and prayer-schedule card
+     sit on always-dark surfaces. On a white page their translucent dark
+     background washed out to grey and muted theme tones (e.g. --ink-2 in
+     the schedule's end-time column) turned hazy. In the light theme make
+     those dark surfaces nearly opaque and keep their text in the same
+     bright white / bright-gold colours the dark theme uses. */
+  :root[data-theme="light"] .waqt-card,
+  :root[data-theme="light"] .hero-prayer,
+  :root[data-theme="light"] .nextp{ background:rgba(12,10,8,.95); }
+  :root[data-theme="light"] .hero-prayer .ptable td.end{ color:var(--gold-2); }
+  :root[data-theme="light"] .date-chip,
+  :root[data-theme="light"] .dates span,
+  :root[data-theme="light"] .profile-chip,
+  :root[data-theme="light"] .loc-pill,
+  :root[data-theme="light"] .theme-mini{ background:rgba(20,17,12,.92); }
   :root[data-theme="dark"] h2.sec,
   :root[data-theme="dark"] .daily .card h3,
   :root[data-theme="dark"] .sitem .arn,
@@ -684,17 +699,6 @@
   html *{ font-style:normal !important; }
   body, h1, h2, h3, h4, button, input, select, textarea{ font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif; }
   .ar, .bismillah{ font-family:"Amiri",serif; font-style:normal !important; }
-/* v4 Hifz Quran — Arabic-only reading, 15 lines per page, Hafezi mushaf style */
-  .hifz-tools{ display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between; margin:10px 0; }
-  .hifz-tools select{ max-width:230px; }
-  .hifz-fontctl{ display:inline-flex; gap:8px; }
-  .hifz-nav{ display:flex; align-items:center; gap:10px; margin:10px 0; }
-  .hifz-info{ flex:1; text-align:center; font-weight:700; color:var(--green-800); font-size:14.5px; }
-  .hifz-page{ background:#fffdf3; border:2px solid var(--gold); border-radius:10px; padding:16px 14px 12px; direction:rtl; box-shadow:0 8px 24px rgba(0,0,0,.12); }
-  .hifz-line{ font-family:"Amiri",serif; font-style:normal !important; color:#1a1a12; font-size:27px; line-height:1.95; text-align:justify; text-align-last:center; min-height:1.95em; border-bottom:1px solid rgba(201,162,75,.14); }
-  .hifz-line:last-child{ border-bottom:none; }
-  .hifz-surah{ font-family:"Amiri",serif; font-style:normal !important; text-align:center; font-size:24px; font-weight:700; color:#7a5b12; background:linear-gradient(180deg, rgba(201,162,75,.28), rgba(201,162,75,.12)); border:1px solid var(--gold); border-radius:8px; line-height:1.9; min-height:1.9em; }
-  .hifz-end{ color:#7a5c14; font-size:.82em; white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -853,6 +857,12 @@
             <option value="bell">মধুর ঘণ্টা ধ্বনি</option>
             <option value="melody">নরম সুর</option>
             <option value="beep">সতর্ক বিপ</option>
+            <option value="azan:makkah">আজান — মক্কা (হারাম শরীফ)</option>
+            <option value="azan:madinah">আজান — মদিনা (মসজিদে নববী)</option>
+            <option value="azan:alafasy">আজান — মিশারি রাশিদ আল-আফাসি</option>
+            <option value="azan:alafasyfajr">আজান — ফজরের আজান (আল-আফাসি)</option>
+            <option value="azan:fakhry">আজান — সাবাহ ফাখরি (সিরীয় সুর)</option>
+            <option value="azan:aaqib">আজান — আকিব আজিজ</option>
           </select>
         </label>
         <label>ভলিউম
@@ -868,11 +878,6 @@
   <section class="view" id="view-quran">
     <div id="quranListWrap">
       <h2 class="sec">পবিত্র কুরআন</h2>
-      <div class="card" style="margin-top:18px; text-align:center">
-        <h3 style="margin:0 0 6px">📖 হিফজ কোরআন</h3>
-        <p class="sub" style="margin:0 0 12px">বাংলাদেশের মাদরাসায় ব্যবহৃত ১৫ লাইনের হাফেজি কুরআন শরীফ — হুবহু ছাপার বইয়ের পৃষ্ঠা অনুযায়ী পড়ুন। পারা বা সূরা বেছে সরাসরি সেই পৃষ্ঠায় যান, আর পৃষ্ঠা ওল্টাতে ছবির ওপর ডানে-বামে সোয়াইপ করুন।</p>
-        <button class="btn gold" id="hifzOpenBtn" style="width:100%">হিফজ কোরআন খুলুন</button>
-      </div>
       <p class="sub">সম্পূর্ণ ১১৪ সূরা — আরবি পাঠ, বাংলা অর্থ (অনুবাদ: মুহিউদ্দীন খান) ও প্রতি আয়াতের তিলাওয়াত অডিও (ক্বারী বাছাইয়ের সুবিধাসহ)। "পারা অনুযায়ী" চাপ দিলে ১–৩০ পারার আলাদা তালিকা পাবেন — যেকোনো পারা বেছে পড়া যাবে। যেসব আয়াতের তাফসির সংকলিত আছে, সেগুলোর অর্থের নিচে <b>"তাফসির দেখুন"</b> বোতাম পাবেন।</p>
       <div class="seg" role="group" aria-label="তালিকার ধরন">
         <button id="segSurah" aria-pressed="true">সূরা অনুযায়ী</button>
@@ -909,32 +914,6 @@
         <button class="btn" id="nextPartBtn">পরেরটি →</button>
       </div>
     </div>
-    <div id="hifzWrap" class="hidden">
-      <div class="reader-head">
-        <button class="btn ghost" id="hifzBack">← তালিকায় ফিরুন</button>
-        <h3>হিফজ কোরআন</h3>
-        <button class="btn gold" id="hifzBookmarkBtn">🔖 বুকমার্ক করুন</button>
-      </div>
-      <p class="sub">১৫ লাইনের হাফেজি কুরআন শরীফ (মোট ৬১০ পৃষ্ঠা)। নিচের তালিকা থেকে পারা বা সূরা বাছলেই সেই পৃষ্ঠা খুলবে। পৃষ্ঠা ওল্টাতে ছবির ওপর ডানে-বামে সোয়াইপ করুন — একবার দেখা পৃষ্ঠা সেভ হয়ে থাকে, পরে নেট ছাড়াও পড়া যাবে।</p>
-      <div class="seg" role="group" aria-label="হিফজ তালিকার ধরন">
-        <button id="hifzSegPara" aria-pressed="true">পারা অনুযায়ী (৩০ পারা)</button>
-        <button id="hifzSegSurah" aria-pressed="false">সূরা অনুযায়ী (১১৪ সূরা)</button>
-      </div>
-      <div class="slist" id="hifzParaList" style="margin-top:12px"></div>
-      <div class="slist hidden" id="hifzSurahList" style="margin-top:12px"></div>
-      <div class="card" style="margin-top:14px">
-        <div id="hifzStage" style="touch-action:pan-y; text-align:center">
-          <img id="hifzImg" alt="হাফেজি কুরআন শরীফের পৃষ্ঠা" style="max-width:100%; height:auto; border-radius:6px" />
-        </div>
-        <p class="sub" id="hifzPageInfo" style="text-align:center; margin:10px 0 0"></p>
-        <p class="sub" style="text-align:center; margin:4px 0 0">← পৃষ্ঠা ওল্টাতে সোয়াইপ করুন →</p>
-        <div style="display:flex; gap:8px; margin-top:10px">
-          <input class="search" type="number" id="hifzGotoInput" min="1" max="610" placeholder="পৃষ্ঠা নম্বর লিখুন (১–৬১০)" aria-label="পৃষ্ঠা নম্বর" style="flex:1; margin:0" />
-          <button class="btn" id="hifzGotoBtn">পৃষ্ঠায় যান</button>
-        </div>
-        <p class="sub" id="hifzBookmarkInfo" style="margin:8px 0 0"></p>
-      </div>
-    </div>
   </section>
 
   
@@ -948,4 +927,47 @@
     <p class="sub">ছয়টি প্রসিদ্ধ হাদিসের কিতাবের পূর্ণ বাংলা অনুবাদ — অধ্যায় অনুযায়ী পড়ুন বা খুঁজুন। প্রথমবার খুললে কিতাবটি ডাউনলোড হয়ে সেভ হয়ে যায়, পরে অফলাইনেও পড়া যাবে।</p>
     <div class="controls">
       <label>কিতাব
-        <select id=
+        <select id="hbBookSel">
+          <option value="ben-bukhari">সহিহ বুখারি</option>
+          <option value="ben-muslim">সহিহ মুসলিম</option>
+          <option value="ben-abudawud">সুনানে আবু দাউদ</option>
+          <option value="ben-tirmidhi">সুনানে তিরমিযি</option>
+          <option value="ben-nasai">সুনানে নাসায়ি</option>
+          <option value="ben-ibnmajah">সুনানে ইবনে মাজাহ</option>
+        </select>
+      </label>
+      <label>অধ্যায়
+        <select id="hbSecSel"><option value="">সব অধ্যায়</option></select>
+      </label>
+    </div>
+    <input class="search" type="text" id="hbSearch" placeholder="এই কিতাবে হাদিস খুঁজুন…" aria-label="কিতাবে হাদিস খুঁজুন" />
+    <p class="sub" id="hbStatus"></p>
+    <div id="hbList"></div>
+    <button class="btn ghost" id="hbMore" style="display:none; width:100%; margin-top:10px">আরও হাদিস দেখুন</button>
+  </section>
+
+  <!-- ================= DUA ================= -->
+  <section class="view" id="view-dua">
+    <h2 class="sec">দৈনন্দিন ও মাসনুন দোয়া</h2>
+    <p class="sub">ঘুম, খাবার, ঘর থেকে বের হওয়া থেকে শুরু করে বিপদ-আপদের দোয়া — আরবি, বাংলা অর্থ ও সূত্রসহ। যেসব দোয়া নির্দিষ্ট সংখ্যায় পড়তে হয়, সেগুলোর সংখ্যা দেওয়া আছে।</p>
+    <input class="search" type="text" id="duaSearch" placeholder="দোয়া খুঁজুন…" aria-label="দোয়া খুঁজুন" />
+    <div id="duaList"></div>
+  </section>
+
+  <!-- ================= QIBLA ================= -->
+  <section class="view" id="view-qibla">
+    <h2 class="sec">কিবলা নির্ণয়</h2>
+    <p class="sub">আপনার অবস্থান থেকে পবিত্র কাবা শরিফের দিক। ফোনের কম্পাস চালু করলে তীরটি সরাসরি কিবলার দিকে ঘুরবে।</p>
+    <div class="qibla-flex">
+      <div class="card">
+        <div class="compass" aria-label="কিবলা কম্পাস">
+          <div class="ring"></div>
+          <div class="dial" id="compassDial">
+            <span class="dir">উ</span><span class="dir e">পূ</span><span class="dir s">দ</span><span class="dir w">প</span>
+            <span class="kaaba" aria-hidden="true">🕋</span>
+          </div>
+          <div class="needle" id="qiblaNeedle"></div>
+          <div class="pin"></div>
+        </div>
+        <p style="text-align:center; margin:12px 0 0">
+          <button class="btn g
