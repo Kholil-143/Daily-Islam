@@ -1,4 +1,6 @@
- শেষ</th><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">ইফতার</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="sub" style="margin:8px 0 0">চাঁদ দেখার ওপর ভিত্তি করে রমজান এক দিন এদিক-সেদিক হতে পারে।</p>';
+imeFormat('bn-BD', { weekday:'short', day:'numeric', month:'short' }).format(d2) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + fmtTime(tt.fajr - 10/60) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + fmtTime(tt.maghrib) + '</td></tr>';
+  }
+  $('ramadanTable').innerHTML = '<h4 style="margin:4px 0 8px; text-align:center">রমজানের ৩০ দিনের সময়সূচি — ' + c.name + '</h4><div style="overflow-x:auto"><table style="width:100%; border-collapse:collapse; font-size:14.5px"><thead><tr><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">রোজা</th><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">তারিখ</th><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">সেহরি শেষ</th><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">ইফতার</th></tr></thead><tbody>' + rows + '</tbody></table></div><p class="sub" style="margin:8px 0 0">চাঁদ দেখার ওপর ভিত্তি করে রমজান এক দিন এদিক-সেদিক হতে পারে।</p>';
 });
 
 /* ---------- Dua bookmarks + profile open ---------- */
@@ -419,22 +421,4 @@ $('refreshBtn').addEventListener('click', function(){
   renderPrayer();
   if (typeof tickRoza === 'function') tickRoza();
   if (typeof tickRamadan === 'function') tickRamadan();
-  toast('ঘড়ি, তারিখ ও নামাজের সময় আপডেট হয়েছে');
-});
-</script>
-
-<script>
-/* ============ Daily ayah & hadith notifications (v2.9) ============ */
-(function(){
-  var KEY = 'di_daily_notif';
-  function enabled(){ try { return localStorage.getItem(KEY) !== '0'; } catch(e){ return true; } }
-  function native(method, opts){
-    var C = window.Capacitor;
-    if (!C || !C.nativePromise) return Promise.reject(new Error('no bridge'));
-    return C.nativePromise('DailyNotify', method, opts || {});
-  }
-  function snippet(t, n){ t = String(t || ''); return t.length > n ? t.slice(0, n - 1) + '\u2026' : t; }
-  function buildItems(){
-    if (typeof QURAN === 'undefined' || !QURAN || typeof HADITHS === 'undefined' || typeof SURA_BN === 'undefined') return null;
-    var flat = [];
-    QURAN.surahs.forEach(function(su, si){ su.a.forEach
+  toast('ঘড

@@ -1,4 +1,22 @@
-(function(a, ai){ flat.push([si, ai, a]); }); });
+়ি, তারিখ ও নামাজের সময় আপডেট হয়েছে');
+});
+</script>
+
+<script>
+/* ============ Daily ayah & hadith notifications (v2.9) ============ */
+(function(){
+  var KEY = 'di_daily_notif';
+  function enabled(){ try { return localStorage.getItem(KEY) !== '0'; } catch(e){ return true; } }
+  function native(method, opts){
+    var C = window.Capacitor;
+    if (!C || !C.nativePromise) return Promise.reject(new Error('no bridge'));
+    return C.nativePromise('DailyNotify', method, opts || {});
+  }
+  function snippet(t, n){ t = String(t || ''); return t.length > n ? t.slice(0, n - 1) + '\u2026' : t; }
+  function buildItems(){
+    if (typeof QURAN === 'undefined' || !QURAN || typeof HADITHS === 'undefined' || typeof SURA_BN === 'undefined') return null;
+    var flat = [];
+    QURAN.surahs.forEach(function(su, si){ su.a.forEach(function(a, ai){ flat.push([si, ai, a]); }); });
     var base = dayIndex(), now = Date.now(), items = [];
     for (var k = 0; k < 7; k++){
       var N = base + k, t = N * 86400000; /* 06:00 Asia/Dhaka == 00:00 UTC */

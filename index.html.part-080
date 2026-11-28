@@ -1,4 +1,5 @@
-dayaBangla/Hedaya%2004.pdf'] },
+য, আচরণ ও দৈনন্দিন জীবনের মনোমুগ্ধকর বর্ণনা।', pdf:'https://archive.org/download/zubdah-tu-shamael-eng-moulana-mohammad/Zubdah%20tu%20Shamael%20eng%20Moulana%20Mohammad%20%28www.alqurantranslation.com%29.pdf' },
+ { t:'আল-হিদায়া', a:'বুরহানুদ্দিন মারগিনানি (রহ.)', d:'হানাফি ফিকহের সবচেয়ে প্রসিদ্ধ ও নির্ভরযোগ্য কিতাব — দাওরায়ে হাদিসের আগের জামাতগুলোতে পঠিত।', pdfs:['https://archive.org/download/HedayaBangla/Hedaya%2001.pdf', 'https://archive.org/download/HedayaBangla/Hedaya%2002.pdf', 'https://archive.org/download/HedayaBangla/Hedaya%2003.pdf', 'https://archive.org/download/HedayaBangla/Hedaya%2004.pdf'] },
  { t:'মুখতাসারুল কুদুরি', a:'ইমাম আবুল হুসাইন আল-কুদুরি (রহ.)', d:'হানাফি ফিকহের প্রাথমিক ও মৌলিক কিতাব — ইবাদত থেকে লেনদেন পর্যন্ত সব অধ্যায়।' },
  { t:'নুরুল ইজাহ', a:'হাসান ইবনে আম্মার আশ-শুরুনবুলালি (রহ.)', d:'ইবাদতের মাসআলার সহজ ও সংক্ষিপ্ত কিতাব — ফিকহ শেখার শুরুতে পঠিত।', pdf:'https://archive.org/download/NurulIzahBangla/Nurul%20Izah%20Bangla.pdf' },
  { t:'কানযুদ দাকায়েক', a:'হাফিজুদ্দিন আন-নাসাফি (রহ.)', d:'হানাফি ফিকহের সংক্ষিপ্ত মৌলিক মতন।' },
@@ -439,6 +440,4 @@ $('ramadanTableBtn').addEventListener('click', function(){
   for (var k = 0; k < 30; k++){
     var d2 = new Date(start.getFullYear(), start.getMonth(), start.getDate() + k);
     var tt = prayerTimes(d2, c.lat, c.lng, c.tz);
-    rows += '<tr><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + bn(k + 1) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + new Intl.DateTimeFormat('bn-BD', { weekday:'short', day:'numeric', month:'short' }).format(d2) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + fmtTime(tt.fajr - 10/60) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + fmtTime(tt.maghrib) + '</td></tr>';
-  }
-  $('ramadanTable').innerHTML = '<h4 style="margin:4px 0 8px; text-align:center">রমজানের ৩০ দিনের সময়সূচি — ' + c.name + '</h4><div style="overflow-x:auto"><table style="width:100%; border-collapse:collapse; font-size:14.5px"><thead><tr><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">রোজা</th><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">তারিখ</th><th style="text-align:left; padding:7px 8px; border-bottom:2px solid var(--gold)">সেহরি
+    rows += '<tr><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + bn(k + 1) + '</td><td style="padding:7px 8px; border-bottom:1px solid var(--line)">' + new Intl.DateT
