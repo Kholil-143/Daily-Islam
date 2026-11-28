@@ -101,6 +101,8 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
             if (ACTION_REFRESH.equals(intent.getAction())) {
                 // A manual refresh also asks for a fresh rain forecast.
                 WeatherInfo.forceFetch(context);
+                // ... and a fresh earthquake check.
+                QuakeInfo.forceFetch(context);
             }
             AppWidgetManager manager = AppWidgetManager.getInstance(context);
             int[] ids = manager.getAppWidgetIds(new ComponentName(context, PrayerWidgetProvider.class));
@@ -214,6 +216,23 @@ public class PrayerWidgetProvider extends AppWidgetProvider {
             views.setViewVisibility(R.id.tv_weather, View.GONE);
         }
         WeatherInfo.maybeFetch(context, latitude, longitude);
+
+        // Earthquake notice (v2.18): a recent magnitude 4.5+ quake within
+        // 500 km of Bangladesh (USGS), in the free space right of the
+        // weather line. Cached like the weather (a background fetch runs
+        // at most every three hours); the space stays empty when no
+        // qualifying quake occurred in the last 24 hours. This reports a
+        // quake that already happened — it is not a prediction.
+        String quake = QuakeInfo.cachedLine(context);
+        if (quake != null) {
+            views.setViewVisibility(R.id.tv_quake, View.VISIBLE);
+            views.setTextViewText(R.id.tv_quake, quake);
+        } else {
+            views.setViewVisibility(R.id.tv_quake, View.GONE);
+        }
+        QuakeInfo.maybeFetch(context);
+        views.setViewVisibility(R.id.row_weatherline,
+                (weather != null || quake != null) ? View.VISIBLE : View.GONE);
 
         // Refresh button
         Intent refreshIntent = new Intent(context, PrayerWidgetProvider.class);

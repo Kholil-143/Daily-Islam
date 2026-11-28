@@ -16,4 +16,6 @@
     <color name="widget_text_dates">#D8EDE4</color>
     <!-- Gold accent (title + next-prayer line) -->
     <color name="widget_accent">#F5C86B</color>
+    <!-- Earthquake notice red, readable on black -->
+    <color name="widget_quake">#F28B82</color>
 </resources>
