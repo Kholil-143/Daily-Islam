@@ -1,4 +1,46 @@
-l){
+ch(function(part){
+        var s2 = QURAN.surahs[part.s];
+        body += '<h3 style="font-family:\'Noto Sans Bengali\',\'Hind Siliguri\',sans-serif; margin:18px 0 2px">সূরা ' + SURA_BN[part.s] + ' — আয়াত ' + bn(part.from + 1) + ' থেকে ' + bn(part.to + 1) + '</h3>';
+        if (part.from === 0 && part.s !== 8 && part.s !== 0) body += '<div class="bismillah">بِسْمِ ٱللَّهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ</div>';
+        for (var i2 = part.from; i2 <= part.to; i2++){ body += ayahHTML(part.s, i2); playCtx.list.push(globalAyah(part.s, i2)); }
+      });
+    }
+    $('readerTitle').textContent = title;
+    $('readerMeta').textContent = meta;
+    $('readerBody').innerHTML = body;
+    $('prevPartBtn').textContent = mode === 'surah' ? '← আগের সূরা' : '← আগের পারা';
+    $('nextPartBtn').textContent = mode === 'surah' ? 'পরের সূরা →' : 'পরের পারা →';
+    $('prevPartBtn').disabled = idx === 0;
+    if (typeof syncBookmarkBtn === 'function') syncBookmarkBtn();
+    if (typeof setLastRead === 'function'){
+      if (mode === 'surah') setLastRead(mode, idx, idx, 0);
+      else if (typeof JUZ_SEGS !== 'undefined' && JUZ_SEGS[idx] && JUZ_SEGS[idx][0]) setLastRead(mode, idx, JUZ_SEGS[idx][0].s, JUZ_SEGS[idx][0].from);
+    }
+    $('nextPartBtn').disabled = idx === (mode === 'surah' ? 113 : 29);
+    window.scrollTo({ top: 0 });
+  });
+}
+$('readerBack').addEventListener('click', function(){
+  stopAudio();
+  $('readerWrap').classList.add('hidden');
+  $('quranListWrap').classList.remove('hidden');
+});
+$('prevPartBtn').addEventListener('click', function(){ if (readerState.idx > 0) openReader(readerState.mode, readerState.idx - 1); });
+$('nextPartBtn').addEventListener('click', function(){
+  var max = readerState.mode === 'surah' ? 113 : 29;
+  if (readerState.idx < max) openReader(readerState.mode, readerState.idx + 1);
+});
+
+/* ---- audio ---- */
+var playingG = null, playAllOn = false;
+var AUDIO_CACHE = 'di-audio-v1';
+function cacheAudio(url){
+  if (!('caches' in window)) return;
+  caches.open(AUDIO_CACHE).then(function(c){
+    c.match(url).then(function(m){ if (!m) c.add(url).catch(function(){}); });
+  }).catch(function(){});
+}
+function playAudioSmart(url){
   function go(){ var p = player.play(); if (p && p.catch) p.catch(function(){ toast('অডিও চালানো যায়নি — ইন্টারনেট সংযোগ দেখুন'); }); }
   if (!('caches' in window)){ player.src = url; go(); return; }
   caches.open(AUDIO_CACHE).then(function(c){ return c.match(url); }).then(function(res){
@@ -406,8 +448,4 @@ var QUIZ = [
  { q:'কুরআনে নাম উল্লেখ আছে এমন একমাত্র নারী কে?', o:['আসিয়া (আ.)','মারইয়াম (আ.)','হাওয়া (আ.)','সারা (আ.)'], a:1, e:'কুরআনে সরাসরি নাম উল্লেখ আছে একমাত্র হযরত মারইয়াম (আ.)-এর; তাঁর নামে একটি সূরাও (সূরা মারইয়াম) রয়েছে।', s:'সূরা মারইয়াম; সূরা আলে-ইমরান: ৪২' },
  { q:'কোন নবীকে "খলিলুল্লাহ" (আল্লাহর বন্ধু) বলা হয়?', o:['হযরত মুসা (আ.)','হযরত ইবরাহিম (আ.)','হযরত ঈসা (আ.)','হযরত নূহ (আ.)'], a:1, e:'আল্লাহ হযরত ইবরাহিম (আ.)-কে খলিল (অন্তরঙ্গ বন্ধু) হিসেবে গ্রহণ করেছেন।', s:'সূরা আন-নিসা: ১২৫' },
  { q:'কাবা শরিফ প্রথম কে নির্মাণ করেন (প্রচলিত বর্ণনা অনুযায়ী)?', o:['হযরত ইসমাইল (আ.) একা','হযরত ইবরাহিম ও ইসমাইল (আ.)','হযরত আদম (আ.)','কুরাইশ গোত্র'], a:1, e:'হযরত ইবরাহিম (আ.) ও তাঁর পুত্র হযরত ইসমাইল (আ.) কাবা শরিফের ভিত্তি উত্তোলন ও নির্মাণ করেন।', s:'সূরা আল-বাকারা: ১২৭' },
- { q:'রমজানের কোন রাত হাজার মাসের চেয়ে উত্তম?', o:['শবে বরাত','শবে মিরাজ','লাইলাতুল কদর','শবে আশুরা'], a:2, e:'লাইলাতুল কদর হাজার মাসের চেয়েও উত্তম; রমজানের শেষ দশকের বেজোড় রাতগুলোতে এটি অন্বেষণ করতে বলা হয়েছে।', s:'সূরা আল-কদর: ৩; সহিহ বুখারি: ২০১৭' },
- { q:'মিরাজের রাতে কয় ওয়াক্ত নামাজ ফরজ হয়?', o:['৩ ওয়াক্ত','৪ ওয়াক্ত','৫ ওয়াক্ত','৭ ওয়াক্ত'], a:2, e:'মিরাজের রাতে প্রথমে ৫০ ওয়াক্ত থেকে কমিয়ে দৈনিক পাঁচ ওয়াক্ত নামাজ ফরজ করা হয়।', s:'সহিহ বুখারি: ৩৪৯; সহিহ মুসলিম: ১৬২' },
- { q:'কুরআনে কোন সূরায় বিসমিল্লাহ নেই?', o:['সূরা আল-আনফাল','সূরা আত-তাওবা','সূরা ইউনুস','সূরা হুদ'], a:1, e:'সূরা আত-তাওবার শুরুতে বিসমিল্লাহ লেখা ও পড়া হয় না। অন্যদিকে সূরা আন-নামলের ৩০ নম্বর আয়াতের ভেতরে বিসমিল্লাহ রয়েছে।', s:'তাফসিরে ইবনে কাসির; সহিহ বুখারি: ৪৩৬৪ (প্রসঙ্গ)' },
- { q:'আয়াতুল কুরসি কোন সূরার আয়াত?', o:['সূরা আল-বাকারা: ২৫৫','সূরা আলে-ইমরান: ১৮','সূরা আল-ইখলাস: ১','সূরা ইয়াসিন: ৫৮'], a:0, e:'আয়াতুল কুরসি সূরা আল-বাকারার ২৫৫ নম্বর আয়াত; এটি কুরআনের অন্যতম শ্রেষ্ঠ আয়াত।', s:'সূরা আল-বাকারা: ২৫৫; সহিহ মুসলিম: ৮১০' },
- { q:'সর্বশেষ অবতীর্ণ পূর্ণ সূরা কোনটি বলে প্রসিদ্ধ?', o:['সূরা আন-নাসর','সূরা আল-মায়িদা','সূরা আত-তাওবা','সূরা আল-ফাতহ'], a:0, e:'সূরা আন-নাসরকে সর্বশেষ অবতীর্ণ পূর্ণ 
+ { q:'রমজানের কোন রাত হাজার মাসের চেয়ে উত্তম?', o:['শবে বরাত','শবে মিরাজ','লাইলাতুল কদর','শবে আশুরা'], a:2, e:'লাইলাতুল কদর হাজার মাসের চেয়েও উত্তম; রমজানের শেষ দশকের বেজোড় রাতগুলোতে এটি অন্বেষণ করতে বলা হয়েছে।', s:'সূরা আল-কদর: ৩; 
