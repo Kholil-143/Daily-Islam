@@ -30,6 +30,7 @@ xml = open(path, encoding='utf-8').read()
 if 'DailyNotifyReceiver' not in xml:
     perms = ('    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />\n'
              '    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />\n'
+             '    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />\n'
              '    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />\n')
     anchor = '<application'
     if anchor not in xml:
@@ -48,6 +49,11 @@ if 'DailyNotifyReceiver' not in xml:
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
+        <!-- Jamaat auto-silent windows (v2.21) -->
+        <receiver
+            android:name=".notify.JamaatSilentReceiver"
+            android:exported="false" />
 """
     if '</application>' not in xml:
         sys.exit('ERROR: </application> not found in ' + path)
@@ -71,11 +77,13 @@ if 'import com.getcapacitor.BridgeActivity;' not in s:
 s = s.replace('import com.getcapacitor.BridgeActivity;',
               'import android.os.Bundle;\n'
               'import com.getcapacitor.BridgeActivity;\n'
-              'import com.kholil.muslimpath.notify.DailyNotifyPlugin;', 1)
+              'import com.kholil.muslimpath.notify.DailyNotifyPlugin;\n'
+              'import com.kholil.muslimpath.notify.JamaatSilentPlugin;', 1)
 new_body = ('public class MainActivity extends BridgeActivity {\n'
             '    @Override\n'
             '    public void onCreate(Bundle savedInstanceState) {\n'
             '        registerPlugin(DailyNotifyPlugin.class);\n'
+            '        registerPlugin(JamaatSilentPlugin.class);\n'
             '        super.onCreate(savedInstanceState);\n'
             '    }\n'
             '}')
@@ -88,4 +96,6 @@ PYEOF
 
 grep -q "DailyNotifyReceiver" "$MANIFEST"
 grep -q "DailyNotifyPlugin" "$MAINACT"
+grep -q "JamaatSilentReceiver" "$MANIFEST"
+grep -q "JamaatSilentPlugin" "$MAINACT"
 echo "DailyNotify installation complete."
