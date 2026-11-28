@@ -8,7 +8,7 @@
 <title>Muslim Path — কুরআন, হাদিস, নামাজের সময়, কিবলা ও তাসবিহ</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@700&family=Hind+Siliguri:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
 <script>try{var _th=localStorage.getItem('di_theme');if(_th==='light'||_th==='dark'||_th==='blue'){document.documentElement.setAttribute('data-theme',_th);}}catch(e){}</script>
 <style>
   :root{
@@ -699,6 +699,35 @@
   html *{ font-style:normal !important; }
   body, h1, h2, h3, h4, button, input, select, textarea{ font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif; }
   .ar, .bismillah{ font-family:"Amiri",serif; font-style:normal !important; }
+
+  /* ===== v2.16 additions ===== */
+  :root[data-afont="s"] .ayah .arabic{ font-size:22px }
+  :root[data-afont="s"] .daily.ar{ font-size:19px }
+  :root[data-afont="l"] .ayah .arabic{ font-size:33px }
+  :root[data-afont="l"] .daily.ar{ font-size:28px }
+  .owner-name{ font-family:"Noto Serif Bengali","Noto Sans Bengali",serif; font-weight:700; font-size:24px; line-height:1.4; background:linear-gradient(92deg,#8a6d1f,#c9a24b 40%,#8a6d1f 72%,#a8852f); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent }
+  :root[data-theme="dark"] .owner-name, :root[data-theme="blue"] .owner-name{ background:linear-gradient(92deg,#e3c878,#fdf6da 45%,#e3c878 75%,#c9a24b); -webkit-background-clip:text; background-clip:text }
+  @supports not (-webkit-background-clip:text){ .owner-name{ color:#c9a24b; -webkit-text-fill-color:currentColor } }
+  .owner-btns{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap }
+  .wq-ends{ display:flex; justify-content:space-between; font-size:12.5px; color:#e9e2c8; margin-top:2px }
+  .wq-ends b{ color:#e3c878 }
+  .wq-nafl{ margin-top:8px; font-size:13px; color:#e3c878; text-align:center }
+  .qshort{ display:grid; grid-template-columns:repeat(4,1fr); gap:8px; margin:12px 0 4px }
+  .qshort button{ background:var(--card); border:1px solid var(--line); border-radius:14px; padding:10px 4px; font:inherit; font-weight:700; color:var(--ink); cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:4px }
+  .qshort button span{ font-size:20px }
+  .qchips{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:6px }
+  .qchips button{ border:1px solid var(--gold); background:rgba(201,162,75,.1); color:var(--ink); border-radius:999px; padding:7px 14px; font:inherit; font-weight:700; cursor:pointer }
+  .kcard{ display:flex; gap:12px; align-items:flex-start }
+  .kcover{ width:64px; height:88px; object-fit:cover; border-radius:8px; border:1px solid var(--line); background:var(--card); flex-shrink:0 }
+  .kinfo{ flex:1; min-width:0 }
+  .kinfo h3{ margin-top:0 }
+  .kdesc{ display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden }
+  .kaction{ flex-shrink:0 }
+  .kbmk{ background:none; border:none; font-size:17px; cursor:pointer; padding:2px 4px }
+  .ramtable td, .ramtable th{ white-space:nowrap }
+  .rtog{ border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:999px; padding:5px 10px; font:inherit; font-size:13.5px; font-weight:700; cursor:pointer }
+  .rtog.on{ background:var(--gold); color:#241a05; border-color:var(--gold) }
+  tr.ramtoday td{ background:rgba(201,162,75,.14) }
 </style>
 </head>
 <body>
@@ -740,10 +769,12 @@
           </g>
         </svg>
       </div>
+      <div class="wq-ends"><span>সূর্যোদয় <b id="arcSunrise">—</b></span><span>সূর্যাস্ত <b id="arcSunset">—</b></span></div>
       <div class="wq-name" id="wqName">—</div>
       <div class="wq-end" id="wqEnd"></div>
       <div class="wq-bar"><i id="wqProg"></i></div>
       <div class="wq-next" id="wqNext"></div>
+      <div class="wq-nafl" id="wqNafl"></div>
       <div class="wq-cd" id="wqCd">--:--:--</div>
       <span id="nextPrayerName" hidden></span><span id="nextPrayerCd" hidden></span>
     </div>
@@ -849,7 +880,7 @@
     </div>
     <div class="card" style="padding:14px 16px; margin-top:12px" id="alarmCard">
       <h3 style="margin:0 0 6px">নামাজের অ্যালার্ম ও রিমাইন্ডার</h3>
-      <p class="sub" style="margin:0 0 10px">প্রতিটি ওয়াক্তের অ্যালার্ম অন করলে ওয়াক্ত শুরু হলে (বা পছন্দমতো কয়েক মিনিট আগে) শব্দ বাজিয়ে রিমাইন্ডার দেওয়া হবে। সেহরি ও ইফতারের জন্যও আলাদা অ্যালার্ম আছে। অ্যালার্ম শুধু এই পেজটি খোলা থাকলেই বাজবে এবং সেটিংস এই সেশনেই থাকে। শব্দ ঠিকমতো বাজে কিনা "টেস্ট শুনুন" দিয়ে যাচাই করে নিন।</p>
+      <p class="sub" style="margin:0 0 10px">প্রতিটি ওয়াক্তের অ্যালার্ম অন করলে ওয়াক্ত শুরু হলে (বা পছন্দমতো কয়েক মিনিট আগে) শব্দ বাজিয়ে রিমাইন্ডার দেওয়া হবে। সেহরি ও ইফতারের জন্যও আলাদা অ্যালার্ম আছে। অ্যালার্ম বাজে অ্যাপটি খোলা থাকলে; তবে আপনার অ্যালার্ম সেটিংস সংরক্ষিত থাকে — অ্যাপ আবার খুললেও সেটিংস থেকে যাবে। শব্দ ঠিকমতো বাজে কিনা "টেস্ট শুনুন" দিয়ে যাচাই করে নিন।</p>
       <div id="alarmRows"></div>
       <div class="zform" style="margin-top:14px">
         <label>রিমাইন্ডারের শব্দ
@@ -879,6 +910,18 @@
     <div id="quranListWrap">
       <h2 class="sec">পবিত্র কুরআন</h2>
       <p class="sub">সম্পূর্ণ ১১৪ সূরা — আরবি পাঠ, বাংলা অর্থ (অনুবাদ: মুহিউদ্দীন খান) ও প্রতি আয়াতের তিলাওয়াত অডিও (ক্বারী বাছাইয়ের সুবিধাসহ)। "পারা অনুযায়ী" চাপ দিলে ১–৩০ পারার আলাদা তালিকা পাবেন — যেকোনো পারা বেছে পড়া যাবে। যেসব আয়াতের তাফসির সংকলিত আছে, সেগুলোর অর্থের নিচে <b>"তাফসির দেখুন"</b> বোতাম পাবেন।</p>
+      <div class="qshort" role="group" aria-label="শর্টকাট">
+        <button type="button" data-qsc="tilawat"><span>🔊</span>তিলাওয়াত</button>
+        <button type="button" data-qsc="tafsir"><span>📖</span>তাফসীর</button>
+        <button type="button" data-qsc="search"><span>🔍</span>অনুসন্ধান</button>
+        <button type="button" data-qsc="bookmark"><span>🔖</span>বুকমার্ক</button>
+      </div>
+      <p style="margin:10px 0 4px; font-weight:700; color:var(--gold)">কুইক লিংক</p>
+      <div class="qchips">
+        <button type="button" data-qchip="kursi">আয়াতুল কুরসী</button>
+        <button type="button" data-qchip="yasin">সূরা ইয়াসীন</button>
+        <button type="button" data-qchip="kahf">সূরা আল-কাহফ</button>
+      </div>
       <div class="seg" role="group" aria-label="তালিকার ধরন">
         <button id="segSurah" aria-pressed="true">সূরা অনুযায়ী</button>
         <button id="segJuz" aria-pressed="false" title="কুরআনের ভিতরেই ৩০ পারার তালিকা">পারা অনুযায়ী (৩০ পারা)</button>
@@ -920,54 +963,4 @@
   <!-- ================= HADITH ================= -->
   <section class="view" id="view-hadith">
     <h2 class="sec">হাদিস ভান্ডার</h2>
-    <p class="sub">সহিহ হাদিস — আরবি পাঠ, বাংলা অর্থ ও পূর্ণ সূত্রসহ।</p>
-    <input class="search" type="text" id="hadithSearch" placeholder="হাদিস খুঁজুন…" aria-label="হাদিস খুঁজুন" />
-    <div id="hadithList"></div>
-    <h3 class="sec" style="margin-top:28px">বড় হাদিসের কিতাবসমূহ — হাজার হাজার হাদিস</h3>
-    <p class="sub">ছয়টি প্রসিদ্ধ হাদিসের কিতাবের পূর্ণ বাংলা অনুবাদ — অধ্যায় অনুযায়ী পড়ুন বা খুঁজুন। প্রথমবার খুললে কিতাবটি ডাউনলোড হয়ে সেভ হয়ে যায়, পরে অফলাইনেও পড়া যাবে।</p>
-    <div class="controls">
-      <label>কিতাব
-        <select id="hbBookSel">
-          <option value="ben-bukhari">সহিহ বুখারি</option>
-          <option value="ben-muslim">সহিহ মুসলিম</option>
-          <option value="ben-abudawud">সুনানে আবু দাউদ</option>
-          <option value="ben-tirmidhi">সুনানে তিরমিযি</option>
-          <option value="ben-nasai">সুনানে নাসায়ি</option>
-          <option value="ben-ibnmajah">সুনানে ইবনে মাজাহ</option>
-        </select>
-      </label>
-      <label>অধ্যায়
-        <select id="hbSecSel"><option value="">সব অধ্যায়</option></select>
-      </label>
-    </div>
-    <input class="search" type="text" id="hbSearch" placeholder="এই কিতাবে হাদিস খুঁজুন…" aria-label="কিতাবে হাদিস খুঁজুন" />
-    <p class="sub" id="hbStatus"></p>
-    <div id="hbList"></div>
-    <button class="btn ghost" id="hbMore" style="display:none; width:100%; margin-top:10px">আরও হাদিস দেখুন</button>
-  </section>
-
-  <!-- ================= DUA ================= -->
-  <section class="view" id="view-dua">
-    <h2 class="sec">দৈনন্দিন ও মাসনুন দোয়া</h2>
-    <p class="sub">ঘুম, খাবার, ঘর থেকে বের হওয়া থেকে শুরু করে বিপদ-আপদের দোয়া — আরবি, বাংলা অর্থ ও সূত্রসহ। যেসব দোয়া নির্দিষ্ট সংখ্যায় পড়তে হয়, সেগুলোর সংখ্যা দেওয়া আছে।</p>
-    <input class="search" type="text" id="duaSearch" placeholder="দোয়া খুঁজুন…" aria-label="দোয়া খুঁজুন" />
-    <div id="duaList"></div>
-  </section>
-
-  <!-- ================= QIBLA ================= -->
-  <section class="view" id="view-qibla">
-    <h2 class="sec">কিবলা নির্ণয়</h2>
-    <p class="sub">আপনার অবস্থান থেকে পবিত্র কাবা শরিফের দিক। ফোনের কম্পাস চালু করলে তীরটি সরাসরি কিবলার দিকে ঘুরবে।</p>
-    <div class="qibla-flex">
-      <div class="card">
-        <div class="compass" aria-label="কিবলা কম্পাস">
-          <div class="ring"></div>
-          <div class="dial" id="compassDial">
-            <span class="dir">উ</span><span class="dir e">পূ</span><span class="dir s">দ</span><span class="dir w">প</span>
-            <span class="kaaba" aria-hidden="true">🕋</span>
-          </div>
-          <div class="needle" id="qiblaNeedle"></div>
-          <div class="pin"></div>
-        </div>
-        <p style="text-align:center; margin:12px 0 0">
-          <button class="btn g
+    <p class="sub">সহিহ হাদিস — আরবি পাঠ, বাংলা অর্থ ও পূ
