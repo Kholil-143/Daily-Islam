@@ -4,7 +4,7 @@ HRrwtB9E/xfV+lv8AM4lxHQpTU8NOzXdfh2X3/wCR9A+C/jxd+CvF9xcPY215o8hEdykcuxlTcdkhJOA
       '<div style="max-width:400px; margin:0 auto">' +
       '<button class="gbtn" id="googleBtn">' + GOOGLE_G + 'Google দিয়ে সাইন ইন</button>' +
       '<p id="googleNote" class="sub" style="margin:10px 0 0; display:none"></p>' +
-      '<p class="sub" style="margin:8px 0 0">অ্যাপ সংস্করণ: v2.19</p>' +
+      '<p class="sub" style="margin:8px 0 0">অ্যাপ সংস্করণ: v2.20</p>' +
       '<p style="margin:10px 0 0"><a class="btn" href="https://github.com/Kholil-143/Muslim-Path/releases/latest/download/Muslim-Path.apk">⬇ সর্বশেষ আপডেট ডাউনলোড / ইনস্টল করুন</a></p>' +
       '<div style="display:flex; align-items:center; gap:10px; margin:18px 0"><span style="flex:1; height:1px; background:var(--line)"></span><span style="color:var(--ink-2); font-size:13.5px">অথবা নাম দিয়ে প্রোফাইল</span><span style="flex:1; height:1px; background:var(--line)"></span></div>' +
       '<input type="text" id="pfName" placeholder="আপনার নাম লিখুন" style="width:100%; margin-bottom:10px" maxlength="40" />' +
@@ -43,7 +43,7 @@ HRrwtB9E/xfV+lv8AM4lxHQpTU8NOzXdfh2X3/wCR9A+C/jxd+CvF9xcPY215o8hEdykcuxlTcdkhJOA
     '<div class="st"><b>' + bn(tasbih.total) + '</b><span>মোট যিকির</span></div>' +
     '<div class="st"><b>' + bn(BOOKMARKS.length) + '</b><span>বুকমার্ক</span></div>' +
     '</div>' +
-    '<p class="sub" style="margin:12px 0 0">অ্যাপ সংস্করণ: v2.19</p>' +
+    '<p class="sub" style="margin:12px 0 0">অ্যাপ সংস্করণ: v2.20</p>' +
       '<p style="margin:10px 0 0"><a class="btn" href="https://github.com/Kholil-143/Muslim-Path/releases/latest/download/Muslim-Path.apk">⬇ সর্বশেষ আপডেট ডাউনলোড / ইনস্টল করুন</a></p>' +
     '<p style="margin:16px 0 0"><button class="btn ghost" id="pfOut">প্রোফাইল থেকে বের হয়ে যান</button></p>' +
     '</div>' +
