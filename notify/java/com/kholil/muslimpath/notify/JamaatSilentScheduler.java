@@ -140,12 +140,15 @@ public class JamaatSilentScheduler {
         if (am == null) return;
         SharedPreferences sp = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
         if (!sp.getBoolean(KEY_ACTIVE, false)) {
+            // First window to start: remember the pre-silent mode. Later,
+            // overlapping windows must NOT overwrite it, so the phone goes
+            // back to the mode it had before the FIRST window began.
             sp.edit()
                     .putInt(KEY_SAVED_MODE, am.getRingerMode())
-                    .putInt(KEY_SET_MODE, mode)
                     .putBoolean(KEY_ACTIVE, true)
                     .apply();
         }
+        sp.edit().putInt(KEY_SET_MODE, mode).apply();
         try {
             am.setRingerMode(mode);
         } catch (SecurityException ignored) {
@@ -156,6 +159,11 @@ public class JamaatSilentScheduler {
     public static void applyEnd(Context ctx) {
         SharedPreferences sp = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
         if (!sp.getBoolean(KEY_ACTIVE, false)) return;
+        // Overlap rule: if another stored window (e.g. madrasa class time)
+        // still covers this moment, stay silent — the later window's end
+        // restores. The small tolerance keeps a window whose end alarm is
+        // firing right now from counting as "still covering".
+        if (coveringMode(ctx, System.currentTimeMillis() + 3000) >= 0) return;
         int saved = sp.getInt(KEY_SAVED_MODE, AudioManager.RINGER_MODE_NORMAL);
         int set = sp.getInt(KEY_SET_MODE, AudioManager.RINGER_MODE_SILENT);
         sp.edit().putBoolean(KEY_ACTIVE, false).apply();
@@ -172,6 +180,24 @@ public class JamaatSilentScheduler {
         }
     }
 
+    /** Ringer mode of a stored window covering the given moment, or -1. */
+    private static int coveringMode(Context ctx, long now) {
+        String json = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
+                .getString(KEY_ITEMS, null);
+        if (json == null) return -1;
+        try {
+            JSONArray arr = new JSONArray(json);
+            for (int i = 0; i < arr.length(); i++) {
+                JSONObject o = arr.getJSONObject(i);
+                if (o.optLong("startMs", 0) <= now && now < o.optLong("endMs", 0)) {
+                    return o.optInt("mode", AudioManager.RINGER_MODE_SILENT);
+                }
+            }
+        } catch (Exception ignored) {
+        }
+        return -1;
+    }
+
     /**
      * Brings the ringer state in line with the stored windows right now:
      * silences if a window currently covers this moment (e.g. after a
@@ -180,24 +206,9 @@ public class JamaatSilentScheduler {
     public static void reconcile(Context ctx) {
         SharedPreferences sp = ctx.getSharedPreferences(PREFS, Context.MODE_PRIVATE);
         boolean active = sp.getBoolean(KEY_ACTIVE, false);
-        int coveringMode = -1;
-        String json = sp.getString(KEY_ITEMS, null);
-        if (json != null) {
-            try {
-                JSONArray arr = new JSONArray(json);
-                long now = System.currentTimeMillis();
-                for (int i = 0; i < arr.length(); i++) {
-                    JSONObject o = arr.getJSONObject(i);
-                    if (o.optLong("startMs", 0) <= now && now < o.optLong("endMs", 0)) {
-                        coveringMode = o.optInt("mode", AudioManager.RINGER_MODE_SILENT);
-                        break;
-                    }
-                }
-            } catch (Exception ignored) {
-            }
-        }
-        if (coveringMode >= 0) {
-            applyStart(ctx, coveringMode);
+        int mode = coveringMode(ctx, System.currentTimeMillis());
+        if (mode >= 0) {
+            applyStart(ctx, mode);
         } else if (active) {
             applyEnd(ctx);
         }
